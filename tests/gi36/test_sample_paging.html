@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+Copyright 2006-2008 TIBCO Software Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Test sample slider controlled paging</title>
+</head>
+<body>
+<table border="1">
+<caption> Before Matrix Paging mode was available, this sample showed how you can do dynamic fetching of data set fragment and assemble on client side. This is an optimization techique to minimize the amount of data the data table must render at one time.</caption>
+<tbody>
+    <tr>
+      <td rowspan="1" colspan="3">Test slider control in paging sample<br>
+      </td>
+    </tr>
+   <tr>
+      <td>include</td>
+      <td>testSetup.html</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td>jsxopen</td>
+      <td>${GIPATH}/shell.html?jsxapppath=${SAMPLESPATH}/sample-paging</td>
+      <td>&nbsp;</td>
+    </tr>
+     <tr>
+      <td>waitForElementPresent</td>
+      <td>JsxSliderName=sldrPageSlider</td>
+       <td>5000</td>
+     </tr>    
+    <tr>
+      <td>assertTextPresent</td>
+      <td>Paging</td>
+      <td>&nbsp;</td>
+    </tr>     
+    <tr>
+      <td>verifyText</td>
+      <td>JsxBlockName=lblRangeLabel</td>
+      <td>0 - 500</td> 
+    </tr>        
+    <tr>
+      <td>moveJsxSliderRelative</td>
+      <td>JsxSliderName=sldrPageSlider</td>
+      <td>120</td>
+    </tr>  
+    <tr>
+      <td>verifyText</td>
+      <td>JsxBlockName=lblRangeLabel</td>
+      <td>5500 - 6000</td> 
+    </tr>        
+    <tr>
+      <td>moveJsxSliderPercent</td>
+      <td>JsxSliderName=sldrPageSlider</td>
+      <td>50</td>
+    </tr>     
+    <tr>
+      <td>assertText</td>
+      <td>JsxBlockName=lblRangeLabel</td>
+      <td>12000 - 12500</td> 
+    </tr>        
+    <!--tr>
+      <td>jsxopen</td>
+      <td>about:blank</td>
+      <td>&nbsp;</td>
+    </tr-->
+  </tbody>
+
+</table>
+</body>
+</html>

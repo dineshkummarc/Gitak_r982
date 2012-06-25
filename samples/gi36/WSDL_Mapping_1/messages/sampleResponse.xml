@@ -1,0 +1,11 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<SOAP-ENV:Body>
+<jsx1:ReturnCityStateResponse xmlns:jsx1="http://ws.cdyne.com/">
+<jsx1:ReturnCityStateResult>
+<jsx1:City>PALO ALTO</jsx1:City>
+<jsx1:StateAbbrev>CA</jsx1:StateAbbrev>
+<jsx1:County>SANTA CLARA</jsx1:County>
+</jsx1:ReturnCityStateResult>
+</jsx1:ReturnCityStateResponse>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

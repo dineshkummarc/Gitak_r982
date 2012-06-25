@@ -1,0 +1,102 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Stack Group (--)</name>
+  <icon/>
+  <description>Stack group with two horizontal (under/over) stack items.</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.StackGroup">
+    <variants jsxleft="0" jsxtop="0" jsxrepeat="3" jsxsizearray="[27,27,'*']" jsxoverflow="2" jsxselectedindex="1" jsxrelativeposition="0" jsxorientation="0" jsxbestguess="0"/>
+    <strings jsxname="stkgrpAlertsStack" jsxwidth="100%" jsxheight="100%"/>
+    <object type="jsx3.gui.Stack">
+      <variants jsxorientation="0"/>
+      <strings jsxname="stkDialogAlert" jsxtext="Dialog Alert" jsxbg="filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr=#ffffffff, EndColorStr=#889090af);"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxleft="0" jsxtop="0" jsxoverflow="1"/>
+        <strings jsxname="blkDialogAlertPane" jsxwidth="100%" jsxheight="100%" jsxborder="border:solid 1px #9898a5;border-left-color:#ffffff;border-top-color:#ffffff;" jsxbgcolor="#ffffff" jsxvisibility="hidden"/>
+        <object type="jsx3.gui.Dialog">
+          <variants jsxwidth="431" jsxzindex="5000" jsxwindowstate="1" jsxleft="0" jsxtop="0"/>
+          <strings jsxname="dlgParentDialog" jsxheight="230"/>
+          <dynamics jsxbgcolor="@Solid Medium"/>
+          <object type="jsx3.gui.WindowBar">
+            <variants/>
+            <strings jsxname="winbarDialogTitle" jsxtext="Dialog Alert"/>
+            <object type="jsx3.gui.ToolbarButton">
+              <variants/>
+              <strings jsxname="tbbMinimizeButton"/>
+              <dynamics jsximage="@Min Icon" jsxtip="@Min Tip"/>
+              <events jsxexecute="this.getParent().getParent().doToggleState();"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <variants/>
+              <strings jsxname="tbbMaximizeButton" jsximage="JSX/images/dialog/max.gif"/>
+              <dynamics jsxtip="@Max Tip"/>
+              <events jsxexecute="this.getAncestorOfType(&quot;jsx3.gui.Dialog&quot;).doMaximize(this);"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <variants/>
+              <strings jsxname="tbbCloseButton"/>
+              <dynamics jsximage="@Close Icon" jsxtip="@Close Tip"/>
+              <events jsxexecute="this.getParent().getParent().doClose();"/>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="1"/>
+            <strings jsxname="blkDialogContentPane" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1" jsxtext="Any type of Alert can also be associated with a dialog."/>
+            <dynamics jsxpadding="@8Pixel"/>
+            <object type="jsx3.gui.Button">
+              <variants jsxindex="0" jsxheight="18" jsxrelativeposition="0" jsxleft="100" jsxtop="50"/>
+              <strings jsxname="btnShowAlertButton" jsxtext="Show Alert" jsxmargin="margin-right:4px;"/>
+              <events jsxexecute="sfn.showDialogAlert()"/>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+    <object type="jsx3.gui.Stack">
+      <variants jsxorientation="0"/>
+      <strings jsxname="stkOtherAlert" jsxtext="Confirm and Prompt Alerts; Callback Functions" jsxbg="filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr=#ffffffff, EndColorStr=#889090af);"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxleft="0" jsxtop="0" jsxoverflow="1"/>
+        <strings jsxname="blkOtherAlertPane" jsxwidth="100%" jsxheight="100%" jsxborder="border:solid 1px #9898a5;border-left-color:#ffffff;border-top-color:#ffffff;" jsxbgcolor="#ffffff" jsxvisibility=""/>
+        <object type="jsx3.gui.Block">
+          <variants jsxleft="50" jsxtop="10" jsxwidth="340" jsxheight="130" jsxoverflow="1" jsxrelativeposition="0"/>
+          <strings jsxname="blkConfirmAlertContent" jsxtext="The &lt;b&gt;confirm alert&lt;/b&gt; allows the user to confirm or deny a selection.&lt;br/&gt;&lt;br/&gt;In addition to Title and Message, the developer can configure the text and callback functions for each button, along with which button is set as the default."/>
+          <dynamics jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"/>
+          <object type="jsx3.gui.Button">
+            <variants jsxindex="0" jsxheight="18" jsxrelativeposition="0" jsxleft="140" jsxwidth="60"/>
+            <strings jsxname="btnConfirmButton" jsxtext="Confirm" jsxmargin="margin-right:4px;" jsxtop="90%"/>
+            <events jsxexecute="sfn.showConfirmAlert()"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxleft="50" jsxtop="160" jsxwidth="340" jsxheight="130" jsxoverflow="1" jsxrelativeposition="0"/>
+          <strings jsxname="blkPromptAlertContent" jsxtext="The &lt;b&gt;prompt alert&lt;/b&gt; allows for a text input field.&lt;br/&gt;&lt;br/&gt;In this case, we have defined a callback function for the OK button that will use a standard JS alert containing the user-entered text.  Note that the alert must be programmatically closed by the callback function."/>
+          <dynamics jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"/>
+          <object type="jsx3.gui.Button">
+            <variants jsxindex="0" jsxheight="18" jsxrelativeposition="0" jsxleft="140" jsxwidth="60"/>
+            <strings jsxname="btnPromptButton" jsxtext="Prompt" jsxmargin="margin-right:4px;" jsxtop="90%"/>
+            <events jsxexecute="sfn.showPromptAlert ()"/>
+          </object>
+        </object>
+      </object>
+    </object>
+    <object type="jsx3.gui.Stack">
+      <variants jsxorientation="0"/>
+      <strings jsxname="stkServerAlert" jsxtext="Server Alert" jsxbg="filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr=#ffffffff, EndColorStr=#889090af);"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxleft="0" jsxtop="0" jsxoverflow="1"/>
+        <strings jsxname="blkServerAlertPane" jsxwidth="100%" jsxheight="100%" jsxborder="border:solid 1px #9898a5;border-left-color:#ffffff;border-top-color:#ffffff;" jsxbgcolor="#ffffff" jsxvisibility="hidden"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxleft="120" jsxtop="40" jsxwidth="340" jsxheight="170" jsxoverflow="1" jsxrelativeposition="0"/>
+          <strings jsxname="blkServerAlertContent" jsxtext="&lt;p&gt;The &lt;b&gt;prompt alert&lt;/b&gt; allows for a text input field.&lt;/p&gt;  &lt;p&gt;In this case, we have defined a callback function for the OK button that will use a standard JS alert containing the user-entered text.  Note that the alert must be programmatically closed by the callback function.&lt;/p&gt;"/>
+          <dynamics jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"/>
+          <object type="jsx3.gui.Button">
+            <variants jsxindex="0" jsxheight="18" jsxrelativeposition="0" jsxleft="160" jsxtop="130"/>
+            <strings jsxname="btnServerAlertButton" jsxtext="Alert" jsxmargin="margin-right:4px;"/>
+            <events jsxexecute="sfn.showServerAlert()"/>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

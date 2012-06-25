@@ -1,0 +1,48 @@
+<serialization jsxversion="3.4" xmlns="urn:tibco.com/v3.0">
+  <name><![CDATA[Dialog]]></name>
+  <icon></icon>
+  <description><![CDATA[Dialog box.  (Set Modal property for a modal dialog).]]></description>
+  <onBeforeDeserialize></onBeforeDeserialize>
+  <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.Dialog">
+    <variants jsxwidth="431" jsxheight="318" jsxzindex="5003" jsxwindowstate="1" jsxleft="194" jsxtop="200"></variants>
+    <strings jsxname="dlgApplicationDetails"></strings>
+    <dynamics jsxbgcolor="@Solid Medium"></dynamics>
+    <object type="jsx3.gui.WindowBar">
+      <variants></variants>
+      <strings jsxname="winbarDialogTitle" jsxtext="Applicant Details"></strings>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants></variants>
+        <strings jsxname="tbbMinimizeButton"></strings>
+        <dynamics jsximage="@Min Icon" jsxtip="@Min Tip"></dynamics>
+        <events jsxexecute="this.getParent().getParent().doToggleState();"></events>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants></variants>
+        <strings jsxname="tbbCloseButton"></strings>
+        <dynamics jsximage="@Close Icon" jsxtip="@Close Tip"></dynamics>
+        <events jsxexecute="eg.CDFMasterDetail.removeDoc(this);this.getParent().getParent().doClose();positionIndex--;"></events>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"></variants>
+      <strings jsxname="blkListPane" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1"></strings>
+      <object type="jsx3.gui.Matrix">
+        <variants jsxpagingmodel="1" jsxselectionmodel="2" jsxscalewidth="1" jsxresize="0"  ></variants>
+        <strings jsxname="mtxApplicantDetails" jsxbodyborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxfocusstyle="color:red;font-weight:bold;" jsxxmlid="applicantDetailsListCache" jsxheaderborder="1px solid #dfdfef"></strings>
+        <events jsxexecute="jsx3.log('EVENT: (jsxexecute). Record: ' + strRECORDID);"></events>
+        <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"></xslparameters>
+        <object type="jsx3.gui.Matrix.Column">
+          <variants></variants>
+          <strings jsxname="mcAttrNameColumn" jsxtext="Name" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px blue;solid 0px" jsxpath="jsxtext"></strings>
+          <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"></dynamics>
+        </object>
+        <object type="jsx3.gui.Matrix.Column">
+          <variants></variants>
+          <strings jsxname="mcAttrValueColumn" jsxtext="Value" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px blue;solid 0px" jsxpath="jsxvalue"></strings>
+          <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"></dynamics>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

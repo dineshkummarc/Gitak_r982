@@ -1,0 +1,114 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.4">
+  <name>Sample App Template</name>
+  <icon/>
+  <description>Basic template for sample applications.  Contains a top block for descriptions, and a bottom block for the sample app.</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['240','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+    <strings jsxname="lytMainLayout" jsxwidth="100%" jsxheight="100%" jsxrows="200,*"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkDescription" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;p align=&quot;right&quot;&gt;&lt;b&gt;JSS Localization: version 3.5&lt;/b&gt;&lt;BR&gt; JSX version: 3.5.0&lt;/p&gt;           &lt;p&gt;This sample application demonstrates the use of GI Properties Bundle files for localization.&lt;/p&gt;           &lt;p&gt;The Tools menu localizes the application. This is accomplished with the Server.setLocale() method,            new since version 3.2. The code for loading the resource file is located in logic.js&lt;/p&gt;            &lt;p&gt;The 'Launch Dialog' button opens a dialog with some additional notes.&lt;/p&gt;&lt;p&gt;Properties Bundle file format&lt;/p&gt;&lt;pre&gt;&amp;lt;data jsxnamespace=&quot;propsbundle&quot; locales=&quot;&lt;b&gt;externalLocales&lt;/b&gt;&quot;&amp;gt; &amp;lt;locale&amp;gt; &amp;lt;record jsxid=&quot;&lt;b&gt;propId&lt;/b&gt;&quot; jsxtext=&quot;&lt;b&gt;propValue&lt;/b&gt;&quot;/&amp;gt; ... &amp;lt;/locale&amp;gt; &amp;lt;/data&amp;gt; &lt;/pre&gt;
+	  &lt;p&gt;&lt;/p&gt;"/>
+      <dynamics jsxborder="@Outset" jsxpadding="@8Pixel" jsxbgcolor="@Solid Medium"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkApp" jsxwidth="100%" jsxheight="100%"/>
+      <dynamics jsxborder="@Outset"/>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants jsxrepeat="2" jsxsizearray="['55','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+        <strings jsxname="lytAppLayout" jsxwidth="100%" jsxheight="100%" jsxrows="55,*"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="blkTopPane" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@Outset"/>
+          <object type="jsx3.gui.LayoutGrid">
+            <variants jsxrepeat="2" jsxsizearray="['25','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+            <strings jsxname="lytTopPaneLayout" jsxwidth="100%" jsxheight="100%" jsxrows="25,*"/>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="2"/>
+              <strings jsxname="blkMenuBarPane" jsxwidth="100%" jsxheight="100%"/>
+              <dynamics jsxborder="@Outset"/>
+              <object type="jsx3.gui.WindowBar">
+                <variants jsxbartype="2"/>
+                <strings jsxname="mnubMenuBar"/>
+				<object type="jsx3.gui.Menu">
+					<variants jsxxmlasync="0"/>
+					<strings jsxname="mnuLocaleSelectMenu" jsxtip="Change display language" jsxxmlurl="xml/menu.xml"/>
+					<dynamics jsxtext="Tools1"/>
+					<events jsxexecute="eg.localization.doLoadLocalizeResource(this, strRECORDID);"/>
+				</object>
+              </object>
+            </object>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="1"/>
+              <strings jsxname="blkToolbarPane" jsxwidth="100%" jsxheight="100%"/>
+              <dynamics jsxborder="@Outset"/>
+              <object type="jsx3.gui.WindowBar">
+                <variants jsxbartype="1"/>
+                <strings jsxname="winbarToolbar"/>
+                <object type="jsx3.gui.ToolbarButton">
+                  <variants Bvql="1"/>
+                  <strings jsxname="tbbLaunchDialogButton" jsximage="images/icon_16.gif" jsxtip="open dialog" jsxtext="Launch Dialog"/>
+                  <events jsxexecute="eg.localization.doLaunchDialog(this);"/>
+                </object>
+				<object type="jsx3.gui.DatePicker">
+					<variants jsxwidth="100" jsxrelativeposition="1" jsxheight="18" jsxyear="2008" jsxmonth="3" 					jsxdate="17"/>
+					<strings jsxname="datePicker" jsxmargin="0 4 0 0"/>
+					<dynamics jsxformat="LocalDate"/>
+				</object>
+				<object type="jsx3.gui.TimePicker">
+					<variants jsxrelativeposition="1" jsxheight="18" jsxhours="0" jsxminutes="0" jsxseconds="0" jsxmillis="0" jsxshowsecs="0" jsxshowmillis="0"/>
+					<strings jsxname="timePicker" jsxmargin="0 4 0 0"/>
+				</object>
+				<object type="jsx3.gui.Select">
+					<variants jsxwidth="150" jsxheight="18" jsxxmlasync="1"/>
+					<strings jsxname="select" jsxxmlurl="jsx:///xml/sample.xml" jsxmargin="0 4 0 0"/>
+				</object>
+              </object>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1"/>
+          <strings jsxname="blkLocalizedContentPane" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@Outset"/>
+          <object type="jsx3.gui.StackGroup">
+            <variants jsxleft="0" jsxtop="0" jsxrepeat="3" jsxsizearray="[27,27,'*']" jsxoverflow="2" jsxselectedindex="2" jsxrelativeposition="1" jsxbestguess="0"/>
+            <strings jsxname="stkgrpLocStackGroup" jsxwidth="100%" jsxheight="100%" jsxrows="27,27,*"/>
+            <object type="jsx3.gui.Stack">
+              <variants jsxorientation="0"/>
+              <strings jsxname="stkStack1" jsxbg="filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr=#ffffffff, EndColorStr=#889090af);"/>
+              <dynamics jsxtext="Line1"/>
+              <properties dynamics="Line1"/>
+              <object type="jsx3.gui.Block">
+                <variants jsxleft="0" jsxtop="0" jsxoverflow="1"/>
+                <strings jsxname="blkStack1Pane" jsxwidth="100%" jsxheight="100%" jsxborder="border:solid 1px #9898a5;border-left-color:#ffffff;border-top-color:#ffffff;" jsxbgcolor="#ffffff" jsxvisibility="hidden"/>
+              </object>
+            </object>
+            <object type="jsx3.gui.Stack">
+              <variants jsxorientation="0"/>
+              <strings jsxname="stkStack2" jsxbg="filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr=#ffffffff, EndColorStr=#889090af);"/>
+              <dynamics jsxtext="Line2"/>
+              <object type="jsx3.gui.Block">
+                <variants jsxleft="0" jsxtop="0" jsxoverflow="1"/>
+                <strings jsxname="blkStack2Pane" jsxwidth="100%" jsxheight="100%" jsxborder="border:solid 1px #9898a5;border-left-color:#ffffff;border-top-color:#ffffff;" jsxbgcolor="#ffffff" jsxvisibility="hidden"/>
+              </object>
+            </object>
+            <object type="jsx3.gui.Stack">
+              <variants jsxorientation="0"/>
+              <strings jsxname="stkStack3" jsxbg="filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr=#ffffffff, EndColorStr=#889090af);" jsxtip="my tip would go here"/>
+              <dynamics jsxtext="Line3"/>
+              <object type="jsx3.gui.Block">
+                <variants jsxleft="0" jsxtop="0" jsxoverflow="1"/>
+                <strings jsxname="blkStack3Pane" jsxwidth="100%" jsxheight="100%" jsxborder="border:solid 1px #9898a5;border-left-color:#ffffff;border-top-color:#ffffff;" jsxbgcolor="#ffffff" jsxvisibility=""/>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

@@ -1,0 +1,92 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.6">
+  <name>root</name>
+  <icon/>
+  <description>2 top-over-bottom panes in an adaptive layout grid.</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize>var req = new jsx3.net.Request();
+req.open("GET", eg.search.SERVER.resolveURI("js/logic.js"), false);
+req.send();
+var loadedSource = req.getResponseText();
+eg.search.SERVER.getJSXByName('textbox').setValue(loadedSource);</onAfterDeserialize>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['30%','*']" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+    <strings jsxname="layoutSample (--)" jsxwidth="100%" jsxheight="100%" jsxrows="30%,*" jsxdisplay=""/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="paneDescription" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;P align=&quot;right&quot;&gt; &lt;B&gt;Search in list: version 2.1&lt;/B&gt;&lt;BR/&gt; JSX version: 3.4.0&lt;/P&gt;  &lt;p&gt; This sample application demonstrates how to search for a text in a CDF document and to highlight the matched record. This method can be used for any jsx3.gui component that has a CDF Record as input like list or grid. &lt;/p&gt;  &lt;p&gt; To perform this task a custom XSLT template has been used to find the record that its jsxtext attribute matches the pattern and to return the value of its jsxid attribute as string. The search pattern is passed as XSLT parameter   &lt;i&gt;searchedtext&lt;/i&gt;. &lt;/p&gt;  A second parameter called   &lt;i&gt;resultindex&lt;/i&gt;  is passed to the XSLT template that specifies the position of the record. Each time the Find Next button is clicked   &lt;i&gt;resultindex&lt;/i&gt;  will increment at one, so the user can  repeat the search and find the next occurrence in the CDF document. For example the fifth click of the Find Next button will find the fifth record that matches the pattern. &lt;p&gt;  If nothing has been found and the result index is grater then one the message 'End of search' will be displayed, otherwise the message 'Text not found' that indicates there isn't any occurrences at all will be displayed. &lt;/p&gt;  &lt;p&gt; User can type a new text in the text field and press enter to begin a new search. &lt;/p&gt;  &lt;p&gt; To use this custom XSLT the jsx3.gui.processor class has been used. This class offers developer simple methods that he/she can use to transform a XML document using a XSLT template.  &lt;/p&gt;  &lt;p&gt; Finally the method jsx3.gui.Matrix.focusRowById(strRECORDID) highlights the matched record. &lt;/p&gt;"/>
+      <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="paneApp" jsxwidth="100%" jsxheight="100%"/>
+      <dynamics jsxborder="@Outset"/>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants jsxrepeat="4" jsxsizearray="['25','65','*','15']" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxorientation="0"/>
+        <strings jsxname="layout (--)" jsxwidth="100%" jsxheight="100%" jsxrows="25,*,200,15"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@Outset"/>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxheight="18"/>
+            <strings jsxname="searchbox" jsxmargin="margin-right:4px;" jsxvalue="Content 0"/>
+            <events jsxincchange="" jsxchange="" jsxexecute="eg.search.selectRecord(this.getValue(),true);"/>
+          </object>
+          <object type="jsx3.gui.Button">
+            <variants jsxindex="0" jsxheight="18"/>
+            <strings jsxname="button" jsxtext="Find Next" jsxmargin="margin-right:4px;"/>
+            <events jsxexecute="eg.search.selectRecord(eg.search.getServer().getJSXByName('searchbox').getValue(),false);"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1"/>
+          <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@Outset"/>
+          <object type="jsx3.gui.Matrix">
+            <variants jsxpagingmodel="1" jsxselectionmodel="2" jsxscalewidth="1"/>
+            <strings jsxname="list" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxfocusstyle="font-weight:bold;color:orange" jsxxmlurl="xml/source.xml" jsxxmlid="cachedlist"/>
+            <events jsxexecute="jsx3.log('EVENT: (jsxexecute). Record: ' + strRECORDID);"/>
+            <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants jsxwidth="74" jsxresize="1"/>
+              <strings jsxname="mc1" jsxtext="Data" jsxcellpadding="2" jsxpath="jsxtext" jsxvaluetemplate=""/>
+              <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants/>
+              <strings jsxname="mc2" jsxtext="Name" jsxpadding="2" jsxwidth="*" jsxcellpadding="2"/>
+              <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="block" jsxwidth="100%" jsxheight="100%"/>
+          <object type="jsx3.gui.Splitter">
+            <variants jsxleft="0" jsxtop="0"/>
+            <strings jsxname="splitter ( | )" jsxsubcontainer1pct="51.724137931034484%" jsxsubcontainer2pct="48.23%"/>
+            <object type="jsx3.gui.BlockX">
+              <variants jsxrelativeposition="1" jsxoverflow="1"/>
+              <strings jsxname="blockX" jsxxmlurl="xsl/findrecordid.xsl" jsxwidth="100%" jsxheight="100%"/>
+              <dynamics jsxbgcolor="@Solid Light" jsxpadding="@8Pixel"/>
+            </object>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="3"/>
+              <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+              <dynamics jsxborder="@Inset"/>
+              <object type="jsx3.gui.TextBox">
+                <variants jsxrelativeposition="1" jsxtype="1" jsxoverflow="3"/>
+                <strings jsxname="textbox" jsxwidth="100%" jsxvalue="" jsxheight="100%"/>
+                <dynamics jsxpadding="@8Pixel"/>
+              </object>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="display" jsxwidth="100%" jsxheight="100%"/>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

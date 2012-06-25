@@ -1,0 +1,76 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.4">
+  <name>Sample App Template</name>
+  <icon/>
+  <description>Basic template for sample applications.  Contains a top block for descriptions, and a bottom block for the sample app.</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['215','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+    <strings jsxname="layoutSample (--)" jsxwidth="100%" jsxheight="100%" jsxrows="215,*"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blockDescription" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;P align=&quot;right&quot;&gt;&lt;B&gt;Efficient Painting: version 4.0&lt;/B&gt;&lt;BR&gt; JSX version: 3.4.0&lt;/P&gt; &lt;P&gt;This sample application demonstrates best practices for adding and repainting complex applications.&lt;/P&gt; &lt;P&gt;The rendering of HTML onscreen is often the slowest aspect of browser-based applications.  Ensuring efficient repaints will make your applications snappier and more responsive to user input.  The GI repaint() method will get a handle to the parent object and render it's HTML along with that of all of its children.  This can often slow app performance when adding children to large parents.  Two strategies are used in this example: 1) use of jsx3.sleep() to give the UI a chance to breathe in between inserts, and 2) paintChild() to efficiently add HTML to the view.&lt;/P&gt; &lt;P&gt;Choose Project &gt; Run Project... in the GI menu to run this project outside of the Builder environment to see the performance impact of the code.  Running this application in Builder tends to slow things down, as the various palettes in the Builder environment try to keep up with the rendering in the application view window.&lt;P&gt;"/>
+      <dynamics jsxborder="@Outset" jsxpadding="@8Pixel" jsxbgcolor="@Solid Medium"/>
+      <object type="jsx3.gui.CheckBox">
+        <variants jsxheight="18" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxchecked="0"/>
+        <strings jsxname="chkDocPane" jsxtext="Minimize doc pane" jsxmargin="0 4 0 0" jsxdisplay=""/>
+        <events jsxexecute="jsx3.log('mycheck','the jsxexecute method was fired for checkbox, ' + this.getId());" jsxtoggle="if (intCHECKED) this.getParent().getParent().setRows('20,*',true); else this.getParent().getParent().setRows('140,*',true);"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blockApp" jsxwidth="100%" jsxheight="100%"/>
+      <dynamics jsxborder="@Outset"/>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants jsxrepeat="2" jsxsizearray="['76','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+        <strings jsxname="layout (--)" jsxwidth="100%" jsxheight="100%" jsxrows="76,*"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Light" jsxpadding="@8Pixel"/>
+          <object type="jsx3.gui.LayoutGrid">
+            <variants jsxrepeat="2" jsxsizearray="['22','22','22']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+            <strings jsxname="layout (--)" jsxwidth="100%" jsxheight="100%" jsxrows="22,22,22"/>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="2"/>
+              <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+              <object type="jsx3.gui.Block">
+                <variants jsxrelativeposition="1" jsxoverflow="3"/>
+                <strings jsxname="label1" jsxtext="Example 1: Efficient Repaints and Content Additions" jsxcolor="#0000ff" jsxstyleoverride="text-decoration:underline" jsxtip="loads an example that shows how to use insertHTML (as opposed to repaint) when adding content." jsxtagname="div" jsxpadding="padding-bottom:8px;"/>
+                <dynamics jsxcursor="@Hand"/>
+                <events jsxclick="var o = this.getServer().getJSXByName('myexamples');   o.removeChildren(); o.load('components/efficient_load.xml');"/>
+              </object>
+            </object>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="1"/>
+              <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+              <object type="jsx3.gui.Block">
+                <variants jsxrelativeposition="1" jsxoverflow="3"/>
+                <strings jsxname="label2" jsxtext="Example 2: Efficient Adoption" jsxcolor="#0000ff" jsxstyleoverride="text-decoration:underline" jsxtip="loads an example that builds upon the previous.  Shows how to add content to an already-full application without a performance hit. Also shows how to efficiently convert views from tabs to dialogs to stacks." jsxtagname="div" jsxpadding="padding-bottom:8px;"/>
+                <dynamics jsxcursor="@Hand"/>
+                <properties onclick=""/>
+                <events jsxclick="var o = this.getServer().getJSXByName('myexamples');   o.removeChildren(); o.load('components/efficient_adopt.xml');"/>
+              </object>
+            </object>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="1"/>
+              <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+              <object type="jsx3.gui.Block">
+                <variants jsxrelativeposition="1" jsxoverflow="3"/>
+                <strings jsxname="label3" jsxtext="Example 3: Efficient Destruction" jsxcolor="#0000ff" jsxstyleoverride="text-decoration:underline" jsxtip="loads an example that builds upon the previous.  Shows how to remove content to an already-full application without a performance hit." jsxtagname="div" jsxpadding="padding-bottom:8px;"/>
+                <dynamics jsxcursor="@Hand"/>
+                <properties onclick=""/>
+                <events jsxclick="var o = this.getServer().getJSXByName('myexamples');   o.removeChildren(); o.load('components/efficient_destroy.xml');"/>
+              </object>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="myexamples" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxbgcolor="@Solid Disabled"/>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

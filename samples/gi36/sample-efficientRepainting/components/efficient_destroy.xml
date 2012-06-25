@@ -1,0 +1,116 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.4">
+  <name>Layout (--)</name>
+  <icon/>
+  <description>2 top-over-bottom panes in an adaptive layout grid.</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="3" jsxsizearray="['160','36','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+    <strings jsxname="layout (--)" jsxwidth="100%" jsxheight="100%" jsxrows="160,36,*"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;P&gt;Note that this subclass to jsx3.StackGroup only applies to versions of GI &lt;strong&gt;prior to 3.1.0 B3&lt;/strong&gt;.  Starting with B3, the method is available in the base stack class.&lt;/P&gt; &lt;P&gt;Removal of items from Tabs, Dialogs, Splitters, etc. in 3.0.0 is already very efficient.  For those times when you need the same efficiency in removing a child jsx3.Stack from a parent jsx3.StackGroup, you need to subclass jsx3.StackGroup a new method.  This example shows how to use the included destroyView() method to efficiently remove children from a populated Stack Group.  Look in the Events Editor palette of the Remove Stack button for the code.&lt;/P&gt; &lt;P&gt;Note that this method is only needed if you have large stack groups, and you are experiencing performance issues removing children.&lt;/P&gt; &lt;P&gt;To subclass jsx3.StackGroup and make this new method available to your application, just make sure that the code in stackExtension.js is loaded when the app is initiated.Note that this dose not apply to versions of GI &lt;strong&gt;3.1.0 B3&lt;/strong&gt; and above. &lt;/P"/>
+      <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="2"/>
+      <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+      <dynamics jsxborder="@Outset Top" jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"/>
+      <object type="jsx3.gui.RadioButton">
+        <variants jsxheight="18" jsxdefaultselected="1" jsxselected="1" jsxrelativeposition="1"/>
+        <strings jsxname="radio" jsxtext="Stack" jsxgroupname="group1" jsxmargin="margin-right:4px;" jsxvalue="stack"/>
+        <events jsxselect="eg.effAdopt..transferAllItems(this.getValue());"/>
+      </object>
+      <object type="jsx3.gui.Button">
+        <variants jsxindex="0" jsxheight="18"/>
+        <strings jsxname="button" jsxtext="Load One Stack Item" jsxmargin="margin-right:8px;"/>
+        <events jsxexecute="eg.effAdopt.loadOneItem(this);"/>
+      </object>
+      <object type="jsx3.gui.Button">
+        <variants jsxindex="0" jsxheight="18"/>
+        <strings jsxname="button" jsxtext="Remove Current Stack Item" jsxmargin=""/>
+        <events jsxexecute="var o = this.getServer().getJSXByName(&quot;mystackcontainer&quot;); o.removeChild(o.getSelectedIndex());"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="mydialogcontainer" jsxwidth="100%" jsxheight="100%"/>
+      <object type="jsx3.gui.StackGroup">
+        <variants jsxleft="0" jsxtop="0" jsxoverflow="2" jsxselectedindex="2" jsxrelativeposition="0" jsxorientation="0" jsxbestguess="0" jsxrepeat="3" jsxsizearray="[27,'*',27]"/>
+        <strings jsxname="mystackcontainer" jsxwidth="100%" jsxheight="100%" jsxrows="27,27,*"/>
+        <object type="jsx3.gui.Stack">
+          <variants jsxorientation="0"/>
+          <strings jsxname="stack" jsxtext="&lt;div title='dblclick to close' ondblclick='var my = jsx3.BrowserDOM.getJSXParent(this); window.setTimeout(function() {my.getParent().removeChild(my);},100);'  &gt;Stack Item&lt;/div&gt;" jsxbg=""/>
+          <object type="jsx3.gui.Block">
+            <variants jsxleft="0" jsxtop="0" jsxoverflow="1"/>
+            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxborder="border:solid 1px #9898a5;border-left-color:#ffffff;border-top-color:#ffffff;" jsxbgcolor="#ffffff" jsxvisibility="hidden"/>
+            <object type="jsx3.gui.Matrix">
+              <variants jsxpagingmodel="1" jsxselectionmodel="2" jsxscalewidth="1" jsxresize="0"/>
+              <strings jsxname="matrix1" jsxbodyborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxfocusstyle="color:red;font-weight:bold;" jsxxmlurl="xml/states.xml" jsxheaderborder="1px solid #dfdfef"/>
+              <events jsxexecute="jsx3.log('EVENT: (jsxexecute). Record: ' + strRECORDID);"/>
+              <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
+              <object type="jsx3.gui.Matrix.Column">
+                <variants/>
+                <strings jsxname="mc1" jsxtext="ID" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px blue;solid 0px" jsxpath="jsxid"/>
+                <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+              </object>
+              <object type="jsx3.gui.Matrix.Column">
+                <variants/>
+                <strings jsxname="mc2" jsxtext="Name" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px blue;solid 0px" jsxpath="jsxtext"/>
+                <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+              </object>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Stack">
+          <variants jsxorientation="0"/>
+          <strings jsxname="stack" jsxtext="&lt;div title='dblclick to close' ondblclick='var my = jsx3.BrowserDOM.getJSXParent(this); window.setTimeout(function() {my.getParent().removeChild(my);},100);'  &gt;Stack Item&lt;/div&gt;" jsxbg=""/>
+          <object type="jsx3.gui.Block">
+            <variants jsxleft="0" jsxtop="0" jsxoverflow="1"/>
+            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxborder="border:solid 1px #9898a5;border-left-color:#ffffff;border-top-color:#ffffff;" jsxbgcolor="#ffffff" jsxvisibility="hidden"/>
+            <object type="jsx3.gui.Matrix">
+              <variants jsxpagingmodel="1" jsxselectionmodel="2" jsxscalewidth="1" jsxresize="0"/>
+              <strings jsxname="matrix1" jsxbodyborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxfocusstyle="color:red;font-weight:bold;" jsxxmlurl="xml/states.xml" jsxheaderborder="1px solid #dfdfef"/>
+              <events jsxexecute="jsx3.log('EVENT: (jsxexecute). Record: ' + strRECORDID);"/>
+              <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
+              <object type="jsx3.gui.Matrix.Column">
+                <variants/>
+                <strings jsxname="mc1" jsxtext="ID" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px blue;solid 0px" jsxpath="jsxid"/>
+                <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+              </object>
+              <object type="jsx3.gui.Matrix.Column">
+                <variants/>
+                <strings jsxname="mc2" jsxtext="Name" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px blue;solid 0px" jsxpath="jsxtext"/>
+                <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+              </object>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Stack">
+          <variants jsxorientation="0"/>
+          <strings jsxname="stack" jsxtext="&lt;div title='dblclick to close' ondblclick='var my = jsx3.BrowserDOM.getJSXParent(this); window.setTimeout(function() {my.getParent().removeChild(my);},100);'  &gt;Stack Item&lt;/div&gt;" jsxbg=""/>
+          <object type="jsx3.gui.Block">
+            <variants jsxleft="0" jsxtop="0" jsxoverflow="1"/>
+            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxborder="border:solid 1px #9898a5;border-left-color:#ffffff;border-top-color:#ffffff;" jsxbgcolor="#ffffff" jsxvisibility=""/>
+            <object type="jsx3.gui.Matrix">
+              <variants jsxpagingmodel="1" jsxselectionmodel="2" jsxscalewidth="1" jsxresize="0"/>
+              <strings jsxname="matrix1" jsxbodyborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxfocusstyle="color:red;font-weight:bold;" jsxxmlurl="xml/states.xml" jsxheaderborder="1px solid #dfdfef"/>
+              <events jsxexecute="jsx3.log('EVENT: (jsxexecute). Record: ' + strRECORDID);"/>
+              <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
+              <object type="jsx3.gui.Matrix.Column">
+                <variants/>
+                <strings jsxname="mc1" jsxtext="ID" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px blue;solid 0px" jsxpath="jsxid"/>
+                <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+              </object>
+              <object type="jsx3.gui.Matrix.Column">
+                <variants/>
+                <strings jsxname="mc2" jsxtext="Name" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px blue;solid 0px" jsxpath="jsxtext"/>
+                <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

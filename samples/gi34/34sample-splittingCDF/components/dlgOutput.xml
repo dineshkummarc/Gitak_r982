@@ -1,0 +1,58 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Dialog</name>
+  <icon/>
+  <description>Dialog box.  (Set Modal property for a modal dialog).</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Dialog">
+    <variants jsxwidth="481" jsxheight="343" jsxzindex="5000" jsxwindowstate="1" jsxleft="87" jsxtop="138"/>
+    <strings jsxname="dlgOutputDialog"/>
+    <dynamics jsxbgcolor="@Solid Medium"/>
+    <object type="jsx3.gui.WindowBar">
+      <variants/>
+      <strings jsxname="winbarOutputDialogTitle" jsxtext="Output CDF (result1.xml; result2.xml)"/>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants/>
+        <strings jsxname="tbbMinimizeButton"/>
+        <dynamics jsximage="@Min Icon" jsxtip="@Min Tip"/>
+        <events jsxexecute="this.getParent().getParent().doToggleState();"/>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants/>
+        <strings jsxname="tbbMaximizeButton" jsximage="JSX/images/dialog/max.gif"/>
+        <dynamics jsxtip="@Max Tip"/>
+        <events jsxexecute="this.getAncestorOfType(&quot;jsx3.gui.Dialog&quot;).doMaximize(this);"/>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants/>
+        <strings jsxname="tbbCloseButton"/>
+        <dynamics jsximage="@Close Icon" jsxtip="@Close Tip"/>
+        <events jsxexecute="this.getParent().getParent().doClose();"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.LayoutGrid">
+      <variants jsxrepeat="2" jsxsizearray="['150','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+      <strings jsxname="lytOutputDialogLayout" jsxwidth="100%" jsxheight="100%"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxname="blkResult1Pane" jsxwidth="100%" jsxheight="100%"/>
+        <dynamics jsxborder="@Outset"/>
+        <object type="jsx3.gui.BlockX">
+          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+          <strings jsxname="xblkResult1XMLPane" jsxwidth="100%" jsxheight="100%" jsxxmlid="result1_xml"/>
+          <dynamics jsxbgcolor="@Solid Light" jsxpadding="@8Pixel"/>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="1"/>
+        <strings jsxname="blkResult2Pane" jsxwidth="100%" jsxheight="100%"/>
+        <dynamics jsxborder="@Outset"/>
+        <object type="jsx3.gui.BlockX">
+          <variants jsxrelativeposition="1" jsxoverflow="3"/>
+          <strings jsxname="xblkResult2XMLPane" jsxwidth="100%" jsxheight="100%" jsxxmlid="result2_xml"/>
+          <dynamics jsxbgcolor="@Solid Light" jsxpadding="@8Pixel"/>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

@@ -1,0 +1,668 @@
+<?xml version="1.0"?>
+<data jsxid="jsxroot" jsxnamespace="jsx3.ide.mapper.Mapper" jsxversion="1.0" xmlns:user="http://tibco.com/gi/cxf">
+  <record jsxid="1" type="W" jsxtext="WSDL (GI_Builder/addins/wsdl/wsdl/Address.wsdl)" jsxopen="1"
+      src="GI_Builder/addins/mapping/wsdl/Address.wsdl" jsxselected="1">
+    <record jsxid="2" type="S" jsxtext="Service (http://ws.cdyne.com/psaddress/addresslookup.asmx)" jsxopen="1">
+      <record jsxid="3" type="P" jsxtext="StandardizedAddress" opname="StandardizedAddress"
+          endpoint="http://ws.cdyne.com/psaddress/addresslookup.asmx">
+        <headers jsxid="4">
+          <record name="Content-Type" value="text/xml" jsxid="5"/>
+          <record jsxid="6" name="SOAPAction" value="http://ws.cdyne.com/StandardizedAddress"/>
+        </headers>
+        <record jsxid="7" type="I" jsxtext="Input (outbound request)" stubsrc="GI_Builder/addins/mapping/xml/stubs/soap.xml"
+            stubpath="/SOAP-ENV:Envelope/SOAP-ENV:Body" onbeforesend="">
+          <record jsxid="8" type="C" jsxtext="StandardizedAddress" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 0]" datatype=""></record>
+        </record>
+        <record jsxid="9" type="O" jsxtext="Output (inbound response)" onafterreceive="">
+          <record jsxid="10" type="C" jsxtext="StandardizedAddressResponse" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 1]" datatype=""></record>
+        </record>
+      </record>
+      <record jsxid="11" type="P" jsxtext="AdvancedStandardization" opname="AdvancedStandardization"
+          endpoint="http://ws.cdyne.com/psaddress/addresslookup.asmx">
+        <headers jsxid="12">
+          <record name="Content-Type" value="text/xml" jsxid="13"/>
+          <record jsxid="14" name="SOAPAction" value="http://ws.cdyne.com/AdvancedStandardization"/>
+        </headers>
+        <record jsxid="15" type="I" jsxtext="Input (outbound request)" stubsrc="GI_Builder/addins/mapping/xml/stubs/soap.xml"
+            stubpath="/SOAP-ENV:Envelope/SOAP-ENV:Body" onbeforesend="">
+          <record jsxid="16" type="C" jsxtext="AdvancedStandardization" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 2]" datatype=""></record>
+        </record>
+        <record jsxid="17" type="O" jsxtext="Output (inbound response)" onafterreceive="">
+          <record jsxid="18" type="C" jsxtext="AdvancedStandardizationResponse" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 3]" datatype=""></record>
+        </record>
+      </record>
+      <record jsxid="19" type="P" jsxtext="ReturnCityState" jsxopen="1" opname="ReturnCityState"
+          endpoint="http://ws.cdyne.com/psaddress/addresslookup.asmx">
+        <headers jsxid="20">
+          <record name="Content-Type" value="text/xml" jsxid="21"/>
+          <record jsxid="22" name="SOAPAction" value="http://ws.cdyne.com/ReturnCityState"/>
+        </headers>
+        <record jsxid="23" type="I" jsxtext="Input (outbound request)" jsxopen="1"
+            stubsrc="GI_Builder/addins/mapping/xml/stubs/soap.xml" stubpath="/SOAP-ENV:Envelope/SOAP-ENV:Body" onbeforesend="">
+          <record jsxid="24" type="C" jsxtext="ReturnCityState" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 4]" datatype="">
+            <record jsxid="25" type="E" jsxtext="zipcode" jsxopen="1" tns="http://ws.cdyne.com/"
+                path="/definitions/types/s:schema/s:element[index() = 4]/s:complexType/s:sequence/s:element[index() = 0]"
+                datatype="s:string">
+              <mappings jsxid="26">
+                <record jsxid="27" name="DOM" value="txtZipcode"/>
+              </mappings>
+              <restrictions jsxid="28">
+                <record name="maxoccur" jsxid="29" value="1"/>
+                <record name="minoccur" jsxid="30" value="0"/>
+              </restrictions>
+            </record>
+            <record jsxid="31" type="E" jsxtext="LicenseKey" jsxopen="1" tns="http://ws.cdyne.com/"
+                path="/definitions/types/s:schema/s:element[index() = 4]/s:complexType/s:sequence/s:element[index() = 1]"
+                datatype="s:string">
+              <mappings jsxid="32">
+                <record name="Script" jsxid="33" value="setValue(&quot;0&quot;);"/>
+              </mappings>
+              <restrictions jsxid="34">
+                <record name="maxoccur" jsxid="35" value="1"/>
+                <record name="minoccur" jsxid="36" value="0"/>
+              </restrictions>
+            </record>
+          </record>
+        </record>
+        <record jsxid="37" type="O" jsxtext="Output (inbound response)" jsxopen="1" onafterreceive="">
+          <record jsxid="38" type="C" jsxtext="ReturnCityStateResponse" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 5]" datatype="">
+            <record jsxid="39" type="C" jsxtext="ReturnCityStateResult" jsxopen="1" tns="http://ws.cdyne.com/"
+                path="/definitions/types/s:schema/s:element[index() = 5]/s:complexType/s:sequence/s:element"
+                datatype="s0:Address">
+              <restrictions jsxid="40">
+                <record name="maxoccur" jsxid="41" value="1"/>
+              </restrictions>
+              <record jsxid="42" type="E" jsxtext="ServiceError" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 0]"
+                  datatype="s:boolean">
+                <restrictions jsxid="43">
+                  <record name="maxoccur" jsxid="44" value="1"/>
+                </restrictions>
+              </record>
+              <record jsxid="45" type="E" jsxtext="AddressError" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 1]"
+                  datatype="s:boolean">
+                <restrictions jsxid="46">
+                  <record name="maxoccur" jsxid="47" value="1"/>
+                </restrictions>
+              </record>
+              <record jsxid="48" type="E" jsxtext="Firm" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 2]"
+                  datatype="s:string">
+                <restrictions jsxid="49">
+                  <record name="maxoccur" jsxid="50" value="1"/>
+                  <record name="minoccur" jsxid="51" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="52" type="E" jsxtext="DeliveryAddress" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 3]"
+                  datatype="s:string">
+                <restrictions jsxid="53">
+                  <record name="maxoccur" jsxid="54" value="1"/>
+                  <record name="minoccur" jsxid="55" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="56" type="E" jsxtext="DeliveryAddress2" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 4]"
+                  datatype="s:string">
+                <restrictions jsxid="57">
+                  <record name="maxoccur" jsxid="58" value="1"/>
+                  <record name="minoccur" jsxid="59" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="60" type="E" jsxtext="PrimaryLow" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 5]"
+                  datatype="s:string">
+                <restrictions jsxid="61">
+                  <record name="maxoccur" jsxid="62" value="1"/>
+                  <record name="minoccur" jsxid="63" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="64" type="E" jsxtext="PrimaryHigh" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 6]"
+                  datatype="s:string">
+                <restrictions jsxid="65">
+                  <record name="maxoccur" jsxid="66" value="1"/>
+                  <record name="minoccur" jsxid="67" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="68" type="E" jsxtext="PriEO" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 7]"
+                  datatype="s:string">
+                <restrictions jsxid="69">
+                  <record name="maxoccur" jsxid="70" value="1"/>
+                  <record name="minoccur" jsxid="71" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="72" type="E" jsxtext="SecEO" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 8]"
+                  datatype="s:string">
+                <restrictions jsxid="73">
+                  <record name="maxoccur" jsxid="74" value="1"/>
+                  <record name="minoccur" jsxid="75" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="76" type="E" jsxtext="SecondaryLow" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 9]"
+                  datatype="s:string">
+                <restrictions jsxid="77">
+                  <record name="maxoccur" jsxid="78" value="1"/>
+                  <record name="minoccur" jsxid="79" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="80" type="E" jsxtext="SecondaryHigh" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 10]"
+                  datatype="s:string">
+                <restrictions jsxid="81">
+                  <record name="maxoccur" jsxid="82" value="1"/>
+                  <record name="minoccur" jsxid="83" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="84" type="E" jsxtext="Secondary" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 11]"
+                  datatype="s:string">
+                <restrictions jsxid="85">
+                  <record name="maxoccur" jsxid="86" value="1"/>
+                  <record name="minoccur" jsxid="87" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="88" type="E" jsxtext="Extra" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 12]"
+                  datatype="s:string">
+                <restrictions jsxid="89">
+                  <record name="maxoccur" jsxid="90" value="1"/>
+                  <record name="minoccur" jsxid="91" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="92" type="E" jsxtext="City" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 13]"
+                  datatype="s:string">
+                <mappings jsxid="93">
+                  <record jsxid="94" name="DOM" value="txtCity"/>
+                </mappings>
+                <restrictions jsxid="95">
+                  <record name="maxoccur" jsxid="96" value="1"/>
+                  <record name="minoccur" jsxid="97" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="98" type="E" jsxtext="StateAbbrev" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 14]"
+                  datatype="s:string">
+                <mappings jsxid="99">
+                  <record jsxid="100" name="DOM" value="txtState"/>
+                </mappings>
+                <restrictions jsxid="101">
+                  <record name="maxoccur" jsxid="102" value="1"/>
+                  <record name="minoccur" jsxid="103" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="104" type="E" jsxtext="ZipCode" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 15]"
+                  datatype="s:string">
+                <restrictions jsxid="105">
+                  <record name="maxoccur" jsxid="106" value="1"/>
+                  <record name="minoccur" jsxid="107" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="108" type="E" jsxtext="AddressFoundBeMoreSpecific" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 16]"
+                  datatype="s:boolean">
+                <restrictions jsxid="109">
+                  <record name="maxoccur" jsxid="110" value="1"/>
+                </restrictions>
+              </record>
+              <record jsxid="111" type="E" jsxtext="CarrierRoute" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 17]"
+                  datatype="s:string">
+                <restrictions jsxid="112">
+                  <record name="maxoccur" jsxid="113" value="1"/>
+                  <record name="minoccur" jsxid="114" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="115" type="E" jsxtext="County" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 18]"
+                  datatype="s:string" simple="1">
+                <restrictions jsxid="116">
+                  <record name="maxoccur" jsxid="117" value="1"/>
+                  <record name="minoccur" jsxid="118" value="0"/>
+                </restrictions>
+                <mappings jsxid="58960">
+                  <record jsxid="9678" name="Script" value="eg.wsdl1.county=MESSAGENODE.getValue();"
+                      serverns="sampleWSDLMapping1"/>
+                </mappings>
+              </record>
+              <record jsxid="119" type="E" jsxtext="DeliveryPoint" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 19]"
+                  datatype="s:string">
+                <restrictions jsxid="120">
+                  <record name="maxoccur" jsxid="121" value="1"/>
+                  <record name="minoccur" jsxid="122" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="123" type="E" jsxtext="CheckDigit" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 20]"
+                  datatype="s:int">
+                <restrictions jsxid="124">
+                  <record name="maxoccur" jsxid="125" value="1"/>
+                </restrictions>
+              </record>
+              <record jsxid="126" type="E" jsxtext="BarCode" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 21]"
+                  datatype="s:string">
+                <restrictions jsxid="127">
+                  <record name="maxoccur" jsxid="128" value="1"/>
+                  <record name="minoccur" jsxid="129" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="130" type="E" jsxtext="NeededCorrection" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 22]"
+                  datatype="s:boolean">
+                <restrictions jsxid="131">
+                  <record name="maxoccur" jsxid="132" value="1"/>
+                </restrictions>
+              </record>
+              <record jsxid="133" type="E" jsxtext="CSKey" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 23]"
+                  datatype="s:string">
+                <restrictions jsxid="134">
+                  <record name="maxoccur" jsxid="135" value="1"/>
+                  <record name="minoccur" jsxid="136" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="137" type="E" jsxtext="UpdateKey" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 24]"
+                  datatype="s:string">
+                <restrictions jsxid="138">
+                  <record name="maxoccur" jsxid="139" value="1"/>
+                  <record name="minoccur" jsxid="140" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="141" type="E" jsxtext="RecordTypeCode" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 25]"
+                  datatype="s:string">
+                <restrictions jsxid="142">
+                  <record name="maxoccur" jsxid="143" value="1"/>
+                  <record name="minoccur" jsxid="144" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="145" type="E" jsxtext="CongressDistrictNumber" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 26]"
+                  datatype="s:string">
+                <restrictions jsxid="146">
+                  <record name="maxoccur" jsxid="147" value="1"/>
+                  <record name="minoccur" jsxid="148" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="149" type="E" jsxtext="FIPS" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 27]"
+                  datatype="s:string">
+                <restrictions jsxid="150">
+                  <record name="maxoccur" jsxid="151" value="1"/>
+                  <record name="minoccur" jsxid="152" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="153" type="E" jsxtext="FinanceNumber" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 28]"
+                  datatype="s:string">
+                <restrictions jsxid="154">
+                  <record name="maxoccur" jsxid="155" value="1"/>
+                  <record name="minoccur" jsxid="156" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="157" type="E" jsxtext="FromLongitude" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 29]"
+                  datatype="s:decimal">
+                <restrictions jsxid="158">
+                  <record name="maxoccur" jsxid="159" value="1"/>
+                </restrictions>
+              </record>
+              <record jsxid="160" type="E" jsxtext="FromLatitude" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 30]"
+                  datatype="s:decimal">
+                <restrictions jsxid="161">
+                  <record name="maxoccur" jsxid="162" value="1"/>
+                </restrictions>
+              </record>
+              <record jsxid="163" type="E" jsxtext="ToLongitude" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 31]"
+                  datatype="s:decimal">
+                <restrictions jsxid="164">
+                  <record name="maxoccur" jsxid="165" value="1"/>
+                </restrictions>
+              </record>
+              <record jsxid="166" type="E" jsxtext="ToLatitude" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 32]"
+                  datatype="s:decimal">
+                <restrictions jsxid="167">
+                  <record name="maxoccur" jsxid="168" value="1"/>
+                </restrictions>
+              </record>
+              <record jsxid="169" type="E" jsxtext="AvgLongitude" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 33]"
+                  datatype="s:decimal">
+                <restrictions jsxid="170">
+                  <record name="maxoccur" jsxid="171" value="1"/>
+                </restrictions>
+                <mappings jsxid="75143">
+                  <record jsxid="18846" name="Script" value="eg.wsdl1.avgLongitude=MESSAGENODE.getValue();"
+                      serverns="sampleWSDLMapping1"/>
+                </mappings>
+              </record>
+              <record jsxid="172" type="E" jsxtext="AvgLatitude" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 34]"
+                  datatype="s:decimal" simple="1">
+                <restrictions jsxid="173">
+                  <record name="maxoccur" jsxid="174" value="1"/>
+                </restrictions>
+                <mappings jsxid="62643">
+                  <record jsxid="22479" name="Script" value="eg.wsdl1.avgLatitude=MESSAGENODE.getValue();"
+                      serverns="sampleWSDLMapping1"/>
+                </mappings>
+              </record>
+              <record jsxid="175" type="E" jsxtext="CMSA" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 35]"
+                  datatype="s:string">
+                <restrictions jsxid="176">
+                  <record name="maxoccur" jsxid="177" value="1"/>
+                  <record name="minoccur" jsxid="178" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="179" type="E" jsxtext="PMSA" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 36]"
+                  datatype="s:string">
+                <restrictions jsxid="180">
+                  <record name="maxoccur" jsxid="181" value="1"/>
+                  <record name="minoccur" jsxid="182" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="183" type="E" jsxtext="MSA" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 37]"
+                  datatype="s:string">
+                <restrictions jsxid="184">
+                  <record name="maxoccur" jsxid="185" value="1"/>
+                  <record name="minoccur" jsxid="186" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="187" type="E" jsxtext="MA" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 38]"
+                  datatype="s:string">
+                <restrictions jsxid="188">
+                  <record name="maxoccur" jsxid="189" value="1"/>
+                  <record name="minoccur" jsxid="190" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="191" type="E" jsxtext="TimeZone" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 39]"
+                  datatype="s:string">
+                <restrictions jsxid="192">
+                  <record name="maxoccur" jsxid="193" value="1"/>
+                  <record name="minoccur" jsxid="194" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="195" type="E" jsxtext="hasDaylightSavings" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 40]"
+                  datatype="s:boolean">
+                <restrictions jsxid="196">
+                  <record name="maxoccur" jsxid="197" value="1"/>
+                </restrictions>
+              </record>
+              <record jsxid="198" type="E" jsxtext="AreaCode" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 41]"
+                  datatype="s:string">
+                <restrictions jsxid="199">
+                  <record name="maxoccur" jsxid="200" value="1"/>
+                  <record name="minoccur" jsxid="201" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="202" type="E" jsxtext="LLCertainty" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 42]"
+                  datatype="s:int">
+                <restrictions jsxid="203">
+                  <record name="maxoccur" jsxid="204" value="1"/>
+                </restrictions>
+              </record>
+              <record jsxid="205" type="E" jsxtext="CountyNum" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 43]"
+                  datatype="s:int">
+                <restrictions jsxid="206">
+                  <record name="maxoccur" jsxid="207" value="1"/>
+                </restrictions>
+              </record>
+              <record jsxid="208" type="E" jsxtext="PreferredCityName" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 44]"
+                  datatype="s:string">
+                <restrictions jsxid="209">
+                  <record name="maxoccur" jsxid="210" value="1"/>
+                  <record name="minoccur" jsxid="211" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="212" type="E" jsxtext="CensusBlockNum" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 45]"
+                  datatype="s:string">
+                <restrictions jsxid="213">
+                  <record name="maxoccur" jsxid="214" value="1"/>
+                  <record name="minoccur" jsxid="215" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="216" type="E" jsxtext="CensusTractNum" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 46]"
+                  datatype="s:string">
+                <restrictions jsxid="217">
+                  <record name="maxoccur" jsxid="218" value="1"/>
+                  <record name="minoccur" jsxid="219" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="220" type="E" jsxtext="Primary" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 47]"
+                  datatype="s:string">
+                <restrictions jsxid="221">
+                  <record name="maxoccur" jsxid="222" value="1"/>
+                  <record name="minoccur" jsxid="223" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="224" type="E" jsxtext="PrefixDirection" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 48]"
+                  datatype="s:string">
+                <restrictions jsxid="225">
+                  <record name="maxoccur" jsxid="226" value="1"/>
+                  <record name="minoccur" jsxid="227" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="228" type="E" jsxtext="StreetName" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 49]"
+                  datatype="s:string">
+                <restrictions jsxid="229">
+                  <record name="maxoccur" jsxid="230" value="1"/>
+                  <record name="minoccur" jsxid="231" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="232" type="E" jsxtext="Suffix" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 50]"
+                  datatype="s:string">
+                <restrictions jsxid="233">
+                  <record name="maxoccur" jsxid="234" value="1"/>
+                  <record name="minoccur" jsxid="235" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="236" type="E" jsxtext="PostDirection" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 51]"
+                  datatype="s:string">
+                <restrictions jsxid="237">
+                  <record name="maxoccur" jsxid="238" value="1"/>
+                  <record name="minoccur" jsxid="239" value="0"/>
+                </restrictions>
+              </record>
+              <record jsxid="240" type="E" jsxtext="SecondaryNumber" jsxopen="1" tns="http://ws.cdyne.com/"
+                  path="/definitions/types/s:schema/s:complexType[index() = 0]/s:sequence/s:element[index() = 52]"
+                  datatype="s:string">
+                <restrictions jsxid="241">
+                  <record name="maxoccur" jsxid="242" value="1"/>
+                  <record name="minoccur" jsxid="243" value="0"/>
+                </restrictions>
+              </record>
+            </record>
+          </record>
+        </record>
+      </record>
+      <record jsxid="244" type="P" jsxtext="BarcodeFontURL" opname="BarcodeFontURL"
+          endpoint="http://ws.cdyne.com/psaddress/addresslookup.asmx">
+        <headers jsxid="245">
+          <record name="Content-Type" value="text/xml" jsxid="246"/>
+          <record jsxid="247" name="SOAPAction" value="http://ws.cdyne.com/BarcodeFontURL"/>
+        </headers>
+        <record jsxid="248" type="I" jsxtext="Input (outbound request)" stubsrc="GI_Builder/addins/mapping/xml/stubs/soap.xml"
+            stubpath="/SOAP-ENV:Envelope/SOAP-ENV:Body" onbeforesend="">
+          <record jsxid="249" type="C" jsxtext="BarcodeFontURL" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 6]" datatype=""></record>
+        </record>
+        <record jsxid="250" type="O" jsxtext="Output (inbound response)" jsxopen="1" onafterreceive="">
+          <record jsxid="251" type="C" jsxtext="BarcodeFontURLResponse" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 7]" datatype="">
+            <record jsxid="252" type="E" jsxtext="BarcodeFontURLResult" jsxopen="1" tns="http://ws.cdyne.com/"
+                path="/definitions/types/s:schema/s:element[index() = 7]/s:complexType/s:sequence/s:element"
+                datatype="s:string">
+              <restrictions jsxid="253">
+                <record name="maxoccur" jsxid="254" value="1"/>
+                <record name="minoccur" jsxid="255" value="0"/>
+              </restrictions>
+            </record>
+          </record>
+        </record>
+      </record>
+      <record jsxid="256" type="P" jsxtext="CCServerCheck" opname="CCServerCheck"
+          endpoint="http://ws.cdyne.com/psaddress/addresslookup.asmx">
+        <headers jsxid="257">
+          <record name="Content-Type" value="text/xml" jsxid="258"/>
+          <record jsxid="259" name="SOAPAction" value="http://ws.cdyne.com/CCServerCheck"/>
+        </headers>
+        <record jsxid="260" type="I" jsxtext="Input (outbound request)" stubsrc="GI_Builder/addins/mapping/xml/stubs/soap.xml"
+            stubpath="/SOAP-ENV:Envelope/SOAP-ENV:Body" onbeforesend="">
+          <record jsxid="261" type="C" jsxtext="CCServerCheck" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 8]" datatype=""></record>
+        </record>
+        <record jsxid="262" type="O" jsxtext="Output (inbound response)" onafterreceive="">
+          <record jsxid="263" type="C" jsxtext="CCServerCheckResponse" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 9]" datatype=""></record>
+        </record>
+      </record>
+      <record jsxid="264" type="P" jsxtext="CheckAddress" opname="CheckAddress"
+          endpoint="http://ws.cdyne.com/psaddress/addresslookup.asmx">
+        <headers jsxid="265">
+          <record name="Content-Type" value="text/xml" jsxid="266"/>
+          <record jsxid="267" name="SOAPAction" value="http://ws.cdyne.com/CheckAddress"/>
+        </headers>
+        <record jsxid="268" type="I" jsxtext="Input (outbound request)" stubsrc="GI_Builder/addins/mapping/xml/stubs/soap.xml"
+            stubpath="/SOAP-ENV:Envelope/SOAP-ENV:Body" onbeforesend="">
+          <record jsxid="269" type="C" jsxtext="CheckAddress" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 10]" datatype=""></record>
+        </record>
+        <record jsxid="270" type="O" jsxtext="Output (inbound response)" onafterreceive="">
+          <record jsxid="271" type="C" jsxtext="CheckAddressResponse" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 11]" datatype=""></record>
+        </record>
+      </record>
+      <record jsxid="272" type="P" jsxtext="CheckAddressW2lines" opname="CheckAddressW2lines"
+          endpoint="http://ws.cdyne.com/psaddress/addresslookup.asmx">
+        <headers jsxid="273">
+          <record name="Content-Type" value="text/xml" jsxid="274"/>
+          <record jsxid="275" name="SOAPAction" value="http://ws.cdyne.com/CheckAddressW2lines"/>
+        </headers>
+        <record jsxid="276" type="I" jsxtext="Input (outbound request)" stubsrc="GI_Builder/addins/mapping/xml/stubs/soap.xml"
+            stubpath="/SOAP-ENV:Envelope/SOAP-ENV:Body" onbeforesend="">
+          <record jsxid="277" type="C" jsxtext="CheckAddressW2lines" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 12]" datatype=""></record>
+        </record>
+        <record jsxid="278" type="O" jsxtext="Output (inbound response)" onafterreceive="">
+          <record jsxid="279" type="C" jsxtext="CheckAddressW2linesResponse" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 13]" datatype=""></record>
+        </record>
+      </record>
+      <record jsxid="280" type="P" jsxtext="AdvancedCheckAddress" opname="AdvancedCheckAddress"
+          endpoint="http://ws.cdyne.com/psaddress/addresslookup.asmx">
+        <headers jsxid="281">
+          <record name="Content-Type" value="text/xml" jsxid="282"/>
+          <record jsxid="283" name="SOAPAction" value="http://ws.cdyne.com/AdvancedCheckAddress"/>
+        </headers>
+        <record jsxid="284" type="I" jsxtext="Input (outbound request)" stubsrc="GI_Builder/addins/mapping/xml/stubs/soap.xml"
+            stubpath="/SOAP-ENV:Envelope/SOAP-ENV:Body" onbeforesend="">
+          <record jsxid="285" type="C" jsxtext="AdvancedCheckAddress" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 14]" datatype=""></record>
+        </record>
+        <record jsxid="286" type="O" jsxtext="Output (inbound response)" onafterreceive="">
+          <record jsxid="287" type="C" jsxtext="AdvancedCheckAddressResponse" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 15]" datatype=""></record>
+        </record>
+      </record>
+      <record jsxid="288" type="P" jsxtext="VersionInformation" opname="VersionInformation"
+          endpoint="http://ws.cdyne.com/psaddress/addresslookup.asmx">
+        <headers jsxid="289">
+          <record name="Content-Type" value="text/xml" jsxid="290"/>
+          <record jsxid="291" name="SOAPAction" value="http://ws.cdyne.com/VersionInformation"/>
+        </headers>
+        <record jsxid="292" type="I" jsxtext="Input (outbound request)" stubsrc="GI_Builder/addins/mapping/xml/stubs/soap.xml"
+            stubpath="/SOAP-ENV:Envelope/SOAP-ENV:Body" onbeforesend="">
+          <record jsxid="293" type="C" jsxtext="VersionInformation" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 16]" datatype=""></record>
+        </record>
+        <record jsxid="294" type="O" jsxtext="Output (inbound response)" onafterreceive="">
+          <record jsxid="295" type="C" jsxtext="VersionInformationResponse" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 17]" datatype=""></record>
+        </record>
+      </record>
+      <record jsxid="296" type="P" jsxtext="Report" opname="Report"
+          endpoint="http://ws.cdyne.com/psaddress/addresslookup.asmx">
+        <headers jsxid="297">
+          <record name="Content-Type" value="text/xml" jsxid="298"/>
+          <record jsxid="299" name="SOAPAction" value="http://ws.cdyne.com/Report"/>
+        </headers>
+        <record jsxid="300" type="I" jsxtext="Input (outbound request)" stubsrc="GI_Builder/addins/mapping/xml/stubs/soap.xml"
+            stubpath="/SOAP-ENV:Envelope/SOAP-ENV:Body" onbeforesend="">
+          <record jsxid="301" type="C" jsxtext="Report" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 18]" datatype=""></record>
+        </record>
+        <record jsxid="302" type="O" jsxtext="Output (inbound response)" onafterreceive="">
+          <record jsxid="303" type="C" jsxtext="ReportResponse" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 19]" datatype=""></record>
+        </record>
+      </record>
+      <record jsxid="304" type="P" jsxtext="CalculateDistanceInMiles" opname="CalculateDistanceInMiles"
+          endpoint="http://ws.cdyne.com/psaddress/addresslookup.asmx">
+        <headers jsxid="305">
+          <record name="Content-Type" value="text/xml" jsxid="306"/>
+          <record jsxid="307" name="SOAPAction" value="http://ws.cdyne.com/CalculateDistanceInMiles"/>
+        </headers>
+        <record jsxid="308" type="I" jsxtext="Input (outbound request)" stubsrc="GI_Builder/addins/mapping/xml/stubs/soap.xml"
+            stubpath="/SOAP-ENV:Envelope/SOAP-ENV:Body" onbeforesend="">
+          <record jsxid="309" type="C" jsxtext="CalculateDistanceInMiles" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 20]" datatype=""></record>
+        </record>
+        <record jsxid="310" type="O" jsxtext="Output (inbound response)" onafterreceive="">
+          <record jsxid="311" type="C" jsxtext="CalculateDistanceInMilesResponse" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 21]" datatype=""></record>
+        </record>
+      </record>
+      <record jsxid="312" type="P" jsxtext="AlternateCities" opname="AlternateCities"
+          endpoint="http://ws.cdyne.com/psaddress/addresslookup.asmx">
+        <headers jsxid="313">
+          <record name="Content-Type" value="text/xml" jsxid="314"/>
+          <record jsxid="315" name="SOAPAction" value="http://ws.cdyne.com/AlternateCities"/>
+        </headers>
+        <record jsxid="316" type="I" jsxtext="Input (outbound request)" stubsrc="GI_Builder/addins/mapping/xml/stubs/soap.xml"
+            stubpath="/SOAP-ENV:Envelope/SOAP-ENV:Body" onbeforesend="">
+          <record jsxid="317" type="C" jsxtext="AlternateCities" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 22]" datatype=""></record>
+        </record>
+        <record jsxid="318" type="O" jsxtext="Output (inbound response)" onafterreceive="">
+          <record jsxid="319" type="C" jsxtext="AlternateCitiesResponse" jsxopen="1" tns="http://ws.cdyne.com/"
+              path="/definitions/types/s:schema/s:element[index() = 23]" datatype=""></record>
+        </record>
+      </record>
+    </record>
+  </record>
+</data>

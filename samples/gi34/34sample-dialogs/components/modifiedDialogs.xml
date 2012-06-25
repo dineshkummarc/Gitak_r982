@@ -1,0 +1,81 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.4">
+  <name/>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Block">
+    <variants jsxrelativeposition="1"/>
+    <strings jsxinstanceof="jsx3.app.Model" jsxname="blkMainPane" jsxwidth="100%" jsxheight="100%"/>
+    <object type="jsx3.gui.LayoutGrid">
+      <variants jsxrepeat="2" jsxsizearray="['*','28']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+      <strings jsxname="lytMainLayout" jsxwidth="100%" jsxheight="100%" jsxrows="*,28"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxname="blkAppPane" jsxwidth="100%" jsxheight="100%"/>
+        <dynamics jsxborder="@Outset"/>
+        <object type="jsx3.gui.Button">
+          <variants jsxindex="0" jsxheight="18" jsxrelativeposition="0" jsxwidth="200" jsxtop="70" jsxleft="10"/>
+          <strings jsxname="btnChangeButtonsButton" jsxtext="Changing the Buttons" jsxmargin="margin-right:4px;"/>
+          <events jsxexecute="eg.sampledialogs.launchComponent(this.getServer().getJSXByName(&quot;blkAppPane&quot;),&quot;changedButtonsDialog.xml&quot;,false)"/>
+        </object>
+        <object type="jsx3.gui.Button">
+          <variants jsxindex="0" jsxheight="18" jsxrelativeposition="0" jsxleft="10" jsxtop="100" jsxwidth="200"/>
+          <strings jsxname="btnRemoveToolbarButton" jsxtext="Removing the Toolbar" jsxmargin="margin-right:4px;"/>
+          <events jsxexecute="eg.sampledialogs.launchComponent(this.getServer().getJSXByName(&quot;blkAppPane&quot;),&quot;noCaptionBarDialog.xml&quot;,false)"/>
+        </object>
+        <object type="jsx3.gui.Button">
+          <variants jsxindex="0" jsxheight="18" jsxrelativeposition="0" jsxleft="10" jsxtop="130" jsxwidth="200"/>
+          <strings jsxname="btnConstrainSizeButton" jsxtext="Constraining Size" jsxmargin="margin-right:4px;"/>
+          <events jsxexecute="eg.sampledialogs.launchComponent(this.getServer().getJSXByName(&quot;blkAppPane&quot;),&quot;maxMinDialog.xml&quot;,false)"/>
+        </object>
+        <object type="jsx3.gui.Button">
+          <variants jsxindex="0" jsxheight="18" jsxrelativeposition="0" jsxleft="10" jsxtop="160" jsxwidth="200"/>
+          <strings jsxname="btnModalButton" jsxtext="Modal Dialogs" jsxmargin="margin-right:4px;"/>
+          <events jsxexecute="var moddialog = eg.sampledialogs.launchComponent(this.getServer().getBodyBlock(),&quot;modalDialog.xml&quot;,false) ; moddialog.focus();"/>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxleft="40" jsxtop="270" jsxwidth="290" jsxheight="40" jsxoverflow="1" jsxrelativeposition="0"/>
+          <strings jsxname="blkNoteText" jsxtext="Note below that a dialog can be instantiated in a minimized state."/>
+          <dynamics jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"/>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="1"/>
+        <strings jsxname="blkTaskbarPane" jsxwidth="100%" jsxheight="100%"/>
+        <dynamics jsxborder="@Outset"/>
+        <object type="jsx3.gui.WindowBar">
+          <variants jsxbartype="3"/>
+          <strings jsxname="winbarTaskBar"/>
+        </object>
+      </object>
+    </object>
+    <object type="jsx3.gui.Dialog">
+      <variants jsxzindex="5002" jsxwindowstate="0"/>
+      <strings jsxname="dlgMinimizedDialog" jsxwidth="250" jsxheight="100" jsxdisplay="none"/>
+      <dynamics jsxbgcolor="@Solid Medium"/>
+      <object type="jsx3.gui.WindowBar">
+        <variants/>
+        <strings jsxname="winbarTitle" jsxtext="[Caption]"/>
+        <object type="jsx3.gui.ToolbarButton">
+          <variants/>
+          <strings jsxname="tbbMinimizeButton"/>
+          <dynamics jsximage="@Min Icon" jsxtip="@Min Tip"/>
+          <events jsxexecute="this.getParent().getParent().doToggleState();"/>
+        </object>
+        <object type="jsx3.gui.ToolbarButton">
+          <variants/>
+          <strings jsxname="tbbMaximizeButton" jsximage="JSX/images/dialog/max.gif"/>
+          <dynamics jsxtip="@Max Tip"/>
+          <events jsxexecute="this.getAncestorOfType(&quot;jsx3.gui.Dialog&quot;).doMaximize(this);"/>
+        </object>
+        <object type="jsx3.gui.ToolbarButton">
+          <variants/>
+          <strings jsxname="tbbCloseButton"/>
+          <dynamics jsximage="@Close Icon" jsxtip="@Close Tip"/>
+          <events jsxexecute="this.getParent().getParent().doClose();"/>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

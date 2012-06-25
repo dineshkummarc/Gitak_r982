@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+  <record jsxid="version" type="string">3.0</record>
+  <record jsxid="jsxversion" type="string">3.3</record>
+  <record jsxid="caption" type="string">32test-matrix</record>
+  <record jsxid="mode" type="boolean">true</record>
+  <record jsxid="namespace" type="string">testmatrix</record>
+  <record jsxid="cancelerror" type="boolean">true</record>
+  <record jsxid="cancelrightclick" type="boolean">true</record>
+  <record jsxid="left" type="number">0</record>
+  <record jsxid="top" type="number">0</record>
+  <record jsxid="width" type="string">100%</record>
+  <record jsxid="height" type="string">100%</record>
+  <record jsxid="position" type="number">0</record>
+  <record jsxid="overflow" type="number">0</record>
+  <record jsxid="eventsvers" type="string">3.1</record>
+  <record jsxid="onload" type="string"/>
+  <record jsxid="objectseturl" type="string">components/appCanvas.xml</record>
+  <record jsxid="includes" type="array">
+    <record jsxid="0" type="map">
+      <record jsxid="id" type="string">matrixEmpty_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">components/matrixEmpty.xml</record>
+    </record>
+    <record jsxid="1" type="map">
+      <record jsxid="id" type="string">appCanvas_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">components/appCanvas.xml</record>
+    </record>
+    <record jsxid="2" type="map">
+      <record jsxid="id" type="string">logic_js</record>
+      <record jsxid="type" type="string">script</record>
+      <record jsxid="load" type="number">1</record>
+      <record jsxid="src" type="string">js/logic.js</record>
+    </record>
+    <record jsxid="3" type="map">
+      <record jsxid="id" type="string">twoAsyncMatrix_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">components/twoAsyncMatrix.xml</record>
+    </record>
+    <record jsxid="4" type="map">
+      <record jsxid="id" type="string">dlgMatrixAsync_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">components/dlgMatrixAsync.xml</record>
+    </record>
+    <record jsxid="5" type="map">
+      <record jsxid="id" type="string">matrixList_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">components/matrixList.xml</record>
+    </record>
+    <record jsxid="6" type="map">
+      <record jsxid="id" type="string">matrixTree_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">components/matrixTree.xml</record>
+    </record>
+    <record jsxid="7" type="map">
+      <record jsxid="id" type="string">matrixGrid_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">components/matrixGrid.xml</record>
+    </record>
+    <record jsxid="8" type="map">
+      <record jsxid="id" type="string">dlgTwoMatrixAsync_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">components/dlgTwoMatrixAsync.xml</record>
+    </record>
+    <record jsxid="9" type="map">
+      <record jsxid="id" type="string">mapping_list_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">components/mapping_list.xml</record>
+    </record>
+    <record jsxid="10" type="map">
+      <record jsxid="id" type="string">matrixFPane_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">components/matrixFPane.xml</record>
+    </record>
+    <record jsxid="11" type="map">
+      <record jsxid="id" type="string">matrixMultiSel_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">components/matrixMultiSel.xml</record>
+    </record>
+    <record jsxid="12" type="map">
+      <record jsxid="id" type="string">matrixPaged_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">components/matrixPaged.xml</record>
+    </record>
+    <record jsxid="13" type="map">
+      <record jsxid="id" type="string">matrixtList_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">components/matrixtList.xml</record>
+    </record>
+    <record jsxid="14" type="map">
+      <record jsxid="id" type="string">mcText_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">components/mcText.xml</record>
+    </record>
+    <record jsxid="15" type="map">
+      <record jsxid="id" type="string">stackstest_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">components/stackstest.xml</record>
+    </record>
+    <record jsxid="16" type="map">
+      <record jsxid="id" type="string">dynamics_xml</record>
+      <record jsxid="type" type="string">jss</record>
+      <record jsxid="load" type="number">1</record>
+      <record jsxid="src" type="string">jss/dynamics.xml</record>
+    </record>
+    <record jsxid="17" type="map">
+      <record jsxid="id" type="string">layoutgrid_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">components/layoutgrid.xml</record>
+    </record>
+    <record jsxid="18" type="map">
+      <record jsxid="id" type="string">treedata_xml</record>
+      <record jsxid="type" type="string">xml</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">xml/treedata.xml</record>
+    </record>
+    <record jsxid="19" type="map">
+      <record jsxid="id" type="string">selectdata_xml</record>
+      <record jsxid="type" type="string">xml</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">xml/selectdata.xml</record>
+    </record>
+    <record jsxid="20" type="map">
+      <record jsxid="id" type="string">sample_xml</record>
+      <record jsxid="type" type="string">xml</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">xml/sample.xml</record>
+    </record>
+    <record jsxid="21" type="map">
+      <record jsxid="id" type="string">replydata_xml</record>
+      <record jsxid="type" type="string">xml</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">xml/replydata.xml</record>
+    </record>
+    <record jsxid="22" type="map">
+      <record jsxid="id" type="string">soapreply_xml</record>
+      <record jsxid="type" type="string">xml</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">xml/soapreply.xml</record>
+    </record>
+    <record jsxid="23" type="map">
+      <record jsxid="id" type="string">dlgScriptPad_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="load" type="number">0</record>
+      <record jsxid="src" type="string">components/dlgScriptPad.xml</record>
+    </record>
+  </record>
+  <record jsxid="bodyhotkeys" type="boolean">true</record>
+  <record jsxid="watermark" type="string">right</record>
+  <record jsxid="default_locale" type="string"/>
+  <record jsxid="onunload" type="string"/>
+</data>

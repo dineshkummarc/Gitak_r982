@@ -1,0 +1,247 @@
+<serialization jsxversion="3.4" xmlns="urn:tibco.com/v3.0">
+  <name><![CDATA[LayoutSample (--)]]></name>
+  <icon></icon>
+  <description><![CDATA[2 top-over-bottom panes in an adaptive layout grid.]]></description>
+  <onBeforeDeserialize></onBeforeDeserialize>
+  <onAfterDeserialize><![CDATA[eg.manipulateCDF.getServer().getJSXByName('columnXY').setText('Sum(x,y)',true)
+eg.manipulateCDF.getServer().getJSXByName('columnX').setText('Sum(x)',true) 
+eg.manipulateCDF.getServer().getJSXByName('columnY').setText('Sum(y)',true) 
+eg.manipulateCDF.getServer().getJSXByName('columnZ').setText('Sum(z)',true) 
+]]></onAfterDeserialize>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['25%','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"></variants>
+    <strings jsxname="layoutSample (--)" jsxwidth="100%" jsxheight="100%" jsxrows="25,70%,*"></strings>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="2"></variants>
+      <strings jsxname="paneDescription" jsxwidth="100%" jsxheight="100%" jsxtextalign="right"></strings>
+      <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Medium"></dynamics>
+      <object type="jsx3.gui.ImageButton">
+        <variants jsxwidth="16" jsxheight="16" jsxtype="0" jsxprefetch="1" jsxstate="0"></variants>
+        <strings jsxname="imagebutton" jsxtext="[button text]" jsximage="GI_Builder/images/icon_59.gif" jsxmargin="4"></strings>
+        <events jsxexecute="eg.manipulateCDF.launchSimple('components/dlgHelp.xml', 'dialog');"></events>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="2"></variants>
+      <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"></strings>
+      <dynamics jsxborder="@Outset"></dynamics>
+      <object type="jsx3.gui.Splitter">
+        <variants jsxleft="0" jsxtop="0"></variants>
+        <strings jsxname="splitter ( | )" jsxsubcontainer1pct="73.38935574229691%" jsxsubcontainer2pct="25.370000000000004%"></strings>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1"></variants>
+          <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"></strings>
+          <dynamics jsxborder="@Inset"></dynamics>
+          <object type="jsx3.gui.LayoutGrid">
+            <variants jsxrepeat="3" jsxsizearray="['150','45','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"></variants>
+            <strings jsxname="layout (--)" jsxwidth="100%" jsxheight="100%" jsxrows="150,45,*"></strings>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="2" jsxloadtype="1"></variants>
+              <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"></strings>
+              <dynamics jsxborder="@Outset"></dynamics>
+              <object type="jsx3.gui.Matrix">
+                <variants jsxpagingmodel="1" jsxselectionmodel="2" jsxscalewidth="1" jsxxmlasync="1"></variants>
+                <strings jsxname="srcList" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxfocusstyle="font-weight:bold;" jsxxmlurl="xml/sourceList.xml" jsxsorttype="text" jsxsortdirection="ascending"></strings>
+                <events jsxexecute="jsx3.log('EVENT: (jsxexecute). Record: ' + strRECORDID);"></events>
+                <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"></xslparameters>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="115" jsxresize="1"></variants>
+                  <strings jsxname="name" jsxtext="Name" jsxcellpadding="2" jsxpath="jsxtext"></strings>
+                  <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="130"></variants>
+                  <strings jsxname="column" jsxtext="X" jsxpadding="2" jsxcellpadding="2" jsxpath="jsxIntX"></strings>
+                  <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="130"></variants>
+                  <strings jsxname="column" jsxtext="Y" jsxpadding="2" jsxcellpadding="3" jsxpath="jsxIntY"></strings>
+                  <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="130"></variants>
+                  <strings jsxname="columnXY" jsxtext="Sum(x,y)" jsxpadding="2" jsxcellpadding="3" jsxpath="jsxIntXY" jsxmenu="menuXY"></strings>
+                  <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+                </object>
+              </object>
+            </object>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="1" jsxloadtype="1"></variants>
+              <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"></strings>
+              <dynamics jsxborder="@Outset"></dynamics>
+              <object type="jsx3.gui.Matrix">
+                <variants jsxpagingmodel="1" jsxselectionmodel="2" jsxscalewidth="1" jsxsuppressvscroll="1"></variants>
+                <strings jsxname="endResultIist" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxfocusstyle="font-weight:bold;" jsxxml="&lt;data jsxid=&quot;jsxroot&quot;&gt;    &lt;record jsxid=&quot;unique&quot; jsxtext=&quot;Total&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot;/&gt; &lt;/data&gt;" jsxsorttype="text" jsxsortdirection="descending"></strings>
+                <events jsxexecute="jsx3.log('EVENT: (jsxexecute). Record: ' + strRECORDID);"></events>
+                <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"></xslparameters>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="113" jsxresize="1"></variants>
+                  <strings jsxname="column(data)" jsxtext="" jsxcellpadding="2" jsxpath="jsxtext" jsxvaluetemplate=""></strings>
+                  <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="130"></variants>
+                  <strings jsxname="columnX" jsxtext="Sum(x)" jsxpadding="2" jsxcellpadding="2" jsxpath="jsxfX" jsxmenu="menuX" jsxcursor="hand"></strings>
+                  <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="130"></variants>
+                  <strings jsxname="columnY" jsxtext="Sum(y)" jsxpadding="2" jsxcellpadding="3" jsxpath="jsxfY" jsxmenu="menuY" jsxcursor="hand"></strings>
+                  <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="130"></variants>
+                  <strings jsxname="columnZ" jsxtext="Sum(z)" jsxpadding="2" jsxcellpadding="3" jsxpath="jsxfZ" jsxmenu="menuZ" jsxcursor="hand"></strings>
+                  <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+                </object>
+              </object>
+            </object>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="1" jsxloadtype="1"></variants>
+              <strings jsxname="block" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1"></strings>
+              <dynamics jsxbgcolor="@Solid Light"></dynamics>
+              <object type="jsx3.gui.Matrix">
+                <variants jsxpagingmodel="1" jsxselectionmodel="2" jsxscalewidth="1" jsxheaderheight="24"></variants>
+                <strings jsxname="listFiltered" jsxfocusstyle="font-weight:bold;" jsxxmlurl="" jsxxmlid="cachedFiltered" jsxsorttype="text" jsxsortdirection="ascending" jsxxmltrans=""></strings>
+                <dynamics jsxbgcolor="@Solid Medium" jsxbg="@Grid Lines"></dynamics>
+                <events jsxexecute="jsx3.log('EVENT: (jsxexecute). Record: ' + strRECORDID);"></events>
+                <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"></xslparameters>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="115" jsxresize="1"></variants>
+                  <strings jsxname="column" jsxtext="Name" jsxcellpadding="2" jsxpath="jsxtext" jsxvaluetemplate="&lt;xsl:template xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;&#xA;  &lt;xsl:param name=&quot;jsx_row_number&quot;/&gt;&#xA;  &lt;xsl:if test=&quot;@jsxtext='Total'&quot;&gt;&#xA;    &lt;xsl:attribute name=&quot;style&quot;&gt;font-size:14px;font-weight:bold;background-color:rgb(0,255,0) &lt;/xsl:attribute&gt;&#xA;  &lt;/xsl:if&gt;  &#xA;  &lt;xsl:value-of select=&quot;{0}&quot;/&gt;&amp;#160;&#xA;  &lt;/xsl:template&gt;"></strings>
+                  <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="130"></variants>
+                  <strings jsxname="column" jsxtext="selected X" jsxpadding="2" jsxcellpadding="2" jsxpath="jsxIntX"></strings>
+                  <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="130"></variants>
+                  <strings jsxname="column" jsxtext="selected Y" jsxpadding="2" jsxcellpadding="3" jsxpath="jsxIntY"></strings>
+                  <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="130"></variants>
+                  <strings jsxname="column" jsxtext="selected Z" jsxpadding="2" jsxcellpadding="3" jsxpath="jsxIntXY" jsxcellfontweight="bold" jsxcellcolor="" jsxcellborder=""></strings>
+                  <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+                </object>
+              </object>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1" jsxloadtype="1"></variants>
+          <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"></strings>
+          <dynamics jsxborder="@Inset"></dynamics>
+          <object type="jsx3.gui.WindowBar">
+            <variants jsxbartype="1"></variants>
+            <strings jsxname="menuBar"></strings>
+            <object type="jsx3.gui.Button">
+              <variants jsxindex="0" jsxheight="18"></variants>
+              <strings jsxname="button" jsxtext="Calculate" jsxmargin="margin:4px;"></strings>
+              <events jsxexecute="eg.manipulateCDF.calculate();"></events>
+            </object>
+            <object type="jsx3.gui.Button">
+              <variants jsxindex="0" jsxheight="18"></variants>
+              <strings jsxname="button" jsxtext="Show Chart" jsxmargin="margin:4px;"></strings>
+              <events jsxexecute="eg.manipulateCDF.launchSimple(&quot;components/resultChart.xml&quot;, &quot;desDialog&quot;);"></events>
+            </object>
+          </object>
+          <object type="jsx3.gui.WindowBar">
+            <variants jsxbartype="2"></variants>
+            <strings jsxname="menuBar"></strings>
+            <object type="jsx3.gui.Select">
+              <variants jsxwidth="80" jsxheight="18"></variants>
+              <strings jsxname="select" jsxvalue="2" jsxxmlurl="xml/sourceList.xml" jsxmargin="margin-right:4px;"></strings>
+              <events jsxselect="eg.manipulateCDF.selectRecord(  eg.manipulateCDF.getServer().getJSXByName(&quot;srcList&quot;)    ,strRECORDID)"></events>
+            </object>
+            <object type="jsx3.gui.Menu">
+              <variants></variants>
+              <strings jsxname="menu" jsxtip="menu" jsxtext="menu" jsxxmlurl="xml/sourceList.xml"></strings>
+              <events jsxexecute="eg.manipulateCDF.selectRecord(  eg.manipulateCDF.getServer().getJSXByName(&quot;srcList&quot;)    ,strRECORDID)"></events>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxheight="80" jsxoverflow="1"></variants>
+            <strings jsxname="multiSelect" jsxrelativeposition="1" jsxwidth="100%"></strings>
+            <dynamics jsxborder="@Inset"></dynamics>
+            <object type="jsx3.gui.Table">
+              <variants jsxheaderheight="0" jsxselectionmodel="2" jsxfontsize="10" jsxxmlasync="1"></variants>
+              <strings jsxname="table" jsxcolumnprofile="&lt;data jsxid=&quot;jsxroot&quot;&gt;     &lt;record jsxid=&quot;a5&quot; jsxwidth=&quot;100%&quot; jsxtext=&quot;&amp;lt;div style='padding:8px;border-right:solid 1px gray;border-bottom:solid 1px gray;white-space:nowrap;'&amp;gt;Col 1&amp;lt;/div&amp;gt;&quot; jsxpath=&quot;jsxtext&quot;/&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               &lt;/data&gt;" jsxcellstyle="padding:4px;padding-bottom:3px;cursor:default;word-wrap:break-word;" jsxheaderstyle="background-color:#dfdfff;" jsxfontweight="normal" jsxbgcolor="#fafaff" jsxcolor="#232743" jsxpadding="12" jsxborder="solid 1px gray" jsxtextalign="right" jsxxmlurl="xml/sourceList.xml"></strings>
+              <dynamics jsxbg="@Bevel TopDown"></dynamics>
+              <events jsxselect="jsx3.log('The target record that was just clicked is ' + this.getSelectedIds());" jsxchange="eg.manipulateCDF.selectRecord(  eg.manipulateCDF.getServer().getJSXByName(&quot;srcList&quot;)    ,strRECORDID)" jsxexecute="jsx3.log('The table was executed on record: ' + strRECORDID + '. The selected rows are ' + this.getSelectedIds());"></events>
+            </object>
+          </object>
+          <object type="jsx3.gui.RadioButton">
+            <variants jsxheight="18" jsxdefaultselected="1" jsxselected="1" jsxrelativeposition="1"></variants>
+            <strings jsxname="radioFiltered" jsxtext="Show filtered CDF" jsxgroupname="group1" jsxmargin="margin-right:4px;"></strings>
+            <events jsxselect="eg.manipulateCDF.onRadioSelected()"></events>
+          </object>
+          <object type="jsx3.gui.RadioButton">
+            <variants jsxheight="18" jsxdefaultselected="1" jsxselected="0" jsxrelativeposition="1"></variants>
+            <strings jsxname="radioModified" jsxtext="Show modified CDF" jsxgroupname="group1" jsxmargin="margin-right:4px;"></strings>
+            <events jsxselect="eg.manipulateCDF.onRadioSelected()"></events>
+          </object>
+        </object>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"></variants>
+      <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"></strings>
+      <dynamics jsxborder="@Outset"></dynamics>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="1"></variants>
+        <strings jsxname="block" jsxwidth="49%" jsxheight="100%" jsxrelativeposition="1" jsxtext=""></strings>
+        <object type="jsx3.gui.Block">
+          <variants></variants>
+          <strings jsxname="label" jsxtext="Source CDF" jsxmargin="margin-right:4px;" jsxpadding="padding-top:4px;"></strings>
+        </object>
+        <object type="jsx3.gui.BlockX">
+          <variants jsxrelativeposition="1" jsxxmlasync="0" jsxshare="1"></variants>
+          <strings jsxname="blockX" jsxwidth="99%" jsxheight="90%" jsxxmlurl="jsxapp://sample-manipulatingData/xml/sourceList.xml" jsxxmlid="cachedSource"></strings>
+          <dynamics jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"></dynamics>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="1" jsxrelativeposition="1"></variants>
+        <strings jsxname="block" jsxwidth="49%" jsxdisplay="" jsxheight="100%"></strings>
+        <object type="jsx3.gui.Block">
+          <variants></variants>
+          <strings jsxname="label" jsxtext="Filtered/Modified CDF" jsxmargin="margin-right:4px;" jsxpadding="padding-top:4px;"></strings>
+        </object>
+        <object type="jsx3.gui.BlockX">
+          <variants jsxrelativeposition="1" jsxshare="1"></variants>
+          <strings jsxname="blockXfiltered" jsxwidth="100%" jsxheight="90%" jsxxmlid="cachedFiltered" jsxdisplay=""></strings>
+          <dynamics jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"></dynamics>
+        </object>
+        <object type="jsx3.gui.BlockX">
+          <variants jsxrelativeposition="1" jsxshare="1"></variants>
+          <strings jsxname="blockXmodified" jsxwidth="100%" jsxheight="90%" jsxxmlid="cachedSource" jsxdisplay="none"></strings>
+          <dynamics jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"></dynamics>
+        </object>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"></variants>
+      <strings jsxname="blockOutOfView" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1"></strings>
+      <object type="jsx3.gui.Menu">
+        <variants></variants>
+        <strings jsxname="menuXY" jsxtip="menu" jsxtext="MenuXY" jsxxml="&lt;data jsxid=&quot;jsxroot&quot;&gt;  &lt;record jsxid=&quot;1&quot; jsxtext=&quot;Sum(x,y)&quot;  jsxexecute=&quot;eg.manipulateCDF.fXYType='sum' ; eg.manipulateCDF.getServer().getJSXByName('columnXY').setText('Sum(x,y)',true) &quot;  /&gt;  &lt;record jsxid=&quot;2&quot; jsxtext=&quot;Mult(x,y)&quot;  jsxexecute=&quot;eg.manipulateCDF.fXYType='mult' ;  eg.manipulateCDF.getServer().getJSXByName('columnXY').setText('Mult(x,y)',true) &quot;  /&gt;  &lt;/data&gt;"></strings>
+      </object>
+      <object type="jsx3.gui.Menu">
+        <variants></variants>
+        <strings jsxname="menuX" jsxtip="menu" jsxtext="MenuX" jsxxml="&lt;data jsxid=&quot;jsxroot&quot;&gt;  &lt;record jsxid=&quot;1&quot; jsxtext=&quot;Sum(xi)&quot;  jsxexecute=&quot;eg.manipulateCDF.fXType='sum' ; eg.manipulateCDF.getServer().getJSXByName('columnX').setText('Sum(xi)',true) &quot;  /&gt;  &lt;record jsxid=&quot;2&quot; jsxtext=&quot;Mult(xi)&quot;  jsxexecute=&quot;eg.manipulateCDF.fXType='mult' ;  eg.manipulateCDF.getServer().getJSXByName('columnX').setText('Mult(xi)',true) &quot;  /&gt;  &lt;/data&gt;"></strings>
+      </object>
+      <object type="jsx3.gui.Menu">
+        <variants></variants>
+        <strings jsxname="menuY" jsxtip="menu" jsxtext="MenuY" jsxxml="&lt;data jsxid=&quot;jsxroot&quot;&gt;  &lt;record jsxid=&quot;1&quot; jsxtext=&quot;Sum(yi)&quot;  jsxexecute=&quot;eg.manipulateCDF.fYType='sum' ; eg.manipulateCDF.getServer().getJSXByName('columnY').setText('Sum(yi)',true) &quot;  /&gt;  &lt;record jsxid=&quot;2&quot; jsxtext=&quot;Mult(yi)&quot;  jsxexecute=&quot;eg.manipulateCDF.fYType='mult' ;  eg.manipulateCDF.getServer().getJSXByName('columnY').setText('Mult(yi)',true) &quot;  /&gt;  &lt;/data&gt;"></strings>
+      </object>
+      <object type="jsx3.gui.Menu">
+        <variants></variants>
+        <strings jsxname="menuZ" jsxtip="menu" jsxtext="MenuZ" jsxxml="&lt;data jsxid=&quot;jsxroot&quot;&gt;  &lt;record jsxid=&quot;1&quot; jsxtext=&quot;Sum(zi)&quot;  jsxexecute=&quot;eg.manipulateCDF.fZType='sum' ; eg.manipulateCDF.getServer().getJSXByName('columnZ').setText('Sum(zi)',true) &quot;  /&gt;  &lt;record jsxid=&quot;2&quot; jsxtext=&quot;Mult(zi)&quot;  jsxexecute=&quot;eg.manipulateCDF.fZType='mult' ;  eg.manipulateCDF.getServer().getJSXByName('columnZ').setText('Mult(zi)',true) &quot;  /&gt;  &lt;/data&gt;"></strings>
+      </object>
+    </object>
+  </object>
+</serialization>

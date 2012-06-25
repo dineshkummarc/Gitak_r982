@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+Copyright 2006-2007 TIBCO Software Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<html>
+
+<head>
+<title>Test jsx3.gui.DatePicker</title>
+</head>
+
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+
+<tbody>
+
+<tr>
+    <td rowspan="1" colspan="3">Test jsx3.gui.DatePicker
+</td>
+</tr>
+
+<!-- Load Test Setup File Below -->
+<tr>
+    <td>include</td>
+    <td>testSetup.html</td>
+    <td>&nbsp;</td>
+</tr>
+
+<!-- Load Test Application Below -->
+<tr>
+    <td>open</td>
+    <td>${GIPATH}/shell.html?jsxapppath=${SAMPLESPATH}/34test-matrix</td>
+    <td>&nbsp;</td>
+</tr>
+<!-- start tests -->
+<tr>
+  <td>setJsxNamespace</td>
+  <td>testmatrix</td>
+  <td>5000</td>
+</tr>
+<tr>
+  <td>waitForJsxPresent</td>
+  <td>JsxName=dpDate</td>
+  <td>5000</td>
+</tr>
+<tr>
+  <td>assertJsxPresent</td>
+  <td>JsxName=dpDate</td>
+  <td>&nbsp;</td>
+</tr>
+
+<tr>
+  <td>typeJsxTextbox</td>
+  <td>JsxDateInput=dpDate</td>
+  <td>Nov 11, 1911</td>
+</tr>
+	<tr>
+		<td>assertValue</td>
+		<td>JsxDateInput=dpDate</td>
+		<td>Nov 11, 1911</td>
+	</tr>
+<tr>
+    <td rowspan="1" colspan="3">Test Datepicker navigation previous year/month
+</td>
+</tr>
+    <tr>
+      <td>unsubscribeJsxResize</td>
+      <td>// remove all resize event subscription to work around IE bug</td>
+      <td>&nbsp;</td>
+    </tr>	
+    <tr>
+      <td>clickJsxDateIcon</td>
+      <td>dpDate</td>
+      <td></td>
+    </tr>
+    <!-- IE BUG on resize event cause HW window to collapse -->
+
+    <tr>
+      <td>clickJsxDatePrevYear</td>
+      <td>dpDate</td>
+      <td>&nbsp;</td>
+    </tr>
+      <tr>
+        <td>clickJsxDatePrevMonth</td>
+        <td>dpDate</td>
+        <td>&nbsp;</td>
+      </tr>
+    <tr>
+      <td>clickJsxElement</td>
+      <td>JsxDateDay=dpDate,13</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+		<td>assertValue</td>
+		<td>JsxDateInput=dpDate</td>
+		<td>Oct 13, 1910</td>
+	</tr>
+	<tr>
+		<td>pickJsxDate</td>
+		<td>dpDate</td>
+		<td>12/31/2011</td>
+	</tr>
+	<tr>
+		<td>assertValue</td>
+		<td>JsxDateInput=dpDate</td>
+		<td>Dec 31, 2011</td>
+	</tr>
+	<tr>
+		<td rowspan="1" colspan="3">Test Datepicker navigation next year/month</td>
+	</tr>
+    <tr>
+      <td>clickJsxDateIcon</td>
+      <td>dpDate</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>clickJsxDateNextYear</td>
+      <td>dpDate</td>
+      <td>&nbsp;</td>
+    </tr>
+      <tr>
+        <td>clickJsxDateNextMonth</td>
+        <td>dpDate</td>
+        <td>&nbsp;</td>
+      </tr>
+    <tr>
+      <td>clickJsxElement</td>
+      <td>JsxDateDay=dpDate,13</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+		<td>assertValue</td>
+		<td>JsxDateInput=dpDate</td>
+		<td>Jan 13, 2013</td>
+	</tr>
+	<!-- gi=jsxname,subtype locator test -->
+	<!--tr>
+		<td>dragAndDrop</td>
+		<td>gi=sldRange,handle</td>
+		<td>50,0</td>
+	</tr-->
+	<!-- following  works -->
+	<!--tr>
+		<td>fireLeftMouse</td>
+		<td>JsxMenuName=menu</td>
+		<td>mousedown</td>
+	</tr-->
+	<!-- following doesn't work -->
+	<!--tr>
+		<td>fireLeftMouse</td>
+		<td>JsxSelectName=slctOptions</td>
+		<td>focus</td>
+	</tr>
+	<tr>
+		<td>fireLeftMouse</td>
+		<td>JsxSelectName=slctOptions</td>
+		<td>mousedown</td>
+	</tr-->
+	    <!-- assert list row length = +1 -->
+    <tr>
+      <td>include</td>
+      <td>testTearDown.html</td>
+      <td>&nbsp;</td>
+    </tr>
+</tbody>
+</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

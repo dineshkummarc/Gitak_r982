@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Layout Sample</name>
+  <icon/>
+  <description>description</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Block">
+    <variants jsxwidth="300" jsxheight="300" jsxoverflow="1" jsxleft="0" jsxtop="0" jsxrelativeposition="0"/>
+    <strings jsxname="blkMainPane" jsxannotation="Dragging rows to portlet B will display a pie chart."/>
+    <dynamics jsxbgcolor="@Solid Medium"/>
+    <object type="jsx3.gui.LayoutGrid">
+      <variants jsxrepeat="2" jsxsizearray="['30','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+      <strings jsxname="lytMainLayout" jsxwidth="100%" jsxheight="100%"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxname="blkTopPane" jsxwidth="100%" jsxheight="100%"/>
+        <dynamics jsxborder="@Outset"/>
+        <object type="jsx3.gui.WindowBar">
+          <variants jsxbartype="1" jsxrelativeposition="0" jsxleft="0" jsxtop="0"/>
+          <strings jsxname="winbarChartTitlebar" jsxtext="MegaloCorp Sales" jsxdisplay=""/>
+          <object type="jsx3.gui.Block">
+            <variants jsxheight="18"/>
+            <strings jsxname="lblChartTitle" jsxtext="Product Sales Chart" jsxmargin="margin-top:4px;margin-right:4px;margin-left:4px;" jsxpadding="padding-top:4px;" jsxfontweight="bold"/>
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2" jsxleft="0" jsxtop="0"/>
+        <strings jsxname="blkBottomPane" jsxwidth="100%" jsxheight="100%" jsxdisplay="" jsxpadding="13" jsxmargin=""/>
+        <dynamics jsxborder="@Outset"/>
+        <object type="jsx3.chart.PieChart">
+          <variants jsxleft="0" jsxtop="0" jsxwidth="270" jsxzindex="1" borderWidth="1" borderAlpha="1" alpha="1" jsxrelativeposition="1" loadState="1" innerRadius="0" seriesPadding="0.1" totalAngle="360" startAngle="0" colors="['#1090ef','#b0104f','#FFCC33','#66CCCC','#CCFF66','#666666','#FF0033','#66CC00','#00FF66']"/>
+          <strings jsxname="chrtPieChart" titlePlacement="top" legendPlacement="right" dataPadding="20" borderColor="#999999" categoryField="name" colorFunction="jsx3.chart.PieChart.defaultColoring" seriesStroke="#666666" jsxbgcolor="#FFFFFF" jsxxmlurl="xml/salesDetail.xml" jsxheight="240"/>
+          <events jsxspy=""/>
+          <object type="jsx3.chart.ChartLabel">
+            <variants jsxleft="0" jsxtop="0" jsxwidth="268" jsxheight="25" jsxzindex="1000" labelRotation="0" jsxfontsize="14"/>
+            <strings jsxname="lblChartTitle" jsxtext="Sales - Widget A" jsxcolor="#FFFFFF" jsxbgcolor="#666666" jsxpadding="4 0 0 0" jsxfontname="Arial" jsxfontweight="bold" jsxtextalign="center"/>
+          </object>
+          <object type="jsx3.chart.PieSeries">
+            <variants jsxleft="0" jsxtop="0" jsxwidth="128" jsxheight="173" jsxzindex="21" usePrimaryX="1" usePrimaryY="1" index="0"/>
+            <strings jsxname="srsChartData" seriesName="Series 1" field="value" tooltipFunction="jsx3.chart.PieSeries.tooltip"/>
+            <events jsxspy="eg.sampleportletB.pieSpy(this.getChart(), strRECORDID);"/>
+          </object>
+          <object type="jsx3.chart.Legend">
+            <variants boxHeight="10" lineHeight="22" titleSpace="8" boxSpace="6" jsxleft="168" jsxtop="25" jsxwidth="100" jsxheight="213" jsxzindex="990"/>
+            <strings jsxname="lgndChartLegend" labelStyle="font-size: 10px; font-weight: bold;" backgroundStroke="#BBBBBB" jsxmargin="10 10 10 4" jsxpadding="4 4 0 4"/>
+            <object type="jsx3.chart.ChartLabel">
+              <variants labelRotation="0" jsxfontsize="12" jsxleft="8" jsxtop="62" jsxwidth="78" jsxheight="20" jsxzindex="3" preferredHeight="20"/>
+              <strings jsxname="lblChartLegendTitle" jsxtext="Region" jsxfontname="Arial" jsxfontweight="bold" jsxtextalign="center"/>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

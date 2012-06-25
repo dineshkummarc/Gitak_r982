@@ -1,0 +1,49 @@
+<serialization jsxversion="3.3" xmlns="urn:tibco.com/v3.0">
+  <name><![CDATA[Tabbed Pane]]></name>
+  <icon><![CDATA[images/prototypes/tabbedpane.gif]]></icon>
+  <description><![CDATA[Tabbed pane with three Tab children.]]></description>
+  <onBeforeDeserialize></onBeforeDeserialize>
+  <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.TabbedPane">
+    <variants selectedIndex="2" jsxselectedindex="1"></variants>
+    <strings jsxname="tabbedpane" jsxtextalign="0"></strings>
+    <object type="jsx3.gui.Tab">
+      <variants jsxzindex="3" jsxheight="20"></variants>
+      <strings jsxname="tab" jsxtext="[caption]" jsxbgcolor="#d8d8e5"></strings>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2" jsxrelativeposition="0" jsxleft="0" jsxtop="0"></variants>
+        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxdisplay="none" jsxvisibility=""></strings>
+        <dynamics jsxbgcolor="@Solid Medium"></dynamics>
+        <include src="components/matrixEmpty.xml" async="true"></include>
+      </object>
+    </object>
+    <object type="jsx3.gui.Tab">
+      <variants jsxzindex="3" jsxheight="18"></variants>
+      <strings jsxname="tab" jsxtext="[caption]" jsxbgcolor="#e8e8f5"></strings>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2" jsxrelativeposition="0" jsxleft="0" jsxtop="0"></variants>
+        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxdisplay="" jsxvisibility=""></strings>
+        <dynamics jsxbgcolor="@Solid Medium"></dynamics>
+        <object type="jsx3.gui.Button">
+          <variants jsxindex="0" jsxheight="18"></variants>
+          <strings jsxname="button" jsxtext="[button text]" jsxmargin="0 4 0 0"></strings>
+          <events jsxexecute="this.getServer().getJSXByName('datePicker').getRendered().childNodes[0].childNodes[1].onclick();"></events>
+        </object>
+        <object type="jsx3.gui.DatePicker">
+          <variants jsxwidth="100" jsxrelativeposition="1" jsxheight="18"></variants>
+          <strings jsxname="datePicker" jsxmargin="0 4 0 0"></strings>
+        </object>
+      </object>
+    </object>
+    <object type="jsx3.gui.Tab">
+      <variants jsxzindex="3" jsxheight="18"></variants>
+      <strings jsxname="tab" jsxtext="[caption]" jsxbgcolor="#d8d8e5"></strings>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2" jsxrelativeposition="0" jsxleft="0" jsxtop="0"></variants>
+        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxdisplay="none" jsxvisibility=""></strings>
+        <dynamics jsxbgcolor="@Solid Medium"></dynamics>
+        <include src="components/matrixEmpty.xml" async="true"></include>
+      </object>
+    </object>
+  </object>
+</serialization>

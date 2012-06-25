@@ -1,0 +1,23 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name/>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Matrix">
+    <variants jsxpagingmodel="1" jsxselectionmodel="2" jsxscalewidth="1" jsxresize="0"/>
+    <strings jsxname="matrix1" jsxbodyborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxfocusstyle="color:red;font-weight:bold;" jsxxmlurl="xml/states.xml" jsxheaderborder="1px solid #dfdfef"/>
+    <events jsxexecute="jsx3.log('EVENT: (jsxexecute). Record: ' + strRECORDID);"/>
+    <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants/>
+      <strings jsxname="mc1" jsxtext="ID" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px blue;solid 0px" jsxpath="jsxid"/>
+      <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+    </object>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants/>
+      <strings jsxname="mc2" jsxtext="Name" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px blue;solid 0px" jsxpath="jsxtext"/>
+      <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+    </object>
+  </object>
+</serialization>

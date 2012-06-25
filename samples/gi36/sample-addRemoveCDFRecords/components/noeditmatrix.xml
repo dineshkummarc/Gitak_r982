@@ -1,0 +1,32 @@
+<serialization jsxversion="3.7" xmlns="urn:tibco.com/v3.0">
+  <object type="jsx3.gui.Matrix">
+    <variants jsxpagingmodel="1" jsxselectionmodel="0" jsxxmlasync="1"></variants>
+    <strings jsxname="mtxUpdatableTable" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxxmlurl="xml/prices.xml" jsxmenu="mnuDeleteRowMenu" jsxfocusstyle="background-color:yellow;" jsxspystyle="color:red;"></strings>
+    <events jsxselect="jsx3.log('select '+ objEVENT.isArrowKey());" jsxbeforeedit="jsx3.log('edit '+ objEVENT.isArrowKey());"></events>
+    <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"></xslparameters>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants jsxwidth="122"></variants>
+      <strings jsxname="mcDateColumn" jsxtext="Date" jsxpadding="3" jsxcellpadding="3" jsxpath="Date" jsxformathandler="@date" jsxvaluetemplate="@empty"></strings>
+      <dynamics jsxbgcolor="@Solid Medium" jsxbg="@Fade TopDown" jsxborder="@Outset"></dynamics>
+    </object>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants jsxwidth="102"></variants>
+      <strings jsxname="mcSecurityColumn" jsxtext="Security" jsxpadding="3" jsxcellpadding="3" jsxpath="Security"></strings>
+      <dynamics jsxbg="@Fade TopDown" jsxbgcolor="@Solid Medium" jsxborder="@Outset"></dynamics>
+    </object>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants jsxwidth="104"></variants>
+      <strings jsxname="mcOpenColumn" jsxtext="Open" jsxvaluetemplate="@empty" jsxpadding="3" jsxcellpadding="3" jsxpath="Open" jsxformathandler="@number"></strings>
+      <dynamics jsxbgcolor="@Solid Medium" jsxbg="@Fade TopDown" jsxborder="@Outset"></dynamics>
+    </object>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants jsxwidth="120"></variants>
+      <strings jsxname="mcHighColumn" jsxtext="High" jsxvaluetemplate="@empty" jsxpadding="3" jsxcellpadding="3" jsxpath="High" jsxformathandler="@number"></strings>
+      <dynamics jsxbgcolor="@Solid Medium" jsxbg="@Fade TopDown" jsxborder="@Outset"></dynamics>
+    </object>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants jsxsort="0"></variants>
+      <strings jsxname="mcPaddingColumn" jsxwidth="100" jsxpadding="3" jsxcellpadding="3" jsxpath="jsxtext"></strings>
+    </object>
+  </object>
+</serialization>

@@ -1,0 +1,22 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Dialog</name>
+  <icon/>
+  <description>Dialog box.  (Set Modal property for a modal dialog).</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Dialog">
+    <variants jsxwidth="431" jsxheight="190" jsxzindex="5000" jsxwindowstate="1" jsxresize="0"/>
+    <strings jsxname="dlgTitlelessDialog"/>
+    <dynamics jsxbgcolor="@Solid Medium"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkDescriptionPane" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1" jsxtext="&lt;P&gt;A dialog without a caption bar can look very elegant in the right setting.&lt;/P&gt;  &lt;P&gt; Set the Resizable property of the dialog to Fixed to avoid unpredictable runtime behaviors.&lt;/P&gt;  &lt;P&gt;Don't forget that it will need a close button or similar programmatic function.&lt;/P&gt;"/>
+      <dynamics jsxpadding="@8Pixel"/>
+      <object type="jsx3.gui.Button">
+        <variants jsxindex="0" jsxheight="18"/>
+        <strings jsxname="btnCloseButton" jsxtext="Close" jsxmargin="margin-right:4px;"/>
+        <events jsxexecute="this.getParent().getParent().doClose();"/>
+      </object>
+    </object>
+  </object>
+</serialization>

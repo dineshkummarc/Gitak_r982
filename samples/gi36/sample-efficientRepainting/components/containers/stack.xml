@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<serialization xmlns="urn:tibco.com/v3.0" >
+ <unicode></unicode>
+ <name><![CDATA[]]></name>
+ <icon><![CDATA[]]></icon>
+ <description><![CDATA[]]></description>
+ <onBeforeDeserialize><![CDATA[]]></onBeforeDeserialize>
+ <onAfterDeserialize><![CDATA[]]></onAfterDeserialize>
+ <objects>
+  <object type="jsx3.gui.Stack">
+   <variants jsxorientation="0" />
+   <strings jsxname="stack" jsxtext="&lt;div title='dblclick to close' ondblclick='var my = jsx3.BrowserDOM.getJSXParent(this); window.setTimeout(function() {my.getParent().removeChild(my);},100);'  &gt;Stack Item&lt;/div&gt;" />
+   <children>
+    <object type="jsx3.gui.Block">
+     <variants jsxleft="0" jsxtop="0" jsxoverflow="1" jsxloadtype="1"/>
+     <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxborder="border:solid 1px #9898a5;border-left-color:#ffffff;border-top-color:#ffffff;" jsxbgcolor="#ffffff" jsxvisibility="" />
+    </object>
+   </children>
+  </object>
+ </objects>
+</serialization>

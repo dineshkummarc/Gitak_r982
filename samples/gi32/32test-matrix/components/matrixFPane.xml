@@ -1,0 +1,48 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Freeze Pane</name>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Splitter">
+    <variants/>
+    <strings jsxname="s1" jsxsubcontainer1pct="20%"/>
+    <object type="jsx3.gui.Block">
+      <variants/>
+      <strings jsxname="b1"/>
+      <object type="jsx3.gui.Matrix">
+        <variants jsxpagingmodel="4" jsxheaderheight="24" jsxsuppressvscroll="1"/>
+        <strings jsxname="matrix1" jsxbodyborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxrenderingmodel="hierarchical" jsxxml="           &lt;data jsxid=&quot;jsxroot&quot;&gt;             &lt;record jsxid=&quot;1&quot; jsxtext=&quot;rootnode&quot; jsxopen=&quot;1&quot; jsximg=&quot;GI_Builder/images/icon_7.gif&quot;&gt;               &lt;record jsxid=&quot;2&quot; jsxtext=&quot;node a&quot; jsximg=&quot;GI_Builder/images/icon_7.gif&quot;&gt;                 &lt;record jsxid=&quot;3&quot; jsxtext=&quot;node b&quot; jsximg=&quot;GI_Builder/images/icon_7.gif&quot;&gt;                   &lt;record jsxid=&quot;4&quot; jsxtext=&quot;node c&quot; jsximg=&quot;GI_Builder/images/icon_7.gif&quot;&gt;                     &lt;record jsxid=&quot;5&quot; jsxtext=&quot;node d&quot; jsximg=&quot;GI_Builder/images/icon_16.gif&quot;/&gt;                   &lt;/record&gt;                 &lt;/record&gt;                 &lt;record jsxid=&quot;6&quot; jsxtext=&quot;node e&quot; jsximg=&quot;GI_Builder/images/icon_7.gif&quot;&gt;                   &lt;record jsxid=&quot;7&quot; jsxtext=&quot;node f with a lot of text to see what the impact&quot; jsximg=&quot;GI_Builder/images/icon_7.gif&quot;&gt;                     &lt;record jsxid=&quot;8&quot; jsxtext=&quot;node g&quot; jsximg=&quot;GI_Builder/images/icon_16.gif&quot;/&gt;                   &lt;/record&gt;                 &lt;/record&gt;               &lt;/record&gt;             &lt;/record&gt;           &lt;/data&gt;         "/>
+        <dynamics jsxbg="@Alternating Rows"/>
+        <events jsxaftersort="var o = this.getAncestorOfType(jsx3.gui.Splitter).getChild(1).getChild(0); o.setSortPath(strSORTPATH); o.setSortType(strSORTTYPE); o.doSort();" jsxtoggle="this.getAncestorOfType(jsx3.gui.Splitter).getChild(1).getChild(0).toggleItem(strRECORDID,bOPEN);" jsxselect="this.getAncestorOfType(jsx3.gui.Splitter).getChild(1).getChild(0).selectRecord(strRECORDID);"/>
+        <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
+        <object type="jsx3.gui.Matrix.Column">
+          <variants/>
+          <strings jsxname="mc0" jsxwidth="200" jsxtext="Category" jsxpadding="4" jsxcellpadding="2" jsxpath="jsxtext"/>
+          <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+        </object>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants/>
+      <strings jsxname="b2"/>
+      <object type="jsx3.gui.Matrix">
+        <variants jsxpagingmodel="4" jsxheaderheight="24"/>
+        <strings jsxname="matrix2" jsxbodyborder="1px solid #dfdfef" jsxrenderingmodel="hierarchical" jsxbgcolor="#efefff" jsxrendernavigators="0" jsxxml="           &lt;data jsxid=&quot;jsxroot&quot;&gt;             &lt;record jsxid=&quot;1&quot; jsxtext=&quot;rootnode&quot; jsxopen=&quot;1&quot; jsximg=&quot;GI_Builder/images/icon_7.gif&quot;&gt;               &lt;record jsxid=&quot;2&quot; jsxtext=&quot;node a&quot; jsximg=&quot;GI_Builder/images/icon_7.gif&quot;&gt;                 &lt;record jsxid=&quot;3&quot; jsxtext=&quot;node b&quot; jsximg=&quot;GI_Builder/images/icon_7.gif&quot;&gt;                   &lt;record jsxid=&quot;4&quot; jsxtext=&quot;node c&quot; jsximg=&quot;GI_Builder/images/icon_7.gif&quot;&gt;                     &lt;record jsxid=&quot;5&quot; jsxtext=&quot;node d&quot; jsximg=&quot;GI_Builder/images/icon_16.gif&quot;/&gt;                   &lt;/record&gt;                 &lt;/record&gt;                 &lt;record jsxid=&quot;6&quot; jsxtext=&quot;node e&quot; jsximg=&quot;GI_Builder/images/icon_7.gif&quot;&gt;                   &lt;record jsxid=&quot;7&quot; jsxtext=&quot;node f with a lot of text to see what the impact&quot; jsximg=&quot;GI_Builder/images/icon_7.gif&quot;&gt;                     &lt;record jsxid=&quot;8&quot; jsxtext=&quot;node g&quot; jsximg=&quot;GI_Builder/images/icon_16.gif&quot;/&gt;                   &lt;/record&gt;                 &lt;/record&gt;               &lt;/record&gt;             &lt;/record&gt;           &lt;/data&gt;         "/>
+        <dynamics jsxbg="@Alternating Rows"/>
+        <events jsxaftersort="var o = this.getAncestorOfType(jsx3.gui.Splitter).getChild(0).getChild(0); o.setSortPath(strSORTPATH); o.setSortType(strSORTTYPE); o.doSort();" jsxselect="this.getAncestorOfType(jsx3.gui.Splitter).getChild(0).getChild(0).selectRecord(strRECORDID);" jsxscroll="if(strDIRECTION == 'vertical') this.getAncestorOfType(jsx3.gui.Splitter).getChild(0).getChild(0).setScrollTop(intPOSITION);"/>
+        <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
+        <object type="jsx3.gui.Matrix.Column">
+          <variants/>
+          <strings jsxname="mc2" jsxwidth="100" jsxtext="Primary Key" jsxpadding="4" jsxcellpadding="2" jsxpath="jsxid"/>
+          <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+        </object>
+        <object type="jsx3.gui.Matrix.Column">
+          <variants/>
+          <strings jsxname="mc1" jsxwidth="*" jsxtext="Image Path" jsxpadding="4" jsxcellpadding="2" jsxpath="jsximg"/>
+          <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

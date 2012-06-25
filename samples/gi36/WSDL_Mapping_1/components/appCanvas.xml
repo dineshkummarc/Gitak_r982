@@ -1,0 +1,97 @@
+<serialization jsxversion="3.4" xmlns="urn:tibco.com/v3.0">
+  <name><![CDATA[Layout (--)]]></name>
+  <icon></icon>
+  <description><![CDATA[2 top-over-bottom panes in an adaptive layout grid.]]></description>
+  <onBeforeDeserialize></onBeforeDeserialize>
+  <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrelativeposition="0" jsxoverflow="2"></variants>
+    <strings jsxname="layout (--)" jsxrows="190,*"></strings>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"></variants>
+      <strings jsxname="description" jsxtext=" &lt;p align=&quot;right&quot;&gt;&lt;b&gt;WSDL Mapping 1; version 2.0&lt;/b&gt;&lt;br/&gt; JSX version: 3.4.0&lt;/p&gt;&#xA; &lt;p&gt;This sample application shows how to connect to a simple SOAP service for address validation, along with mapping between the GUI and the request and response messages.  Enter a zip code in the text box and click the button.&lt;/p&gt;&#xA; &lt;p&gt;This project uses a sample WSDL included with the project (wsdl/Address.wsdl).  Open the Mapping Rule document getCityAndState.xml to see the SOAP to GUI mappings.  Notice that the county node is mapped to a script and the value is stored in a variable by calling the getValue() method of the MESSAGENODE object.&lt;/p&gt;&#xA; &lt;p&gt; Note:  See WSDL Mapping 2 for an example of mapping repeating elements to a jsx3.gui.Matrix control.&lt;/p&gt;"></strings>
+      <dynamics jsxborder="@Outset" jsxpadding="@8Pixel" jsxbgcolor="@Solid Medium"></dynamics>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"></variants>
+      <strings jsxname="pane"></strings>
+      <dynamics jsxborder="@Outset"></dynamics>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants jsxrelativeposition="0" jsxoverflow="2"></variants>
+        <strings jsxname="layout (--)" jsxrows="50,*"></strings>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"></variants>
+          <strings jsxname="inputPane"></strings>
+          <dynamics jsxborder="@No jsxborder"></dynamics>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="3"></variants>
+            <strings jsxname="block" jsxwidth="100%" jsxrelativeposition="1" jsxheight="100%"></strings>
+            <dynamics jsxpadding="@8Pixel"></dynamics>
+            <object type="jsx3.gui.Block">
+              <variants jsxheight="18" jsxwidth="100"></variants>
+              <strings jsxname="label" jsxtext="Enter Zip Code" jsxmargin="0 4 0 0" jsxpadding="4 0 0 0"></strings>
+            </object>
+            <object type="jsx3.gui.TextBox">
+              <variants jsxheight="18"></variants>
+              <strings jsxname="zip" jsxmargin="0 4 0 0" jsxvalue=""></strings>
+            </object>
+            <object type="jsx3.gui.Button">
+              <variants jsxindex="0" jsxheight="18"></variants>
+              <strings jsxname="lookupButton" jsxtext="Find City and State" jsxmargin="0 4 0 0"></strings>
+              <events jsxexecute="eg.wsdl1.callReturnCityState();"></events>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1"></variants>
+          <strings jsxname="outputPane" jsxwidth="100%" jsxheight="100%"></strings>
+          <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Light"></dynamics>
+          <object type="jsx3.gui.Block">
+            <variants jsxheight="40" jsxoverflow="3"></variants>
+            <strings jsxname="block" jsxwidth="100%" jsxrelativeposition="1"></strings>
+            <dynamics jsxpadding="@8Pixel"></dynamics>
+            <object type="jsx3.gui.Block">
+              <variants jsxheight="18" jsxwidth="100"></variants>
+              <strings jsxname="label" jsxtext="City" jsxmargin="0 4 0 0" jsxpadding="4 0 0 0"></strings>
+            </object>
+            <object type="jsx3.gui.TextBox">
+              <variants jsxheight="18"></variants>
+              <strings jsxname="city" jsxmargin="0 4 0 0" jsxvalue="Palo Alto"></strings>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxheight="40" jsxoverflow="3"></variants>
+            <strings jsxname="block" jsxwidth="100%" jsxrelativeposition="1"></strings>
+            <dynamics jsxpadding="@8Pixel"></dynamics>
+            <object type="jsx3.gui.Block">
+              <variants jsxheight="18" jsxwidth="100"></variants>
+              <strings jsxname="label" jsxtext="State" jsxmargin="0 4 0 0" jsxpadding="4 0 0 0"></strings>
+            </object>
+            <object type="jsx3.gui.TextBox">
+              <variants jsxheight="18"></variants>
+              <strings jsxname="state" jsxmargin="0 4 0 0" jsxvalue="CA"></strings>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxheight="40" jsxoverflow="3"></variants>
+            <strings jsxname="block" jsxwidth="100%" jsxrelativeposition="1"></strings>
+            <dynamics jsxpadding="@8Pixel"></dynamics>
+            <object type="jsx3.gui.Block">
+              <variants jsxheight="40" jsxwidth="270"></variants>
+              <strings jsxname="label" jsxtext="" jsxmargin="0 4 0 0" jsxpadding="4 0 0 0"></strings>
+              <object type="jsx3.gui.Block">
+                <variants jsxoverflow="1"></variants>
+                <strings jsxname="block" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1" jsxtext="The response value for County was stored in a JavaScript variable by the mapping rule."></strings>
+              </object>
+            </object>
+            <object type="jsx3.gui.Button">
+              <variants jsxindex="0" jsxheight="18" jsxwidth="60" jsxrelativeposition="0" jsxleft="300" jsxtop="20"></variants>
+              <strings jsxname="buttonCounty" jsxtext="County" jsxmargin="0 4 0 0"></strings>
+              <events jsxexecute="eg.wsdl1.showCountyAlert();"></events>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

@@ -1,0 +1,607 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<!--
+Copyright (c) 2006-2011 TIBCO Software Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<head>
+    <title>Action Commands</title>
+    <style>
+body, table {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 10;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    border: 1px solid #999;
+}
+tr:hover {
+    background-color: #FBF09D;
+}
+    </style>
+
+</head>
+<body>
+    <a href="tib_gitak_selenium_extension_reference.html">Reference &gt; Top<br />
+    </a>
+    <br />
+
+<table>
+            <tr>
+                <td colspan="3" style="font-weight: bold; background-color: gainsboro; height: 23px;">
+                    Extended General Interface action commands</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold">
+                    Command/Locator&nbsp;</td>
+                <td style="font-weight: bold;">
+                    Usage&nbsp;</td>
+                <td style="font-weight: bold">
+                    Description&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    openjsx</td>
+                <td>
+                    <pre>| openjsx | URL | timeout |</pre>
+                </td>
+                <td>
+                    Open a GI application launch page, will wait for application to finish loading 
+                    by default.</td>
+            </tr>
+        <tr >
+            <td>
+                setInterval</td>
+            <td>
+                <pre>| setInterval | time in milliseconds | |</pre>
+            </td>
+            <td>
+                Action - set the run time command interval, which is the time TestRunner will pause between each action or assertion command. Default is 0ms. Once the time is set, it will be used until it is changed again to a new interval. This value is stored in the TestRunner control panel, so it is a global value.
+            </td>
+        </tr>
+        <tr >
+            <td>
+                setJsxNamespace</td>
+            <td>
+                <pre>| setJsxNamespace | namespace | |</pre>
+            </td>
+            <td>
+                Action - set the GI application namespace to use in locating GI object using GI extended locators.
+            </td>
+        </tr>
+            <tr>
+                <td>clickJsxCellMask</td>
+                <td>
+                    <pre>| clickJsxCellMask | JsxMatrixCell[Id/Index] | value |</pre></td>
+                <td>
+                    Action - do the applicable action depending on the cell mask with given value. For
+                    exmple, type value in textbox, pick date in datepicker, etc.
+                </td>
+            </tr>
+            <tr>
+                <td>actionJsxCellMask</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    Action - do the applicable action depending on the cell mask with given value. For
+                    exmple, type value in textbox, pick date in datepicker, etc.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    chooseJsxCancelConfirmPrompt</td>
+                <td>
+                   <pre>| chooseJsxCancelConfirmPrompt | confirm caption or message text | value |</pre></td>
+                <td>
+                    Action - choose cancel on next confirm or prompt dialog.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    checkJsx</td>
+                <td>
+                    <pre>| checkJsx | JsxRadioText/JsxRadioValue/JsxCheckBox locator | |</pre></td>
+                <td>
+                    Action - Check a RadioButton or CheckBox control.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    uncheckJsx</td>
+                <td>
+                    <pre>| checkJsx | JsxRadioText/JsxRadioValue/JsxCheckBox locator | |</pre></td>
+                <td>
+                    Action - Uncheck a RadioButton or CheckBox control.
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    partialCheckJsx</td>
+                <td >
+                   <pre>| partialCheckJsx | JsxCheckBox locator | |</pre></td>
+                <td >
+                    Action - set state of a CheckBox control to jsx3.gui.CheckBox.PARTIAL
+                </td>
+            </tr>
+    <tr>
+        <td>
+            toggleJsxCheck</td>
+        <td>
+            <pre>| toggleJsxCheck | JsxRadioText/JsxRadioValue/JsxCheckBox locator | |</pre>
+        </td>
+        <td>
+            Action - Toggle the state of a CheckBox or RadioButton control.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            clickJsxDateIcon</td>
+        <td>
+            <pre>| clickJsxDateIcon | jsxname | |</pre>
+        </td>
+        <td>
+            Action - click on DatePicker icon element.</td>
+    </tr>
+    <tr>
+        <td>
+            clickJsxDateNextMonth</td>
+        <td>
+            <pre>| clickJsxDateNextMonth | jsxname | |</pre>
+        </td>
+        <td>
+            Action - click on DatePicker pop up calendar's next month [&gt;] arrow icon.
+            This also set the date with next month value</td>
+    </tr>
+    <tr>
+        <td>
+            clickJsxDatePrevMonth</td>
+        <td>
+            <pre>| clickJsxDatePrevMonth | jsxname | |</pre>
+        </td>
+        <td>
+            Action - click on DatePicker pop up calendar's previous month [&lt;] arrow icon.
+            This also set the date with previous month value</td>
+    </tr>
+    <tr>
+        <td>
+            clickJsxDateNextYear</td>
+        <td>
+            <pre>| clickJsxDateNextYear | jsxname | |</pre>
+        </td>
+        <td>
+            Action - click on DatePicker pop up calendar's next year [&gt;] arrow icon.
+            This also set the date with next year value</td>
+    </tr>
+    <tr>
+        <td>
+            clickJsxDatePrevYear</td>
+        <td>
+            <pre>| clickJsxDatePrevYear | jsxname | |</pre>
+        </td>
+        <td>
+            Action - click on DatePicker pop up calendar's previous year [&gt;] arrow icon. 
+            This also set the date with previous year value</td>
+        </tr>
+        <tr>
+                <td>
+                    clickJsxDialogButton</td>
+                <td>
+                    <pre>| clickJsxDialogButton | Dialog caption text/jsxname | Button jsxname/text|</pre></td>
+                <td>
+                    Action - click the button of given jsxname/text on Dialog of given jsxname/text.
+                    Default buttons' jsxname are : "min button", "max button", and "close button".</td>
+         </tr>
+         <tr>
+                <td>
+                    clickJsxElement</td>
+                <td>
+                    <pre>| clickJsxElement | Jsx element locator | |</pre></td>
+                <td>
+                    Action - click on a jsx element. This is needed in some cases where the more generic
+                    "click" command can fail.
+                    <br />
+                    <strong>NOTE</strong>: If generic "click" command fails then use this command and
+                    if this command fails then use control specific extension (like "clickJsxMenu")
+                    command.</td>
+         </tr>
+            <tr>
+                <td>
+                    clickJsxMatrixHeader</td>
+                <td>
+                    <pre>| clickJsxMatrixTreeToggle | JsxMatrixHeaderIndex=jsxname,columnIndex | |</pre></td>
+                <td>
+                    Action - click on the matrix column's header with given matrix jsxname and column index.
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    clickJsxMatrixTreeToggle</td>
+                <td>
+                    <pre>| clickJsxMatrixTreeToggle | JsxMatrixTreeItem[Id/Text] | |</pre></td>
+                <td>
+                    Action - click on the matrix tree toogle with given JsxMatrixTreeItemId=jsxname,jsxid or JsxMatrixTreeItemText locator.
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    clickJsxMatrixTreeItem</td>
+                <td>
+                    <pre>| clickJsxMatrixTreeItem | JsxMatrixTreeItem[Id/Text] | |</pre></td>
+                <td>
+                    Action - click on a matrix tree item (icon) with given JsxMatrixTreeItemId or JsxMatrixTreeItemText locator.
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    clickJsxMenu</td>
+                <td>
+                    <pre>| clickJsxMenu | JsxMenu[Text/Name] | JsxMenuItem[Id/Index/Text] |</pre></td>
+                <td>
+                    Action - click on a menu located with given menu locator (by label text or by jsxname). 
+                    <br />
+                    The second parameter is optional.
+                    When the second parameter is present the specified menu item will also be choosen. 
+                    Otherwise, the menu window should remain open until next mouse action.</td>
+            </tr>
+            <tr>
+                <td>
+                    clickJsxMenuItem</td>
+                <td>
+                    <pre>| clickJsxMenuItem | JsxMenuItem[Id/Index/Text]=jsxname,[jsxid/index/text] | |</pre></td>
+                <td>
+                    Action - click on a menu item with given menu jsxname and menu item jsxid, index or text.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    clickJsxSelect</td>
+                <td>
+                    <pre>| clickJsxSelect | JsxSelectName=jsxname | JsxSelecItem[Id/Index/Text] |</pre></td>
+                <td>
+                    Action - click on jsx3.gui.Select with given jsxname. 
+                    <br />
+                    The second parameter is optional. 
+                    When the second parameter is present the specified select option item will also be choosen. 
+                    Otherwise, the select options window should remain open until next mouse action.</td>
+            </tr>
+            <tr>
+                <td>
+                    clickJsxSelectItem</td>
+                <td>
+                    <pre>| clickJsxSelectItem | JsxSelectItem[Id/Index/Text]=jsxname,[jsxid/index/text] | |</pre></td>
+                <td>
+                    Action - click on a select option item with given select control's jsxname and option item jsxid, index or text.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    clickJsxStack</td>
+                <td>
+                    <pre>| clickJsxStack | JsxStackName=jsxname / JsxStackText=label text | |</pre></td>
+                <td>
+                    Action - click on jsx3.gui.Stack with given label text or jsxname. &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    clickJsxToolbarButton</td>
+                <td>
+                    <pre>| clickJsxToolbarButton | toolbar button jsxname | |</pre></td>
+                <td>
+                    Action - click on a tool bar button with given jsxname. &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    clickJsxTreeToggle</td>
+                <td>
+                    <pre>| clickJsxTreeToggle | JsxTreeItemId/JsxTreeItemText | |</pre></td>
+                <td>
+                    Action - click on a tree toogle image with given JsxTreeItem locator (by id or text)</td>
+            </tr>
+            <tr>
+                <td>
+                    clickJsxTreeItem</td>
+                <td>
+                    <pre>| clickJsxTreeItem | JsxTreeItemId/JsxTreeItemText | |</pre></td>
+                <td>
+                    Action - click on a tree item with given JsxTreeItem locator (by id or text)</td>
+            </tr>
+            <tr>
+                <td>
+                    doubleClickJsxElement</td>
+                <td>
+                    <pre>| doubleClickJsxElement | Jsx element locator | |</pre></td>
+                <td>
+                    Action - double click on a jsx element.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    doubleClickJsxTreeItem</td>
+                <td>
+                    <pre>| doubleClickJsxTreeItem | JsxTreeItemId=jsname,jsxid | |</pre></td>
+                <td>
+                    Action - double click a tree item with given tree jsxname and record jsxid. <b>NOTE:</b>
+                    You must use this action command for tree item. The generic doubleClickJsxElement
+                    does not work on Tree Item.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    dragJsxDialogResize</td>
+                <td>
+                    <pre>| dragJsxDialogResize | Dialog Locator | X,Y</pre></td>
+                <td>
+                    Action - Drag to resize a Dialog Object a X,Y offset.</td>
+            </tr>
+            <tr>
+                <td>
+                    dragJsxDialogTo</td>
+                <td>
+                    <pre>| dragJsxDialogTo | Dialog Locator | X,Y</pre></td>
+                <td>
+                    Action - Drag a Dialog Object a X,Y offset position. Note, Drag of dialog box is
+                    applied to the contained captionbar. So you cannot use the generic dragJsxTo action.</td>
+            </tr>
+            <tr>
+                <td>
+                    dragJsxTo</td>
+                <td>
+                    <pre>| dragJsxTo | Jsx Locator | X,Y</pre></td>
+                <td>
+                    Action - Drag a JSX Object a X,Y offset position .</td>
+            </tr>
+            <tr>
+                <td>
+                    dragJsxToJsx</td>
+                <td>
+                    <pre>| dragJsxToJsx | JsxLocator | JsxLocator2</pre></td>
+                <td>
+                    Action - Drag a JSX Object to JSX Object 2 (using any locator). Try selenium "dragAndDrop" command if this does not work.
+                   </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    fireRightMouse</td>
+                <td>
+                    <pre>| fireRightMouse | Any locator | mouse event |</pre></td>
+                <td>
+                    Action - Fire a right mouse button event, like mouseup, mousedown, mouseover</td>
+            </tr>
+            
+            <tr>
+                <td>
+                    fireLeftMouse</td>
+                <td>
+                    <pre>| fireLeftMouse | Any locator | mouse event |</pre></td>
+                <td>
+                    Action - Fire a left mouse button event, like mouseup, mousedown, mouseover</td>
+            </tr>
+            <tr>
+                <td>
+                    jsxMouseDown</td>
+                <td>
+                    <pre>| jsxMouseDown | Any locator | |</pre></td>
+                <td>
+                    Action - Fire a left mouse button mousedown event</td>
+            </tr>
+            <tr>
+                <td>
+                    jsxMouseOver</td>
+                <td>
+                    <pre>| jsxMouseOver | Any locator | </pre></td>
+                <td>
+                    Action - Fire a left mouse button mouseover event</td>
+            </tr>
+            <tr>
+                <td>
+                    jsxMouseUp</td>
+                <td>
+                    <pre>| jsxMouseUp | Any locator | </pre></td>
+                <td>
+                    Action - Fire a left mouse button mouseup event</td>
+            </tr>
+            <tr>
+                <td>
+                    moveJsxSliderPercent</td>
+                <td>
+                    <pre>| moveJsxSliderPercent | JsxSliderName=jsxname | percent value</pre></td>
+                <td>
+                    Action - move a slider handle to a position corresponding to the percent value (0-100).</td>
+            </tr>
+            <tr>
+                <td>
+                    moveJsxSliderRelative</td>
+                <td>
+                   <pre> | moveJsxSliderRelative | JsxSliderName=jsxname | +/- pixel value</pre></td>
+                <td>
+                    Action - move a slider handle to a position relative to current position. Value
+                    is in pixel unit.</td>
+            </tr>
+    <tr>
+        <td>
+            pickJsxDate</td>
+        <td>
+           <pre>|pickJsxDate | datepicker jsxname | date value |</pre></td>
+        <td>
+           Action - pick a date using DatePicker control. Date value must be javascript parseable
+           string. &nbsp;</td>
+   </tr>
+    <tr>
+        <td>
+            pickJsxTime</td>
+        <td>
+            <pre>|pickJsxTime | timepicker jsxname | hh:mm:ss.ms |</pre></td>
+        <td>
+            Action - pick a time using TimePicker control. Hour format can be a simple "hh:mm:ss.ms" string</td>
+    </tr>
+    <tr>
+        <td>
+            rightClickJsxListRow</td>
+        <td>
+           <pre>|rightClickJsxListRow | list/grid jsxname,jsxid | |</pre></td>
+        <td>
+            Action - right click on a list/grid row with given list/grid jsxname and row record
+            jsxid.&nbsp;</td>
+    </tr>
+    <tr>
+        <td>
+            rightClickJsxElement</td>
+        <td>
+            <pre>|rightClickJsxElement | list/grid jsxname,jsxid | |</pre>
+        </td>
+        <td>
+            Action - right click on a list/grid row with given list/grid jsxname and row record
+            jsxid.&nbsp;</td>
+    </tr>
+    <tr>
+        <td>
+            rightClickJsxTreeItem</td>
+        <td>
+            <pre>|rightClickJsxTreeItem | JsxTreeItem[Id/Text] | |</pre>
+        </td>
+        <td>
+            Action - right click on a tree item.&nbsp;</td>
+    </tr>
+
+    <tr>
+        <td>
+            resizeJsxLayout</td>
+        <td>
+            <pre>|doResizeJsxLayout | jsxname  | x,y |</pre>
+        </td>
+        <td>
+            Action - resize jsx3.gui.LayoutGrid to the given size array</td>
+    </tr>
+            <tr>
+                <td>
+                    spyJsxElement</td>
+                <td>
+                    <pre>| spyJsxElement | Jsx locator |  |</pre></td>
+                <td>
+                    Action - do a mouseover to trigger spyglass over JSX element. Note: does not work on IE.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    typeJsxKeys</td>
+                <td>
+                    <pre>| typeJsxKeys | JsxTextboxName=jsxname | value |</pre></td>
+                <td>
+                    Action - Simulate each keydown/keyup typing into textbox
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    typeJsxTextbox</td>
+                <td>
+                    <pre>| typeJsxTextbox | JsxTextboxName=jsxname | value |</pre></td>
+                <td>
+                    Action - Type value into textbox with given jsxname
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    typeJsxGridCell</td>
+                <td>
+                    <pre>| typeJsxGridCell | JsxGridCell=grid_jsxname.record_jsxid.cell_index | value |</pre></td>
+                <td>
+                    Action - enter the given value to the grid cell with given grid jsxname, row with
+                    jsxid, and cell idex number
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    recordStartTime</td>
+                <td>
+                    <pre>| recordStartTime | indexKey | |</pre></td>
+                <td>
+                    Action - Store a start time for profiling</td>
+            </tr>
+            <tr>
+                <td>
+                    recordEndTime</td>
+                <td>
+                    <pre>| recordEndTime | indexKey | |</pre></td>
+                <td>
+                    Action - Store a end time for profiling</td>
+            </tr>
+            <tr>
+                <td>
+                    showElpaseTime</td>
+                <td>
+                    <pre>| showElapseTime | indexKey | |</pre></td>
+                <td>
+                    Action - Display the elapse time of given timer key
+                </td>
+            </tr>
+            <tr>
+                <td>selectJsxRecords</td>
+                <td>
+                    <pre> selectJsxRecords | <jsxname | locator> | xpath |</pre></td>
+                <td> Action - Convenience function for selecting records in Matrix or Tree according to a XPath selector of the XML records.
+                </td>
+            </tr>
+
+            <record jsxid="" />
+            <tr>
+                <td>selectJsxWindow</td>
+                <td>
+                    <pre> selectJsxWindow | jsxname | |</pre></td>
+                <td> Action - switch window to new jsx3.gui.Window instance. Pass null to switch back to main window.
+                </td>
+            </tr>
+      <tr>
+            <td>
+                include</td>
+            <td>
+                <pre>| include | test_file.html | |</pre>
+            </td>
+            <td>
+                Action - include another test file (selenese test case table) to the current test case.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                unsubscribeJsxResize</td>
+            <td>
+                <pre>| unsubscribeJsxResize | | |</pre>
+            </td>
+            <td>
+                Action - a shortcut command used to workaround IE bug that generate resize event when element are inserted dynamically into the DOM, but no actual resize ever took place.<br />
+                Since Heavyweight object such as menu/select and datepicker windows now subscribes to this event and collapse the Heavyweight window on resize, this bug causes serious issue for test that use multi-command selection of menu/select item or date calendar navigation.
+            </td>
+        </tr>
+
+</table>
+
+    <p>
+    <a href="tib_gitak_selenium_extension_reference.html">Reference &gt; Top<br />
+    </a>
+    </p>
+    <p>
+        For information about Selenium commands and locators, see <a href="../../reference.html">Selenium
+            Reference</a>.
+    </p>
+
+</body>
+</html>

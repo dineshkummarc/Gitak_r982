@@ -1,0 +1,16 @@
+<data jsxid="jsxroot">
+         <record jsxid="1" jsxtext="rootnode" jsxopen="1">
+           <record jsxid="2" jsxtext="node a" jsxopen="1">
+             <record jsxid="3" jsxtext="node b">
+               <record jsxid="4" jsxtext="node c">
+                 <record jsxid="5" jsxtext="node d"/>
+               </record>
+             </record>
+             <record jsxid="6" jsxtext="node e">
+               <record jsxid="7" jsxtext="node f with a lot of text to see what the impact" jsximg="GI_Builder/images/icon_7.gif">
+                 <record jsxid="8" jsxtext="node g"/>
+               </record>
+             </record>
+           </record>
+         </record>       
+</data>

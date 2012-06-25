@@ -1,0 +1,38 @@
+<serialization xmlns="urn:tibco.com/v3.0">
+  <name/>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Block">
+    <variants jsxoverflow="1"/>
+    <strings jsxname="block" jsxwidth="100%" jsxheight="100%"/>
+    <object type="jsx3.gui.Button">
+      <variants jsxindex="0" jsxheight="18" jsxrelativeposition="0" jsxleft="10" jsxtop="6" jsxwidth="70"/>
+      <strings jsxname="button" jsxtext="Run Matrix" jsxmargin="0 4 0 0" jsxdisplay="" jsxtextalign="center"/>
+      <events jsxexecute="runMatrix(this);"/>
+    </object>
+    <object type="jsx3.gui.Button">
+      <variants jsxindex="0" jsxheight="18" jsxrelativeposition="0" jsxleft="162" jsxtop="6" jsxwidth="70"/>
+      <strings jsxname="button" jsxtext="Reset" jsxmargin="0 4 0 0" jsxdisplay="" jsxtextalign="center"/>
+      <events jsxexecute="reset(this);"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxleft="10" jsxtop="30" jsxwidth="180" jsxheight="400" jsxoverflow="1" jsxrelativeposition="0"/>
+      <strings jsxname="logPane"/>
+      <dynamics jsxpadding="@8Pixel" jsxborder="@Dashed"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxleft="200" jsxtop="30" jsxwidth="300" jsxheight="300" jsxoverflow="1" jsxrelativeposition="0"/>
+      <strings jsxname="matrixPane"/>
+      <dynamics jsxbgcolor="@Solid Medium" jsxborder="@Outset"/>
+    </object>
+<!--
+    <object type="jsx3.gui.Button">
+      <variants jsxindex="0" jsxheight="18" jsxrelativeposition="0" jsxleft="86" jsxtop="6" jsxwidth="70"/>
+      <strings jsxname="button" jsxtext="Run List" jsxmargin="0 4 0 0" jsxdisplay="" jsxtextalign="center"/>
+      <events jsxexecute="runList(this);"/>
+    </object>
+-->
+  </object>
+</serialization>

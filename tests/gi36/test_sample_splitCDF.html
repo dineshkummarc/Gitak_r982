@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+Copyright 2006-2008 TIBCO Software Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Test XSL Split CDF XML</title>
+</head>
+<body>
+<table border="1">
+<caption>Sample demostrate how to use XSLT to split a CDF data set.</caption>
+<tbody>
+    <tr>
+      <td rowspan="1" colspan="3">Test JS/Mapper/XSL splitting CDF<br>
+      </td>
+    </tr>
+   <tr>
+      <td>include</td>
+      <td>testSetup.html</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td>jsxopen</td>
+      <td>${GIPATH}/shell.html?jsxapppath=${SAMPLESPATH}/sample-splittingCDF</td>
+      <td>&nbsp;</td>
+    </tr>
+     <tr>
+       <td>waitForElementPresent</td>
+       <td>JsxToolbarButtonName=tbbClear</td>
+       <td>5000</td>
+     </tr>
+      <tr>
+        <td>storeEval</td>
+        <td>selenium.page().findByJsxName("xblkOutput1Pane")</td>
+        <td>outputBlock</td>
+      </tr>
+      <tr>
+        <td>verifyEval</td>
+        <td>storedVars['outputBlock'].getXML().selectSingleNode('//data').getChildNodes().getLength()</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>clickJsxElement</td>
+        <td>JsxToolbarButtonName=tbbSplitViaJS</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>verifyEval</td>
+        <td>storedVars['outputBlock'].getXML().selectSingleNode('//data').getChildNodes().getLength()</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>clickJsxElement</td>
+        <td>JsxToolbarButtonName=tbbClear</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>verifyEval</td>
+        <td>storedVars['outputBlock'].getXML().selectSingleNode('//data').getChildNodes().getLength()</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>setInterval</td>
+        <td>500</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>storeEval</td>
+        <td>selenium.page().findByJsxName("xblkOutput2Pane")</td>
+        <td>outputBlock2</td>
+      </tr>
+
+      <tr>
+        <td>clickJsxElement</td>
+        <td>JsxToolbarButtonName=tbbSplitViaMapper</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>verifyEval</td>
+        <td>storedVars['outputBlock2'].getXML().selectSingleNode('//data').getChildNodes().getLength()</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>clickJsxElement</td>
+        <td>JsxToolbarButtonName=tbbClear</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>verifyEval</td>
+        <td>storedVars['outputBlock2'].getXML().selectSingleNode('//data').getChildNodes().getLength()</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>clickJsxElement</td>
+        <td>JsxToolbarButtonName=tbbSplitViaXSLT</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>verifyEval</td>
+        <td>storedVars['outputBlock'].getXML().selectSingleNode('//data').getChildNodes().getLength()</td>
+        <td>2</td>
+      </tr>
+    <tr>
+      <td>verifyEval</td>
+      <td>storedVars['outputBlock2'].getXML().selectSingleNode('//data').getChildNodes().getLength()</td>
+      <td>4</td>
+    </tr>
+
+  </tbody>
+
+</table>
+</body>
+</html>

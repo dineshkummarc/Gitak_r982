@@ -1,0 +1,61 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Layout (--)</name>
+  <icon/>
+  <description>2 top-over-bottom panes in an adaptive layout grid.</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['100','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+    <strings jsxname="lytMainLayout" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkDescriptionPane" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;p align=&quot;left&quot;&gt;&lt;b&gt;Source: &lt;a style=&quot;text-decoration:none&quot; href=&quot;http://power.tibco.com/content/GI/Apps/320/projects/JSXAPPS/32sample-treeDragAndDrop.zip&quot;&gt; http://power.tibco.com/content/GI/Apps/320/projects/JSXAPPS/32sample-treeDragAndDrop.zip&lt;/a&gt;&lt;/b&gt;&lt;/p&gt; &lt;p align=&quot;right&quot;&gt;&lt;b&gt;Tree Drag And Drop; version 2.0&lt;/b&gt;&lt;br/&gt; JSX version: 3.2.0&lt;/p&gt;  &lt;p&gt;This sample application demonstrates &lt;ul&gt;&lt;li&gt;Drag and Drop from a Tree.&lt;/li&gt;&lt;li&gt;Dynamically add a CDF &amp;lt;Record&amp;gt;s to a tree.&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;  &lt;p&gt;Drag an item from the tree to the right-hand block and the text boxes will be updated to show additional information about the item.  Clicking the button will add a new &amp;lt;Record&amp;gt; to the CDF Model and update the View.&lt;/p&gt;  &lt;p&gt;Look in logic.js for the application code.&lt;/p&gt;"/>
+      <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkAppPane" jsxwidth="100%" jsxheight="100%"/>
+      <dynamics jsxborder="@Outset"/>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants jsxrepeat="2" jsxsizearray="['200','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="1"/>
+        <strings jsxname="lytAppLayout" jsxwidth="100%" jsxheight="100%"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2" jsxrelativeposition="0"/>
+          <strings jsxname="blkLeftPane" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@Outset"/>
+          <object type="jsx3.gui.Tree">
+            <variants jsxdrag="1" jsxuseroot="1" jsxoverflow="3"/>
+            <strings jsxname="treeBreedSelection" jsxwidth="100%" jsxheight="100%" jsxvalue="1" jsxxmlid="treeXML" jsxxmlurl="xml/listData.xml"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1" jsxdrop="1"/>
+          <strings jsxname="blkRightPane" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@Outset"/>
+          <events jsxdrop="eg.treeDragAndDrop.showSize(objSOURCE,strDRAGID);"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxheight="18" jsxleft="10" jsxtop="10" jsxwidth="55" jsxrelativeposition="0"/>
+            <strings jsxname="lblBreed" jsxtext="Breed" jsxmargin="margin-right:4px;" jsxpadding="padding-top:4px;" jsxtextalign="right"/>
+          </object>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxheight="18" jsxleft="75" jsxtop="10" jsxrelativeposition="0"/>
+            <strings jsxname="txtBreed" jsxmargin="margin-right:4px;"/>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxheight="18" jsxleft="10" jsxtop="40" jsxwidth="55" jsxrelativeposition="0"/>
+            <strings jsxname="lblSize" jsxtext="Size" jsxmargin="margin-right:4px;" jsxpadding="padding-top:4px;" jsxtextalign="right"/>
+          </object>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxheight="18" jsxrelativeposition="0" jsxleft="75" jsxtop="40"/>
+            <strings jsxname="txtSize" jsxmargin="margin-right:4px;"/>
+          </object>
+          <object type="jsx3.gui.Button">
+            <variants jsxindex="0" jsxheight="18" jsxrelativeposition="0" jsxleft="216" jsxtop="41"/>
+            <strings jsxname="btnAddItem" jsxtext="Add Item" jsxmargin="margin-right:4px;"/>
+            <events jsxexecute="eg.treeDragAndDrop.addBreed();"/>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

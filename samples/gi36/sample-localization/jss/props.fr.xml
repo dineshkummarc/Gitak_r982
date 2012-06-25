@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- French (fr) localized version of this file. -->
+<data jsxid="jsxroot" jsxns="urn:tibco.com/v3.0/dynamicproperties/1">
+  <record jsxid="Line1" jsxtext="Ce village ancien" type="jsxtext"/>
+  <record jsxid="Line2" jsxtext="pas une maison" type="jsxtext"/>
+  <record jsxid="Line3" jsxtext="sans arbres de kaki" type="jsxtext"/>
+  <record jsxid="Tools1" jsxtext="Outils" type="jsxtext"/>
+  <record jsxid="Display English" jsxtext="Englais"/>
+  <record jsxid="Display Chinese" jsxtext="Chinois"/>
+  <record jsxid="Display French" jsxtext="Français"/>
+</data>

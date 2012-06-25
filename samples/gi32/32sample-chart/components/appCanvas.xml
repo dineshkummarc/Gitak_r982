@@ -1,0 +1,36 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name/>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize><![CDATA[eg.chart.launchStockPrice();]]></onAfterDeserialize>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxwidth="750" jsxrepeat="2" jsxsizearray="['150','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="0" jsxorientation="1"/>
+    <strings jsxname="lytMainLayout" jsxheight="100%"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="2"/>
+      <strings jsxname="blkActionPane" jsxwidth="100%" jsxheight="100%" jsxpadding="4" jsxtextalign="center"/>
+      <dynamics jsxborder="@Outset"/>
+      <object type="jsx3.gui.Button">
+        <variants jsxindex="0" jsxheight="18"/>
+        <strings jsxname="btnStockButton" jsxtext="Launch Stock Price" jsxmargin="4 0 0 0" jsxwidth="100%" jsxstyleoverride="display:block"/>
+        <events jsxexecute="eg.chart.launchStockPrice(this);"/>
+      </object>
+      <object type="jsx3.gui.Button">
+        <variants jsxindex="0" jsxheight="18"/>
+        <strings jsxname="btnEventsButton" jsxtext="Launch Events" jsxmargin="4 0 0 0" jsxwidth="100%" jsxstyleoverride="display:block"/>
+        <events jsxexecute="eg.chart.launchChartEvent(this);"/>
+      </object>
+      <object type="jsx3.gui.Button">
+        <variants jsxindex="0" jsxheight="18"/>
+        <strings jsxname="btnBubbleButton" jsxtext="Launch Bubble Chart" jsxmargin="4 0 0 0" jsxwidth="100%" jsxstyleoverride="display:block"/>
+        <events jsxexecute="eg.chart.launchBubble(this)"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkWorkPane" jsxwidth="100%" jsxheight="100%"/>
+      <dynamics jsxborder="@Outset"/>
+    </object>
+  </object>
+</serialization>

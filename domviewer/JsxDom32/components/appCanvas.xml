@@ -1,0 +1,47 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Block - 100%</name>
+  <icon>images/prototypes/block.gif</icon>
+  <description>Simple block, relatively positioned with overflow=scroll.</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Block">
+    <variants jsxoverflow="1"/>
+    <strings jsxname="blkTop" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1"/>
+    <object type="jsx3.gui.LayoutGrid">
+      <variants jsxrepeat="2" jsxsizearray="['100','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+      <strings jsxname="layout (--)" jsxwidth="100%" jsxheight="100%"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+        <dynamics jsxborder="@Outset"/>
+        <object type="jsx3.gui.WindowBar">
+          <variants jsxbartype="2" jsxrelativeposition="1"/>
+          <strings jsxname="menuBar" jsxdisplay=""/>
+          <object type="jsx3.gui.Menu">
+            <variants/>
+            <strings jsxname="menu" jsxtip="menu" jsxtext="menu" jsxxml="&lt;data jsxid=&quot;jsxroot&quot;&gt;  &lt;record jsxid=&quot;1&quot; jsxtext=&quot;New&quot; jsximage=&quot;JSX/image/tbb/default.gif&quot; /&gt;  &lt;record jsxid=&quot;2&quot; jsxtext=&quot;Open&quot;/&gt;  &lt;record jsxid=&quot;3&quot; jsxtext=&quot;Save&quot;/&gt;  &lt;/data&gt;"/>
+            <events jsxexecute=""/>
+          </object>
+        </object>
+        <object type="jsx3.gui.WindowBar">
+          <variants jsxbartype="1" jsxrelativeposition="0" jsxtop="20"/>
+          <strings jsxname="toolBar" jsxdisplay=""/>
+          <object type="jsx3.gui.ToolbarButton">
+            <variants/>
+            <strings jsxname="toolbar button" jsximage="jsx:///images/tbb/open.gif" jsxtext="[text]"/>
+            <events jsxexecute="this.getServer().getJSXByName('blkTop').load('components/dlgJsxDom.xml');"/>
+          </object>
+          <object type="jsx3.gui.Select">
+            <variants jsxwidth="150" jsxheight="18"/>
+            <strings jsxname="select" jsxxmlurl="jsx:///xml/sample.xml" jsxmargin="0 4 0 0"/>
+          </object>
+          <object type="jsx3.gui.Select">
+            <variants jsxwidth="150" jsxheight="18" jsxtype="1"/>
+            <strings jsxname="combo" jsxvalue="a" jsxxmlurl="jsx:///xml/sample.xml" jsxmargin="0 4 0 0"/>
+            <events onmousedown="this.style.backgroundColor='';" onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');"/>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

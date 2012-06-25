@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- English (en_US) is the default locale. -->
+<data jsxid="jsxroot" jsxns="urn:tibco.com/v3.0/dynamicproperties/1">
+  <record jsxid="Line1" jsxtext="This old village" type="jsxtext"/>
+  <record jsxid="Line2" jsxtext="not a single house" type="jsxtext"/>
+  <record jsxid="Line3" jsxtext="without persimmon trees" type="jsxtext"/>
+  <record jsxid="Dialog1" jsxtext="Dialog Title (No Chinese or French value available)" type="jsxtext"/>
+  <record jsxid="Tools1" jsxtext="Tools" type="jsxtext"/>
+  <record jsxid="Display English" jsxtext="Display English"/>
+  <record jsxid="Display Chinese" jsxtext="Display Chinese"/>
+  <record jsxid="Display French" jsxtext="Display French"/>
+  <record jsxid="Display Default" jsxtext="Display Default"/> <!-- demonstrates fall-through -->
+</data>

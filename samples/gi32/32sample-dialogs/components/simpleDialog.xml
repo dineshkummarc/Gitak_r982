@@ -1,0 +1,39 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Dialog</name>
+  <icon/>
+  <description>Dialog box.  (Set Modal property for a modal dialog).</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Dialog">
+    <variants jsxheight="318" jsxzindex="5000" jsxwindowstate="1"/>
+    <strings jsxname="dlgSimpleDialog" jsxwidth="440"/>
+    <dynamics jsxbgcolor="@Solid Medium"/>
+    <object type="jsx3.gui.WindowBar">
+      <variants/>
+      <strings jsxname="winbarTitleBar" jsxtext="This text is a property of the dialog's Caption Bar"/>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants/>
+        <strings jsxname="tbbMinimizeButton"/>
+        <dynamics jsximage="@Min Icon" jsxtip="@Min Tip"/>
+        <events jsxexecute="this.getParent().getParent().doToggleState();"/>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants/>
+        <strings jsxname="tbbMaximizeButton" jsximage="JSX/images/dialog/max.gif"/>
+        <dynamics jsxtip="@Max Tip"/>
+        <events jsxexecute="this.getAncestorOfType(&quot;jsx3.gui.Dialog&quot;).doMaximize(this);"/>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants/>
+        <strings jsxname="tbbCloseButton"/>
+        <dynamics jsximage="@Close Icon" jsxtip="@Close Tip"/>
+        <events jsxexecute="this.getParent().getParent().doClose();"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants/>
+      <strings jsxname="blkContentPane" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1" jsxtext="Create dialogs as separate components, and then load them as children of your application's body block&lt;p&gt; The code that launched this dialog is:&lt;br/&gt; &lt;b&gt;sampledialogs32.getBodyBlock().load(&quot;components/simpleDialog.xml&quot;);&lt;/b&gt;&lt;/p&gt;&lt;p&gt; jsx3.app.Server.getBodyBlock() returns the body block for this server&lt;/p&gt;&lt;p&gt; Note that we explicitly refer to the application's namespace (sampledialogs32) as defined in the Project Deployment Options.&lt;/p&gt;&lt;p&gt; As a child of body block, the maximize button in the dialog's toolbar will expand the dialog to fill the entire application canvas.  When dragged the dialog will typically appear in front of its peer children.&lt;/p&gt;"/>
+      <dynamics jsxpadding="@8Pixel"/>
+    </object>
+  </object>
+</serialization>

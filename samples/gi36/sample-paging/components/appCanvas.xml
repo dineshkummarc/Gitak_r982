@@ -1,0 +1,75 @@
+<serialization jsxversion="3.4" xmlns="urn:tibco.com/v3.0">
+  <name><![CDATA[Layout (--)]]></name>
+  <icon></icon>
+  <description><![CDATA[2 top-over-bottom panes in an adaptive layout grid.]]></description>
+  <onBeforeDeserialize></onBeforeDeserialize>
+  <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['180','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"></variants>
+    <strings jsxname="lytMainLayout" jsxwidth="100%" jsxheight="100%" jsxrows="180,*"></strings>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"></variants>
+      <strings jsxname="blkDescription" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;p align=&quot;right&quot;&gt;&lt;b&gt;Data Paging; version 4.0&lt;/b&gt;&lt;br/&gt; JSX version: 3.4.0&lt;/p&gt; &lt;p&gt;This sample application demonstrates how to page data from a server process into a GI data control, in this case a jsx3.gui.Matrix.  The browser is very efficient at managing large XML documents, N &gt; 25,000 records, and less efficient at painting huge amounts of HTML, for example a list with N &gt; 500 rows.  In our use case, we imagine a server which can page 500 record data sets from a 25,000 record data source.&lt;/p&gt; &lt;p&gt;Look in the Local Data Cache.  The XML document, paged_list_xml, is used to hold the data to be displayed in the list.  Each time a new page document is accessed from the &quot;server&quot;, the records are added to paged_list.xml as a new nested node, and the list is repainted to include only that node (See XSL parameters Palette for the list for implementation).  The XML document can grow to &gt; 25,000 records without a noticable drop in rendering performance for the 500 rows on screen.&lt;/p&gt; &lt;p&gt;Note that the default Sort behavior of the list needs to be modified when displaying paged data sets.  When the header row is clicked, list will sort only the 500 rows of rendered data.  When the use case requires the ability to resort the entire 25,000 record data set, the local data document is cleared, and a server process will return the appropriate data set for rendering. This sample app also shows how easily GI applications can be tested independently by mimic the server request and responses.&lt;/p&gt;"></strings>
+      <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"></dynamics>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"></variants>
+      <strings jsxname="blkAppPane" jsxwidth="100%" jsxheight="100%"></strings>
+      <dynamics jsxborder="@Outset"></dynamics>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants jsxrepeat="2" jsxsizearray="['*','80']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"></variants>
+        <strings jsxname="lytAppLayout" jsxwidth="100%" jsxheight="100%" jsxrows="*,80"></strings>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1"></variants>
+          <strings jsxname="blkListPane" jsxwidth="100%" jsxheight="100%"></strings>
+          <dynamics jsxborder="@Outset"></dynamics>
+          <object type="jsx3.gui.Matrix">
+            <variants jsxpagingmodel="3" jsxselectionmodel="0" jsxscalewidth="1" jsxresize="0" ></variants>
+            <strings jsxname="mtxPagedList" jsxbgcolor="#efefff" jsxfocusstyle="color:red;font-weight:bold;" jsxxml="&lt;data jsxid=&quot;jsxroot&quot;/&gt;" jsxxmlid="paged_list_xml"></strings>
+            <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff" jsxshallowfrom="xml/01.xml"></xslparameters>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants></variants>
+              <strings jsxname="mcIDColumn" jsxwidth="100" jsxtext="ID" jsxpadding="3" jsxcellpadding="3" jsxpath="jsxid"></strings>
+              <dynamics jsxbgcolor="@Solid Medium" jsxbg="@Fade TopDown" jsxborder="@Outset"></dynamics>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants></variants>
+              <strings jsxname="mcTextColumn" jsxwidth="100" jsxtext="Text" jsxpadding="3" jsxcellpadding="3" jsxpath="jsxtext"></strings>
+              <dynamics jsxbgcolor="@Solid Medium" jsxbg="@Fade TopDown" jsxborder="@Outset"></dynamics>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"></variants>
+          <strings jsxname="blkPagingPane" jsxwidth="100%" jsxheight="100%"></strings>
+          <dynamics jsxborder="@Outset"></dynamics>
+          <object type="jsx3.gui.Block">
+            <variants jsxheight="18" jsxoverflow="1" jsxleft="350" jsxtop="26"></variants>
+            <strings jsxname="lblInstruction" jsxwidth="100%" jsxrelativeposition="1" jsxtext="Drag slider, or click bar, to load new paged data set." jsxtextalign="center"></strings>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="1"></variants>
+            <strings jsxname="blkSliderPane" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1" jsxtextalign="center"></strings>
+            <object type="jsx3.gui.Block">
+              <variants jsxwidth="5" jsxoverflow="3"></variants>
+              <strings jsxname="lblLowValueLabel" jsxrelativeposition="1" jsxtext="0"></strings>
+            </object>
+            <object type="jsx3.gui.Slider">
+              <variants jsxvalue="0" jsxrelativeposition="1" jsxorientation="0" jsxpainttrack="1" jsxtrackclick="1"></variants>
+              <strings jsxname="sldrPageSlider" jsxlength="500"></strings>
+              <events jsxchange="eg.samplepaging.doMove(this,fpVALUE); eg.samplepaging.doIncrement(this,fpVALUE);" jsxincchange="eg.samplepaging.doIncrement(this,fpVALUE);"></events>
+            </object>
+            <object type="jsx3.gui.Block">
+              <variants jsxwidth="30" jsxheight="0" jsxoverflow="3"></variants>
+              <strings jsxname="lblHighValueLabel" jsxrelativeposition="1" jsxtext="25,000"></strings>
+            </object>
+            <object type="jsx3.gui.Block">
+              <variants jsxheight="0" jsxoverflow="3" jsxleft="20" jsxtop="30"></variants>
+              <strings jsxname="lblRangeLabel" jsxwidth="100%" jsxrelativeposition="1" jsxfontweight="bold" jsxtextalign="center" jsxtext="0 - 500"></strings>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

@@ -1,0 +1,86 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>LayoutSample (--)</name>
+  <icon/>
+  <description>2 top-over-bottom panes in an adaptive layout grid.</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['35%','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+    <strings jsxname="lytMainLayout" jsxwidth="100%" jsxheight="100%"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkDescriptionPane" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;p align=&quot;left&quot;&gt;&lt;b&gt;Source: &lt;a style=&quot;text-decoration:none&quot; href='http://power.tibco.com/content/GI/Apps/320/projects/JSXAPPS/32sample-portal.zip'&gt;http://power.tibco.com/content/GI/Apps/320/projects/JSXAPPS/32sample-portal.zip&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;  &lt;p align=&quot;right&quot;&gt;&lt;b&gt;Portlet Communication; version 2.0&lt;/b&gt;&lt;br/&gt; JSX version: 3.2.0&lt;/p&gt;   &lt;p&gt;This sample application demonstrates how to instantiate two GI application instances in a single HTML page, and communicate between them.&lt;/p&gt;  &lt;p&gt;Each GI instance or server has its own name space. Furthermore, functions loaded by one instance are available to another instance.    In this simple application, dragging rows of data from one portlet into another will render that data as a pie chart.&lt;/p&gt;  &lt;p&gt;There are two projects included in this zip file, along with a launch page to demonstrate the behavior.&lt;/p&gt;  &lt;p&gt;To install, simply unzip the attached .zip file into your JSXAPPS/ folder.    Then move the html launch page to the GI installation directory (as a peer to GI_Builder.html), and edit both of the jsxapppath variables within it, replacing 'depotPath' with the relative path to your project depot.    Double-clicking the launch page will open the two &quot;portlets&quot;.&lt;/p&gt;"/>
+      <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkAppPane" jsxwidth="100%" jsxheight="100%"/>
+      <dynamics jsxborder="@Outset"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxwidth="300" jsxheight="160" jsxoverflow="1" jsxrelativeposition="0" jsxleft="0" jsxtop="0"/>
+        <strings jsxname="blkPortlet" jsxannotation="Dragging rows to portlet B will display a pie chart."/>
+        <object type="jsx3.gui.LayoutGrid">
+          <variants jsxrepeat="2" jsxsizearray="['30','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+          <strings jsxname="lytPortletLayout" jsxwidth="100%" jsxheight="100%"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2"/>
+            <strings jsxname="blkTopPane" jsxwidth="100%" jsxheight="100%"/>
+            <dynamics jsxborder="@Outset"/>
+            <object type="jsx3.gui.WindowBar">
+              <variants jsxbartype="1"/>
+              <strings jsxname="winbarProductToolbar"/>
+              <object type="jsx3.gui.Block">
+                <variants jsxheight="18"/>
+                <strings jsxname="lblProductSales" jsxtext="Product Sales By Region" jsxmargin="margin-right:4px;" jsxpadding="padding-top:4px;"/>
+              </object>
+              <object type="jsx3.gui.ToolbarButton">
+                <variants jsxenabled="1"/>
+                <strings jsxname="btnShowChart" jsximage="images/pie2.gif" jsxtext="Show Chart"/>
+                <events jsxexecute="eg.sampleportletA.showPie();"/>
+              </object>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="1"/>
+            <strings jsxname="blkBottomPane" jsxwidth="100%" jsxheight="100%"/>
+            <dynamics jsxborder="@Outset"/>
+            <object type="jsx3.gui.TabbedPane">
+              <variants selectedIndex="2" jsxselectedindex="0"/>
+              <strings jsxname="tpanTabbedPane" jsxtextalign="0"/>
+              <object type="jsx3.gui.Tab">
+                <variants jsxzindex="3" jsxheight="20"/>
+                <strings jsxname="tabDataTable" jsxtext="Data Table" jsxbgcolor="#e8e8f5"/>
+                <object type="jsx3.gui.Block">
+                  <variants jsxoverflow="2" jsxrelativeposition="0" jsxleft="0" jsxtop="0"/>
+                  <strings jsxname="blkTablePane" jsxwidth="100%" jsxheight="100%" jsxdisplay="" jsxvisibility=""/>
+                  <dynamics jsxbgcolor="@Solid Medium"/>
+                  <object type="jsx3.gui.List">
+                    <variants jsxgrowby="1" jsxdrop="1" jsxdrag="1" jsxsortcolumn="0"/>
+                    <strings jsxname="listWidgetList" jsxsortdirection="ascending" jsxxmlurl="xml/salesData.xml"/>
+                    <dynamics jsxbg="@Alternating Rows" jsxbgcolor="@Solid Medium" jsxclassname="@List Fixed Height (Clear)"/>
+                    <object type="jsx3.gui.Column">
+                      <variants jsxwidth="70"/>
+                      <strings jsxname="colProductColumn" jsxpath="@product" jsxtext="Product"/>
+                    </object>
+                    <object type="jsx3.gui.Column">
+                      <variants jsxwidth="70"/>
+                      <strings jsxname="colWestColumn" jsxpath="@west" jsxtext="West"/>
+                    </object>
+                    <object type="jsx3.gui.Column">
+                      <variants jsxwidth="70"/>
+                      <strings jsxname="colCentralColumn" jsxpath="@central" jsxtext="Central"/>
+                    </object>
+                    <object type="jsx3.gui.Column">
+                      <variants jsxwidth="70"/>
+                      <strings jsxname="colEastColumn" jsxpath="@east" jsxtext="East"/>
+                    </object>
+                  </object>
+                </object>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

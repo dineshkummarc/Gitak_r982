@@ -1,0 +1,17 @@
+<serialization jsxversion="3.2" xmlns="urn:tibco.com/v3.0">
+  <name><![CDATA[MultiSelect]]></name>
+  <icon></icon>
+  <description></description>
+  <onBeforeDeserialize></onBeforeDeserialize>
+  <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.Matrix">
+    <variants jsxheaderheight="0" jsxpagingmodel="1" jsxselectionmodel="2" jsxsuppressvscroll="1"></variants>
+    <strings jsxname="matrix1" jsxbgcolor="#efefff" jsxxml="       &lt;data jsxid=&quot;jsxroot&quot;&gt;         &lt;record jsxid=&quot;AG&quot; jsxtext=&quot;Afghanistan&quot;/&gt;         &lt;record jsxid=&quot;AL&quot; jsxtext=&quot;Albania&quot;/&gt;         &lt;record jsxid=&quot;AR&quot; jsxtext=&quot;Algeria&quot;/&gt;         &lt;record jsxid=&quot;AS&quot; jsxtext=&quot;American Samoa&quot;/&gt;         &lt;record jsxid=&quot;AD&quot; jsxtext=&quot;Andorra&quot;/&gt;         &lt;record jsxid=&quot;AO&quot; jsxtext=&quot;Angola&quot;/&gt;         &lt;record jsxid=&quot;AU&quot; jsxtext=&quot;Anguilla&quot;/&gt;         &lt;record jsxid=&quot;AX&quot; jsxtext=&quot;Antarctica&quot;/&gt;         &lt;record jsxid=&quot;AT&quot; jsxtext=&quot;Antigua and Barbuda&quot;/&gt;         &lt;record jsxid=&quot;AE&quot; jsxtext=&quot;Argentina&quot;/&gt;         &lt;record jsxid=&quot;AM&quot; jsxtext=&quot;Armenia&quot;/&gt;         &lt;record jsxid=&quot;AB&quot; jsxtext=&quot;Aruba&quot;/&gt;         &lt;record jsxid=&quot;AA&quot; jsxtext=&quot;Australia&quot;/&gt;         &lt;record jsxid=&quot;AI&quot; jsxtext=&quot;Austria&quot;/&gt;         &lt;record jsxid=&quot;AZ&quot; jsxtext=&quot;Azerbaijan&quot;/&gt;       &lt;/data&gt;     "></strings>
+    <events jsxselect="jsx3.log('EVENT: (jsxselect). Record: ' + strRECORDIDS);"></events>
+    <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"></xslparameters>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants></variants>
+      <strings jsxname="mc1" jsxwidth="*" jsxcellpadding="2" jsxpath="jsxtext"></strings>
+    </object>
+  </object>
+</serialization>

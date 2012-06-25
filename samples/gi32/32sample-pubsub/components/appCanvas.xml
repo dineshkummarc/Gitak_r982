@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Sample App Template</name>
+  <icon/>
+  <description>Basic template for sample applications.  Contains a top block for descriptions, and a bottom block for the sample app.</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['170','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="-1" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+    <strings jsxname="lytMainLayout" jsxwidth="100%" jsxheight="100%"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkDescriptionPane" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;p align=&quot;left&quot;&gt;&lt;b&gt;Source: &lt;a style=&quot;text-decoration:none&quot; href='http://power.tibco.com/content/GI/Apps/320/projects/JSXAPPS/32sample-pubsub.zip'&gt;http://power.tibco.com/content/GI/Apps/320/projects/JSXAPPS/32sample-pubsub.zip&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;  &lt;p align=&quot;right&quot;&gt;&lt;b&gt;PubSub: version 2.0&lt;/b&gt;&lt;br/&gt; JSX version: 3.2.0&lt;/p&gt;  &lt;p&gt;A General Interface project, when run, is an instance of the &lt;b&gt;jsx3.app.Server&lt;/b&gt; class.  This class (as well as Alerts, HttpRequest, HttpForm, ERROR, etc) implements the &lt;b&gt;jsx3.util.EventDispatcher&lt;/b&gt; mixin.  The EventDispatcher is the &lt;i&gt;publish/subscribe&lt;/i&gt; mechanism for General Interface and allows for, among other things, asynchronous messaging.  Wheras &lt;i&gt;request/response&lt;/i&gt; is the most common and best understood Web communication model, publish and subscribe does play a necessary role.&lt;/p&gt;  &lt;p&gt;To demonstrate how the EventDispatcher can be used, two examples will be shown. (see also logic.js)&lt;/P&gt;  &lt;P&gt;The first one shows how one can subscribe to an arbitrary subject running on a jsx3.app.Server instance.  An event is then published to that subject, notifying all subscribers. Each time the Subscribe button is clicked, a new subscription is created, meaning multiple clicks will result in multiple subscribed clients.Click &lt;i&gt;subscribe&lt;/i&gt; followed by &lt;i&gt;publish&lt;/i&gt; and observe the system messages in System log (GI Builder).&lt;/p&gt;  &lt;p&gt;The second example contacts the TIBCO home page, using the &lt;b&gt;jsx3.net.Request&lt;/b&gt; object. This call is asynchronous, so the &quot;response&quot; subject must be subscribed to in order to be notified when the server eventually responds.&lt;/p&gt;  &lt;p&gt;Logging api calls used to display trace messages.&lt;/p&gt;"/>
+      <dynamics jsxborder="@Outset" jsxpadding="@8Pixel" jsxbgcolor="@Solid Medium"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkAppPane" jsxwidth="100%" jsxheight="100%"/>
+      <dynamics jsxborder="@Outset" jsxpadding="@8Pixel"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxheight="30" jsxoverflow="2" jsxfontsize="16"/>
+        <strings jsxname="lblExample1Title" jsxwidth="100%" jsxrelativeposition="1" jsxtext="Example 1: GI Server subscriber and publisher." jsxpadding="padding:8px;"/>
+        <dynamics jsxfontweight="@Label1 FW"/>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxheight="80" jsxoverflow="1"/>
+        <strings jsxname="blkSubscribePane" jsxwidth="100%" jsxrelativeposition="1"/>
+        <object type="jsx3.gui.LayoutGrid">
+          <variants jsxrepeat="2" jsxsizearray="['370','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="1"/>
+          <strings jsxname="lytSubscribePaneLayout" jsxwidth="100%" jsxheight="100%"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2"/>
+            <strings jsxname="blkSubscribeTextPane" jsxwidth="100%" jsxheight="100%"/>
+            <object type="jsx3.gui.TextBox">
+              <variants jsxtype="1" jsxrelativeposition="0"/>
+              <strings jsxname="txtSubscribeScriptTextArea" jsxmargin="" jsxwidth="100%" jsxheight="100%" jsxvalue="//get the logger object   //subscribe to &quot;sometopic&quot;   eg.pubsub.getServer().subscribe(&quot;sometopic&quot;,function(e) {    //output the event to the sytem out   eg.pubsub.logger.log(e.code, &quot;Example1 Subscriber: received message '&quot; + e.description + &quot;'&quot;,3,false); });  eg.pubsub.logger.info(&quot;Example1 Subscriber: create Subscription:&quot; + (eg.pubsub.subscriber_count++) + &quot; to listen messages with subject 'sometopic'&quot; ,null) ;" jsxcolor="DarkGreen"/>
+              <dynamics jsxfontname="@Script FN" jsxfontsize="@Script FS"/>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="1"/>
+            <strings jsxname="blkSubscribeButtonPane" jsxwidth="100%" jsxheight="100%"/>
+            <object type="jsx3.gui.Button">
+              <variants jsxindex="0" jsxheight="18"/>
+              <strings jsxname="btnSubscribeButton" jsxtext="Subscribe" jsxmargin="margin-right:4px;"/>
+              <events jsxexecute="jsx3.eval(eg.pubsub.getServer().getJSXByName(&quot;txtSubscribeScriptTextArea&quot;).getValue(), null);"/>
+            </object>
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxheight="120" jsxoverflow="1"/>
+        <strings jsxname="blkPublishPane" jsxwidth="100%" jsxrelativeposition="1"/>
+        <object type="jsx3.gui.LayoutGrid">
+          <variants jsxrepeat="2" jsxsizearray="['370','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="1"/>
+          <strings jsxname="lytPubllishPaneLayout" jsxwidth="100%" jsxheight="100%"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2"/>
+            <strings jsxname="blkPublishTextPane" jsxwidth="100%" jsxheight="100%"/>
+            <object type="jsx3.gui.TextBox">
+              <variants jsxtype="1" jsxrelativeposition="0"/>
+              <strings jsxname="txtPublishScriptTextArea" jsxmargin="" jsxwidth="100%" jsxheight="100%" jsxvalue="//create an event object. set fields. var publishEvent = new Object(); publishEvent.subject = &quot;sometopic&quot;; publishEvent.code = jsx3.util.Logger.INFO; publishEvent.description = &quot;This is a test message on subject sometopic.&quot;;  //publish eg.pubsub.logger.info(&quot;Example1 Publisher: publishing a message with subject 'sometopic'&quot; ,null);  eg.pubsub.getServer().publish(publishEvent); " jsxcolor="DarkGreen"/>
+              <dynamics jsxfontname="@Script FN" jsxfontsize="@Script FS"/>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="1"/>
+            <strings jsxname="blkPublishButtonPane" jsxwidth="100%" jsxheight="100%"/>
+            <object type="jsx3.gui.Button">
+              <variants jsxindex="0" jsxheight="18"/>
+              <strings jsxname="btnPublishButton" jsxtext="Publish" jsxmargin="margin-right:4px;"/>
+              <events jsxexecute="jsx3.eval(eg.pubsub.getServer().getJSXByName(&quot;txtPublishScriptTextArea&quot;).getValue(), null);"/>
+            </object>
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxheight="40" jsxoverflow="2" jsxfontsize="16"/>
+        <strings jsxname="lblExample2Title" jsxwidth="100%" jsxrelativeposition="1" jsxtext="Example 2: GI as subscriber for asynchronous HTTP Response." jsxpadding="padding:8px;padding-top:20px;"/>
+        <dynamics jsxfontweight="@Label1 FW"/>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxheight="180" jsxoverflow="1"/>
+        <strings jsxname="blkAsychPane" jsxwidth="100%" jsxrelativeposition="1"/>
+        <object type="jsx3.gui.LayoutGrid">
+          <variants jsxrepeat="2" jsxsizearray="['470','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="1"/>
+          <strings jsxname="lytAsynchPaneLayout" jsxwidth="100%" jsxheight="100%"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2"/>
+            <strings jsxname="blkAsynchTextPane" jsxwidth="100%" jsxheight="100%"/>
+            <object type="jsx3.gui.TextBox">
+              <variants jsxheight="180" jsxtype="1" jsxrelativeposition="0"/>
+              <strings jsxname="txtSubmitScriptTextArea" jsxmargin="" jsxwidth="100%" jsxvalue="//create http request object var objHTTP = new jsx3.net.Request();  //open connection; pass true for async objHTTP.open(&quot;GET&quot;,&quot;http://www.tibco.com&quot;,true);   //subscribe to 'response' event objHTTP.subscribe(jsx3.net.Request.EVENT_ON_RESPONSE,function(objEvent) {   //get handle to the http object (this is accessible via the event's 'target' field   var objHTTP = objEvent.target;   var alertWindow = new Object(); alertWindow.width = 400; alertWindow.height = 400; alertWindow.scrollbar = true;   var msg = objHTTP.getResponseText();   //alert user to the underlying source for the page    //publish eg.pubsub.logger.info(&quot;Example2 Subscriber: Received asynchronous response from web link&quot; ,null) ;  alert(msg);  //eg.pubsub.getServer().alert(&quot;Response notified&quot;, msg.escapeHTML(), null, &quot;OK&quot;, alertWindow);    }); //send the request objHTTP.send();  " jsxcolor="DarkGreen"/>
+              <dynamics jsxfontname="@Script FN" jsxfontsize="@Script FS"/>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="1"/>
+            <strings jsxname="blkSubmitButtonPane" jsxwidth="100%" jsxheight="100%"/>
+            <object type="jsx3.gui.Button">
+              <variants jsxindex="0" jsxheight="18"/>
+              <strings jsxname="btnSubmitButton" jsxtext="Submit" jsxmargin="margin-right:4px;"/>
+              <events jsxexecute="jsx3.eval(eg.pubsub.getServer().getJSXByName(&quot;txtSubmitScriptTextArea&quot;).getValue());"/>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

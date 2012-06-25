@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+Copyright 2006-2008 TIBCO Software Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<html>
+
+<head>
+<title>Swap to new window sample</title>
+</head>
+
+<body>
+<table border="1">
+<caption>Test to excercise select jsx3.gui.Window tests</caption>
+<tbody>
+
+    <tr>
+        <td rowspan="1" colspan="3">Swap to new window sample test
+        </td>
+    </tr>
+
+<!-- Load Test Setup File Below -->
+    <tr>
+        <td>include</td>
+        <td>testSetup.html</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>jsxopen</td>
+        <td>${GIPATH}/shell.html?jsxapppath=${SAMPLESPATH}/sample-windowSwap</td>
+        <td>&nbsp;</td>
+    </tr>
+    <!--tr>
+      <td>setJsxNamespace</td>
+      <td>eg.windowswap.APP</td>
+      <td>&nbsp;</td>
+    </tr-->
+    <tr>
+        <td>waitForElementPresent</td>
+        <td>JsxButtonName=button</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>click</td>
+        <td>JsxButtonText=*Swap*</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>pause</td>
+        <td>1000</td>
+        <td>&nbsp;</td>
+    </tr>    
+    <tr>
+        <td>selectJsxWindow</td>
+        <td>swapWin</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>waitForElementPresent</td>
+        <td>JsxMatrixRowText=matrix1,*Azerbaijan*</td>
+        <td>&nbsp;</td>
+    </tr>    
+    <tr>
+        <td>assertElementPresent</td>
+        <td>JsxButtonName=button</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>assertEval</td>
+        <td>selenium.browserbot.findByJsxName('tree').getAncestorOfType('jsx3.gui.Window')!=null</td>
+        <td>true</td>
+    </tr>
+    <tr>
+        <td>click</td>
+        <td>JsxButtonText=*Swap*</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>selectJsxWindow</td>
+        <td>null</td>
+        <td>&nbsp;</td>
+    </tr>  
+    <tr>
+        <td>waitForElementPresent</td>
+        <td>JsxName=tree</td>
+        <td>&nbsp;</td>
+    </tr>    
+    <tr>
+        <td>assertEval</td>
+        <td>selenium.browserbot.findByJsxName('tree').getAncestorOfType('jsx3.gui.Window')!=null</td>
+        <td>false</td>
+    </tr>
+</tbody>
+    </table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

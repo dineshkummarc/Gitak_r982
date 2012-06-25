@@ -1,0 +1,67 @@
+<serialization jsxversion="3.7" xmlns="urn:tibco.com/v3.0">
+  <name></name>
+  <icon></icon>
+  <description></description>
+  <onBeforeDeserialize></onBeforeDeserialize>
+  <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.Matrix">
+    <variants jsxpagingmodel="1" jsxselectionmodel="1" jsxautorow="2" jsxreorder="0" jsxfixedcolumnindex="0" jsxxmlasync="1"></variants>
+    <strings jsxname="mtxEditableTable" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxxmlurl="xml/prices.xml" jsxsorttype="text" jsxsortdirection="descending" jsxmenu="mnuAddRowMenu"></strings>
+    <xslparameters jsx_autorow_style="#66ff33"></xslparameters>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants jsxwidth="20"></variants>
+      <strings jsxname="mcEditDeleteColumn" jsxpadding="3" jsxcellpadding="1" jsxvaluetemplate="@empty" jsxcellbgcolor="" jsxcellborder="0px; 0px;solid 1px gray;0px"></strings>
+      <dynamics jsxbgcolor="@Solid Medium" jsxbg="@Fade TopDown" jsxborder="@Outset"></dynamics>
+      <object type="jsx3.gui.ImageButton">
+        <variants jsxenabled="1" jsxprefetch="1" jsxtype="0" jsxstate="0" jsxwidth="15" jsxheight="15"></variants>
+        <strings jsxname="imageButtonMask" jsximage="jsx:///images/list/delete.gif"></strings>
+        <events jsxexecute="this.getParent().getParent().deleteRecord(this.emGetSession().recordId, true);"></events>
+      </object>
+    </object>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants jsxwidth="99"></variants>
+      <strings jsxname="mcEditDateColumn" jsxtext="Date" jsxpadding="3" jsxcellpadding="3" jsxpath="Date" jsxformathandler="@date" jsxvaluetemplate="@empty" jsxcellbgcolor="" jsxcellborder="0px; 0px;solid 1px gray;0px"></strings>
+      <dynamics jsxbgcolor="@Solid Medium" jsxbg="@Fade TopDown" jsxborder="@Outset"></dynamics>
+      <object type="jsx3.gui.DatePicker">
+        <variants jsxrelativeposition="0" jsxleft="20" jsxtop="80" jsxyear="2005" jsxmonth="6" jsxdate="27" jsxwidth="99" jsxheight="20" jsxzindex="10"></variants>
+        <strings jsxname="dpkrDateEditor" jsxdisplay="none"></strings>
+        <dynamics jsxformat="@Medium"></dynamics>
+      </object>
+    </object>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants jsxwidth="102"></variants>
+      <strings jsxname="mcEditSecurityColumn" jsxtext="Security" jsxpadding="3" jsxcellpadding="3" jsxpath="Security" jsxcellbgcolor="" jsxcellborder="0px; 0px;solid 1px gray;0px"></strings>
+      <dynamics jsxbg="@Fade TopDown" jsxbgcolor="@Solid Medium" jsxborder="@Outset"></dynamics>
+      <object type="jsx3.gui.TextBox">
+        <variants jsxrelativeposition="0" jsxleft="119" jsxtop="0" jsxzindex="10" jsxwidth="102" jsxheight="20"></variants>
+        <strings jsxname="txtSecurityEditor" jsxdisplay="none" jsxvalue=""></strings>
+        <events jsxkeydown="1;"></events>
+      </object>
+    </object>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants jsxwidth="104"></variants>
+      <strings jsxname="mcEditOpenColumn" jsxtext="Open" jsxvaluetemplate="@empty" jsxpadding="3" jsxcellpadding="3" jsxpath="Open" jsxformathandler="eg.addRemoveCDF.formatValue" jsxcellbgcolor="" jsxcellborder="0px; 0px;solid 1px gray;0px" jsxcelltextalign="right"></strings>
+      <dynamics jsxbgcolor="@Solid Medium" jsxbg="@Fade TopDown" jsxborder="@Outset"></dynamics>
+      <object type="jsx3.gui.TextBox">
+        <variants jsxrelativeposition="0" jsxleft="221" jsxtop="0" jsxzindex="10" jsxwidth="104" jsxheight="20"></variants>
+        <strings jsxname="txtOpenEditor" jsxdisplay="none" jsxvalue=""></strings>
+        <events jsxkeydown="1;"></events>
+      </object>
+    </object>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants jsxwidth="102"></variants>
+      <strings jsxname="mcEditHighColumn" jsxtext="High" jsxvaluetemplate="@empty" jsxpadding="3" jsxcellpadding="3" jsxpath="High" jsxformathandler="@number,currency" jsxcellbgcolor="" jsxcellborder="0px; 0px;solid 1px gray;0px" jsxcelltextalign="right"></strings>
+      <dynamics jsxbgcolor="@Solid Medium" jsxbg="@Fade TopDown" jsxborder="@Outset"></dynamics>
+      <object type="jsx3.gui.TextBox">
+        <variants jsxrelativeposition="0" jsxleft="325" jsxtop="0" jsxzindex="10" jsxwidth="102" jsxheight="20"></variants>
+        <strings jsxname="txtHighEditor" jsxdisplay="none" jsxvalue=""></strings>
+        <events jsxkeydown="1;"></events>
+      </object>
+    </object>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants jsxsort="0"></variants>
+      <strings jsxname="mcEditPaddingColumn" jsxwidth="100" jsxpadding="3" jsxcellpadding="3" jsxpath="jsxtext" jsxtext="&amp;#160;" jsxcellbgcolor="" jsxcellborder="0px; 0px;solid 1px gray;0px"></strings>
+      <dynamics jsxbgcolor="@Solid Medium"></dynamics>
+    </object>
+  </object>
+</serialization>

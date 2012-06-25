@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+Copyright 2006-2007 TIBCO Software Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Test app canvas</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+  <tbody>
+    <tr>
+      <td rowspan="1" colspan="3">Test sample-dialog appCanvas-menu-taskbar<br>
+      </td>
+    </tr>
+   <tr>
+      <td>include</td>
+      <td>testSetup.html</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>open</td>
+      <td>${GIPATH}/shell.html?jsxapppath=${SAMPLESPATH}/34sample-dialogs</td>
+      <td>&nbsp;</td>
+    </tr>
+     <tr>
+      <td>waitForTextPresent</td>
+      <td>*Dialogs*</td>
+       <td>5000</td>
+     </tr>
+    <!-- can't always click an element. use fireEvent(element, 'click') instead -->
+    <tr>
+      <td>assertTextPresent</td>
+      <td>*Dialogs*</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>checkJsx</td>
+      <td>JsxName=chkDocPane</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>click</td>
+      <td>JsxButtonText=Application Canvas</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>waitForElementPresent</td>
+      <td>JsxMenuName=mnuMenu1</td>
+      <td>5000</td>
+    </tr>
+    <tr>
+      <td>assertElementPresent</td>
+      <td>JsxMenuText=menu</td>
+      <td>&nbsp;</td>
+    </tr>
+
+   <tr>
+       <td>setInterval</td>
+       <td>700</td>
+       <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>unsubscribeJsxResize</td>
+      <td>// disable resize event to work around IE bug</td>
+      <td>&nbsp;</td>
+    </tr>
+    <!-- Menu item react to mouse down, not click event -->
+    <tr>
+      <td>clickJsxMenu</td>
+      <td>JsxMenuName=mnuMenu1</td>
+      <td>&nbsp;</td>
+    </tr>
+    <!-- if you need to access menu item in 3.4.0, don't do anything after clickJsxMenu -->
+    <tr>
+      <td>assertElementPresent</td>
+      <td>JsxMenuWindowId=1</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>assertElementPresent</td>
+      <td>JsxMenuItemText=mnuMenu1,Save</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>fireEvent</td>
+      <td>JsxMenuItemText=mnuMenu1,Save</td>
+      <td>mouseover</td>
+    </tr>
+    <!-- you can't just hover with mouseover due to the IE defect -->
+    <!--tr>
+      <td>verifyElementPresent</td>
+      <td>JsxMenuItemId="mnuMenu1,1"</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>fireEvent</td>
+      <td>JsxMenuItemId="mnuMenu1,1"</td>
+      <td>mouseover</td>
+    </tr>
+    <tr>
+      <td>verifyElementPresent</td>
+      <td>JsxMenuItemText="mnuMenu1,Open"</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>clickJsxMenuItem</td>
+      <td>JsxMenuItemText="mnuMenu1,Open"</td>
+      <td>&nbsp;</td>
+    </tr-->
+    <tr>
+       <td>setInterval</td>
+       <td>0</td>
+       <td>&nbsp;</td>
+    </tr>
+
+    </tbody>
+</table>
+
+<br/>
+
+Test AppPane Dialog    
+<table cellpadding="1" cellspacing="1" border="1">
+    <tbody>
+    <tr>
+      <td>click</td>
+      <td>JsxButtonText="Launch Dialog in Middle Pane"</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>verifyElementPresent</td>
+      <td>JsxDialogName=appCanvasDialog</td>
+      <td>&nbsp;</td>
+    </tr>
+   <tr>
+      <td>clickJsxToolbarButton</td>
+      <td>"tbbCloseButton"</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>click</td>
+      <td>JsxButtonText=Launch Dialog as child of*</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>verifyElementPresent</td>
+      <td>JsxDialogCaption="This text is a property of the dialog's Caption Bar"</td>
+      <td>&nbsp;</td>
+    </tr>
+   <tr>
+      <td>clickJsxToolbarButton</td>
+      <td>"tbbCloseButton"</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>verifyElementNotPresent</td>
+      <td>JsxDialogName=simpleDialog</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>verifyImageComplete</td>
+      <td>*tibcologo.gif*</td>
+      <td>&nbsp;</td>
+    </tr>
+
+  </tbody>
+
+</table>
+</body>
+</html>

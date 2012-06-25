@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+  <record jsxid="version" type="string">3.4</record>
+  <record jsxid="caption" type="string">34sample-efficientRepainting</record>
+  <record jsxid="mode" type="boolean">true</record>
+  <record jsxid="namespace" type="string">eg.efficientRepainting.APP</record>
+  <record jsxid="cancelerror" type="boolean">true</record>
+  <record jsxid="cancelrightclick" type="boolean">true</record>
+  <record jsxid="left" type="number">0</record>
+  <record jsxid="top" type="number">0</record>
+  <record jsxid="width" type="string">100%</record>
+  <record jsxid="height" type="string">100%</record>
+  <record jsxid="position" type="number">0</record>
+  <record jsxid="overflow" type="number">0</record>
+  <record jsxid="onload" type="string"/>
+  <record jsxid="objectseturl" type="string">components/appCanvas.xml</record>
+  <record jsxid="includes" type="array">
+    <record jsxid="0" type="map">
+      <record jsxid="id" type="string">main_component</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="onLoad" type="boolean">false</record>
+      <record jsxid="src" type="string">components/appCanvas.xml</record>
+    </record>
+    <record jsxid="1" type="map">
+      <record jsxid="id" type="string">efficient_load_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="onLoad" type="string"/>
+      <record jsxid="src" type="string">components/efficient_load.xml</record>
+    </record>
+    <record jsxid="2" type="map">
+      <record jsxid="id" type="string">efficient_load_js</record>
+      <record jsxid="type" type="string">script</record>
+      <record jsxid="onLoad" type="boolean">true</record>
+      <record jsxid="src" type="string">js/efficient_load.js</record>
+      <record jsxid="load" type="number">0</record>
+    </record>
+    <record jsxid="3" type="map">
+      <record jsxid="id" type="string">efficient_adopt_js</record>
+      <record jsxid="type" type="string">script</record>
+      <record jsxid="onLoad" type="boolean">true</record>
+      <record jsxid="src" type="string">js/efficient_adopt.js</record>
+      <record jsxid="load" type="number">0</record>
+    </record>
+    <record jsxid="4" type="map">
+      <record jsxid="id" type="string">efficient_adopt_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="onLoad" type="string"/>
+      <record jsxid="src" type="string">components/efficient_adopt.xml</record>
+    </record>
+    <record jsxid="5" type="map">
+      <record jsxid="id" type="string">states_xml</record>
+      <record jsxid="type" type="string">xml</record>
+      <record jsxid="onLoad" type="boolean">false</record>
+      <record jsxid="src" type="string">xml/states.xml</record>
+    </record>
+    <record jsxid="6" type="map">
+      <record jsxid="id" type="string">efficient_destroy_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="onLoad" type="string"/>
+      <record jsxid="src" type="string">components/efficient_destroy.xml</record>
+    </record>
+    <record jsxid="7" type="map">
+      <record jsxid="id" type="string">logic_js</record>
+      <record jsxid="type" type="string">script</record>
+      <record jsxid="onLoad" type="boolean">true</record>
+      <record jsxid="src" type="string">js/logic.js</record>
+      <record jsxid="load" type="number">0</record>
+    </record>
+    <record jsxid="8" type="map">
+      <record jsxid="id" type="string">dialog_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="onLoad" type="boolean">false</record>
+      <record jsxid="src" type="string">components/containers/dialog.xml</record>
+    </record>
+    <record jsxid="9" type="map">
+      <record jsxid="id" type="string">list_of_states_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="onLoad" type="boolean">false</record>
+      <record jsxid="src" type="string">components/list_of_states.xml</record>
+    </record>
+    <record jsxid="10" type="map">
+      <record jsxid="id" type="string">tab_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="onLoad" type="boolean">false</record>
+      <record jsxid="src" type="string">components/containers/tab.xml</record>
+    </record>
+    <record jsxid="11" type="map">
+      <record jsxid="id" type="string">stack_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="onLoad" type="string"/>
+      <record jsxid="src" type="string">components/containers/stack.xml</record>
+    </record>
+    <record jsxid="12" type="map">
+      <record jsxid="id" type="string">stackExtensions_js</record>
+      <record jsxid="type" type="string">script</record>
+      <record jsxid="onLoad" type="boolean">false</record>
+      <record jsxid="src" type="string">js/stackExtensions.js</record>
+      <record jsxid="load" type="number">0</record>
+    </record>
+  </record>
+  <record jsxid="eventsvers" type="string">3.1</record>
+  <record jsxid="bodyhotkeys" type="boolean">false</record>
+  <record jsxid="jsxversion" type="string">3.2</record>
+  <record jsxid="default_locale" type="string"/>
+  <record jsxid="onunload" type="string"/>
+</data>

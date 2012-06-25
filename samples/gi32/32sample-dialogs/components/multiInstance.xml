@@ -1,0 +1,93 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Layout (--)</name>
+  <icon/>
+  <description>2 top-over-bottom panes in an adaptive layout grid.</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxwidth="488" jsxrepeat="2" jsxsizearray="['120','*']" jsxleft="26" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+    <strings jsxname="lytMainLayout" jsxheight="100%"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkDescription" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;P&gt;This example shows 1) multi-instancing of dialogs with unique names; 2) bringing an existing dialog forward instead of launching it again; and 3) cascading.&lt;/P&gt;  &lt;P&gt;Relevant JavaScript code is in multiInstance.js.&lt;/P&gt;  &lt;P&gt;2x-click a row to launch the dialog.  Note that new dialogs are cascaded down and to the right.  If you 2x-click on a row which already has a dialog displayed, that dialog will be brought forward.&lt;/P&gt;"/>
+      <dynamics jsxborder="@Outset" jsxpadding="@8Pixel"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkAppPane" jsxwidth="100%" jsxheight="100%"/>
+      <dynamics jsxborder="@Outset"/>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants jsxrepeat="2" jsxsizearray="['*','180']" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+        <strings jsxname="lytAppLayout" jsxwidth="100%" jsxheight="100%"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="blkTablePane" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@Outset"/>
+          <object type="jsx3.gui.Matrix">
+            <variants jsxpagingmodel="1" jsxselectionmodel="2" jsxscalewidth="1"/>
+            <strings jsxname="mtxTable" jsxbodyborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxfocusstyle="font-weight:bold;" jsxxmlurl="xml/portfolioStocks.xml" jsxsortpath="Symbol" jsxsorttype="text" jsxsortdirection="ascending" jsxheaderborder="1px solid #dfdfef"/>
+            <events jsxexecute="sfn.openSelectedStocks(this)"/>
+            <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants/>
+              <strings jsxname="mcIconColumn" jsxwidth="20" jsxtext="&amp;nbsp;" jsxvaluetemplate="@image" jsxpadding="3" jsxcellpadding="1" jsxpath="jsximg"/>
+              <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants/>
+              <strings jsxname="mcSymbolColumn" jsxwidth="100" jsxtext="Symbol" jsxpadding="2" jsxcellpadding="2" jsxpath="Symbol" jsxdatatype="text"/>
+              <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants/>
+              <strings jsxname="mcSharesColumn" jsxwidth="100" jsxtext="Shares" jsxpadding="2" jsxcellpadding="2" jsxpath="Shares" jsxdatatype="number"/>
+              <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants/>
+              <strings jsxname="mcLastColumn" jsxwidth="100" jsxtext="Last Trade" jsxpadding="2" jsxcellpadding="2" jsxpath="Last" jsxdatatype="number"/>
+              <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants/>
+              <strings jsxname="mcValuesColumn" jsxwidth="100" jsxtext="&lt;center&gt;Value&lt;/center&gt;" jsxpadding="2" jsxcellpadding="2" jsxpath="SharesValue" jsxdatatype="number"/>
+              <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants/>
+              <strings jsxname="mcCompanyNameColumn" jsxwidth="100" jsxtext="Company Name" jsxpadding="2" jsxcellpadding="2" jsxpath="Name" jsxdatatype="text"/>
+              <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1"/>
+          <strings jsxname="blkBottomPane" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@Outset"/>
+          <object type="jsx3.gui.LayoutGrid">
+            <variants jsxrepeat="2" jsxsizearray="['*','28']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+            <strings jsxname="lytBottonPaneLayout" jsxwidth="100%" jsxheight="100%"/>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="2" jsxrelativeposition="0"/>
+              <strings jsxname="blkDialogPane" jsxwidth="100%" jsxheight="100%"/>
+              <dynamics jsxborder="@Outset"/>
+              <object type="jsx3.gui.Block">
+                <variants jsxrelativeposition="0" jsxoverflow="1"/>
+                <strings jsxname="blkDialogScrollableArea" jsxwidth="100%" jsxheight="100%"/>
+              </object>
+            </object>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="1"/>
+              <strings jsxname="blkTaskBarPane" jsxwidth="100%" jsxheight="100%"/>
+              <dynamics jsxborder="@Outset"/>
+              <object type="jsx3.gui.WindowBar">
+                <variants jsxbartype="3"/>
+                <strings jsxname="winbarTaskBar"/>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

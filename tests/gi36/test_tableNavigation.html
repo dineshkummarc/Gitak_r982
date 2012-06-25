@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+Copyright 2006-2008 TIBCO Software Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Test Table control</title>
+</head>
+<body>
+<table border="1">
+<!-- caption will be used for test descriptions-->
+<caption>
+This test excercise the table navigation locators : cellbyindex, cellbyid.
+</caption>
+<caption></caption>
+<tbody>   
+    <tr>
+      <td rowspan="1" colspan="3">Test Table Control</td>
+    </tr>    
+   <tr>
+      <td>include</td>
+      <td>testSetup.html</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>jsxopen</td>
+      <td>${GIPATH}/shell.html?jsxapppath=${SAMPLESPATH}/test-matrix</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>waitForElementPresent</td>
+      <td>JsxToolbarButtonName=tbbTable</td>
+      <td>5000</td>
+     </tr>    
+
+	 <tr>
+        <td>clickJsxElement</td>
+        <td>JsxToolbarButtonText=Table</td>
+        <td>&nbsp;</td>
+    </tr>    
+    <tr>
+      <td>storeJsxElementName</td>
+      <td>JsxToolbarButtonText=Table</td>
+      <td>objJSX</td>
+     </tr>    
+    <tr>
+      <td>assertElementPresent</td>
+      <td>gi=//toolBar/[@jsxtext="List"]</td>
+      <td>&nbsp;</td>
+     </tr>    
+    <tr>
+      <td>echo</td>
+      <td>${LASTJSXNAME}</td>
+      <td>&nbsp;</td>
+     </tr>
+    <tr>
+      <td>assertElementPresent</td>
+      <td>gi=//[@jsxtext="List"]</td>
+      <td>&nbsp;</td>
+     </tr>    
+    <tr>
+      <td>echo</td>
+      <td>${LASTJSXNAME}</td>
+      <td>&nbsp;</td>
+     </tr>
+     <tr>
+      <td>assertElementPresent</td>
+      <td>gi=//toolBar/jsx3.gui.ToolbarButton</td>
+      <td>&nbsp;</td>
+     </tr> 
+     <tr>
+      <td>assertElementPresent</td>
+      <td>gi=toolBar/jsx3.gui.ToolbarButton[3]</td>
+      <td>&nbsp;</td>
+     </tr>    
+     
+    <tr>
+      <td>echo</td>
+      <td>${LASTJSXNAME}</td>
+      <td>&nbsp;</td>
+     </tr>    
+    <tr>
+      <td>waitForElementPresent</td>
+      <td>gi=blockMain/*/tblTable,rowbyindex,1</td>
+      <td>&nbsp;</td>
+     </tr>    
+    <tr>
+      <td>click</td>
+      <td>gi=paneMatrix/tblTable,rowbyindex,0</td>
+      <td>&nbsp;</td>
+     </tr>    
+    <tr>
+      <td>assertElementPresent</td>
+      <td>gi=tblTable,cellbyjsxid,1.2</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>clickJsxElement</td>
+      <td>gi=tblTable,cellbyindex,1.2</td>
+      <td>&nbsp;</td>
+     </tr>    
+    <tr>
+      <td>echo</td>
+      <td>${LASTJSXNAME}</td>
+      <td>&nbsp;</td>
+     </tr>   
+     
+    <!-- assert list row length = +1 -->
+    <!--tr>
+      <td>jsxopen</td>
+      <td>about:blank</td>
+      <td>&nbsp;</td>
+    </tr-->
+  </tbody>
+
+</table>
+</body>
+</html>

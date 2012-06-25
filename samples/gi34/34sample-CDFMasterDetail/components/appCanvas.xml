@@ -1,0 +1,69 @@
+<serialization jsxversion="3.4" xmlns="urn:tibco.com/v3.0">
+  <name><![CDATA[Layout (--)]]></name>
+  <icon></icon>
+  <description><![CDATA[2 top-over-bottom panes in an adaptive layout grid.]]></description>
+  <onBeforeDeserialize></onBeforeDeserialize>
+  <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['150','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"></variants>
+    <strings jsxname="lytMainLayout" jsxwidth="100%" jsxheight="100%" jsxrows="140,*"></strings>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"></variants>
+      <strings jsxname="blkDescription" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;p align=&quot;right&quot;&gt;&lt;b&gt;Master Detail List: version 3.0&lt;/b&gt;&lt;br/&gt; JSX version: 3.4.0&lt;/p&gt;  &lt;p&gt;This example demonstrates master-detail drill down in a List.&lt;/p&gt;  &lt;p&gt;The CDF document (source_list.xml) data loaded into master list. Double click on a master list row opens the applicant details dialog. Many detail dialogs can be opened as cascade to compare the data.&lt;/p&gt;"></strings>
+      <dynamics jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"></dynamics>
+      <object type="jsx3.gui.CheckBox">
+        <variants jsxheight="18" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxchecked="0"></variants>
+        <strings jsxname="chkDocPane" jsxtext="Minimize doc pane" jsxmargin="0 4 0 0" jsxdisplay=""></strings>
+        <events jsxexecute="jsx3.out('mycheck','the jsxexecute method was fired for checkbox, ' + this.getId());" jsxtoggle="if (intCHECKED) this.getParent().getParent().setRows('20,*',true); else this.getParent().getParent().setRows('140,*',true);"></events>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"></variants>
+      <strings jsxname="blkAppPane" jsxwidth="100%" jsxheight="100%"></strings>
+      <dynamics jsxborder="@Outset"></dynamics>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants jsxrepeat="2" jsxsizearray="['*','30']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"></variants>
+        <strings jsxname="lytAppPaneLayout" jsxwidth="100%" jsxheight="100%" jsxrows="*,30"></strings>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"></variants>
+          <strings jsxname="blkMainPane" jsxwidth="100%" jsxheight="100%"></strings>
+          <dynamics jsxborder="@Outset"></dynamics>
+          <object type="jsx3.gui.Matrix">
+            <variants jsxpagingmodel="1" jsxselectionmodel="2" jsxscalewidth="1" jsxresize="0"></variants>
+            <strings jsxname="mtxResultsTable" jsxbodyborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxfocusstyle="color:red;font-weight:bold;" jsxxmlurl="xml/source_list.xml" jsxheaderborder="1px solid #dfdfef"></strings>
+            <events jsxexecute="eg.CDFMasterDetail.displayItem (this,strRECORDID);"></events>
+            <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"></xslparameters>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants></variants>
+              <strings jsxname="mcFirstNameColumn" jsxtext="First Name" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px blue;solid 0px" jsxpath="first_name"></strings>
+              <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"></dynamics>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants></variants>
+              <strings jsxname="mcLastNameColumn" jsxtext="Last Name" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px blue;solid 0px" jsxpath="last_name"></strings>
+              <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"></dynamics>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants></variants>
+              <strings jsxname="mcStatusColumn" jsxtext="Status" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px blue;solid 0px" jsxpath="status"></strings>
+              <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"></dynamics>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants></variants>
+              <strings jsxname="mcExperienceColumn" jsxtext="Experience" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px blue;solid 0px" jsxpath="experience"></strings>
+              <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"></dynamics>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1"></variants>
+          <strings jsxname="blkTaskBarPane" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1"></strings>
+          <object type="jsx3.gui.WindowBar">
+            <variants jsxbartype="3"></variants>
+            <strings jsxname="winbarTaskBar"></strings>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

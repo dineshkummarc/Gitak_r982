@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+Copyright 2006-2007 TIBCO Software Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<html>
+
+<head>
+<title>Matrix Performance Test</title>
+</head>
+
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+
+<tbody>
+
+    <tr>
+        <td colspan="3">Matrix Performance Test
+        </td>
+    </tr>
+
+<!-- Load Test Setup File Below -->
+    <tr>
+        <td>include</td>
+        <td>testSetup.html</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>open</td>
+        <td>${GIPATH}/shell.html?jsxapppath=${SAMPLESPATH}/matrix-benchmark</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>waitForJsxButtonPresent</td>
+        <td>button</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>recordStartTime</td>
+        <td>matrix_perf</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>click</td>
+        <td>JsxButtonText=Run Matrix</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>waitForTextPresent</td>
+        <td>Total</td>
+        <td>20000</td>
+    </tr>
+    <tr>
+        <td>recordEndTime</td>
+        <td>matrix_perf</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>showElapseTime</td>
+        <td>matrix_perf</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>assertTextPresent</td>
+        <td>Total</td>
+        <td>20000</td>
+    </tr>
+</tbody>
+    </table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

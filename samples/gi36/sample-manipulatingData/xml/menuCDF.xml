@@ -1,0 +1,22 @@
+<data jsxid="jsxroot">
+ <record jsxid="1" jsxtext="Sum(x,y)"  jsxexecute="eg.manipulateCDF.fXYType='sum' ; eg.manipulateCDF.getServer().getJSXByName('columnXY').setText('Sum(x,y)',true) "  />
+ <record jsxid="2" jsxtext="Mult(x,y)"  jsxexecute="eg.manipulateCDF.fXYType='mult' ;  eg.manipulateCDF.getServer().getJSXByName('columnXY').setText('Mult(x,y)',true) "  />
+</data>
+
+
+<data jsxid="jsxroot">
+ <record jsxid="1" jsxtext="Sum(xi)"  jsxexecute="eg.manipulateCDF.fXType='sum' ; eg.manipulateCDF.getServer().getJSXByName('columnX').setText('Sum(xi)',true) "  />
+ <record jsxid="2" jsxtext="Mult(xi)"  jsxexecute="eg.manipulateCDF.fXType='mult' ;  eg.manipulateCDF.getServer().getJSXByName('columnX').setText('Mult(xi)',true) "  />
+</data>
+
+
+<data jsxid="jsxroot">
+ <record jsxid="1" jsxtext="Sum(yi)"  jsxexecute="eg.manipulateCDF.fYType='sum' ; eg.manipulateCDF.getServer().getJSXByName('columnY').setText('Sum(yi)',true) "  />
+ <record jsxid="2" jsxtext="Mult(yi)"  jsxexecute="eg.manipulateCDF.fYType='mult' ;  eg.manipulateCDF.getServer().getJSXByName('columnY').setText('Mult(yi)',true) "  />
+</data>
+
+
+<data jsxid="jsxroot">
+ <record jsxid="1" jsxtext="Sum(zi)"  jsxexecute="eg.manipulateCDF.fZType='sum' ; eg.manipulateCDF.getServer().getJSXByName('columnZ').setText('Sum(zi)',true) "  />
+ <record jsxid="2" jsxtext="Mult(zi)"  jsxexecute="eg.manipulateCDF.fZType='mult' ;  eg.manipulateCDF.getServer().getJSXByName('columnZ').setText('Mult(zi)',true) "  />
+</data>

@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+Copyright 2006-2008 TIBCO Software Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Test XML to CDF</title>
+</head>
+<body>
+<table border="1">
+<caption>Test multiple app on the same page, communicating with PageBus.</caption>
+<tbody>
+    <tr>
+      <td rowspan="1" colspan="3">Test Portal Multiple Apps<br>
+      </td>
+    </tr>
+   <tr>
+      <td>include</td>
+      <td>testSetup.html</td>
+      <td>&nbsp;</td>
+    </tr>
+<!--         <td bgcolor="lime">testSetup.html must be edited with installed GI path</td> -->
+    <tr>
+        <td>echo</td>
+        <td>${GIPATH}</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>jsxopen</td>
+      <td>${SAMPLESPATH}/sample-portal/sample-portal.html?gipath=${GIPATH}</td>
+      <td>&nbsp;</td>
+    </tr>
+     <tr>
+       <td>waitForTextPresent</td>
+       <td>*Product Sales Chart*</td>
+       <td>5000</td>
+     </tr>
+     <tr>
+       <td>setJsxNamespace</td>
+       <td>eg.portletA.APP</td>
+       <td>&nbsp;</td>
+     </tr>  
+     <tr>
+       <td>verifyJsxPresent</td>
+       <td>JsxText="Data Table"</td>
+       <td>&nbsp;</td>
+     </tr>     
+ 
+    <tr>
+      <td colspan="3">-- show widget B --</td>
+    </tr>
+     <tr>
+       <td>clickJsxElement</td>
+       <td>JsxMatrixRowText=listWidgetList,*Widget B*</td>
+       <td>&nbsp;</td>
+     </tr>     
+     <tr>
+       <td>clickJsxElement</td>
+       <td>JsxButtonText="Show Chart"</td>
+       <td>&nbsp;</td>
+     </tr>     
+     <tr>
+       <td>setJsxNamespace</td>
+       <td>eg.portletB.APP</td>
+       <td>&nbsp;</td>
+     </tr>     
+     <tr>
+       <td>assertJsxPresent</td>
+       <td>JsxText="*Sales - Widget B*"</td>
+       <td>&nbsp;</td>
+     </tr>     
+
+    <tr>
+      <td colspan="3">-- show widget C --</td>
+    </tr>
+     
+     <tr>
+       <td>setJsxNamespace</td>
+       <td>eg.portletA.APP</td>
+       <td>&nbsp;</td>
+     </tr>  
+     <tr>
+       <td>clickJsxElement</td>
+       <td>JsxMatrixRowText=listWidgetList,*Widget C*</td>
+       <td>&nbsp;</td>
+     </tr>     
+     <tr>
+       <td>clickJsxElement</td>
+       <td>JsxButtonName=btnShowChart</td>
+       <td>&nbsp;</td>
+     </tr>     
+     <tr>
+       <td>setJsxNamespace</td>
+       <td>eg.portletB.APP</td>
+       <td>&nbsp;</td>
+     </tr>        
+     <tr>
+       <td>assertJsxPresent</td>
+       <td>JsxText="*Sales - Widget C*"</td>
+       <td>&nbsp;</td>
+     </tr>     
+    
+    <tr>
+      <td colspan="3">-- show widget D --</td>
+    </tr>
+     
+     <tr>
+       <td>setJsxNamespace</td>
+       <td>eg.portletA.APP</td>
+       <td>&nbsp;</td>
+     </tr>  
+     <tr>
+       <td>clickJsxElement</td>
+       <td>JsxMatrixRowText=listWidgetList,*Widget D*</td>
+       <td>&nbsp;</td>
+     </tr>     
+     <tr>
+       <td>clickJsxElement</td>
+       <td>JsxButtonName=btnShowChart</td>
+       <td>&nbsp;</td>
+     </tr>     
+     <tr>
+       <td>setJsxNamespace</td>
+       <td>eg.portletB.APP</td>
+       <td>&nbsp;</td>
+     </tr>        
+     <tr>
+       <td>assertJsxPresent</td>
+       <td>JsxText="*Sales - Widget D*"</td>
+       <td>&nbsp;</td>
+     </tr>     
+     <tr>
+       <td>include</td>
+       <td>testTearDown.html</td>
+       <td>&nbsp;</td>
+     </tr>  
+  </tbody>
+
+</table>
+</body>
+</html>

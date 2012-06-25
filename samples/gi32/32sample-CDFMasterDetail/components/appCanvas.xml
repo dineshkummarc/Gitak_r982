@@ -1,0 +1,64 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Layout (--)</name>
+  <icon/>
+  <description>2 top-over-bottom panes in an adaptive layout grid.</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['150','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+    <strings jsxname="lytMainLayout" jsxwidth="100%" jsxheight="100%"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkDescription" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;p align=&quot;left&quot;&gt;&lt;b&gt;Source: &lt;a style=&quot;text-decoration:none&quot; href='http://power.tibco.com/content/GI/Apps/320/projects/JSXAPPS/32sample-CDFMasterDetail.zip'&gt;http://power.tibco.com/content/GI/Apps/320/projects/JSXAPPS/32sample-CDFMasterDetail.zip &lt;/a&gt;&lt;/b&gt;&lt;/p&gt;&lt;p align=&quot;right&quot;&gt;&lt;b&gt;Master Detail List: version 2.0&lt;/b&gt;&lt;br/&gt; JSX version: 3.2.0&lt;/p&gt;  &lt;p&gt;This example demonstrates master-detail drill down in a List.&lt;/p&gt;  &lt;p&gt;The CDF document (source_list.xml) data loaded into master list. 2x-click on a master list row opens the applicant details dialog. Many detail dialogs can be opened as cascade to compare the data.&lt;/p&gt;"/>
+      <dynamics jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkAppPane" jsxwidth="100%" jsxheight="100%"/>
+      <dynamics jsxborder="@Outset"/>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants jsxrepeat="2" jsxsizearray="['*','30']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+        <strings jsxname="lytAppPaneLayout" jsxwidth="100%" jsxheight="100%"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="blkMainPane" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@Outset"/>
+          <object type="jsx3.gui.Matrix">
+            <variants jsxpagingmodel="1" jsxselectionmodel="2" jsxscalewidth="1" jsxresize="0"/>
+            <strings jsxname="mtxResultsTable" jsxbodyborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxfocusstyle="color:red;font-weight:bold;" jsxxmlurl="xml/source_list.xml" jsxheaderborder="1px solid #dfdfef"/>
+            <events jsxexecute="eg.CDFMasterDetail.displayItem (this,strRECORDID);"/>
+            <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants/>
+              <strings jsxname="mcFirstNameColumn" jsxtext="First Name" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px blue;solid 0px" jsxpath="first_name"/>
+              <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants/>
+              <strings jsxname="mcLastNameColumn" jsxtext="Last Name" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px blue;solid 0px" jsxpath="last_name"/>
+              <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants/>
+              <strings jsxname="mcStatusColumn" jsxtext="Status" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px blue;solid 0px" jsxpath="status"/>
+              <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants/>
+              <strings jsxname="mcExperienceColumn" jsxtext="Experience" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px blue;solid 0px" jsxpath="experience"/>
+              <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1"/>
+          <strings jsxname="blkTaskBarPane" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1"/>
+          <object type="jsx3.gui.WindowBar">
+            <variants jsxbartype="3"/>
+            <strings jsxname="winbarTaskBar"/>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

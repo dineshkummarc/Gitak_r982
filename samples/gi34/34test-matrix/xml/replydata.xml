@@ -1,0 +1,9 @@
+<List>
+<MachineInformation>
+<ip>myIPAddress</ip>
+<MachineKey>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</MachineKey>
+<processorMegahertz>2800</processorMegahertz>
+<numProcessors>2</numProcessors>
+<MainMemoryRAMAvailable>0</MainMemoryRAMAvailable>
+</MachineInformation>
+</List>

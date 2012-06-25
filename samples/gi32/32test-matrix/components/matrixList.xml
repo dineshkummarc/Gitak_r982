@@ -1,0 +1,23 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>List</name>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Matrix">
+    <variants jsxpagingmodel="2" jsxselectionmodel="2" jsxscalewidth="0"/>
+    <strings jsxname="matrix1" jsxbgcolor="#efefff" jsxfocusstyle="font-weight:bold;" jsxxml="       &lt;data jsxid=&quot;jsxroot&quot;&gt;         &lt;record jsxid=&quot;AG&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Afghanistan&quot;/&gt;         &lt;record jsxid=&quot;AL&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Albania&quot;/&gt;         &lt;record jsxid=&quot;AR&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Algeria&quot;/&gt;         &lt;record jsxid=&quot;AS&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;American Samoa&quot;/&gt;         &lt;record jsxid=&quot;AD&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Andorra&quot;/&gt;         &lt;record jsxid=&quot;AO&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Angola&quot;/&gt;         &lt;record jsxid=&quot;AU&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Anguilla&quot;/&gt;         &lt;record jsxid=&quot;AX&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Antarctica&quot;/&gt;         &lt;record jsxid=&quot;AT&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Antigua and Barbuda&quot;/&gt;         &lt;record jsxid=&quot;AE&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Argentina&quot;/&gt;         &lt;record jsxid=&quot;AM&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Armenia&quot;/&gt;         &lt;record jsxid=&quot;AB&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Aruba&quot;/&gt;         &lt;record jsxid=&quot;AA&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Australia&quot;/&gt;         &lt;record jsxid=&quot;AI&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Austria&quot;/&gt;         &lt;record jsxid=&quot;AZ&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Azerbaijan&quot;/&gt;       &lt;/data&gt;     " jsxsortpath="jsximg" jsxsorttype="text" jsxsortdirection="descending"/>
+    <events jsxexecute="jsx3.log('EVENT: (jsxexecute). Record: ' + strRECORDID);" jsxselect="jsx3.log('EVENT: (select). Record: ' + strRECORDID);" jsxbeforesort="jsx3.log(&quot;before sort&quot;);"/>
+    <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants jsxwidth="100" jsxresize="0" jsxwrap="1" jsxsort="0"/>
+      <strings jsxname="col50" jsxtext="&amp;#160;" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px #bfbfcf;solid 0px" jsxpath="jsximg" jsxvaluetemplate="@image"/>
+      <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+    </object>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants jsxwidth="100" jsxwrap="1" jsxsort="0"/>
+      <strings jsxname="col50" jsxtext="Name" jsxpadding="2" jsxcellpadding="2" jsxcellborder="solid 0px;solid 0px;solid 1px #bfbfcf;solid 0px" jsxpath="jsxtext"/>
+      <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown"/>
+    </object>
+  </object>
+</serialization>

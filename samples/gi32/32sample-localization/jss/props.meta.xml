@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This file tells the application what locales are available. Besides en_US, the default locale, we have
+     versions of this properties file for locales fr and zh_TW. -->    
+<data jsxid="jsxroot" jsxns="urn:tibco.com/v3.0/localizedprops/1">
+  <record jsxid="locales" jsxtext="fr,zh_TW"/>
+</data>

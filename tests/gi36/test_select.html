@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+Copyright 2006-2008 TIBCO Software Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Test Select</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<!-- Test description goes into the caption. Do not use the colon char ":" -->
+<caption>Test select combo control features - click to select, combo type-ahead.</caption>
+  <tbody>
+    <tr>
+      <td rowspan="1" colspan="3">Test Select Combo Control<br>
+      </td>
+    </tr>
+   <tr>
+      <td>include</td>
+      <td>testSetup.html</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>jsxopen</td>
+      <td>${GIPATH}/${LAUNCHER}?jsxapppath=${SAMPLESPATH}/test-matrix</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>waitForElementPresent</td>
+      <td>JsxSelectName=slctOptions</td>
+      <td>5000</td>
+    </tr>
+    <tr>
+       <td>assertElementPresent</td>
+       <td>JsxSelectName=slctOptions</td>
+       <td>&nbsp;</td>
+    </tr>
+<!--     <tr>
+      <td>unsubscribeJsxResize</td>
+      <td>// disable resize event to work around IE bug</td>
+      <td>&nbsp;</td>
+    </tr> -->
+    <!--tr>
+      <td>clickJsxSelect</td>
+      <td>JsxSelectName=slctOptions</td>
+      <td>JsxSelectItemIndex=slctOptions,4</td>
+    </tr-->
+    <tr>
+      <td>clickJsxSelect</td>
+      <td>JsxSelectName=slctOptions</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+       <td>waitForJsxSelectWindowPresent</td>
+       <td>slctOptions</td>
+       <td>2000</td>
+    </tr>
+	<!-- Test JsxSelectItemIndex-->
+    <tr>
+       <td>clickJsxElement</td>
+       <td>JsxSelectItemIndex=slctOptions,4</td>
+       <td>&nbsp;</td>
+    </tr>
+    <tr>
+       <td>assertJsxValueEqual</td>
+       <td>txtOutput</td>
+       <td>d</td>
+     </tr>
+    <tr>
+       <td>setInterval</td>
+       <td>500</td>
+       <td>&nbsp;</td>
+    </tr>
+	<!-- Test JsxSelectItemId -->	
+    <tr>
+       <td>clickJsxSelect</td>
+       <td>JsxSelectName=slctOptions</td>
+       <td>JsxSelectItemId=slctOptions,a</td>
+    </tr>
+    <tr>
+       <td>assertJsxValueEqual</td>
+       <td>txtOutput</td>
+       <td>a</td>
+    </tr>
+    <tr>
+       <td>clickJsxSelect</td>
+       <td>JsxSelectName=slctOptions</td>
+       <td>JsxSelectItemId=slctOptions,b</td>
+    </tr>
+    <tr>
+      <td>assertJsxValueEqual</td>
+      <td>txtOutput</td>
+      <td>b</td>
+    </tr>
+	<!-- Test JsxSelectItemText-->
+    <tr>
+      <td>clickJsxSelect</td>
+      <td>JsxSelectName=slctOptions</td>
+      <td>JsxSelectItemText=slctOptions,abc</td>
+    </tr>
+    <tr>
+      <td>assertJsxValueEqual</td>
+      <td>txtOutput</td>
+      <td>c</td>
+    </tr>
+    <tr>
+      <td>clickJsxSelect</td>
+      <td>JsxSelectName=slctOptions</td>
+      <td>JsxSelectItemText=slctOptions,ab*</td>
+    </tr>
+    <tr>
+      <td>assertJsxValueEqual</td>
+      <td>txtOutput</td>
+      <td>b</td>
+    </tr>
+
+    <!-- Test Combo select -->
+    <tr>
+       <td>clickJsxSelect</td>
+       <td>JsxSelectName=cmbOptions</td>
+       <td>JsxSelectItemId=cmbOptions,AE</td>
+    </tr>
+    <tr>
+       <td>assertJsxValueEqual</td>
+       <td>txtOutput</td>
+       <td>AE</td>
+    </tr>
+    <tr>
+       <td>clickJsxSelect</td>
+       <td>JsxSelectName=cmbOptions</td>
+       <td>JsxSelectItemId=cmbOptions,AZ</td>
+    </tr>
+    <tr>
+       <td>clickJsxSelect</td>
+       <td>JsxSelectName=slctOptions</td>
+       <td>JsxSelectItemText=slctOptions,abcdefghijk</td>
+    </tr>
+    <tr>
+       <td>verifyEval</td>
+       <td>selenium.browserbot.findByJsxName('cmbOptions').getValue();</td>
+       <td>AZ</td>
+    </tr>
+    <tr>
+       <td>typeJsxTextbox</td>
+       <td>JsxComboInputName=cmbOptions</td>
+       <td>Wyoming</td>
+	   <td>Type each key as user would. Needed to set proper focus and blur.</td>
+    </tr>
+    <tr>
+       <td>assertJsxValueEqual</td>
+       <td>txtOutput</td>
+       <td>WY</td>
+    </tr>
+    <tr>
+       <td>setInterval</td>
+       <td>0</td>
+       <td>&nbsp;</td>
+    </tr>
+
+  </tbody>
+
+</table>
+</body>
+</html>

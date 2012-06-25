@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name/>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <objects>
+    <object type="jsx3.gui.Dialog">
+      <variants jsxwidth="500" jsxheight="350" jsxleft="33" jsxtop="39" jsxzindex="5005"/>
+      <strings jsxname="dlgChinese"/>
+      <dynamics jsxbgcolor="@Solid Medium"/>
+      <children>
+        <object type="jsx3.gui.WindowBar">
+          <variants/>
+          <strings jsxname="caption bar"/>
+          <dynamics jsxtext="Dialog1"/>
+          <children>
+            <object type="jsx3.gui.ToolbarButton">
+              <variants/>
+              <strings jsxname="min button"/>
+              <dynamics jsximage="@Min Icon" jsxtip="@Min Tip"/>
+              <events jsxexecute="this.getParent().getParent().doToggleState();"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <variants/>
+              <strings jsxname="close button"/>
+              <dynamics jsximage="@Close Icon" jsxtip="@Close Tip"/>
+              <events jsxexecute="this.getParent().getParent().doClose();"/>
+            </object>
+          </children>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxleft="15" jsxtop="10" jsxwidth="461" jsxheight="69" jsxoverflow="1" jsxrelativeposition="0"/>
+          <strings jsxname="block" jsxtext="The text/HTML property of the caption bar is specified in props.xml.
+          Since there is no corresponding property in props.zh_TW.xml or props.fr.xml, it will not change when the
+          locale is changed. This demonstrates localized property fallback when a translation is not available."/>
+          <dynamics jsxbgcolor="@Solid Light" jsxborder="@Outset" jsxpadding="@8Pixel"/>
+        </object>
+        <object type="jsx3.gui.TextBox">
+          <variants jsxheight="18" jsxrelativeposition="0" jsxleft="16" jsxtop="98"/>
+          <strings jsxname="textbox" jsxborder="border-bottom:solid 1px #cccccc;border-right:solid 1px #cccccc;"
+              jsxvalue="麥可霹騎"/>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxleft="141" jsxtop="98" jsxwidth="207" jsxheight="71" jsxoverflow="1" jsxrelativeposition="0"/>
+          <strings jsxname="block" jsxtext="Note:  The value in this text box is hardcoded in dlgLocal.xml component,
+           and does not change when the locale is changed."/>
+          <dynamics jsxbgcolor="@Solid Light" jsxborder="@Outset" jsxpadding="@8Pixel"/>
+        </object>
+        <object type="jsx3.gui.BlockX">
+          <variants jsxrelativeposition="0" jsxleft="17" jsxtop="185"/>
+          <strings jsxname="XSLT block" jsxxmlurl="xml/data.xml" jsxxslurl="xsl/data.xsl"/>
+          <dynamics jsxbgcolor="@Solid Light" jsxpadding="@8Pixel"/>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxleft="141" jsxtop="182" jsxwidth="207" jsxheight="104" jsxoverflow="1" jsxrelativeposition="0"/>
+          <strings jsxname="block" jsxtext="Note:  The value in this Block is hardcoded in the data.xml component.
+          It is displayed by referencing the data.xsl file as a property of the block.  It also does not change
+          when the locale is changed."/>
+          <dynamics jsxbgcolor="@Solid Light" jsxborder="@Outset" jsxpadding="@8Pixel"/>
+        </object>
+      </children>
+    </object>
+  </objects>
+</serialization>

@@ -1,0 +1,26 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.4">
+  <name/>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['45%','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+    <strings jsxname="layoutSample (--)" jsxwidth="100%" jsxheight="100%" jsxrows="40%,*"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="paneDescription" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;P align=&quot;right&quot;&gt; &lt;B&gt;Drill Down: version 4.0&lt;/B&gt;&lt;BR&gt; JSX version: 3.4.0&lt;/P&gt;  &lt;p&gt; This sample application demonstrates how to represent large CDF/XML data as GI Tree component. Instead of loading the large data from server during startup, the children of a node are loaded &quot;expanded&quot; on demand on user click event on that node.  &lt;/p&gt; &lt;p&gt; To achieve this goal  &lt;ul&gt; &lt;li&gt; Those nodes that should fetch their content on demand have a flag (lazy=&quot;1&quot;). These same nodes also contain a place-holder child with the text &quot;loading...&quot; &lt;/li&gt; &lt;li&gt; An event handler has been added to the tree via the Events Editor palette. Each time an event Toggle occurs the information about the node that was just toggled are passed to a function called lazyLoad. This function checks if the node that was just toggled has the flag, lazy=&quot;1&quot; If it does, it uses the id of the node to make a query for the true content, using the jsx3.net.Request object. Then, when the data returns, the place-holder node is removed and the specific node in the tree is repainted. &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;To simulate a loading effect the replacing process is delayed on 700 ms.&lt;/p&gt; &lt;/p&gt;"/>
+      <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="paneApp" jsxwidth="100%" jsxheight="100%"/>
+      <dynamics jsxborder="@Outset"/>
+      <object type="jsx3.gui.Tree">
+        <variants/>
+        <strings jsxname="tree" jsxwidth="100%" jsxheight="100%" jsxvalue="1" jsxxmlurl="xml/source.xml"/>
+        <events jsxtoggle="eg.drilldown.lazyLoad(this,objRECORD,strRECORDID);"/>
+      </object>
+    </object>
+  </object>
+</serialization>

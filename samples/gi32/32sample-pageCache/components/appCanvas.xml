@@ -1,0 +1,73 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Sample App Template</name>
+  <icon/>
+  <description>Basic template for sample applications.  Contains a top block for descriptions, and a bottom block for the sample app.</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['150','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+    <strings jsxname="layoutSample (--)" jsxwidth="100%" jsxheight="100%"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blockDescription" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;p align=&quot;left&quot;&gt;&lt;b&gt;Source: &lt;a style=&quot;text-decoration:none&quot; href='http://tibcotest2.tibco.com/320/JSXAPPS/32sample-pageCache.zip'&gt;http://tibcotest2.tibco.com/320/JSXAPPS/32sample-pageCache.zip &lt;/a&gt;&lt;/b&gt;&lt;/p&gt;   &lt;p align=&quot;right&quot;&gt;&lt;b&gt;Pre-caching: version 2.0&lt;/b&gt;&lt;br&gt; JSX version: 3.2.0&lt;/p&gt;  &lt;p&gt;This sample application demonstrates the use of jsx3.net.Request to acquire legacy HTML and store in a local hash for later display within a GI GUI control.  Pre-caching of a PDF document in the browser's own cache is also shown.&lt;/p&gt;   &lt;p&gt;Note that the browser's ability to cache documents is defined by both browser (Tools | Internet Options | Temporary Internet Files | Settings) and server settings, and is not controlled by GI.  Note also that the PDF plug-in is heavyweight, and will bleed through GI controls.  Therefore, use a separate browser window for displaying PDF documents.&lt;/p&gt;"/>
+      <dynamics jsxborder="@Outset" jsxpadding="@8Pixel" jsxbgcolor="@Solid Medium"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blockApp" jsxwidth="100%" jsxheight="100%"/>
+      <dynamics jsxborder="@Outset"/>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants jsxrepeat="3" jsxsizearray="['30','182','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="0" jsxorientation="0"/>
+        <strings jsxname="layout (--)" jsxwidth="100%" jsxheight="100%"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Medium"/>
+          <object type="jsx3.gui.ToolbarButton">
+            <variants/>
+            <strings jsxname="mytb" jsximage="images/cache.gif" jsxtext="Cache Pages" jsxtip="caches all pages listed below in an in-memory hash (a JavaScript Object). Once cached, a page can be viewed by double-clicking on one of the listed sites."/>
+            <events jsxexecute="eg.pageCache.doCachePages();"/>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxrelativeposition="0" jsxoverflow="3" jsxheight="16" jsxleft="117" jsxtop="6" jsxwidth="308"/>
+            <strings jsxname="label" jsxtext="(Once cached, dbl-click to display cached home page)"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1"/>
+          <strings jsxname="block" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1"/>
+          <object type="jsx3.gui.Matrix">
+            <variants jsxpagingmodel="1" jsxselectionmodel="1" jsxresize="1" jsxreorder="1"/>
+            <strings jsxname="mycachelist" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxsortpath="cached" jsxsorttype="text" jsxsortdirection="descending" jsxxmlurl="xml/cachelist.xml"/>
+            <events jsxbeforeedit="jsx3.log('EVENT: (jsxbeforeedit). Record: ' + strRECORDID);" jsxafteredit="" jsxexecute="eg.pageCache.displayCachedPage(strRECORDID);"/>
+            <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants jsxwidth="153"/>
+              <strings jsxname="textTitle" jsxtext="Text" jsxpadding="3" jsxcellpadding="3" jsxpath="jsxtext"/>
+              <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset" jsxfontweight="@CaptionText FW"/>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants jsxwidth="333"/>
+              <strings jsxname="textUrl" jsxtext="URL" jsxpadding="3" jsxcellpadding="3" jsxpath="jsxid"/>
+              <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset" jsxfontweight="@CaptionText FW"/>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants jsxwidth="50"/>
+              <strings jsxname="textColumn" jsxtext="Is Cached" jsxpadding="3" jsxcellpadding="3" jsxpath="cached"/>
+              <dynamics jsxborder="@Outset" jsxbg="@Fade TopDown" jsxfontweight="@CaptionText FW"/>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1"/>
+          <strings jsxname="block" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2"/>
+            <strings jsxname="mycacheblock" jsxwidth="100%" jsxheight="100%"/>
+            <dynamics jsxborder="@Outset"/>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

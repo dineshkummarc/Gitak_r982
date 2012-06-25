@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+Copyright 2006-2008 TIBCO Software Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Test Matrix delete column</title>
+</head>
+<body>
+<table border="1">
+<caption>Matrix Delete Column test, make sure record deletion works with delete column. Should be tested over HTTPS.</caption>
+<tbody>   
+    <tr>
+      <td rowspan="1" colspan="3">Test Matrix delete column</td>
+    </tr>    
+   <tr>
+      <td>include</td>
+      <td>testSetup.html</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>jsxopen</td>
+      <td>${GIPATH}/shell.html?jsxapppath=${SAMPLESPATH}/test-matrix</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>waitForElementPresent</td>
+      <td>JsxToolbarButtonName=tbbList</td>
+      <td>5000</td>
+     </tr>    
+    <tr>
+        <td>clickJsxElement</td>
+        <td>JsxToolbarButtonText=List</td>
+        <td>&nbsp;</td>
+    </tr>    
+    <tr>
+      <td>waitForElementPresent</td>
+      <td>JsxMatrixCellText=matrix1,Antarctica</td>
+      <td>5000</td>
+     </tr>    
+    <tr>
+      <td rowspan="1" colspan="3">// Sort on delete column first. IE7 is reverse of other browsers</td>
+    </tr>
+    <tr>
+      <td>clickJsxMatrixHeader</td>
+      <td>JsxMatrixHeaderIndex=matrix1,0</td>
+       <td>&nbsp;</td>
+     </tr>
+    <tr>
+      <td>pause</td>
+      <td>700</td>
+       <td>&nbsp;</td>
+     </tr>
+    <tr>
+      <td>assertElementPresent</td>
+      <td>JsxMatrixCellIndex=matrix1.14.0</td>
+       <td>// last row is index 14 of 0-14</td>
+     </tr>
+    <tr>
+      <td rowspan="1" colspan="3">// Delete Angola<br>
+      </td>
+    </tr>
+     <tr>
+      <td>clickJsxCellMask</td>
+      <td>JsxMatrixCellId=matrix1.AO.0</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>verifyElementNotPresent</td>
+      <td>JsxMatrixCellId=matrix1.AO.0</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>assertElementNotPresent</td>
+      <td>JsxMatrixCellIndex=matrix1.14.0</td>
+       <td>// row 14 was deleted </td>
+     </tr>
+    <tr>
+      <td rowspan="1" colspan="3">// Delete Azerbaijanen </td>
+    </tr>
+    <tr>
+      <td>verifyElementPresent</td>
+      <td>JsxMatrixCellId=matrix1.AZ.0</td>
+      <td>&nbsp;</td>
+    </tr>
+     <tr>
+      <td>clickJsxCellMask</td>
+      <td>JsxMatrixCellIndex=matrix1.13.0</td>
+      <td>//one row deleted only 0-13 left</td>
+    </tr>
+    <tr>
+      <td>verifyElementNotPresent</td>
+      <td>JsxMatrixCellId=matrix1.AZ.0</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td rowspan="1" colspan="3">// Delete Albenia </td>
+    </tr>    
+    <tr>
+      <td>verifyElementPresent</td>
+      <td>JsxMatrixCellId=matrix1.AL.0</td>
+      <td>&nbsp;</td>
+    </tr>
+     <tr>
+      <td>clickJsxCellMask</td>
+      <td>JsxMatrixCellId=matrix1.AL.0</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>verifyElementNotPresent</td>
+      <td>JsxMatrixCellId=matrix1.AL.0</td>
+      <td>&nbsp;</td>
+    </tr>
+     
+    <!-- assert list row length = +1 -->
+    <!--tr>
+      <td>jsxopen</td>
+      <td>about:blank</td>
+      <td>&nbsp;</td>
+    </tr-->
+  </tbody>
+
+</table>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+Copyright 2006-2008 TIBCO Software Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<html>
+
+<head>
+<title>Matrix Tree Sample Test</title>
+</head>
+
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<caption>Test to excercise hiearchical matrix tree control commands</caption>
+<tbody>
+<tr>
+    <td rowspan="1" colspan="3">Test Matrix tree control<br></td>
+</tr>
+
+<!-- Load Test Setup File Below -->
+<tr>
+    <td>include</td>
+    <td>testSetup.html</td>
+    <td>&nbsp;</td>
+</tr>
+
+<!-- Load Test Application Below -->
+<tr>
+    <td>jsxopen</td>
+    <td>${GIPATH}/shell.html?jsxapppath=${SAMPLESPATH}/test-matrix</td>
+    <td>&nbsp;</td>
+</tr>
+<!-- start tests -->
+<tr>
+  <td>waitForElementPresent</td>
+  <td>JsxToolbarButtonName=tbbTree</td>
+  <td>5000</td>
+<tr>
+  <td>assertElementPresent</td>
+  <td>JsxToolbarButtonText=Tree</td>
+  <td>&nbsp;</td>
+</tr>
+
+<tr>
+  <td>click</td>
+  <td>JsxToolbarButtonText=Tree</td>
+  <td>&nbsp;</td>
+</tr>
+
+<!-- Toggle Tree Nodes -->
+
+
+<tr>
+  <td>verifyElementNotPresent</td>
+  <td>JsxMatrixTreeItemId=mtxTree,4</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td>verifyElementNotPresent</td>
+  <td>JsxMatrixTreeItemId=mtxTree,5</td>
+  <td>&nbsp;</td>
+</tr>
+
+<tr>
+  <td>clickJsxMatrixTreeToggle</td>
+  <td>JsxMatrixTreeItemId=mtxTree,3</td>
+  <td>&nbsp;</td>
+</tr>
+
+
+<tr>
+  <td>pause</td>
+  <td>1000</td>
+  <td>&nbsp;</td>
+</tr>
+
+<tr>
+  <td>verifyVisible</td>
+  <td>JsxMatrixTreeItemId=mtxTree,4</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td>clickJsxMatrixTreeToggle</td>
+  <td>JsxMatrixTreeItemId=mtxTree,4</td>
+  <td>&nbsp;</td>
+</tr>
+
+<tr>
+  <td>pause</td>
+  <td>500</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td>verifyVisible</td>
+  <td>JsxMatrixTreeItemId=mtxTree,5</td>
+  <td>&nbsp;</td>
+</tr>
+
+<tr>
+  <td>clickJsxMatrixTreeToggle</td>
+  <td>JsxMatrixTreeItemId=mtxTree,5</td>
+  <td>&nbsp;</td>
+</tr>
+
+    <tr>
+      <td>clickJsxElement</td>
+      <td>JsxMatrixTreeItemIndex=mtxTree,5</td>
+      <td>&nbsp;</td>
+    </tr>
+
+</tbody>
+</table>
+
+<br />
+Test deep tree drill down beyond 22 levels.
+
+<table cellpadding="1" cellspacing="1" border="1">
+<tbody> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,5</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td>verifyVisible</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t0</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t0</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t1</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t2</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t3</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t4</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t5</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t6</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t7</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t8</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t9</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t10</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t11</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t12</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t13</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t14</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t15</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t16</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t17</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t18</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t19</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>doubleClickJsxElement</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t20</td>
+  <td>&nbsp;</td>
+</tr> 
+<tr>
+  <td>verifyVisible</td>
+  <td>JsxMatrixTreeItemId=mtxTree,t21</td>
+  <td>&nbsp;</td>
+</tr>
+
+</tbody>
+</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

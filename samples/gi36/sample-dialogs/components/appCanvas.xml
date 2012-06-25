@@ -1,0 +1,76 @@
+<serialization jsxversion="3.4" xmlns="urn:tibco.com/v3.0">
+  <name><![CDATA[LayoutSample (--)]]></name>
+  <icon></icon>
+  <description><![CDATA[2 top-over-bottom panes in an adaptive layout grid.]]></description>
+  <onBeforeDeserialize></onBeforeDeserialize>
+  <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['30%','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"></variants>
+    <strings jsxname="lytMainLayout" jsxwidth="100%" jsxheight="100%" jsxrows="160,*"></strings>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"></variants>
+      <strings jsxname="blkDescription" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;p align=&quot;right&quot;&gt; &lt;b&gt;Dialogs: version 3.0&lt;/b&gt;&lt;br/&gt; JSX version: 3.4.0&lt;/p&gt;  &lt;p&gt;This sample application demonstrates a number of ways to create and instantiate dialogs. If you click on a button which already has a dialog displayed, that dialog wil be brought forward.  See methodes launchComponent and  launchSimple in logic.js  &lt;/p&gt;  &lt;p&gt;Note the componentized assembly of the overall sample from a set of components, each of which is instantiated as needed.  The process of loading components on demand will help to keep applications snappy for end users.&lt;/p&gt;"></strings>
+      <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"></dynamics>
+      <object type="jsx3.gui.CheckBox">
+        <variants jsxheight="18" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxchecked="0"></variants>
+        <strings jsxname="chkDocPane" jsxtext="Minimize doc pane" jsxmargin="0 4 0 0" jsxdisplay=""></strings>
+        <events jsxexecute="jsx3.out('mycheck','the jsxexecute method was fired for checkbox, ' + this.getId());" jsxtoggle="if (intCHECKED) this.getParent().getParent().setRows('20,*',true); else this.getParent().getParent().setRows('140,*',true);"></events>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="2"></variants>
+      <strings jsxname="blkApp" jsxwidth="100%" jsxheight="100%"></strings>
+      <dynamics jsxborder="@Outset"></dynamics>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants jsxrepeat="2" jsxsizearray="['150','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="0" jsxorientation="1"></variants>
+        <strings jsxname="lytAppLayout" jsxwidth="100%" jsxheight="100%" jsxcols="150,*"></strings>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"></variants>
+          <strings jsxname="blkButtonsPane" jsxwidth="100%" jsxheight="100%" jsxpadding="padding:5%"></strings>
+          <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Medium"></dynamics>
+          <object type="jsx3.gui.Button">
+            <variants jsxindex="0" jsxheight="18" jsxtop="0"></variants>
+            <strings jsxname="btnSD" jsxtext="Simple Dialog" jsxmargin="margin-top:5px" jsxwidth="100%"></strings>
+            <events jsxexecute="eg.sampledialogs.launchSimple()"></events>
+          </object>
+          <object type="jsx3.gui.Button">
+            <variants jsxindex="0" jsxheight="18"></variants>
+            <strings jsxname="btnAppCan" jsxtext="Application Canvas" jsxmargin="margin-top:5px" jsxwidth="100%" jsxborder=""></strings>
+            <events jsxexecute="eg.sampledialogs.launchComponent(this.getServer().getJSXByName(&quot;blkWorkPane&quot;),'appLayout.xml',true)"></events>
+          </object>
+          <object type="jsx3.gui.Button">
+            <variants jsxindex="0" jsxheight="18"></variants>
+            <strings jsxname="btnAlert" jsxtext="Alerts" jsxmargin="margin-top:5px" jsxwidth="100%"></strings>
+            <events jsxexecute="eg.sampledialogs.launchComponent(this.getServer().getJSXByName(&quot;blkWorkPane&quot;),&quot;alert.xml&quot;,true)"></events>
+          </object>
+          <object type="jsx3.gui.Button">
+            <variants jsxindex="0" jsxheight="18"></variants>
+            <strings jsxname="btnPDOM" jsxtext="Property/Dom Mods" jsxmargin="margin-top:5px" jsxwidth="100%"></strings>
+            <events jsxexecute="eg.sampledialogs.launchComponent(this.getServer().getJSXByName(&quot;blkWorkPane&quot;),&quot;modifiedDialogs.xml&quot;,true)"></events>
+          </object>
+          <object type="jsx3.gui.Button">
+            <variants jsxindex="0" jsxheight="18"></variants>
+            <strings jsxname="btnFocus" jsxtext="Multi-instance &amp; Focus" jsxmargin="margin-top:5px" jsxwidth="100%"></strings>
+            <events jsxexecute="eg.sampledialogs.launchComponent(this.getServer().getJSXByName(&quot;blkWorkPane&quot;),&quot;multiInstance.xml&quot;,true)"></events>
+          </object>
+          <object type="jsx3.gui.Button">
+            <variants jsxindex="0" jsxheight="18"></variants>
+            <strings jsxname="btnEP" jsxtext="Escaping the Parent" jsxmargin="margin-top:5px" jsxwidth="100%"></strings>
+            <events jsxexecute="eg.sampledialogs.launchComponent(this.getServer().getJSXByName(&quot;blkWorkPane&quot;),&quot;escaping.xml&quot;,true)"></events>
+          </object>
+          <object type="jsx3.gui.Button">
+            <variants jsxindex="0" jsxheight="18"></variants>
+            <strings jsxname="btnClear" jsxtext="Clear Work Area" jsxmargin="margin-top:5px" jsxcolor="red" jsxwidth="100%"></strings>
+            <dynamics jsxbgcolor="@Solid Shadow"></dynamics>
+            <events jsxexecute="eg.sampledialogs.clearWorkArea(this.getServer().getJSXByName(&quot;blkWorkPane&quot;));"></events>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"></variants>
+          <strings jsxname="blkWorkPane" jsxwidth="100%" jsxheight="100%" jsxtext=""></strings>
+          <dynamics jsxborder="@Outset"></dynamics>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

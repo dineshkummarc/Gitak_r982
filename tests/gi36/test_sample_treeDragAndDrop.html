@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+<head>
+<title> Drag and Drop Layout Title</title>
+</head>
+
+<body>
+<table border="1">
+<caption>Test Drag and drop command "dragJsxToJsx". Do drag and drop from tree to block.</caption>
+<tbody>
+
+<tr>
+<td rowspan="1" colspan="3">Drag and drop from Tree to Block<br>
+</td>
+</tr>
+
+<!-- Load Test Setup File Below -->
+
+<tr>
+<td>include</td>
+<td>testSetup.html</td>
+<td>&nbsp;</td>
+</tr>
+
+<!-- Load Test Application Below -->
+
+<tr>
+<td>jsxopen</td>
+<td>${GIPATH}/shell.html?jsxapppath=${SAMPLESPATH}/sample-treeDragAndDrop&jsxlt=true</td>
+<td>&nbsp;</td>
+</tr>
+
+<!-- Add Test Cases Below -->
+
+
+<tr>
+ <td>waitForElementPresent</td>
+ <td>JsxTreeName=treeBreedSelection</td>
+  <td>5000</td>
+</tr>
+<tr>
+  <td>assertElementPresent</td>
+  <td>JsxTreeName=treeBreedSelection</td>
+  <td>&nbsp;</td>
+</tr>
+
+
+<tr>
+ <td>assertElementPresent</td>
+ <td>JsxTreeItemId=treeBreedSelection,c</td>
+ <td>&nbsp</td>
+</tr>
+<tr>
+<td>clickJsxTreeItem</td>
+<td>JsxTreeItemId=treeBreedSelection,c</td>
+<td>&nbsp</td>
+</tr>
+
+<!--tr>
+ <td>break</td>
+ <td>1500</td>
+ <td>&nbsp</td>
+</tr-->
+
+<tr>
+ <td>dragJsxToJsx</td>
+ <td>JsxTreeItemId=treeBreedSelection,c</td>
+ <td>JsxName=txtBreed</td>
+ <!--td>JsxName=blkRightPane</td-->
+</tr>
+
+<tr>
+ <td>assertJsxValueEqual</td>
+ <td>txtBreed</td>
+ <td>Poodle</td>
+</tr>
+<tr>
+ <td>dragJsxToJsx</td><!--dragAndDropToObject</td>-->
+ <td>JsxTreeItemText=treeBreedSelection,*Mutt*</td>
+ <td>JsxName=blkRightPane</td>
+</tr>
+
+<tr>
+ <td>assertJsxValueEqual</td>
+ <td>txtBreed</td>
+ <td>Mutt</td>
+</tr>
+
+<tr>
+ <td>typeJsxTextbox</td>
+ <td>JsxTextboxName=txtBreed</td>
+ <td>German Shepherd </td>
+</tr>
+
+<tr>
+ <td>typeJsxTextbox</td>
+ <td>JsxTextboxName=txtSize</td>
+ <td>Medium</td>
+</tr>
+
+
+<tr>
+ <td>click</td>
+ <td>JsxButtonName=btnAddItem</td>
+ <td>&nbsp</td>
+</tr>
+
+
+
+
+</tbody>
+</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

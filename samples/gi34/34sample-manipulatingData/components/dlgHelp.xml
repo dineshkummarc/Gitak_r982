@@ -1,0 +1,43 @@
+<serialization jsxversion="3.5" xmlns="urn:tibco.com/v3.0">
+  <name><![CDATA[Dialog]]></name>
+  <icon><![CDATA[images/prototypes/dialog.gif]]></icon>
+  <description><![CDATA[Dialog box.  (Set Modal property for a modal dialog).]]></description>
+  <onBeforeDeserialize></onBeforeDeserialize>
+  <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.Dialog">
+    <variants jsxwidth="544" jsxheight="454" jsxzindex="5003" jsxwindowstate="1" jsxleft="53" jsxtop="51"></variants>
+    <strings jsxname="dialog"></strings>
+    <dynamics jsxbgcolor="@Solid Medium"></dynamics>
+    <object type="jsx3.gui.WindowBar">
+      <variants></variants>
+      <strings jsxname="windowBar" jsxtext="Help"></strings>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants></variants>
+        <strings jsxname="btnMinimize"></strings>
+        <dynamics jsximage="@Min Icon" jsxtip="jsx3.gui.Dialog.min"></dynamics>
+        <events jsxexecute="this.getAncestorOfType(jsx3.gui.Dialog).doToggleState();"></events>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants></variants>
+        <strings jsxname="btnMaximize"></strings>
+        <dynamics jsximage="@Max Icon" jsxtip="jsx3.gui.Dialog.max"></dynamics>
+        <events jsxexecute="this.getAncestorOfType(jsx3.gui.Dialog).doMaximize(this);"></events>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants></variants>
+        <strings jsxname="btnClose"></strings>
+        <dynamics jsximage="@Close Icon" jsxtip="jsx3.gui.Dialog.close"></dynamics>
+        <events jsxexecute="this.getAncestorOfType(jsx3.gui.Dialog).doClose();"></events>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1" jsxloadtype="1"></variants>
+      <strings jsxname="block" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1"></strings>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="1"></variants>
+        <strings jsxname="paneDescription" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;P align=&quot;right&quot;&gt;&lt;b&gt;Manipulating data in CDF Documents; version 2.1&#xA;&lt;/b&gt;&lt;br/&gt;&#xA;JSX version: 3.4.0-3.5.1&lt;/P&gt;&#xA;&lt;p&gt;This sample application demonstrates the manipulation of data in a CDF document. This sample also demonstrates the means &#xA;to bind a function to fields of a column or  to fields of a row and it also demonstrates XSL which will modify the&#xA;visual display of cell values, based on the value in the cell &lt;/p&gt;&#xA;&#xA;&lt;p&gt;&#xA;Right click on columns that are marked with &lt;b&gt;Sum&lt;/b&gt;, displays a list of all available functions for that column.&#xA;For each one of these columns a specific menu object has been bounded to their &lt;i&gt;Bound Menu&lt;/i&gt; properties. &#xA;These menus are placed out of viewable range in a block called &lt;i&gt;blockOutOfView&lt;/i&gt;.&#xA;You can see the XML document for these menus in menu xml (String) property or in the &lt;I&gt;JSXAPPS/31sample-manipulatingData/xml/menuCDF.xml&lt;/I&gt; project file.&#xA;&lt;/p&gt;&#xA;&#xA;&#xA;&lt;p&gt;Hold down the &lt;i&gt;Ctrl key&lt;/i&gt; and click on items to select records that should be included in the calculation  &#xA;or select an item from the select box, menu or select multiple items from the multi-select box.  &#xA;To include the whole list in the calculation simply don't select any item.&lt;/p&gt;&#xA;&#xA;&#xA;&lt;p&gt;Click on &lt;i&gt;Calculate&lt;/i&gt; button displays the calculation result in 4 different ways:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt; The result of function f(X,Y)  for each record  will be added as attribute jsxIntXY  to that record, this new attribute will be rendered as column Z in &#xA;&#xA;the list. &lt;/li&gt;&#xA;&lt;li&gt;The fields of column  X, column Y and newly created column Z will be calculated and added as a new record to a second list.&lt;/li&gt;&#xA;&lt;li&gt;A new CDF document created from modified selected records from first list and  newly created record  will be  mapped to a third list. A custom XSL &#xA;&#xA;template is applied to the list control to modify the visual display of the Totals and a second XSL template modifies the visual display of column Z. &lt;/li&gt;&#xA;&lt;li&gt;The raw original CDF document, modified CDF document and filtered CDF document will be  rendered in an xblock object.&lt;/li&gt;&#xA;&lt;li&gt;Click on &lt;i&gt;Show Cart&lt;/i&gt; button displays a linear chart of X, Y and Z.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&#xA;&lt;p&gt;&#xA;The method jsxs.gui.getSelectedNodes returns a collection of selected nodes. The items in this object can easily be accessed in a while loop. If no records &#xA;&#xA;are selected the method jsx3.xml.Entity.selectNodes('//data/*') is called to get the collection of all records from cached CDF document, the XPATH query &#xA;&#xA;'//data/*' returns all children of element data.&#xA;The methods jsx3.xml.Entity.getAttribute, jsx3.xml.Entity.settAttribute are called to get the values for X and Y columns and to add new attribute Z to each &#xA;&#xA;record. Finally the modified selected records are cloned and added to a new CDF document. &#xA;&lt;/p&gt;&#xA;&lt;p&gt;&#xA;There are two key places where XSL is used in the example:  First, the default XSL template for all GI list &lt;I&gt;JSX/xsl/jsx30list.xsl&lt;/I&gt; has been copied to &#xA;&#xA;the project folder and modified to set the font size, font weight and the background color of the record with attribute value jsxtext= 'Total' .&#xA;&lt;br/&gt;&#xA; &amp;lt;xsl:when test=&quot;@jsxtext = 'Total'&quot;&amp;gt; &#xA;&lt;br/&gt;&#xA;          &amp;lt;xsl:attribute name=&quot;style&quot;&amp;gt; font-size:14px;font-weight:bold;background-color:rgb(0,255,0)&amp;lt; /xsl:attribute&amp;gt; &#xA;&lt;br/&gt;&#xA; &amp;lt;/xsl:when&amp;gt; &#xA;&lt;br/&gt;&#xA;The modified template was saved as &lt;br/&gt; &lt;i&gt;JSXAPPS/34sample-manipulatingData/xsl/listXSLT.xsl&lt;/i&gt; and the path to the modified template &#xA;has been specified in the list component's XSL URL property.  Second, a custom &amp;lt;xsl:attrribute&amp;gt; has been specified as the XSL Template property &#xA;for  the column Z in the third list.  You can see this XSL snippet in Z column's XSL Template property.&#xA;&lt;/p&gt;"></strings>
+        <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"></dynamics>
+      </object>
+    </object>
+  </object>
+</serialization>

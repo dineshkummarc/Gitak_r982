@@ -1,0 +1,90 @@
+<serialization jsxversion="3.5" xmlns="urn:tibco.com/v3.0">
+  <name><![CDATA[appCanvas]]></name>
+  <icon></icon>
+  <description><![CDATA[Sample for copy and pasting records from jsx3.gui.List to jsx3.gui.Textbox.]]></description>
+  <onBeforeDeserialize></onBeforeDeserialize>
+  <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="3" jsxsizearray="['220','*','15']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"></variants>
+    <strings jsxname="layout (--)" jsxwidth="100%" jsxheight="100%" jsxrows="220,*,15"></strings>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"></variants>
+      <strings jsxname="description" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;P align=&quot;right&quot;&gt; &lt;B&gt;Copy and Paste Formatted Text from List: version 2.1&lt;/B&gt;&lt;BR&gt;&#xA;JSX version: 3.4.0 +later&lt;/P&gt;&#xA;&#xA;&lt;P&gt;This sample application shows how to enable a right-click context menu to copy a jsx3.gui.Matrix List record to the clipboard as formatted text.&lt;/P&gt;The use case is to allow the application user the ability to right mouse a record, select from a menu to copy the entire record to the clipboard and then allow a &amp;lt;CONTROL&amp;gt;&amp;lt;V&amp;gt; keyboard sequence to insert the formatted text from the clipboard to any text area.&lt;/p&gt;&lt;p&gt;Show Source Button will retrieve the logic.js file using jsx3.net.Request for display.&lt;/p&gt;"></strings>
+      <dynamics jsxborder="@Outset" jsxpadding="@8Pixel" jsxbgcolor="@Solid Medium"></dynamics>
+      <object type="jsx3.gui.Button">
+        <variants jsxindex="0" jsxheight="18"></variants>
+        <strings jsxname="button" jsxtext="show JavaScript Source" jsxmargin="margin-left:6px;"></strings>
+        <events jsxexecute="eg.copypaste.showSource();"></events>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"></variants>
+      <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"></strings>
+      <dynamics jsxborder="@Outset"></dynamics>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="1"></variants>
+        <strings jsxname="outputPane" jsxwidth="100%" jsxheight="100%"></strings>
+        <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Light"></dynamics>
+        <object type="jsx3.gui.Block">
+          <variants jsxrelativeposition="0" jsxleft="10" jsxtop="9" jsxwidth="290" jsxheight="285"></variants>
+          <strings jsxname="sourceBlock" jsxxmlid="blockX_xml"></strings>
+          <dynamics jsxbgcolor="@Solid Light" jsxborder="@Inset"></dynamics>
+          <object type="jsx3.gui.Menu">
+            <variants></variants>
+            <strings jsxname="cityStateZipMenu" jsxtip="menu" jsxtext="menu" jsxxmlid="cityStateZipMenu_xml" jsxxmlurl="xml/cityStateZip_contextMenu_CDF.xml" jsxdisplay="none"></strings>
+            <events jsxexecute="eg.copypaste.copyRecordToClipboard(this);"></events>
+          </object>
+          <object type="jsx3.gui.Matrix">
+            <variants jsxpagingmodel="1" jsxselectionmodel="2" jsxscalewidth="1"></variants>
+            <strings jsxname="list" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxfocusstyle="" jsxxmlurl="xml/cityStateZip_CDF.xml" jsxxmlid="cityStateZipCDF_xml" jsxsortpath="city" jsxsorttype="text" jsxsortdirection="ascending" jsxmenu="cityStateZipMenu"></strings>
+            <events jsxexecute="jsx3.log('EVENT: (jsxexecute). Record: ' + strRECORDID);" jsxspy="eg.copypaste.showSpy(this, strRECORDID);"></events>
+            <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"></xslparameters>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants jsxwidth="81" jsxresize="1"></variants>
+              <strings jsxname="cityColumn" jsxtext="City" jsxcellpadding="2" jsxpath="city"></strings>
+              <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants jsxwidth="92"></variants>
+              <strings jsxname="stateColumn" jsxtext="State" jsxpadding="2" jsxcellpadding="2" jsxpath="state"></strings>
+              <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants></variants>
+              <strings jsxname="zipColumn" jsxwidth="100" jsxtext="Zip" jsxpadding="2" jsxcellpadding="3" jsxpath="zip"></strings>
+              <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxleft="10" jsxtop="290" jsxwidth="290" jsxheight="40" jsxoverflow="1" jsxrelativeposition="0"></variants>
+          <strings jsxname="sourceBlockText" jsxtextalign="center" jsxtext="Right click for context menu,&lt;br/&gt; choose 'Copy Record to Clipboard'" jsxpadding="padding-top:4px;"></strings>
+          <dynamics jsxbgcolor="@Solid Medium" jsxborder="@Inset"></dynamics>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxrelativeposition="0" jsxleft="340" jsxtop="10" jsxwidth="290" jsxheight="285"></variants>
+          <strings jsxname="resultBlock" jsxxmlid="comboCDF_xml"></strings>
+          <dynamics jsxbgcolor="@Solid Light" jsxborder="@Inset"></dynamics>
+          <object type="jsx3.gui.Menu">
+            <variants></variants>
+            <strings jsxname="pasteMenu" jsxtip="menu" jsxtext="paste" jsxxmlid="pasteRecordMenu_xml" jsxxmlurl="xml/pasteMenuCDF.xml" jsxdisplay="none"></strings>
+          </object>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxtype="1" jsxrelativeposition="0" jsxleft="0" jsxtop="0"></variants>
+            <strings jsxname="textarea" jsxwidth="100%" jsxheight="100%" jsxmenu="pasteMenu" jsxvalue=""></strings>
+            <dynamics jsxborder="@No jsxborder"></dynamics>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxleft="340" jsxtop="290" jsxwidth="290" jsxheight="40" jsxoverflow="1" jsxrelativeposition="0"></variants>
+          <strings jsxname="resultBlockText" jsxtextalign="center" jsxtext="Text area for right click context menu paste or &amp;lt;CONTROL&amp;gt;&amp;lt;V&amp;gt; paste." jsxpadding="padding-top:4px;"></strings>
+          <dynamics jsxbgcolor="@Solid Medium" jsxborder="@Inset"></dynamics>
+        </object>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"></variants>
+      <strings jsxname="block" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1"></strings>
+    </object>
+  </object>
+</serialization>

@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+Copyright 2006-2008 TIBCO Software Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Test Matrix Row Index Command</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<!--caption stores the test description for result reporting -->
+<caption>Test to excercize the store matrix row commands, this command allow tester to remember the row that match a particular matrix locator</caption>
+  <tbody>   
+<!--The first comment row is the Test Name used in result reporting -->
+    <tr>
+      <td rowspan="1" colspan="3">Test Matrix Row Index Command</td>
+    </tr>    
+   <tr>
+      <td>include</td>
+      <td>testSetup.html</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>jsxopen</td>
+      <td>${GIPATH}/shell.html?jsxapppath=${SAMPLESPATH}/test-matrix</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>waitForElementPresent</td>
+      <td>JsxToolbarButtonName=tbbList</td>
+      <td>5000</td>
+     </tr>    
+    <tr>
+        <td>clickJsxElement</td>
+        <td>JsxToolbarButtonText=Grid</td>
+        <td>&nbsp;</td>
+    </tr>    
+    <tr>
+      <td>waitForElementPresent</td>
+      <td>JsxMatrixCellText=matrix1,Antarctica</td>
+      <td>5000</td>
+     </tr>
+    <tr>
+      <td>storeJsxElementName</td>
+      <td>JsxMatrixRowText=matrix1,*Algeria*</td>
+      <td>objJSX</td>
+    </tr>
+    <tr>
+      <td>echo</td>
+      <td>${objJSX}</td>
+      <td></td>
+    </tr>
+
+	 <tr>
+      <td>storeJsxRecordIndex</td>
+      <td>JsxMatrixRowText=matrix1,*Algeria*</td>
+      <td>rowIndex</td>
+    </tr>
+    <tr>
+      <td>echo</td>
+      <td>${rowIndex}</td>
+      <td></td>
+    </tr>
+	<!--  MatrixCellId = name.${rowIndex}.mcTextbox-->
+    <tr>
+      <td>clickJsxCellMask</td>
+      <td>JsxMatrixCellIndex=matrix1.${rowIndex}.1</td>
+      <td></td>
+    </tr>     
+    <tr>
+      <td>clickJsxCellMask</td>
+      <td>JsxMatrixCellIndex=matrix1.${rowIndex}.3</td>
+      <td>New Algeria</td>
+    </tr>
+	<tr>
+    <td>clickJsxCellMask</td>
+      <td>JsxMatrixCellIndex=matrix1.${rowIndex}.4</td>
+      <td>JsxSelectItemText=selectMask,*Three*</td>
+	</tr>
+    <tr>
+      <td>assertText</td>
+      <td>JsxMatrixCellIndex=matrix1.${rowIndex}.3</td>
+      <td>New Algeria</td>
+    </tr>     
+    <tr>
+      <td>assertText</td>
+      <td>css=#JSX .jsx30button</td>
+      <td>Asynch Matrix</td>
+    </tr>     
+    <tr>
+      <td>assertText</td>
+      <td>css=#JSX .jsx30toolbarbutton:first</td>
+      <td>List</td>
+    </tr>     
+     
+    <!-- assert list row length = +1 -->
+    <!--tr>
+      <td>jsxopen</td>
+      <td>about:blank</td>
+      <td>&nbsp;</td>
+    </tr-->
+  </tbody>
+
+</table>
+</body>
+</html>

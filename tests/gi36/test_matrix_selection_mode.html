@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+Copyright 2006-2008 TIBCO Software Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<html>
+
+<head>
+<title>Multi Select matrix</title>
+</head>
+
+<body>
+<table border="1">
+<caption>Test the multiselect control, using shiftDown+mouseDown and controlDown+mouseDown</caption>
+<tbody>
+
+    <tr>
+        <td rowspan="1" colspan="3">Test multiselect control </td>
+    </tr>
+
+<!-- Load Test Setup File Below -->
+    <tr>
+        <td>include</td>
+        <td>testSetup.html</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>jsxopen</td>
+        <td>${GIPATH}/shell.html?jsxapppath=${SAMPLESPATH}/test-matrix</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>waitForElementPresent</td>
+      <td>JsxToolbarButtonName=tbbMultiSel</td>
+      <td>5000</td>
+     </tr>    
+    <tr>
+        <td>clickJsxElement</td>
+        <td>JsxToolbarButtonName=tbbMultiSel</td>
+        <td>&nbsp;</td>
+    </tr>    
+    <tr>
+      <td>waitForElementPresent</td>
+      <td>JsxMatrixCellText=matrix1,Azerbaijan</td>
+      <td>5000</td>
+     </tr>
+    <tr>
+      <td colspan="3">!-- shift key + click --</td>
+    </tr>
+	 <tr>
+		<td>shiftKeyDown</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	 </tr>
+	 <tr>
+        <td>jsxMouseDown</td>
+        <td>JsxMatrixRowId=matrix1,AX</td>
+        <td>shift</td>
+    </tr>
+    <tr>
+        <td>assertJsxSelectedId</td>
+        <td>matrix1</td>
+        <td>AX</td>
+    </tr>
+	 <tr>
+        <td>jsxMouseDown</td>
+        <td>JsxMatrixRowId=matrix1,AG</td>
+        <td>shift</td>
+    </tr>
+	 <tr>
+		<td>shiftKeyUp</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	 </tr>
+    <tr>
+      <td colspan="3">!-- control key + click --</td>
+    </tr>
+    <tr>
+        <td>clickJsxElement</td>
+        <td>JsxToolbarButtonText=Clear*</td>
+        <td>&nbsp;</td>
+    </tr>
+        <tr>
+        <td>clickJsxElement</td>
+        <td>JsxToolbarButtonText=*Select*</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>waitForElementPresent</td>
+      <td>JsxMatrixCellText=matrix1,Azerbaijan</td>
+      <td>5000</td>
+     </tr>    
+    <tr>
+      <td>controlKeyDown</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+<tr>
+ <td>mouseDown</td>
+ <td>JsxMatrixRowText=matrix1,Afghanistan*</td>
+ <td></td>
+</tr>
+<tr>
+ <td>mouseDown</td>
+ <td>JsxMatrixRowText=matrix1,Algeria*</td>
+ <td>&nbsp;</td>
+</tr>
+<tr>
+ <td>mouseDown</td>
+ <td>JsxMatrixRowText=matrix1,*Angola*</td>
+ <td>&nbsp;</td>
+</tr>
+<tr>
+ <td>mouseDown</td>
+ <td>JsxMatrixRowText=matrix1,*Austria*</td>
+ <td>&nbsp;</td>
+</tr>
+    <tr>
+        <td>assertJsxSelectedIds</td>
+        <td>matrix1</td>
+        <td>AG,AR,AO,AI</td>
+    </tr>
+    <tr>
+      <td>controlKeyUp</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>selectJsxRecords</td>
+      <td>matrix1</td>
+      <td>//record[@jsxtext="Aruba"]</td>
+    </tr>
+	</tbody>
+</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

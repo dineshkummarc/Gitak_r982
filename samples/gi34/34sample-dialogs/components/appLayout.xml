@@ -1,0 +1,75 @@
+<serialization jsxversion="3.4" xmlns="urn:tibco.com/v3.0">
+  <name><![CDATA[Layout (--)]]></name>
+  <icon></icon>
+  <description><![CDATA[2 top-over-bottom panes in an adaptive layout grid.]]></description>
+  <onBeforeDeserialize></onBeforeDeserialize>
+  <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="3" jsxsizearray="['84','*','28']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"></variants>
+    <strings jsxname="lytMainLayout" jsxwidth="100%" jsxheight="100%" jsxrows="84,*,28"></strings>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="2"></variants>
+      <strings jsxname="blkTopPane" jsxwidth="100%" jsxheight="100%"></strings>
+      <dynamics jsxborder="@Outset"></dynamics>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants jsxrepeat="2" jsxsizearray="['54','*']" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="0" jsxorientation="0"></variants>
+        <strings jsxname="lytTopPaneLayout" jsxwidth="100%" jsxheight="100%" jsxdisplay="" jsxrows="54,*"></strings>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2" jsxleft="0" jsxtop="0"></variants>
+          <strings jsxname="blkLogoPane" jsxwidth="100%" jsxheight="100%" jsxdisplay="" jsxtagname="div"></strings>
+          <dynamics jsxborder="@Outset"></dynamics>
+          <object type="jsx3.gui.Image">
+            <variants jsxoverflow="3" jsxrelativeposition="1" jsxwidth="121" jsxheight="54"></variants>
+            <strings jsxname="image" jsxsrc="images/tibcologo.gif"></strings>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1" jsxleft="0" jsxtop="0"></variants>
+          <strings jsxname="blkMenuBarPane" jsxwidth="100%" jsxheight="100%" jsxdisplay="" jsxtagname="div"></strings>
+          <dynamics jsxborder="@Outset"></dynamics>
+          <object type="jsx3.gui.WindowBar">
+            <variants jsxbartype="2" jsxleft="0" jsxtop="0" jsxrelativeposition="0"></variants>
+            <strings jsxname="winbarMenuBar" jsxdisplay=""></strings>
+            <properties width="100%" height="100%"></properties>
+            <object type="jsx3.gui.Menu">
+              <variants></variants>
+              <strings jsxname="mnuMenu1" jsxtip="menu" jsxtext="menu" jsxxml="&lt;data jsxid=&quot;jsxroot&quot;&gt;  &lt;record jsxid=&quot;1&quot; jsxtext=&quot;New&quot;/&gt;  &lt;record jsxid=&quot;2&quot; jsxtext=&quot;Open&quot;/&gt;  &lt;record jsxid=&quot;3&quot; jsxtext=&quot;Save&quot;/&gt;  &lt;/data&gt;"></strings>
+            </object>
+            <object type="jsx3.gui.Menu">
+              <variants jsxstate="0"></variants>
+              <strings jsxname="mnuMenu2" jsxtip="menu" jsxtext="menu" jsximage="images/refresh.gif" jsxxml="&lt;data jsxid=&quot;jsxroot&quot;&gt; &lt;record jsxid=&quot;1&quot; jsxtext=&quot;New&quot;/&gt; &lt;record jsxid=&quot;2&quot; jsxtext=&quot;Open&quot;/&gt; &lt;record jsxid=&quot;3&quot; jsxtext=&quot;Save&quot;/&gt; &lt;/data&gt;"></strings>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="2"></variants>
+      <strings jsxname="blkMiddlePane" jsxwidth="100%" jsxheight="100%"></strings>
+      <dynamics jsxborder="@Outset"></dynamics>
+      <object type="jsx3.gui.Block">
+        <variants jsxleft="50" jsxtop="10" jsxwidth="450" jsxheight="200" jsxoverflow="1" jsxrelativeposition="0"></variants>
+        <strings jsxname="blkMiddlePaneContent" jsxtext="&lt;P&gt;Frequently, applications are created in the context of an application layout grid.&lt;/P&gt;  &lt;P&gt;This example provides a top branding area and menu bar, and a bottom task bar. The grid in the middle is where the application UI will be located.&lt;/P&gt;  &lt;P&gt;Dialogs in this scenario are often set as children of the middle pane. Then, when they are maximized or dragged, they will remain in the middle pane, not overlapping the menu and task bars.&lt;/P&gt;  &lt;P&gt;The Overflow property of the parent block to which the dialog belongs should be set to Hidden in order to avoid scroll bars when the dialog is moved outside of the block.&lt;/P&gt;"></strings>
+        <dynamics jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"></dynamics>
+      </object>
+      <object type="jsx3.gui.Button">
+        <variants jsxindex="0" jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="230"></variants>
+        <strings jsxname="btnLaunchInMiddlePaneButton" jsxtext="Launch Dialog in Middle Pane" jsxmargin="margin-right:4px;"></strings>
+        <events jsxexecute="eg.sampledialogs.launchComponent(this.getServer().getJSXByName(&quot;blkMiddlePane&quot;),&quot;appCanvasDialog.xml&quot;,false)"></events>
+      </object>
+      <object type="jsx3.gui.Button">
+        <variants jsxindex="0" jsxheight="18" jsxrelativeposition="0" jsxleft="50" jsxtop="250"></variants>
+        <strings jsxname="btnLaunchAsAppChildButton" jsxtext="Launch Dialog as child of application's body block" jsxmargin="margin-right:4px;"></strings>
+        <events jsxexecute="eg.sampledialogs.launchComponent(this.getServer().getBodyBlock(),&quot;simpleDialog.xml&quot;,false)"></events>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"></variants>
+      <strings jsxname="blkBottomPane" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1"></strings>
+      <object type="jsx3.gui.WindowBar">
+        <variants jsxbartype="3"></variants>
+        <strings jsxname="winbarTaskBar"></strings>
+      </object>
+    </object>
+  </object>
+</serialization>

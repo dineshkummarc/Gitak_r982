@@ -1,0 +1,39 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Dialog</name>
+  <icon/>
+  <description>Dialog box.  (Set Modal property for a modal dialog).</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Dialog">
+    <variants jsxwidth="431" jsxheight="200" jsxzindex="5000" jsxwindowstate="1" jsxmodal="1"/>
+    <strings jsxname="dlgModalDialog"/>
+    <dynamics jsxbgcolor="@Solid Medium"/>
+    <object type="jsx3.gui.WindowBar">
+      <variants/>
+      <strings jsxname="winbarModalTitle" jsxtext="ModalDialog"/>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants/>
+        <strings jsxname="tbbMinimizeButton"/>
+        <dynamics jsximage="@Min Icon" jsxtip="@Min Tip"/>
+        <events jsxexecute="this.getParent().getParent().doToggleState();"/>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants/>
+        <strings jsxname="tbbMaximizeButton" jsximage="JSX/images/dialog/max.gif"/>
+        <dynamics jsxtip="@Max Tip"/>
+        <events jsxexecute="this.getAncestorOfType(&quot;jsx3.gui.Dialog&quot;).doMaximize(this);"/>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants/>
+        <strings jsxname="tbbCloseButton"/>
+        <dynamics jsximage="@Close Icon" jsxtip="@Close Tip"/>
+        <events jsxexecute="this.getParent().getParent().doClose();"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkModalDescription" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1" jsxtext="&lt;p&gt;A &lt;b&gt;Modal dialog&lt;/b&gt; will prevent the user from interacting its peer children.&lt;/p&gt; &lt;p&gt; It retains the focus while open&lt;/p&gt;"/>
+      <dynamics jsxpadding="@8Pixel"/>
+    </object>
+  </object>
+</serialization>

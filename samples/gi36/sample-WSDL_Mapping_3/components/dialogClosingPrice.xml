@@ -1,0 +1,26 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Dialog</name>
+  <icon/>
+  <description>Dialog box.  (Set Modal property for a modal dialog).</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Dialog">
+    <variants jsxwidth="300" jsxheight="100" jsxzindex="5000" jsxwindowstate="1" jsxleft="236" jsxtop="310"/>
+    <strings jsxname="dlgClosingPriceDialog"/>
+    <dynamics jsxbgcolor="@Solid Medium"/>
+    <object type="jsx3.gui.WindowBar">
+      <variants/>
+      <strings jsxname="winbarTitle" jsxtext="Last Closing Price"/>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants/>
+        <strings jsxname="tbbCloseButton"/>
+        <dynamics jsximage="@Close Icon" jsxtip="@Close Tip"/>
+        <events jsxexecute="this.getParent().getParent().doClose();"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="2" jsxfontsize="20"/>
+      <strings jsxname="blkClosePriceValue" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1" jsxfontweight="bold" jsxpadding="padding:12px;" jsxcolor="Green" jsxtext="waiting..."/>
+    </object>
+  </object>
+</serialization>

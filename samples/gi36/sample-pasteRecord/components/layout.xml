@@ -1,0 +1,119 @@
+<?xml version="1.0" ?>
+<serialization xmlns="urn:tibco.com/v3.0" >
+ <unicode></unicode>
+ <name><![CDATA[Layout (--)]]></name>
+ <icon><![CDATA[]]></icon>
+ <description><![CDATA[2 top-over-bottom panes in an adaptive layout grid.]]></description>
+ <onBeforeDeserialize><![CDATA[]]></onBeforeDeserialize>
+ <onAfterDeserialize><![CDATA[]]></onAfterDeserialize>
+ <objects>
+  <object type="jsx3.gui.LayoutGrid">
+   <variants jsxrepeat="2" jsxsizearray="['190','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0" />
+   <strings jsxname="layout (--)" jsxwidth="100%" jsxheight="100%" />
+   <children>
+    <object type="jsx3.gui.Block">
+     <dynamics jsxborder="@Outset" jsxpadding="@8Pixel" jsxbgcolor="@Solid Medium" />
+     <variants jsxoverflow="1" />
+     <strings jsxname="description" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;P align=&quot;right&quot;&gt;&lt;B&gt;Extracting Unique Attribues from CDF&lt;/B&gt;&lt;BR&gt;
+JSX version: 3.1.0&lt;/P&gt;
+
+&lt;P&gt;This sample application shows how to extract unique values from one CDF and apply a transformation XSL to create another CDF.&lt;/P&gt;
+&lt;P&gt;The scenario for this demonstration is where an existing CDF has records that can be used for menu items or select options, but the records repeat attributes.  We want to extract a list of all the unique attribute values and copy them into a second CDF for use in the menu or select object.&lt;P&gt;" />
+     <children>
+     </children>
+    </object>
+    <object type="jsx3.gui.Block">
+     <dynamics jsxborder="@Outset" />
+     <variants jsxoverflow="1" />
+     <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" />
+     <children>
+      <object type="jsx3.gui.LayoutGrid">
+       <variants jsxrepeat="2" jsxsizearray="['50','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0" />
+       <strings jsxname="layout (--)" jsxwidth="100%" jsxheight="100%" />
+       <children>
+        <object type="jsx3.gui.Block">
+         <dynamics jsxborder="@No jsxborder" />
+         <variants jsxoverflow="2" />
+         <strings jsxname="inputPane" jsxwidth="100%" jsxheight="100%" />
+         <children>
+          <object type="jsx3.gui.Block">
+           <dynamics jsxpadding="@8Pixel" />
+           <variants jsxheight="18" jsxoverflow="3" />
+           <strings jsxname="block" jsxwidth="100%" jsxrelativeposition="1" />
+           <children>
+            <object type="jsx3.gui.Block">
+             <variants jsxheight="18" jsxwidth="100" />
+             <strings jsxname="label" jsxtext="Enter Zip Code" jsxmargin="margin-right:4px;" jsxpadding="padding-top:4px;" />
+             <children>
+             </children>
+            </object>
+            <object type="jsx3.gui.TextBox">
+             <variants jsxheight="18" />
+             <strings jsxname="zip" jsxmargin="margin-right:4px;" />
+             <children>
+             </children>
+            </object>
+            <object type="jsx3.gui.Button">
+             <variants jsxindex="0" jsxheight="18" />
+             <strings jsxname="lookupButton" jsxtext="Find City and State" jsxmargin="margin-right:4px;" />
+             <events jsxexecute="doTest();" />
+             <children>
+             </children>
+            </object>
+           </children>
+          </object>
+         </children>
+        </object>
+        <object type="jsx3.gui.Block">
+         <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Light" />
+         <variants jsxoverflow="1" />
+         <strings jsxname="outputPane" jsxwidth="100%" jsxheight="100%" />
+         <children>
+          <object type="jsx3.gui.Block">
+           <dynamics jsxpadding="@8Pixel" />
+           <variants jsxheight="18" jsxoverflow="3" />
+           <strings jsxname="block" jsxwidth="100%" jsxrelativeposition="1" />
+           <children>
+            <object type="jsx3.gui.Block">
+             <variants jsxheight="18" jsxwidth="100" />
+             <strings jsxname="label" jsxtext="City" jsxmargin="margin-right:4px;" jsxpadding="padding-top:4px;" />
+             <children>
+             </children>
+            </object>
+            <object type="jsx3.gui.TextBox">
+             <variants jsxheight="18" />
+             <strings jsxname="city" jsxmargin="margin-right:4px;" />
+             <children>
+             </children>
+            </object>
+           </children>
+          </object>
+          <object type="jsx3.gui.Block">
+           <dynamics jsxpadding="@8Pixel" />
+           <variants jsxheight="18" jsxoverflow="3" />
+           <strings jsxname="block" jsxwidth="100%" jsxrelativeposition="1" />
+           <children>
+            <object type="jsx3.gui.Block">
+             <variants jsxheight="18" jsxwidth="100" />
+             <strings jsxname="label" jsxtext="State" jsxmargin="margin-right:4px;" jsxpadding="padding-top:4px;" />
+             <children>
+             </children>
+            </object>
+            <object type="jsx3.gui.TextBox">
+             <variants jsxheight="18" />
+             <strings jsxname="state" jsxmargin="margin-right:4px;" />
+             <children>
+             </children>
+            </object>
+           </children>
+          </object>
+         </children>
+        </object>
+       </children>
+      </object>
+     </children>
+    </object>
+   </children>
+  </object>
+ </objects>
+</serialization>

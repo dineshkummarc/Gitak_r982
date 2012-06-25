@@ -1,0 +1,56 @@
+<serialization jsxversion="3.4" xmlns="urn:tibco.com/v3.0">
+  <name><![CDATA[Layout Sample]]></name>
+  <icon></icon>
+  <description><![CDATA[description]]></description>
+  <onBeforeDeserialize></onBeforeDeserialize>
+  <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.Block">
+    <variants jsxwidth="300" jsxheight="300" jsxoverflow="1" jsxleft="0" jsxtop="0" jsxrelativeposition="0"></variants>
+    <strings jsxname="blkMainPane" jsxannotation="Dragging rows to portlet B will display a pie chart."></strings>
+    <dynamics jsxbgcolor="@Solid Medium"></dynamics>
+    <object type="jsx3.gui.LayoutGrid">
+      <variants jsxrepeat="2" jsxsizearray="['30','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"></variants>
+      <strings jsxname="lytMainLayout" jsxwidth="100%" jsxheight="100%" jsxrows="30,*"></strings>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"></variants>
+        <strings jsxname="blkTopPane" jsxwidth="100%" jsxheight="100%"></strings>
+        <dynamics jsxborder="@Outset"></dynamics>
+        <object type="jsx3.gui.WindowBar">
+          <variants jsxbartype="1" jsxrelativeposition="0" jsxleft="0" jsxtop="0"></variants>
+          <strings jsxname="winbarChartTitlebar" jsxtext="MegaloCorp Sales" jsxdisplay=""></strings>
+          <object type="jsx3.gui.Block">
+            <variants jsxheight="18"></variants>
+            <strings jsxname="lblChartTitle" jsxtext="Product Sales Chart" jsxmargin="margin-top:4px;margin-right:4px;margin-left:4px;" jsxpadding="padding-top:4px;" jsxfontweight="bold"></strings>
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2" jsxleft="0" jsxtop="0"></variants>
+        <strings jsxname="blkBottomPane" jsxwidth="100%" jsxheight="100%" jsxdisplay="" jsxpadding="13" jsxmargin=""></strings>
+        <dynamics jsxborder="@Outset"></dynamics>
+        <object type="jsx3.chart.PieChart">
+          <variants jsxleft="0" jsxtop="0" jsxwidth="270" jsxzindex="1" borderWidth="1" borderAlpha="1" alpha="1" jsxrelativeposition="1" loadState="1" innerRadius="0" seriesPadding="0.1" totalAngle="360" startAngle="0" colors="['#1090ef','#b0104f','#FFCC33','#66CCCC','#CCFF66','#666666','#FF0033','#66CC00','#00FF66']"></variants>
+          <strings jsxname="chrtPieChart" titlePlacement="top" legendPlacement="right" dataPadding="20" borderColor="#999999" categoryField="name" colorFunction="jsx3.chart.PieChart.defaultColoring" seriesStroke="#666666" jsxbgcolor="#FFFFFF" jsxxmlurl="xml/salesDetail.xml" jsxheight="240"></strings>
+          <events jsxspy=""></events>
+          <object type="jsx3.chart.ChartLabel">
+            <variants jsxleft="0" jsxtop="0" jsxwidth="268" jsxheight="25" jsxzindex="1000" labelRotation="0" jsxfontsize="14"></variants>
+            <strings jsxname="lblChartTitle" jsxtext="Sales - Widget A" jsxcolor="#FFFFFF" jsxbgcolor="#666666" jsxpadding="4 0 0 0" jsxfontname="Arial" jsxfontweight="bold" jsxtextalign="center"></strings>
+          </object>
+          <object type="jsx3.chart.PieSeries">
+            <variants jsxleft="0" jsxtop="0" jsxwidth="128" jsxheight="173" jsxzindex="21" usePrimaryX="1" usePrimaryY="1" index="0"></variants>
+            <strings jsxname="srsChartData" seriesName="Series 1" field="value"></strings>
+            <events jsxspy="eg.portletB.pieSpy(this.getChart(), strRECORDID);" jsxselect="jsx3.log('idx='+intINDEX+',id='+strRECORDID);"></events>
+          </object>
+          <object type="jsx3.chart.Legend">
+            <variants boxHeight="10" lineHeight="22" titleSpace="8" boxSpace="6" jsxleft="168" jsxtop="25" jsxwidth="100" jsxheight="213" jsxzindex="990"></variants>
+            <strings jsxname="lgndChartLegend" labelStyle="font-size: 10px; font-weight: bold;" backgroundStroke="#BBBBBB" jsxmargin="10 10 10 4" jsxpadding="4 4 0 4"></strings>
+            <object type="jsx3.chart.ChartLabel">
+              <variants labelRotation="0" jsxfontsize="12" jsxleft="8" jsxtop="62" jsxwidth="78" jsxheight="20" jsxzindex="3" preferredHeight="20"></variants>
+              <strings jsxname="lblChartLegendTitle" jsxtext="Region" jsxfontname="Arial" jsxfontweight="bold" jsxtextalign="center"></strings>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The attribute values in this file of the form {abc} refer to dynamic properties. When this file is loaded
+     as the XML source of an object that implements the jsx3.xml.Cacheable interface, like jsx3.gui.Menu, all of
+     these attributes will be swapped out for the value of the corresponding dynamic properties. -->
+<data jsxid="jsxroot">
+  <record jsxid="en" jsxtext="{Display English}"/>
+  <record jsxid="zh_TW" jsxtext="{Display Chinese}"/>
+  <record jsxid="fr" jsxtext="{Display French}"/>
+  <record jsxid="-1" jsxtext="{Display Default}"/>
+</data>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Test Setup</title>
+</head>
+<body >
+
+<table>
+    <tr>
+      <td rowspan="1" colspan="3">Test Setup Procedures</td>
+    </tr>
+    <tr>
+      <td>store</td>
+      <td>file:///C:/tibco/tibco-gi-3.7.1-pro</td>
+      <td>GIPATH</td>
+    </tr>
+    <tr>
+      <td>storeEval</td>
+      <td>document.location.href.split("/core")[0];</td>
+      <td>SELENIUMPATH</td>
+    </tr>
+     <tr>
+      <td>echo</td>
+      <td>${SELENIUMPATH}</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>store</td>
+      <td>${SELENIUMPATH}/gi/samples/gi36</td>
+      <td>SAMPLESPATH</td>
+    </tr>
+    <tr>
+     <td>echo</td>
+     <td>${SELENIUMPATH}</td>
+     <td></td>
+   </tr>
+
+</table>
+
+
+</body>
+</html>

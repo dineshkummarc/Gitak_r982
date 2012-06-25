@@ -1,0 +1,97 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Sample App Template</name>
+  <icon/>
+  <description>Basic template for sample applications.  Contains a top block for descriptions, and a bottom block for the sample app.</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['250','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="0" jsxorientation="0"/>
+    <strings jsxname="lytMainLayout" jsxwidth="100%" jsxheight="100%"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkDescription" jsxwidth="100%" jsxtext="&lt;p align=&quot;left&quot;&gt;&lt;b&gt;Source: &lt;a style=&quot;text-decoration:none&quot; href='http://power.tibco.com/content/GI/Apps/320/projects/JSXAPPS/32sample-WSDL_Mapping_2.zip'&gt;http://power.tibco.com/content/GI/Apps/320/projects/JSXAPPS/32sample-WSDL_Mapping_2.zip&lt;/a&gt;&lt;/b&gt;&lt;/p&gt; &lt;p align=&quot;right&quot;&gt;&lt;b&gt;WSDL Mapping 2; version 2.0&lt;/b&gt;&lt;br/&gt; JSX version: 3.2.0&lt;/p&gt; &lt;p&gt;This sample application demonstrates the two-step process for rendering repeating structures: 1) mapping repeating structures from WSDL to CDF; and 2) associating CDF documents and attributes with GUI components.&lt;/p&gt; &lt;p&gt;Enter several comma-separated ticker symbols, choose a day with the date picker and click Query Service.  The service will return a record for each stock, which will be rendered in the grid component.&lt;/p&gt; &lt;p&gt;Examine the mapping rule for details.  The response element containing the repeating structures is mapped to a CDF Document; the repeating element is mapped to a CDF Record, and the values to be displayed are mapped to CDF Attributes.  Examine the cache document &quot;historicals&quot; to see the CDF.&lt;/p&gt; &lt;p&gt;The CDF document is then rendered in the view by specifying the XML Cache ID property of the grid, and then defining the Path properties of each of the columns.&lt;/p&gt;" jsxheight="100%"/>
+      <dynamics jsxborder="@Outset" jsxpadding="@8Pixel" jsxbgcolor="@Solid Medium"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkAppPane" jsxwidth="100%" jsxheight="100%"/>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants jsxrepeat="2" jsxsizearray="['50','*']" jsxrelativeposition="1" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+        <strings jsxname="lytAppLayout" jsxwidth="100%" jsxheight="100%"/>
+        <dynamics jsxbgcolor="@Solid Light" jsxborder="@Outset"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="blkInputPane" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Disabled" jsxpadding="@8Pixel"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxheight="18" jsxrelativeposition="0" jsxleft="13" jsxtop="4"/>
+            <strings jsxname="lblSymbolLabel" jsxtext="Enter one or more stock symbols" jsxmargin="0 4 0 0" jsxpadding="4 0 0 0"/>
+          </object>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxheight="18" jsxrelativeposition="0" jsxleft="210" jsxtop="4" jsxwidth="200"/>
+            <strings jsxname="txtSymbolInput" jsxmargin="0 4 0 0" jsxvalue="TIBX"/>
+            <events jsxexecute="eg.wsdl2.callGetHistoricalQuotes();"/>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxheight="18" jsxrelativeposition="0" jsxleft="170" jsxtop="24"/>
+            <strings jsxname="lblStartDateLabel" jsxtext="Date" jsxmargin="0 4 0 0" jsxpadding="4 0 0 0"/>
+          </object>
+          <object type="jsx3.gui.Button">
+            <variants jsxindex="0" jsxheight="18" jsxrelativeposition="0" jsxleft="410" jsxtop="26"/>
+            <strings jsxname="btnQueryButton" jsxtext="Query Service" jsxmargin="0 4 0 0"/>
+            <events jsxexecute="eg.wsdl2.callGetHistoricalQuotes();"/>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxheight="18" jsxrelativeposition="0" jsxleft="290" jsxtop="24"/>
+            <strings jsxname="lblDateFormatLabel" jsxtext="(MM-DD-YYYY)" jsxmargin="0 4 0 0" jsxpadding="4 0 0 0"/>
+          </object>
+          <object type="jsx3.gui.DatePicker">
+            <variants jsxwidth="80" jsxrelativeposition="0" jsxheight="18" jsxleft="210" jsxtop="25" jsxfirstweekday="0" jsxyear="2006" jsxmonth="8" jsxdate="13"/>
+            <strings jsxname="dpkrStartDateInput" jsxmargin="0 4 0 0" jsxtip="Click to enter a date"/>
+            <dynamics jsxformat="@US Short"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants/>
+          <strings jsxname="blkOutputPane"/>
+          <dynamics jsxbgcolor="@Solid Medium" jsxbodyborder="@Outset"/>
+          <object type="jsx3.gui.Matrix">
+            <variants jsxsortcolumn="1"/>
+            <strings jsxname="mtxResultsTable" jsxsortdirection="descending" jsxxmlid="historicals"/>
+            <dynamics jsxbgcolor="@Solid Light" jsxbg="@Alternating Rows"/>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants jsxwidth="120"/>
+              <strings jsxname="mcDateColumn" jsxpath="Date" jsxtext="Date" jsxcellpadding="3" jsxpadding="3"/>
+              <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset"/>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants jsxwidth="120"/>
+              <strings jsxname="mcSecurityColumn" jsxpath="Security" jsxtext="Security" jsxcellpadding="3" jsxpadding="3"/>
+              <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset"/>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants jsxwidth="120"/>
+              <strings jsxname="mcOpenColumn" jsxpath="Open" jsxtext="Open" jsxcellpadding="3" jsxpadding="3"/>
+              <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset"/>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants jsxwidth="120"/>
+              <strings jsxname="mcHighColumn" jsxpath="High" jsxtext="High" jsxcellpadding="3" jsxpadding="3"/>
+              <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset"/>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants jsxwidth="120"/>
+              <strings jsxname="mcLowColumn" jsxpath="Low" jsxtext="Low" jsxcellpadding="3" jsxpadding="3"/>
+              <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset"/>
+            </object>
+            <object type="jsx3.gui.Matrix.Column">
+              <variants jsxwidth="120"/>
+              <strings jsxname="mcCloseColumn" jsxpath="LastClose" jsxtext="Close" jsxcellpadding="3" jsxpadding="3"/>
+              <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset"/>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

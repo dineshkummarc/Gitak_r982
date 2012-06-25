@@ -1,0 +1,27 @@
+<!--
+
+This file simply redirects to the JsUnit testRunner.html page and auto-fills the run path.
+
+-->
+<html>
+<head>
+  <script type="text/javascript">
+
+function redir() {
+  var href = window.location.href;
+  href = href.replace(/\\/g, "/");
+  var index = href.lastIndexOf("/");
+  var base = href.substring(0, index);
+  var basePath = base.replace(/^(file|http|https):\/{0,3}/i, "");
+  var giPath = "/c:/tibco/gi/tibco-gi-3.7.1-pro-max";
+  var url = base + "/sample-portal.html?gipath=" + giPath;
+  alert('Launching sample using URL=' + url);
+  window.location.href = url;
+}
+
+  </script>
+</head>
+<body onload="redir();">
+
+</body>
+</html>

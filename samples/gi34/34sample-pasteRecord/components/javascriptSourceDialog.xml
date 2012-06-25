@@ -1,0 +1,45 @@
+<serialization jsxversion="3.5" xmlns="urn:tibco.com/v3.0">
+  <name><![CDATA[Dialog]]></name>
+  <icon></icon>
+  <description><![CDATA[Dialog box.  (Set Modal property for a modal dialog).]]></description>
+  <onBeforeDeserialize></onBeforeDeserialize>
+  <onAfterDeserialize><![CDATA[jsx3.sleep( function ()  {
+    var textRequest = new jsx3.net.Request();
+    var logicurl = objJSX.getServer().resolveURI('js/logic.js');
+    textRequest.open('GET', logicurl, false);
+    textRequest.send();
+    var replyText = textRequest.getResponseText();
+   objJSX.getServer().getJSXByName('txt_logic_js').setValue(replyText);
+});]]></onAfterDeserialize>
+  <object type="jsx3.gui.Dialog">
+    <variants jsxzindex="5000" jsxwindowstate="1" jsxleft="34" jsxtop="58"></variants>
+    <strings jsxname="dialog" jsxwidth="600" jsxheight="500"></strings>
+    <dynamics jsxbgcolor="@Solid Medium"></dynamics>
+    <object type="jsx3.gui.WindowBar">
+      <variants></variants>
+      <strings jsxname="caption bar" jsxtext="JavaScript Source"></strings>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants></variants>
+        <strings jsxname="min button"></strings>
+        <dynamics jsximage="@Min Icon" jsxtip="@Min Tip"></dynamics>
+        <events jsxexecute="this.getParent().getParent().doToggleState();"></events>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants></variants>
+        <strings jsxname="max button" jsximage="JSX/images/dialog/max.gif"></strings>
+        <dynamics jsxtip="@Max Tip"></dynamics>
+        <events jsxexecute="this.getAncestorOfType(&quot;jsx3.gui.Dialog&quot;).doMaximize(this);"></events>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants></variants>
+        <strings jsxname="close button"></strings>
+        <dynamics jsximage="@Close Icon" jsxtip="@Close Tip"></dynamics>
+        <events jsxexecute="this.getParent().getParent().doClose();"></events>
+      </object>
+    </object>
+    <object type="jsx3.gui.TextBox">
+      <variants jsxtype="1"></variants>
+      <strings jsxname="txt_logic_js" jsxmargin="margin-right:4px;" jsxwidth="100%" jsxheight="99%"></strings>
+    </object>
+  </object>
+</serialization>

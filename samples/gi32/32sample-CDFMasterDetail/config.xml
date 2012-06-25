@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<data>
+  <record jsxid="version" type="string">3.2</record>
+  <record jsxid="caption" type="string">32sample-CDFMasterDetail</record>
+  <record jsxid="mode" type="boolean">true</record>
+  <record jsxid="namespace" type="string">CDFMasterDetail32</record>
+  <record jsxid="cancelerror" type="boolean">true</record>
+  <record jsxid="cancelrightclick" type="boolean">true</record>
+  <record jsxid="left" type="number">0</record>
+  <record jsxid="top" type="number">0</record>
+  <record jsxid="width" type="string">100%</record>
+  <record jsxid="height" type="string">100%</record>
+  <record jsxid="position" type="number">0</record>
+  <record jsxid="overflow" type="number">0</record>
+  <record jsxid="eventsvers" type="string">3.1</record>
+  <record jsxid="onload" type="string"/>
+  <record jsxid="objectseturl" type="string">components/appCanvas.xml</record>
+  <record jsxid="includes" type="array">
+    <record jsxid="0" type="map">
+      <record jsxid="id" type="string">appCanvas_component</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="onLoad" type="boolean">false</record>
+      <record jsxid="src" type="string">components/appCanvas.xml</record>
+    </record>
+    <record jsxid="1" type="map">
+      <record jsxid="id" type="string">logic_js</record>
+      <record jsxid="type" type="string">script</record>
+      <record jsxid="onLoad" type="boolean">true</record>
+      <record jsxid="src" type="string">js/logic.js</record>
+    </record>
+    <record jsxid="2" type="map">
+      <record jsxid="id" type="string">source_list_xml</record>
+      <record jsxid="type" type="string">xml</record>
+      <record jsxid="onLoad" type="boolean">true</record>
+      <record jsxid="src" type="string">xml/source_list.xml</record>
+    </record>
+    <record jsxid="3" type="map">
+      <record jsxid="id" type="string">record2records_xsl</record>
+      <record jsxid="type" type="string">xsl</record>
+      <record jsxid="onLoad" type="boolean">true</record>
+      <record jsxid="src" type="string">xsl/record2records.xsl</record>
+    </record>
+    <record jsxid="4" type="map">
+      <record jsxid="id" type="string">dlgApplicantDetails_xml</record>
+      <record jsxid="type" type="string">component</record>
+      <record jsxid="onLoad" type="string"/>
+      <record jsxid="src" type="string">components/dlgApplicantDetails.xml</record>
+    </record>
+  </record>
+  <record jsxid="bodyhotkeys" type="boolean">false</record>
+  <record jsxid="jsxversion" type="string">3.2</record>
+</data>

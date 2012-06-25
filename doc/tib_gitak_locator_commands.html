@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<!--
+Copyright 2006-2007 TIBCO Software Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<head>
+    <title>Locator Parameters</title>
+    <style>
+body, table {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 10;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    border: 1px solid #999;
+}
+
+tr:hover {
+    background-color: #FBF09D;
+}
+    </style>      
+</head>
+
+<body>
+    <a href="tib_gitak_selenium_extension_reference.html">Reference &gt; Top<br />
+    </a>
+    <br />
+<table id="TABLE1">
+<tbody>
+            <tr>
+                <td colspan="3" style="font-weight: bold; background-color: gainsboro">
+                    Extended General Interface object locators</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold">
+                    Command/Locator&nbsp;</td>
+                <td>
+                    Usage&nbsp;</td>
+                <td style="font-weight: bold">
+                    Description&nbsp;</td>
+            </tr>
+    <tr>
+      <td>jsxselector</td>
+      <td> <pre> | command | jsxselector=#jsxname | |</pre></td>
+      <td>    Select objects from the DOM using a CSS3-like selection syntax. This method considers the DOM tree whose root is this object. The following constructs are supported:
+<pre>
+    * jsx3_gui_ClassName - matches objects by their exact class. Replace "." with "_" in the selector.
+    * * - matches any object
+    * #jsxname - matches objects whose name equals jsxname
+    * .class-name - matches objects for which getClassName() is defined and returns a string that contains the token class-name
+    * :first and :last - matches objects that are their parents' first and last children
+    * :nth(n) and nth-child(n) - matches objects whose child index is equal to n
+    * :instanceof(ClassName) - matches objects that are instances of the class or interface ClassName
+    * [prop="value"] and [prop*="value"] - matches objects whose value for field prop equals value 
+      or, with "*", contains value. The quotes around value are optional.
+    * [getter()="value"] and [getter()*="value"] - matches objects whose return value for method getter equals value 
+       or, with "*", contains value. The quotes around value are optional. AB - matches objects that match both A and B
+    * A B - matches descendants of objects matching A that match B
+    * A > B - matches immediate children of objects matching A that match B
+</pre>
+</td>
+    </tr>
+    <tr>
+      <td>gi</td>
+      <td> <pre> | command | gi=xpath-like-dom-expression | |</pre></td>
+      <td>GI DOM locator <pre>
+          gi=jsxname/[@jsxtext="Menu"]/child[1]/jsx3.gui.Splitter/jsx3.gui.TextBox[1]
+          gi=.jsx3.gui.Splitter  - locate first object of type splitter 
+          gi=//message - locate control with jsxname "message" 
+          gi=//toolBar/[@jsxtext="List"] -locate control (toolbar button) with jsxtext="List" under control named "toolBar" </i>
+          gi=//[@jsxtext="List"] -locate control with jsxtext "List" (a toolbar button) 
+          gi=//toolBar/jsx3.gui.ToolbarButton - locate first ToolbarButton under "toolBar" 
+          gi=//toolBar/jsx3.gui.ToolbarButton[3] - locate the third ToolbarButton under toolBar
+          gi=paneMatrix/tblTable,rowbyindex,0
+          gi=tblTable,cellbyjsxid,1.2
+          </pre>
+      </td>
+    </tr>
+
+    <tr>
+      <td>JsxAlertCaption</td>
+      <td> <pre> | command | JsxAlertCaption=alert box caption text | |</pre></td>
+      <td>Locator - element by alert caption text (glob and regexp pattern allowed). &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxAlertText</td>
+      <td> <pre> | command | JsxAlertText=alert box content text | |</pre></td>
+      <td>Locator - element by alert context text (glob and regexp pattern allowed). &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxDialogCaption</td>
+      <td> <pre> | command | JsxDialogCaption=dialog caption text | |</pre></td>
+      <td>Locator - element by dialog caption text (glob and regexp pattern allowed). &nbsp;</td>
+    </tr>
+    <tr>
+      <td style="height: 37px" valign="top">JsxDialogName</td>
+      <td valign="top"> <pre> | command | JsxDialogName=jsxname | |</pre></td>
+      <td style="height: 37px">Locator - element by dialog jsxname. &nbsp;</td>
+    </tr>  
+    <tr>
+      <td>JsxButtonName</td>
+      <td> <pre> | command | JsxButtonName=jsxname | |</pre></td>
+      <td>Locator - element by button jsxname. &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxButtonText</td>
+      <td> <pre> | command | JsxButtonText=label_text | |</pre></td>
+      <td>Locator - element by button label text (glob and regexp pattern allowed) &nbsp;</td>
+    </tr>
+    
+    <tr>
+      <td>JsxDateName</td>
+      <td> <pre> | command | JsxDateName=jsxname | |</pre></td>
+      <td>Locator - element by date picker jsxname &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxDateInput</td>
+      <td> <pre> | command | JsxDateName=jsxname | |</pre></td>
+      <td>Locator - input element in date picker. NEW in 3.2.0 &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxDateIcon</td>
+      <td> <pre> | command | JsxDateName=jsxname | |</pre></td>
+      <td>Locator - icon element in date picker. NEW in 3.2.0 &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxDateDay</td>
+      <td> <pre> | command | JsxDateDay=jsxname,day | |</pre></td>
+      <td>Locator - day element by date picker jsxname and day value (1-31). &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxDatePrevYear</td>
+      <td> <pre> | command | JsxDatePrevYear=jsxname | |</pre></td>
+      <td>Locator - previous year element by date picker jsxname &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxDateNextYear</td>
+      <td> <pre> | command | JsxDateNextYear=jsxname | |</pre></td>
+      <td>Locator - next year element by date picker jsxname &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxDatePrevMonth</td>
+      <td> <pre> | command | JsxDatePrevMonth=jsxname | |</pre></td>
+      <td>Locator - previous month element by date picker jsxname &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxDateNextMonth</td>
+      <td> <pre> | command | JsxDateNextMonth=jsxname | |</pre></td>
+      <td>Locator - next month element by date picker jsxname &nbsp;</td>
+    </tr>
+    <tr>
+      <td><strike>JsxGridCell</strike></td>
+      <td> </pre></td>
+      <td><strike>Locator - cell element by grid jsxname, row jsxid and cell index&nbsp;<br />
+          Example : gridResult.1.3 return cell in row with jsxid=1 and column=3</strike></td>
+    </tr>
+    <tr>
+      <td><strike>JsxListHeaderIndex</strike></td>
+      <td> </pre></td>
+      <td><strike>Locator - element for list header cell by list jsxname and column index</strike></td>
+    </tr>
+     
+    <tr>
+      <td><strike>JsxListName</td>
+      <td> </td>
+      <td><strike>Locator - element for list by list jsxname</td>
+    </tr>
+    <tr>
+      <td><strike>JsxListRowId</td>
+      <td> </td>
+      <td><strike>Locator - element for list row by list jsxname and record row jsxid</td>
+    </tr>
+    <tr>
+      <td><strike>JsxListRowText</td>
+      <td> </td>
+      <td><strike>Locator - element list row by a text in the a list row (glob and regexp pattern allowed). 
+          <br />
+          <strong>NOTE</strong> this locator is not exact, you should use ListRowId locator instead&nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxMatrixHeaderIndex</td>
+      <td> <pre> | command | JsxMatrixHeaderIndex=jsxname,columnIndex | |</pre></td>
+      <td>Locator - element for matrix header cell by list jsxname and column index&nbsp</td>
+    </tr>
+     
+    <tr>
+      <td>JsxMatrixName</td>
+      <td> <pre> | command | JsxMatrixName=jsxname | |</pre></td>
+      <td>Locator - element for Matrix by jsxname&nbsp</td>
+    </tr>
+      <tr>
+          <td>JsxMatrixHScroller</td>
+          <td> <pre> | command | JsxMatrixHScroller=jsxname | |</pre></td>
+          <td>Locator - element horizontal scroll bar for Matrix by jsxname&nbsp;</td>
+      </tr>
+      <tr>
+          <td>JsxMatrixVScroller</td>
+          <td> <pre> | command | JsxMatrixVScroller=jsxname | |</pre></td>
+          <td>Locator - element vertical scroll bar for Matrix by jsxname&nbsp;</td>
+      </tr>
+    <tr>
+      <td>JsxMatrixRowId</td>
+      <td> <pre> | command | JsxMatrixRowId=jsxname,record jsxid</td>
+      <td>Locator - element for a List type Matrix row by jsxname and record jsxid.</td>
+    </tr>
+    <tr>
+      <td>JsxMatrixRowIndex</td>
+      <td> <pre> | command | JsxMatrixRowIndex=jsxname,row index</td>
+      <td>Locator - element for a List type Matrix row by  jsxname and row index (1 based).</td>
+    </tr>
+    <tr>
+      <td>JsxMatrixRowText</td>
+      <td> <pre> | command | JsxMatrixRowText=jsxname,text pattern | |</pre></td>
+      <td>Locator - element list row by the text pattern in the List Matrix (glob and regexp pattern allowed). NOTE: if there are multiple row with same text pattern, this locator returns the first row with the text pattern.&nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxMatrixCellId</td>
+      <td> <pre> | command | JsxMatrixCellIndex=jsxname.jsxid.columnIndex | |</pre></td>
+      <td>Locator - element for a cell in a Grid type Matrix by jsxname, record jsxid, and column index.</td>
+    </tr>
+    <tr>
+      <td>JsxMatrixCellIndex</td>
+      <td> <pre> | command | JsxMatrixCellIndex=jsxname.rowIndex.columnIndex | |</pre></td>
+      <td>Locator - element for a cell in a Grid type Matrix  by jsxname, row index, and column index.</td>
+    </tr>
+    <tr>
+      <td>JsxMatrixTreeItemId</td>
+      <td> <pre> | command | JsxMatrixTreeItemId=jsxname,jsxid | |</pre></td>
+      <td>Locator - element for an item in a tree type Matrix by jsxname and jsxid.</td>
+    </tr>
+    <tr>
+        <td>JsxMatrixTreeItemIndex</td>
+        <td> <pre> | command | JsxMatrixTreeItemIndex=jsxname,1 | |</pre></td>
+        <td> Locator - element for an item in a tree type Matrix by jsxname and index</td>
+    </tr>
+    <tr>
+        <td>JsxMatrixTreeItemText</td>
+        <td> <pre>| command | JsxMatrixTreeItemText=jsxname,text pattern | |</pre></td>
+        <td>Locator - element for an item in a tree type Matrix by jsxname and node text</td>
+    </tr>
+
+    <tr>
+      <td>JsxMenuWindowId</td>
+      <td> <pre> | command | JsxMenuWindowId=(1,2,3,4...) | |</pre></td>
+      <td>Locator - element by WindowId. Locate the drop down menu window &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxMenuName</td>
+      <td> <pre> | command | JsxMenuName=jsxname | |</pre></td>
+      <td>Locator - element by menu jsxname. Locate the menu anchor object. &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxMenuText</td>
+      <td> <pre> | command | JsxMenuText=menu label text | |</pre></td>
+      <td>Locator - element by menu label text (glob and regexp pattern allowed). Locate the menu anchor object.&nbsp;</td>
+    </tr>
+    <tr>
+        <td>
+            JsxMenuItemIndex</td>
+        <td>
+            <pre>| command | JsxMenuItemIndex=jsxname,1| |</pre></td>
+        <td>
+            Locator - element for menu item by menu jsxname and item index&nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxMenuItemId</td>
+      <td> <pre> | command | JsxMenuItemId=jsxname,jsxid| |</pre></td>
+      <td>Locator - element by menu jsxname and item jsxid. Locate menu item. &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxMenuItemText</td>
+      <td> <pre> | command | JsxMenuItemText=jsxname,text pattern | |</pre></td>
+      <td>Locator - element for menu item by menu item label text (glob and regexp pattern allowed). &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxRadioName</td>
+      <td> <pre> | command | JsxRadioName=jsxname | |</pre></td>
+      <td>Locator - element by RadioButton jsxname. &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxRadioText</td>
+      <td> <pre> | command | JsxRadioText=text pattern | |</pre></td>
+      <td>Locator - element by RadioButton label text. &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxRadioValue</td>
+      <td> <pre> | command | JsxRadioName=radio value | |</pre></td>
+      <td>Locator - element by RadioButton value attribute. Radio button value are unique within a RadioGroup. &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxSliderName</td>
+      <td> <pre> | command | JsxSliderName=jsxname | |</pre></td>
+      <td>Locator - element for slider itself by Slider jsxname. &nbsp;</td>
+    </tr>
+    <tr>
+        <td>
+            JsxSliderHandle</td>
+        <td>
+            <pre> | command | JsxSliderHandle=jsxname | |</pre>
+        </td>
+        <td>
+            Locator - element for the handle by Slider jsxname. &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxSelectWindow</td>
+      <td> <pre> | command | JsxSelectWindow=1 | |</pre></td>
+      <td>Locator - element Locate the select drop down window &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxSelectName</td>
+      <td> <pre> | command | JsxSelectName=jsxname | |</pre></td>
+      <td>Locator - element by select/combo jsxname. &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxSelectItemId</td>
+      <td> <pre> | command | JsxSelectItemId=jsxname,id1| |</pre></td>
+      <td>Locator - element by select jsxname and item jsxid &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxSelectItemIndex</td>
+      <td> <pre> | command | JsxSelectItemIndex=jsxname,3| |</pre></td>
+      <td>Locator - element by select jsxname and item index (item #1, #2, etc..) &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxSelectItemText</td>
+      <td> <pre> | command | JsxSelectItemId=jsxname,text pattern| |</pre></td>
+      <td>Locator - element by select jsxname and item text &nbsp;&nbsp;(glob and regexp pattern
+     allowed)
+ </td>
+    </tr>
+    <tr>
+      <td>JsxSplitterName</td>
+      <td> <pre> | command | JsxSplitterName=jsxname | |</pre></td>
+      <td>Locator - element by Splitter jsxname. &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxStackName</td>
+      <td> <pre> | command | JsxStackName=jsxname | |</pre></td>
+      <td>Locator - element by stack jsxname &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxStackText</td>
+      <td> <pre> | command | JsxStackText=stack label text | |</pre></td>
+      <td>Locator - element by stack label text (glob and regexp pattern allowed) &nbsp;</td>
+    </tr>
+     <tr>
+      <td>JsxTimePickerHours</td>
+      <td> <pre> | command | JsxTimePickerHours=jsxname | |</pre></td>
+      <td>Locator - element for Hour input by TimePicker jsxname &nbsp;</td>
+    </tr>
+     <tr>
+      <td>JsxTimePickerMinutes</td>
+      <td> <pre> | command | JsxTimePickerMinutes=jsxname | |</pre></td>
+      <td>Locator - element for Minutes input by TimePicker jsxname &nbsp;</td>
+    </tr>
+     <tr>
+      <td>JsxTimePickerSeconds</td>
+      <td> <pre> | command | JsxTimePickerSeconds=jsxname | |</pre></td>
+      <td>Locator - element for Seconds input by TimePicker jsxname &nbsp;</td>
+    </tr>
+     <tr>
+      <td>JsxTimePickerMillis</td>
+      <td> <pre> | command | JsxTimePickerSeconds=jsxname | |</pre></td>
+      <td>Locator - element for Milliseconds input by TimePicker jsxname &nbsp;</td>
+    </tr>
+     <tr>
+      <td>JsxTimePickerAmPm</td>
+      <td> <pre> | command | JsxTimePickerSeconds=jsxname | |</pre></td>
+      <td>Locator - element for AMPM input by TimePicker jsxname &nbsp;</td>
+    </tr>
+     <tr>
+      <td>JsxTimePickerSpinUp</td>
+      <td> <pre> | command | JsxTimePickerSeconds=jsxname | |</pre></td>
+      <td>Locator - element for up spinner input by TimePicker jsxname &nbsp;</td>
+    </tr>
+     <tr>
+      <td>JsxTimePickerSpinDown</td>
+      <td> <pre> | command | JsxTimePickerSeconds=jsxname | |</pre></td>
+      <td>Locator - element for down spinner input by TimePicker jsxname &nbsp;</td>
+    </tr>
+ 
+    <tr>
+      <td>JsxTabName</td>
+      <td> <pre> | command | JsxTabName=jsxname | |</pre></td>
+      <td>Locator - element by Tab jsxname &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxTabText</td>
+      <td> <pre> | command | JsxTabText=Tab label text | |</pre></td>
+      <td>Locator - element by Tab label text (glob and regexp pattern allowed) &nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxTextboxName</td>
+      <td> <pre> | command | JsxTextboxName=jsxname | | </td>
+      <td>Locator - element by Textbox jsxname.&nbsp;</td>
+    </tr>
+    <tr>
+      <td>JsxToolbarButtonName</td>
+      <td> <pre> | command | JsxToolbarButtonName=jsxname | |</pre></td>
+      <td>Locator - element by toolbar button jsxname. </td>
+    </tr>
+    <tr>
+      <td>JsxToolbarButtonText</td>
+      <td> <pre> | command | JsxToolbarButtonText=jsxname | |</pre></td>
+      <td>Locator - element by toolbar button label text (glob and regexp pattern allowed). </td>
+    </tr>
+    <tr>
+      <td style="height: 23px">JsxTreeName</td>
+      <td> <pre> | command | JsxTreeName=jsxname | |</pre></td>
+      <td style="height: 23px">Locator - element by tree jsxname. </td>
+    </tr>
+      <tr>
+          <td>JsxTreeItemId</td>
+      <td> <pre> | command | JsxTreeItemId=jsxname,jsxid | |</pre></td>
+          <td>
+              Locator - element of tree item by tree jsxname and tree record jsxid.
+          </td>
+      </tr>
+    <tr>
+        <td>
+            JsxTreeItemIndex</td>
+        <td>
+            <pre> | command | JsxTreeItemIndex=jsxname,index | |</pre>
+        </td>
+        <td>
+            Locator - element of tree item by tree jsxname and tree item index.
+        </td>
+    </tr>
+    <tr>
+      <td>JsxTreeItemText</td>
+      <td> <pre> | command | JsxTreeItemText=jsxname,text pattern | |</pre></td>
+      <td>Locator - element of tree item by tree jsxname and tree record text (glob and regexp
+            pattern allowed) .
+      </td>
+    </tr>
+    <tr>
+      <td>JsxName</td>
+      <td> <pre> | command | JsxName=jsxname | |</pre></td>
+      <td>Locator - generic locator for any jsxtype element by jsxname. </td>
+    </tr>
+    <tr>
+      <td>JsxText</td>
+      <td> <pre> | command | JsxText=text pattern | |</pre></td>
+      <td>Locator - generic locator for any jsxtype element with given jsxtext="*some text*". <br /> <b>e.g.</b> JsxText=*ZIPCODE*</td>
+    </tr>
+    <tr>
+      <td>JsxValue</td>
+      <td> <pre> | command | JsxValue=text pattern | |</pre></td>
+      <td>Locator - generic locator for any jsxtype element with given jsxvalue="*some value*". <br/> <b>e.g.</b> JsxValue=*PALO ALTO* </td>
+    </tr>
+     
+    <!-- assert list row length = +1 -->
+    <!--tr>
+      <td>open</td>
+      <td>about:blank</td>
+      <td>&nbsp;</td>
+    </tr-->
+  </tbody>
+
+</table>
+    <p>
+    <a href="tib_gitak_selenium_extension_reference.html">Reference &gt; Top<br />
+    </a>
+    </p>
+    <p>
+        For information about Selenium commands and locators, see <a href="../../reference.html">Selenium
+            Reference</a>.
+    </p>
+    
+</body>
+</html>

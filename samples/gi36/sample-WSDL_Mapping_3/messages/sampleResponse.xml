@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<soap:Body><GetHistoricalQuotesResponse xmlns="http://www.xignite.com/services/">
+<GetHistoricalQuotesResult>
+<HistoricalQuote>
+<Outcome>Success</Outcome>
+<Identity>IP</Identity><Delay>0.046875</Delay>
+<Security><Outcome>Success</Outcome>
+<Delay>0</Delay><CIK>0000858877</CIK>
+<Cusip>17275R102</Cusip><Symbol>CSCO</Symbol>
+<ISIN>US17275R1023</ISIN>
+<Name>Cisco Systems, Inc.</Name>
+<Market>NASDAQGS</Market>
+<CategoryOrIndustry>TECHNOLOGY</CategoryOrIndustry></Security><Date>7/15/2005</Date>
+<Last>19.89</Last><Open>19.93</Open><LastClose>19.94</LastClose><High>20.02</High>
+<Low>19.78</Low><ChangeFromOpen>-0.04</ChangeFromOpen>
+<PercentChangeFromOpen>-0.201</PercentChangeFromOpen>
+<ChangeFromLastClose>-0.05</ChangeFromLastClose>
+<PercentChangeFromLastClose>-0.251</PercentChangeFromLastClose>
+<Volume>37684900</Volume><SplitRatio>1</SplitRatio>
+<LastAdjusted>19.89</LastAdjusted><OpenAdjusted>19.93</OpenAdjusted>
+<LastCloseAdjusted>19.94</LastCloseAdjusted><HighAdjusted>20.02</HighAdjusted>
+<LowAdjusted>19.78</LowAdjusted><ChangeFromOpenAdjusted>-0.04</ChangeFromOpenAdjusted>
+<ChangeFromLastCloseAdjusted>-0.05</ChangeFromLastCloseAdjusted>
+<VolumeAdjusted>37684900</VolumeAdjusted><NotTraded>false</NotTraded>
+</HistoricalQuote><HistoricalQuote><Outcome>Success</Outcome><Delay>0</Delay>
+<Security><Outcome>Success</Outcome><Delay>0</Delay><CIK>0000709519</CIK>
+<Cusip>866810104</Cusip><Symbol>SUNW</Symbol><ISIN>US8668101046</ISIN>
+<Name>Sun Microsystems, Inc.</Name><Market>NASDAQGS</Market>
+<CategoryOrIndustry>TECHNOLOGY</CategoryOrIndustry></Security>
+<Date>7/15/2005</Date><Last>3.76</Last><Open>3.73</Open>
+<LastClose>3.74</LastClose><High>3.82</High><Low>3.72</Low>
+<ChangeFromOpen>0.03</ChangeFromOpen><PercentChangeFromOpen>0.804</PercentChangeFromOpen>
+<ChangeFromLastClose>0.02</ChangeFromLastClose>
+<PercentChangeFromLastClose>0.535</PercentChangeFromLastClose><Volume>33711500</Volume>
+<SplitRatio>1</SplitRatio><LastAdjusted>3.76</LastAdjusted><OpenAdjusted>3.73</OpenAdjusted>
+<LastCloseAdjusted>3.74</LastCloseAdjusted><HighAdjusted>3.82</HighAdjusted>
+<LowAdjusted>3.72</LowAdjusted><ChangeFromOpenAdjusted>0.03</ChangeFromOpenAdjusted>
+<ChangeFromLastCloseAdjusted>0.02</ChangeFromLastCloseAdjusted>
+<VolumeAdjusted>33711500</VolumeAdjusted>
+<NotTraded>false</NotTraded></HistoricalQuote><HistoricalQuote>
+<Outcome>Success</Outcome><Delay>0</Delay><Security>
+<Outcome>Success</Outcome><Delay>0</Delay><CIK>0001085280</CIK>
+<Cusip>88632Q103</Cusip><Symbol>TIBX</Symbol><ISIN>US88632Q1031</ISIN>
+<Name>TIBCO Software, Inc.</Name><Market>NASDAQGS</Market>
+<CategoryOrIndustry>TECHNOLOGY</CategoryOrIndustry></Security>
+<Date>7/15/2005</Date><Last>7.18</Last><Open>7.25</Open><LastClose>7.25</LastClose><High>7.34</High><Low>7.12</Low><ChangeFromOpen>-0.07</ChangeFromOpen><PercentChangeFromOpen>-0.966</PercentChangeFromOpen><ChangeFromLastClose>-0.07</ChangeFromLastClose><PercentChangeFromLastClose>-0.966</PercentChangeFromLastClose><Volume>3313700</Volume><SplitRatio>1</SplitRatio><LastAdjusted>7.18</LastAdjusted><OpenAdjusted>7.25</OpenAdjusted><LastCloseAdjusted>7.25</LastCloseAdjusted><HighAdjusted>7.34</HighAdjusted><LowAdjusted>7.12</LowAdjusted><ChangeFromOpenAdjusted>-0.07</ChangeFromOpenAdjusted><ChangeFromLastCloseAdjusted>-0.07</ChangeFromLastCloseAdjusted><VolumeAdjusted>3313700</VolumeAdjusted><NotTraded>false</NotTraded></HistoricalQuote><HistoricalQuote><Outcome>Success</Outcome><Delay>0</Delay><Security><Outcome>Success</Outcome><Delay>0</Delay><CIK>0001011006</CIK><Cusip>984332106</Cusip><Symbol>YHOO</Symbol><ISIN>US9843321061</ISIN><Name>Yahoo! Inc.</Name><Market>NASDAQGS</Market><CategoryOrIndustry>TECHNOLOGY</CategoryOrIndustry></Security><Date>7/15/2005</Date><Last>36.58</Last><Open>37.05</Open><LastClose>36.86</LastClose><High>37.16</High><Low>36.5</Low><ChangeFromOpen>-0.47</ChangeFromOpen><PercentChangeFromOpen>-1.269</PercentChangeFromOpen><ChangeFromLastClose>-0.28</ChangeFromLastClose><PercentChangeFromLastClose>-0.76</PercentChangeFromLastClose><Volume>12391500</Volume><SplitRatio>1</SplitRatio><LastAdjusted>36.58</LastAdjusted><OpenAdjusted>37.05</OpenAdjusted><LastCloseAdjusted>36.86</LastCloseAdjusted><HighAdjusted>37.16</HighAdjusted><LowAdjusted>36.5</LowAdjusted><ChangeFromOpenAdjusted>-0.47</ChangeFromOpenAdjusted><ChangeFromLastCloseAdjusted>-0.28</ChangeFromLastCloseAdjusted><VolumeAdjusted>12391500</VolumeAdjusted><NotTraded>false</NotTraded></HistoricalQuote></GetHistoricalQuotesResult></GetHistoricalQuotesResponse></soap:Body></soap:Envelope>

@@ -1,0 +1,76 @@
+<serialization jsxversion="3.2" xmlns="urn:tibco.com/v3.0">
+  <name><![CDATA[Layout (--)]]></name>
+  <icon/>
+  <description><![CDATA[2 top-over-bottom panes in an adaptive layout grid.]]></description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="3" jsxsizearray="['150','36','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+    <strings jsxname="layout (--)" jsxwidth="100%" jsxheight="100%"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="pane" jsxwidth="100%" jsxheight="100%" jsxtext="This example shows two optimization features that can be employed in GI applications that contain a lot of content.&lt;br/&gt;&lt;br/&gt;
+The first optimization shows how to load an object (dialog, stack, or tab) and fill it with content (a list of all 50 states).  Each time the 'Load One Item' button is clicked, an additional control will be added.  The point of this is to show that adding additional content &lt;i&gt;should not&lt;/i&gt; get progressively slower as the app size increases.&lt;br/&gt;&lt;br/&gt;
+The second optimization shows how to efficiently convert controls in one format to another.  In other words, how to efficiently move between tab-, stack-, and dialog-views. To test this, load several components by clicking 'Load One Item' multiple times.  Then choose the radio button for the visualization you'd prefer.  Notice how the entirety of the app is transferred &lt;i&gt;without the app becoming unresponsive&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;
+To see the code the drives this example, look in the project resource file, &lt;b&gt;efficient_adopt.js&lt;/b&gt;"/>
+      <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="2"/>
+      <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+      <dynamics jsxborder="@Outset Top" jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"/>
+      <object type="jsx3.gui.RadioButton">
+        <variants jsxheight="18" jsxdefaultselected="1" jsxselected="1" jsxrelativeposition="1"/>
+        <strings jsxname="radio" jsxtext="Dialog" jsxgroupname="group1" jsxmargin="margin-right:4px;" jsxvalue="dialog"/>
+        <events jsxselect="eg.effAdopt.transferAllItems(this.getValue());"/>
+      </object>
+      <object type="jsx3.gui.RadioButton">
+        <variants jsxheight="18" jsxdefaultselected="1" jsxselected="0" jsxrelativeposition="1"/>
+        <strings jsxname="radio" jsxtext="Stack" jsxgroupname="group1" jsxmargin="margin-right:4px;" jsxvalue="stack"/>
+        <events jsxselect="eg.effAdopt.transferAllItems(this.getValue());"/>
+      </object>
+      <object type="jsx3.gui.RadioButton">
+        <variants jsxheight="18" jsxdefaultselected="1" jsxselected="0" jsxrelativeposition="1" jsxwidth="60"/>
+        <strings jsxname="radio" jsxtext="Tab" jsxgroupname="group1" jsxmargin="margin-right:4px;" jsxvalue="tab"/>
+        <events jsxselect="eg.effAdopt.transferAllItems(this.getValue());"/>
+      </object>
+      <object type="jsx3.gui.Button">
+        <variants jsxindex="0" jsxheight="18"/>
+        <strings jsxname="button" jsxtext="Load One Item" jsxmargin="margin-right:8px;"/>
+        <events jsxexecute="eg.effAdopt.loadOneItem();"/>
+      </object>
+      <object type="jsx3.gui.Button">
+        <variants jsxindex="0" jsxheight="18"/>
+        <strings jsxname="button" jsxtext="Remove all Items (reset)" jsxmargin=""/>
+        <events jsxexecute="eg.effAdopt.removeAllItems();"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="mydialogcontainer" jsxwidth="100%" jsxheight="100%"/>
+      <object type="jsx3.gui.Splitter">
+        <variants jsxleft="0" jsxtop="0"/>
+        <strings jsxname="splitter ( | )" jsxsubcontainer1pct="48.01%" jsxsubcontainer2pct="51.99%"/>
+        <dynamics jsxbgcolor="@Solid Medium"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@Inset" jsxbgcolor="@Solid Light"/>
+          <object type="jsx3.gui.StackGroup">
+            <variants jsxleft="0" jsxtop="0" jsxoverflow="2" jsxselectedindex="0" jsxrelativeposition="0" jsxorientation="0" jsxbestguess="0"/>
+            <strings jsxname="mystackcontainer" jsxwidth="100%" jsxheight="100%"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@Inset" jsxbgcolor="@Solid Light"/>
+          <object type="jsx3.gui.TabbedPane">
+            <variants selectedIndex="2" jsxselectedindex="0"/>
+            <strings jsxname="mytabcontainer" jsxtextalign="0"/>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

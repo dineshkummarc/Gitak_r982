@@ -1,0 +1,90 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Layout (--)</name>
+  <icon/>
+  <description>2 top-over-bottom panes in an adaptive layout grid.</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['170','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+    <strings jsxname="lytMainLayout" jsxwidth="100%" jsxheight="100%"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkDescription" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;p&gt;This example shows how to escape the parent container.  This technique can be useful when creating GI apps to be instantiated in a smaller portion of an overall HTML page, as in a portal deployment.&lt;/p&gt;  &lt;p&gt;The trick is to set the Overflow property of the containing parent to Expand.  Then, when the dialog is dragged outside the bounds of the original application, the entire dialog will still be displayed.  By default, the jsx3.gui.Dialog.constrainPosition() method is called after the dialog is moved to prevent a user from losing a handle to the dialog box in the current view.  This method prevents the dialog from being dragged beyond the parent container's boundaries.  If this behavior is not desired, a different method (or a null statement) can be given for the After Move event of the dialog.&lt;/p&gt;  &lt;p&gt;The same principle applies to other child objects such as Spyglass hovers, menus, combo boxes, etc.  Make sure that your portlet app is able to Expand in order to not truncate any of the content which might wish to escape.&lt;/p&gt;"/>
+      <dynamics jsxborder="@Outset" jsxpadding="@8Pixel"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkAppPane" jsxwidth="100%" jsxheight="100%"/>
+      <dynamics jsxborder="@Outset"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxleft="10" jsxtop="20" jsxwidth="200" jsxheight="100" jsxoverflow="2" jsxrelativeposition="0"/>
+        <strings jsxname="blkHiddenPane" jsxtext="200px x 100px block container (portlet) with Overflow=&lt;b&gt;Hidden&lt;/b&gt;"/>
+        <dynamics jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"/>
+        <object type="jsx3.gui.Dialog">
+          <variants jsxleft="152" jsxtop="52" jsxzindex="5000" jsxwindowstate="1"/>
+          <strings jsxname="dlgHiddenDialog" jsxwidth="193" jsxheight="144"/>
+          <dynamics jsxbgcolor="@Solid Medium"/>
+          <object type="jsx3.gui.WindowBar">
+            <variants/>
+            <strings jsxname="winbarHiddenDialogTitle" jsxtext="[Caption]"/>
+            <object type="jsx3.gui.ToolbarButton">
+              <variants/>
+              <strings jsxname="tbbMinimizeHiddenButton"/>
+              <dynamics jsximage="@Min Icon" jsxtip="@Min Tip"/>
+              <events jsxexecute="this.getParent().getParent().doToggleState();"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <variants/>
+              <strings jsxname="tbbMaximizeHiddenButton" jsximage="JSX/images/dialog/max.gif"/>
+              <dynamics jsxtip="@Max Tip"/>
+              <events jsxexecute="this.getAncestorOfType(&quot;jsx3.gui.Dialog&quot;).doMaximize(this);"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <variants/>
+              <strings jsxname="tbbCloseHiddenButton"/>
+              <dynamics jsximage="@Close Icon" jsxtip="@Close Tip"/>
+              <events jsxexecute="this.getParent().getParent().doClose();"/>
+            </object>
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxleft="10" jsxtop="140" jsxwidth="200" jsxheight="100" jsxoverflow="3" jsxrelativeposition="0"/>
+        <strings jsxname="blkExpandPane" jsxtext="200px x 100px block container (portlet) with Overflow=&lt;b&gt;Expand&lt;/b&gt;"/>
+        <dynamics jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"/>
+        <object type="jsx3.gui.Dialog">
+          <variants jsxzindex="5001" jsxwindowstate="1" jsxleft="168" jsxtop="0"/>
+          <strings jsxname="dlgExpandDialog" jsxwidth="224" jsxheight="140"/>
+          <dynamics jsxbgcolor="@Solid Medium"/>
+          <object type="jsx3.gui.WindowBar">
+            <variants/>
+            <strings jsxname="winbarExpandDialogTitle" jsxtext="[Caption]"/>
+            <object type="jsx3.gui.ToolbarButton">
+              <variants/>
+              <strings jsxname="tbbMinimizeExpandButton"/>
+              <dynamics jsximage="@Min Icon" jsxtip="@Min Tip"/>
+              <events jsxexecute="this.getParent().getParent().doToggleState();"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <variants/>
+              <strings jsxname="tbbMaximizeExpandButton" jsximage="JSX/images/dialog/max.gif"/>
+              <dynamics jsxtip="@Max Tip"/>
+              <events jsxexecute="this.getAncestorOfType(&quot;jsx3.gui.Dialog&quot;).doMaximize(this);"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <variants/>
+              <strings jsxname="tbbCloseExpandButton"/>
+              <dynamics jsximage="@Close Icon" jsxtip="@Close Tip"/>
+              <events jsxexecute="this.getParent().getParent().doClose();"/>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="1"/>
+            <strings jsxname="blkExpandDialogDescription" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1" jsxtext="Set the value for the After Move event for this Dialog to null and see the effect"/>
+            <dynamics jsxpadding="@8Pixel"/>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

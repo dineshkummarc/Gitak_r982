@@ -1,0 +1,27 @@
+<serialization jsxversion="3.3" xmlns="urn:tibco.com/v3.0">
+  <name><![CDATA[List]]></name>
+  <icon></icon>
+  <description></description>
+  <onBeforeDeserialize></onBeforeDeserialize>
+  <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.Matrix">
+    <variants jsxselectionmodel="0" jsxpagingmodel="0"></variants>
+    <strings jsxname="matrix1" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxfocusstyle="font-weight:bold;"></strings>
+    <dynamics jsxbg="@Alternating Rows"></dynamics>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants jsxresize="0"></variants>
+      <strings jsxname="mc1" jsxtext="&amp;#160;" jsxwidth="20" jsxcellpadding="2" jsxpath="jsximg" jsxvaluetemplate="@image"></strings>
+      <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+    </object>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants></variants>
+      <strings jsxname="textColumn" jsxwidth="100" jsxtext="Text" jsxpadding="2" jsxcellpadding="3" jsxpath="jsxtext"></strings>
+      <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+    </object>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants></variants>
+      <strings jsxname="mc2" jsxtext="Name" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxpath="jsxtext"></strings>
+      <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+    </object>
+  </object>
+</serialization>

@@ -1,0 +1,39 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Dialog</name>
+  <icon/>
+  <description>Dialog box.  (Set Modal property for a modal dialog).</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Dialog">
+    <variants jsxwidth="431" jsxheight="150" jsxzindex="5000" jsxwindowstate="1"/>
+    <strings jsxname="dlgChangeButtonsDialog"/>
+    <dynamics jsxbgcolor="@Solid Medium"/>
+    <object type="jsx3.gui.WindowBar">
+      <variants/>
+      <strings jsxname="winbarDialogTitle" jsxtext="[Caption]"/>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants/>
+        <strings jsxname="tbbMinimizeButton"/>
+        <dynamics jsximage="@Min Icon" jsxtip="@Min Tip"/>
+        <events jsxexecute="this.getParent().getParent().doToggleState();"/>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants/>
+        <strings jsxname="tbbMaximizeButton" jsximage="JSX/images/dialog/max.gif"/>
+        <dynamics jsxtip="@Max Tip"/>
+        <events jsxexecute="this.getAncestorOfType(&quot;jsx3.gui.Dialog&quot;).doMaximize(this);"/>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants/>
+        <strings jsxname="tbbCloseButton" jsximage="images/icon_55.gif" jsxtext="Toolbar Button"/>
+        <dynamics jsxtip="@Close Tip"/>
+        <events jsxexecute="this.getParent().getParent().doClose();"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkDescription" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1" jsxtext="&lt;p&gt;The default buttons can be augmented or modified by adding Toolbar Button library prototypes to the caption bar.  Regular Form Buttons are too big to fit conveniently.&lt;/p&gt;"/>
+      <dynamics jsxpadding="@8Pixel"/>
+    </object>
+  </object>
+</serialization>

@@ -1,0 +1,111 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Layout (--)</name>
+  <icon/>
+  <description>2 top-over-bottom panes in an adaptive layout grid.</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['180','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+    <strings jsxname="lytMainLayout" jsxwidth="100%" jsxheight="100%"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkDescription" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;p align=&quot;left&quot;&gt;&lt;b&gt;Source: &lt;a style=&quot;text-decoration:none&quot; href='http://power.tibco.com/content/GI/Apps/320/projects/JSXAPPS/32sample-WSDL_Mapping_1.zip'&gt;http://power.tibco.com/content/GI/Apps/320/projects/JSXAPPS/32sample-WSDL_Mapping_1.zip&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;  &lt;p align=&quot;right&quot;&gt;&lt;b&gt;WSDL Mapping 1; version 2.0&lt;/b&gt;&lt;br/&gt;JSX version: 3.2.0&lt;/p&gt;   &lt;p&gt;This sample application shows how to connect to a simple SOAP service for address validation, along with mapping between the GUI and the request and response messages.  Enter a zip code in the text box and click the button.&lt;/p&gt; &lt;p&gt;This project uses a sample WSDL included with the sample (wsdl/Address.wsdl).  Open the Mapping Rule document getCityAndState.xml to see the SOAP to GUI mappings.  Notice that the county node is mapped to a script and the value is stored in a variable by calling the getValue() method of the MESSAGENODE object.&lt;/p&gt;  &lt;p&gt;Note: See WSDL Mapping 2 for an example of mapping repeating elements to a jsx3.gui.Matrix control.&lt;/p&gt;"/>
+      <dynamics jsxborder="@Outset" jsxpadding="@8Pixel" jsxbgcolor="@Solid Medium"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkWorkspace" jsxwidth="100%" jsxheight="100%"/>
+      <dynamics jsxborder="@Outset"/>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants jsxrepeat="2" jsxsizearray="['50','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+        <strings jsxname="lytWorkspaceLayout" jsxwidth="100%" jsxheight="100%"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="blkInput" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@No jsxborder"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxheight="18" jsxoverflow="3"/>
+            <strings jsxname="blkZipcode" jsxwidth="100%" jsxrelativeposition="1"/>
+            <dynamics jsxpadding="@8Pixel"/>
+            <object type="jsx3.gui.Block">
+              <variants jsxheight="18" jsxwidth="100"/>
+              <strings jsxname="lblZipcode" jsxtext="Enter Zip Code" jsxmargin="0 4 0 0" jsxpadding="4 0 0 0"/>
+            </object>
+            <object type="jsx3.gui.TextBox">
+              <variants jsxheight="18"/>
+              <strings jsxname="txtZipcode" jsxmargin="0 4 0 0"/>
+            </object>
+            <object type="jsx3.gui.Button">
+              <variants jsxindex="0" jsxheight="18"/>
+              <strings jsxname="btnLookup" jsxtext="Find City and State" jsxmargin="0 4 0 0"/>
+              <events jsxexecute="eg.wsdl1.callReturnCityState();"/>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1"/>
+          <strings jsxname="blkOutput" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Light"/>
+          <object type="jsx3.gui.LayoutGrid">
+            <variants jsxrepeat="3" jsxsizearray="['35','35','*']" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0" jsxrelativeposition="0"/>
+            <strings jsxname="lytOutputLayout" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="3"/>
+              <strings jsxname="blkCity" jsxwidth="100%" jsxrelativeposition="1" jsxheight="100%"/>
+              <dynamics jsxpadding="@8Pixel"/>
+              <object type="jsx3.gui.Block">
+                <variants jsxheight="18" jsxwidth="100" jsxleft="0" jsxtop="0"/>
+                <strings jsxname="lblCity" jsxtext="City" jsxmargin="0 4 0 0" jsxpadding="4 0 0 0"/>
+              </object>
+              <object type="jsx3.gui.TextBox">
+                <variants jsxheight="18"/>
+                <strings jsxname="txtCity" jsxmargin="0 4 0 0"/>
+              </object>
+            </object>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="3"/>
+              <strings jsxname="blkState" jsxwidth="100%" jsxrelativeposition="1" jsxheight="100%"/>
+              <dynamics jsxpadding="@8Pixel"/>
+              <object type="jsx3.gui.Block">
+                <variants jsxheight="18" jsxwidth="100"/>
+                <strings jsxname="lblState" jsxtext="State" jsxmargin="0 4 0 0" jsxpadding="4 0 0 0"/>
+              </object>
+              <object type="jsx3.gui.TextBox">
+                <variants jsxheight="18"/>
+                <strings jsxname="txtState" jsxmargin="0 4 0 0"/>
+              </object>
+            </object>
+            <object type="jsx3.gui.Block">
+              <variants jsxrelativeposition="1" jsxoverflow="3"/>
+              <strings jsxname="blkCounty" jsxwidth="100%" jsxheight="100%"/>
+              <dynamics jsxpadding="@8Pixel"/>
+              <object type="jsx3.gui.LayoutGrid">
+                <variants jsxrepeat="2" jsxsizearray="['300','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="1"/>
+                <strings jsxname="lytCountyLayout" jsxwidth="100%" jsxheight="100%" jsxborder="0px"/>
+                <object type="jsx3.gui.Block">
+                  <variants jsxheight="40" jsxoverflow="2"/>
+                  <strings jsxname="blkCountyLabelPane" jsxwidth="100%"/>
+                  <dynamics jsxborder="@No jsxborder"/>
+                  <object type="jsx3.gui.Block">
+                    <variants jsxheight="40" jsxwidth="270" jsxrelativeposition="0" jsxleft="0" jsxtop="0"/>
+                    <strings jsxname="lblCounty" jsxtext="The response value for County was stored in a JavaScript variable by the mapping rule." jsxmargin="0 4 0 0" jsxpadding="8 0 0 0" jsxdisplay=""/>
+                  </object>
+                </object>
+                <object type="jsx3.gui.Block">
+                  <variants jsxoverflow="1"/>
+                  <strings jsxname="blkCountyButtonPane" jsxwidth="100%" jsxheight="100%"/>
+                  <dynamics jsxborder="@No jsxborder"/>
+                  <object type="jsx3.gui.Button">
+                    <variants jsxindex="0" jsxheight="20" jsxwidth="60" jsxrelativeposition="0" jsxleft="0" jsxtop="10"/>
+                    <strings jsxname="btnCounty" jsxtext="County" jsxmargin="0 4 0 0"/>
+                    <events jsxexecute="eg.wsdl1.showCountyAlert();"/>
+                  </object>
+                </object>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

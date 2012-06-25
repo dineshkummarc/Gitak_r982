@@ -1,0 +1,17 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Tree</name>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Matrix">
+    <variants/>
+    <strings jsxname="mtxTree" jsxheaderheight="0" jsxrenderingmodel="hierarchical" jsxpagingmodel="4" jsxdrag="1" jsxdrop="1" jsxselectionmodel="2" jsxxmlurl="xml/treedata.xml"/>
+    <dynamics jsxbgcolor="@Solid Light"/>
+    <events jsxtoggle="jsx3.log('EVENT: (jsxtoggle). ' + strRECORDID + '. Open: ' + bOPEN);" jsxexecute="addTreeRecord(this,strRECORDID);"/>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants/>
+      <strings jsxname="mc1" jsxwidth="*" jsxcellpadding="2" jsxpath="jsxtext"/>
+    </object>
+  </object>
+</serialization>

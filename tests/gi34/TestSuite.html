@@ -1,0 +1,98 @@
+<!--
+Copyright 2006-2008 TIBCO Software Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<html>
+<head>
+<meta content="text/html; charset=ISO-8859-1"
+http-equiv="content-type">
+<title>Sample GI Test Suite</title>
+    <script language="JavaScript" type="text/javascript" src="../../../core/scripts/selenium-browserdetect.js"></script>
+<script language="JavaScript" type="text/javascript">
+    var DISABLED = true; // used to flag failing tests
+
+    function filterTestsForBrowser(mydocument) {
+        var suiteTable = mydocument.getElementById("suiteTable");
+        var skippedTests = mydocument.getElementById("skippedTests");
+
+        for(rowNum = suiteTable.rows.length - 1; rowNum >= 0; rowNum--)
+        {
+            var row = suiteTable.rows[rowNum];
+            var filterString = row.getAttribute("unless");
+            if (filterString && eval(filterString))
+            {
+              var cellHTML = row.cells[0].innerHTML;
+              suiteTable.deleteRow(rowNum);
+
+              var newRow = skippedTests.insertRow(1);
+              var newCell = newRow.insertCell(0)
+              newCell.innerHTML = cellHTML;
+            }
+        }
+    }
+
+    function isFileURL() {
+        var p = document.location.protocol;
+        var result = ("file:" == p);
+        return result;
+    }
+</script>
+
+</head>
+
+<body onload="filterTestsForBrowser(document)">
+<table id="suiteTable" class="selenium">
+    <tbody>
+      <tr><td><b>GI 3.5 Samples Test Suite</b></td></tr>
+      <tr><td><a href="./test_datePicker.html">Date Picker control test</a></td></tr>
+      <tr><td><a href="./test_timePicker.html">Time Picker control test</a></td></tr>
+      <tr><td><a href="./test_matrixPerformance.html">Matrix Performance test</a></td></tr>
+      <tr><td><a href="./test_matrixTree.html">Matrix tree control test</a></td></tr>
+      <tr><td><a href="./test_matrixDelColumn.html">Matrix delete row test</a></td></tr>
+      <tr><td><a href="./test_select.html">Select control test</a></td></tr>	  
+      <tr><td><a href="./test_sample_portal.html">sample portal multiple apps</a></td></tr>
+      <tr><td><a href="./test_sample_searchList.html">sample search List</a></td></tr>
+      <tr><td><a href="./test_sample_xmlTransform.html">sample XML to CDF transform</a></td></tr>
+      <tr><td><a href="./test_sample_splitCDF.html">sample splitting CDF </a></td></tr>
+      <tr><td><a href="./test_sample_paging.html">sample large paging matrix using slider</a></td></tr>
+      <tr><td><a href="./test_sample_masterDetails.html">sample Master Detail</a></td></tr>
+      <tr><td><a href="./test_sample_localize.html">sample localization</a></td></tr>
+      <tr><td><a href="./test_sample_efficientRepaint_adopt.html">sample Efficient Repaint Adopt</a></td></tr>
+      <tr><td><a href="./test_sample_efficientRepaint_Remove.html">sample Efficient Repaint Remove</a></td></tr>
+      <tr><td><a href="./test_sample_drillDown.html">sample Tree Drill down</a></td></tr>
+      <tr><td><a href="./test_sample_dialog_simple.html">sample Dialog Simple</a></td></tr>
+      <tr><td><a href="./test_sample_dialog_mod.html">sample Dialog Modified Button</a></td></tr>
+      <tr><td><a href="./test_sample_dialog_multi.html">sample Dialog Multi Instance</a></td></tr>
+      <tr><td><a href="./test_sample_dialog_appcanvas.html">sample Dialog AppCanvas</a></td></tr>
+      <tr><td><a href="./test_sample_dialog_alerts.html">sample Dialog Alerts</a></td></tr>
+      <tr><td><a href="./test_sample_addRemoveRecords.html">sample Add Remove CDF</a></td></tr>
+      <tr><td><a href="./test_sample_wsdl_3.html">WSDL Mapping 3</a></td></tr> 
+      <tr><td><a href="./test_sample_wsdl_2.html">WSDL Mapping 2</a></td></tr> 
+      <tr><td><a href="./test_sample_wsdl.html">WSDL Mapping 1</a></td></tr> 
+	  <tr><td><a href="./test_sample_chart.html">sample chart</a></td></tr> 
+      <tr><td><a href="./test_sample_efficientRepaint_Load.html">sample Efficient Repaint Load</a></td></tr>
+    </tbody>
+  </table>
+<br />
+<em>Not supported in this browser</em>
+<table id="skippedTests" class="selenium">
+    <tbody>
+        <tr><td><b>Skipped Tests</b></td></tr>
+      <!--tr><td><a href="./test_sample_windowSwap.html">Window swap and access test</a></td></tr-->
+        <!--tr><td><a href="./test_sample_treeDragDrop.html">TBD sample tree drag drop</a></td></tr-->
+    </tbody>
+</table>
+
+</body>
+</html>

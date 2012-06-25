@@ -1,0 +1,90 @@
+<serialization jsxversion="3.4" xmlns="urn:tibco.com/v3.0">
+  <name><![CDATA[LayoutSample (--)]]></name>
+  <icon></icon>
+  <description><![CDATA[2 top-over-bottom panes in an adaptive layout grid.]]></description>
+  <onBeforeDeserialize></onBeforeDeserialize>
+  <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['35%','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"></variants>
+    <strings jsxname="lytMainLayout" jsxwidth="100%" jsxheight="100%" jsxrows="35%,*"></strings>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"></variants>
+      <strings jsxname="blkDescriptionPane" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;p align=&quot;right&quot;&gt;&lt;b&gt;Portlet Communication; version 3.5&lt;/b&gt;&lt;br/&gt; JSX version: 3.5.1&lt;/p&gt;   &lt;p&gt;This sample application demonstrates how to instantiate two GI application instances in a single HTML page, and communicate between them.&lt;/p&gt;  &lt;p&gt;In this simple application, selecting rows of data from one portlet into another will render that data as a pie chart.&lt;/p&gt;  &lt;p&gt;There are two projects included in this zip file, along with a launch page to demonstrate the behavior.&lt;/p&gt;  &lt;p&gt;To install, simply unzip the attached .zip file into your JSXAPPS/ folder.   Edit the launch page for jsx and jsxapppath variables within it, replacing 'depotPath' with the relative path to your project depot.    Double-clicking the launch page will open the two &quot;portlets&quot;.&lt;/p&gt;"></strings>
+      <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"></dynamics>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"></variants>
+      <strings jsxname="blkAppPane" jsxwidth="100%" jsxheight="100%"></strings>
+      <dynamics jsxborder="@Outset"></dynamics>
+      <object type="jsx3.gui.Block">
+        <variants jsxwidth="300" jsxheight="160" jsxoverflow="1" jsxrelativeposition="0" jsxleft="0" jsxtop="0"></variants>
+        <strings jsxname="blkPortlet" jsxannotation="Dragging rows to portlet B will display a pie chart."></strings>
+        <object type="jsx3.gui.LayoutGrid">
+          <variants jsxrepeat="2" jsxsizearray="['30','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"></variants>
+          <strings jsxname="lytPortletLayout" jsxwidth="100%" jsxheight="100%" jsxrows="30,*"></strings>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2"></variants>
+            <strings jsxname="blkTopPane" jsxwidth="100%" jsxheight="100%"></strings>
+            <dynamics jsxborder="@Outset"></dynamics>
+            <object type="jsx3.gui.WindowBar">
+              <variants jsxbartype="1"></variants>
+              <strings jsxname="winbarProductToolbar"></strings>
+              <object type="jsx3.gui.Block">
+                <variants jsxheight="18"></variants>
+                <strings jsxname="lblProductSales" jsxtext="Product Sales By Region" jsxmargin="margin-right:4px;" jsxpadding="padding-top:4px;"></strings>
+              </object>
+              <object type="jsx3.gui.ToolbarButton">
+                <variants jsxenabled="1"></variants>
+                <strings jsxname="btnShowChart" jsximage="images/pie2.gif" jsxtext="Show Chart"></strings>
+                <events jsxexecute="eg.portletA.showPie();"></events>
+              </object>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="1"></variants>
+            <strings jsxname="blkBottomPane" jsxwidth="100%" jsxheight="100%"></strings>
+            <dynamics jsxborder="@Outset"></dynamics>
+            <object type="jsx3.gui.TabbedPane">
+              <variants selectedIndex="2" jsxselectedindex="0"></variants>
+              <strings jsxname="tpanTabbedPane" jsxtextalign="0"></strings>
+              <object type="jsx3.gui.Tab">
+                <variants jsxzindex="3" jsxheight="20"></variants>
+                <strings jsxname="tabDataTable" jsxtext="Data Table" jsxbgcolor="#e8e8f5"></strings>
+                <object type="jsx3.gui.Block">
+                  <variants jsxoverflow="2" jsxrelativeposition="0" jsxleft="0" jsxtop="0"></variants>
+                  <strings jsxname="blkTablePane" jsxwidth="100%" jsxheight="100%" jsxdisplay="" jsxvisibility=""></strings>
+                  <dynamics jsxbgcolor="@Solid Medium"></dynamics>
+                  <object type="jsx3.gui.Matrix">
+                    <variants jsxpagingmodel="1" jsxselectionmodel="2" jsxscalewidth="1" jsxdrag="1"></variants>
+                    <strings jsxname="listWidgetList" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxfocusstyle="font-weight:bold;" jsxxmlurl="xml/salesData.xml"></strings>
+                    <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"></xslparameters>
+                    <object type="jsx3.gui.Matrix.Column">
+                      <variants></variants>
+                      <strings jsxname="mc2" jsxtext="Name" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxpath="product"></strings>
+                      <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+                    </object>
+                    <object type="jsx3.gui.Matrix.Column">
+                      <variants></variants>
+                      <strings jsxname="mc2" jsxtext="West" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxpath="west"></strings>
+                      <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+                    </object>
+                    <object type="jsx3.gui.Matrix.Column">
+                      <variants></variants>
+                      <strings jsxname="mcCentral" jsxtext="Central" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxpath="central"></strings>
+                      <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+                    </object>
+                    <object type="jsx3.gui.Matrix.Column">
+                      <variants></variants>
+                      <strings jsxname="mcEast" jsxtext="East" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxpath="east"></strings>
+                      <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"></dynamics>
+                    </object>
+                  </object>
+                </object>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

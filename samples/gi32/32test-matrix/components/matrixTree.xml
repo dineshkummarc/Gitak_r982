@@ -1,0 +1,17 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Tree</name>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Matrix">
+    <variants/>
+    <strings jsxname="mtxTree" jsxheaderheight="0" jsxrenderingmodel="hierarchical" jsxpagingmodel="4" jsxdrag="1" jsxdrop="1" jsxselectionmodel="2" jsxxml="       &lt;data jsxid=&quot;jsxroot&quot;&gt;         &lt;record jsxid=&quot;1&quot; jsxtext=&quot;rootnode&quot; jsxopen=&quot;1&quot; jsximg=&quot;GI_Builder/images/icon_7.gif&quot;&gt;           &lt;record jsxid=&quot;2&quot; jsxtext=&quot;node a&quot; jsxopen=&quot;1&quot; jsximg=&quot;GI_Builder/images/icon_7.gif&quot;&gt;             &lt;record jsxid=&quot;3&quot; jsxtext=&quot;node b&quot; jsximg=&quot;GI_Builder/images/icon_7.gif&quot;&gt;               &lt;record jsxid=&quot;4&quot; jsxtext=&quot;node c&quot;  jsximg=&quot;GI_Builder/images/icon_7.gif&quot;&gt;                 &lt;record jsxid=&quot;5&quot; jsxtext=&quot;node d&quot; jsximg=&quot;GI_Builder/images/icon_16.gif&quot;/&gt;               &lt;/record&gt;             &lt;/record&gt;             &lt;record jsxid=&quot;6&quot; jsxtext=&quot;node e&quot; jsximg=&quot;GI_Builder/images/icon_7.gif&quot;&gt;               &lt;record jsxid=&quot;7&quot; jsxtext=&quot;node f with a lot of text to see what the impact&quot; jsximg=&quot;GI_Builder/images/icon_7.gif&quot;&gt;                 &lt;record jsxid=&quot;8&quot; jsxtext=&quot;node g&quot; jsximg=&quot;GI_Builder/images/icon_16.gif&quot;/&gt;               &lt;/record&gt;             &lt;/record&gt;           &lt;/record&gt;         &lt;/record&gt;       &lt;/data&gt;     "/>
+    <dynamics jsxbgcolor="@Solid Light"/>
+    <events jsxtoggle="jsx3.log('EVENT: (jsxtoggle). ' + strRECORDID + '. Open: ' + bOPEN);" jsxexecute="addTreeRecord(this,strRECORDID);"/>
+    <object type="jsx3.gui.Matrix.Column">
+      <variants/>
+      <strings jsxname="mc1" jsxwidth="*" jsxcellpadding="2" jsxpath="jsxtext"/>
+    </object>
+  </object>
+</serialization>

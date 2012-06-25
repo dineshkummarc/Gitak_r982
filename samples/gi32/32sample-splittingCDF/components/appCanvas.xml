@@ -1,0 +1,91 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Sample App Template</name>
+  <icon/>
+  <description>Basic template for sample applications.  Contains a top block for descriptions, and a bottom block for the sample app.</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['100','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+    <strings jsxname="lytMainLayout" jsxwidth="100%" jsxheight="100%"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkDescriptionPane" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;p align=&quot;left&quot;&gt;&lt;b&gt;Source: &lt;a style=&quot;text-decoration:none&quot; href=&quot;http://power.tibco.com/content/GI/Apps/320/projects/JSXAPPS/32sample-splittingCDF.zip&quot;&gt; http://power.tibco.com/content/GI/Apps/320/projects/JSXAPPS/32sample-splittingCDF.zip&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;&lt;p align=&quot;right&quot;&gt;&lt;b&gt;Splitting CDF Documents: version 2.0&lt;/b&gt;&lt;br/&gt; JSX version: 3.2.0&lt;/p&gt;  &lt;p&gt;This sample application demonstrates three different means to split a single CDF document into 2 CDF documents in the GI cache, based on the value of an attribute in the original document.&lt;/p&gt;  &lt;p&gt;1)  JavaScript is used in conjunction with the GI APIs to traverse the source document in cache, create two new documents and copy records from the source document.&lt;/p&gt;  &lt;p&gt;2)  The Data Mapping Utility is used to retrrieve the source CDF and a script mapping on the size element determines whether or not the record would be added to the result document.  Note that two service calls are required.&lt;/p&gt;  &lt;p&gt;3)  A custom XSLT transformation is made to the original document after it is already in cache.&lt;/p&gt;"/>
+      <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkAppPane" jsxwidth="100%" jsxheight="100%"/>
+      <dynamics jsxborder="@Outset"/>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants jsxrepeat="3" jsxsizearray="['28','200','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+        <strings jsxname="lytAppPaneLayout" jsxwidth="100%" jsxheight="100%" jsxdisplay=""/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxname="blkToolbarPane" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@Outset"/>
+          <object type="jsx3.gui.WindowBar">
+            <variants jsxbartype="1"/>
+            <strings jsxname="winbarToolbar"/>
+            <object type="jsx3.gui.ToolbarButton">
+              <variants/>
+              <strings jsxname="tbbSplitViaJS" jsximage="images/default.gif" jsxtext="JavaScript"/>
+              <events jsxexecute="eg.service.splitViaScript(); eg.service.paintResults();"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <variants/>
+              <strings jsxname="tbbSplitViaMapper" jsximage="images/default.gif" jsxtext="Data Mapper"/>
+              <events jsxexecute="eg.service.splitViaMap();"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <variants/>
+              <strings jsxname="tbbSplitViaXSLT" jsximage="images/default.gif" jsxtext="XSLT"/>
+              <events jsxexecute="eg.service.splitViaXSLT(); eg.service.paintResults();"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <variants/>
+              <strings jsxname="tbbClear" jsximage="images/default.gif" jsxtext="Clear Results"/>
+              <events jsxexecute="eg.service.clearResults(); eg.service.paintResults();"/>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1"/>
+          <strings jsxname="blkSourcePane" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@Outset" jsxpadding="@8Pixel"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxrelativeposition="0" jsxoverflow="3" jsxfontsize="12" jsxtop="10"/>
+            <strings jsxname="lblSourceLabel" jsxtext="Source CDF" jsxfontweight="bold"/>
+          </object>
+          <object type="jsx3.gui.BlockX">
+            <variants jsxrelativeposition="0" jsxleft="100" jsxtop="10" jsxwidth="410"/>
+            <strings jsxname="xblkSourcePane" jsxheight="100%" jsxxmlid="source_xml"/>
+            <dynamics jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel" jsxborder="@Inset"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1"/>
+          <strings jsxname="blkOutputPane" jsxwidth="100%" jsxheight="100%"/>
+          <dynamics jsxborder="@Outset" jsxpadding="@8Pixel"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxrelativeposition="0" jsxoverflow="2" jsxfontsize="12" jsxleft="0" jsxtop="10"/>
+            <strings jsxname="lblOutput1Label" jsxtext="Output CDF 1" jsxfontweight="bold" jsxtagname="div"/>
+          </object>
+          <object type="jsx3.gui.BlockX">
+            <variants jsxheight="90" jsxrelativeposition="0" jsxleft="100" jsxtop="10" jsxwidth="410"/>
+            <strings jsxname="xblkOutput1Pane" jsxxmlid="result1_xml"/>
+            <dynamics jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel" jsxborder="@Inset"/>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxrelativeposition="0" jsxoverflow="2" jsxfontsize="12" jsxtop="120" jsxleft="0"/>
+            <strings jsxname="lblOutput2Label" jsxtext="Output CDF 2" jsxfontweight="bold" jsxtagname="div"/>
+          </object>
+          <object type="jsx3.gui.BlockX">
+            <variants jsxheight="110" jsxrelativeposition="0" jsxleft="100" jsxtop="120" jsxwidth="410"/>
+            <strings jsxname="xblkOutput2Pane" jsxxmlid="result2_xml"/>
+            <dynamics jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel" jsxborder="@Inset"/>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

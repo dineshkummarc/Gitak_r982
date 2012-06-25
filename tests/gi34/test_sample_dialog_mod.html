@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+Copyright 2006-2007 TIBCO Software Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Test Dialog Modified</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+  <tbody>
+    <tr>
+      <td rowspan="1" colspan="3">Test sample-dialog modified<br>
+      </td>
+    </tr>
+   <tr>
+      <td>include</td>
+      <td>testSetup.html</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td>open</td>
+      <td>${GIPATH}/shell.html?jsxapppath=${SAMPLESPATH}/34sample-dialogs</td>
+      <td>&nbsp;</td>
+    </tr>
+     <tr>
+      <td>waitForJsxButtonPresent</td>
+      <td>btnPDOM</td>
+       <td>5000</td>
+     </tr>    
+    <tr>
+      <td>assertJsxButtonPresent</td>
+      <td>*Property*</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>checkJsx</td>
+      <td>JsxName=chkDocPane</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>click</td>
+      <td>JsxButtonText=*Property*</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>waitForElementPresent</td>
+      <td>JsxButtonText=*Changing*</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>click</td>
+      <td>JsxButtonText=*Changing*</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>verifyElementPresent</td>
+      <td>JsxToolbarButtonText=*Toolbar Button*</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>click</td>
+      <td>JsxButtonText=*Modal*</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>clickJsxElement</td>
+      <td>JsxButtonText=*Constraining Size*</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <!--tr>
+      <td>verityWidth</td>
+      <td>JsxDialogName=dlgContstrainSize</td>
+      <td>500</td>
+    </tr-->
+  </tbody>
+
+</table>
+</body>
+</html>

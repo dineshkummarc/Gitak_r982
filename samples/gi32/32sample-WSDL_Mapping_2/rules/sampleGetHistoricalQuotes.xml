@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<data jsxid="jsxroot" jsxnamespace="jsx3.ide.mapper.Mapper" jsxversion="1.0" xmlns:user="http://tibco.com/gi/cxf">
+  <record jsxid="1" type="W" jsxtext="WSDL (GI_Builder/addins/wsdl/wsdl/Historicals.wsdl)" jsxopen="1" src="other/Historicals.wsdl" path="/jsx1:definitions">
+    <record jsxid="2" type="S" jsxtext="Service (http://www.xignite.com/xHistorical.asmx)" jsxopen="1">
+      
+      
+      
+      <record jsxid="27" type="P" jsxtext="GetHistoricalQuotes" jsxopen="1" opname="GetHistoricalQuotes" endpoint="http://www.xignite.com/xHistorical.asmx">
+        <headers jsxid="28">
+          <record name="Content-Type" value="text/xml" jsxid="29"/>
+          <record jsxid="30" name="SOAPAction" value="http://www.xignite.com/services/GetHistoricalQuotes"/>
+        </headers>
+        <record jsxid="31" type="I" jsxtext="Input (outbound request)" stubsrc="GI_Builder/addins/mapping/xml/stubs/soap.xml" stubpath="/SOAP-ENV:Envelope/SOAP-ENV:Body" onbeforesend="" jsxopen="1">
+          <record jsxid="32" type="C" jsxtext="GetHistoricalQuotes" jsxopen="1" tns="http://www.xignite.com/services/" path="/wsdl:definitions/wsdl:types/s:schema/s:element[index() = 7]" datatype="">
+            <record jsxid="33" type="E" jsxtext="Identifiers" jsxopen="1" tns="http://www.xignite.com/services/" path="/wsdl:definitions/wsdl:types/s:schema/s:element[index() = 7]/s:complexType/s:sequence/s:element[index() = 0]" datatype="s:string" simple="1">
+              <mappings jsxid="34">
+                <record jsxid="35" name="DOM" value="txtSymbolInput" serverns=""/>
+              </mappings>
+              <restrictions jsxid="36">
+                <record name="maxoccur" jsxid="37" value="1"/>
+                <record name="minoccur" jsxid="38" value="0"/>
+              </restrictions>
+            </record>
+            <record jsxid="39" type="E" jsxtext="IdentifierType" jsxopen="1" tns="http://www.xignite.com/services/" path="/wsdl:definitions/wsdl:types/s:schema/s:simpleType[index() = 0]" datatype="tns:IdentifierTypes">
+              <mappings jsxid="40">
+                <record name="Script" jsxid="41" value="setValue(&quot;Symbol&quot;);" serverns=""/>
+              </mappings>
+              <restrictions jsxid="42">
+                <record jsxid="43" name="enumeration" value="Symbol"/>
+                <record jsxid="44" name="enumeration" value="CIK"/>
+                <record jsxid="45" name="enumeration" value="CUSIP"/>
+                <record name="maxoccur" jsxid="46" value="1"/>
+              </restrictions>
+            </record>
+            <record jsxid="47" type="E" jsxtext="AsOfDate" jsxopen="1" tns="http://www.xignite.com/services/" path="/wsdl:definitions/wsdl:types/s:schema/s:element[index() = 7]/s:complexType/s:sequence/s:element[index() = 2]" datatype="s:string" simple="1">
+              <mappings jsxid="48">
+                <record jsxid="49" name="DOM" value="dpkrStartDateInput" serverns=""/>
+              </mappings>
+              <restrictions jsxid="50">
+                <record name="maxoccur" jsxid="51" value="1"/>
+                <record name="minoccur" jsxid="52" value="0"/>
+              </restrictions>
+            </record>
+          </record>
+        </record>
+        <record jsxid="53" type="O" jsxtext="Output (inbound response)" jsxopen="1">
+          <record jsxid="54" type="C" jsxtext="GetHistoricalQuotesResponse" tns="http://www.xignite.com/services/" path="/wsdl:definitions/wsdl:types/s:schema/s:element[index() = 8]" datatype="" jsxopen="1">
+            <record jsxid="55" type="C" jsxtext="GetHistoricalQuotesResult" tns="http://www.xignite.com/services/" path="/wsdl:definitions/wsdl:types/s:schema/s:element[index() = 8]/s:complexType/s:sequence/s:element" datatype="tns:ArrayOfHistoricalQuote" jsxopen="1">
+              <mappings jsxid="56">
+                <record jsxid="57" name="CDF Document" value="historicals" serverns="sampleWSDLMapping2"/>
+              </mappings>
+              <restrictions jsxid="58">
+                <record name="maxoccur" jsxid="59" value="1"/>
+                <record name="minoccur" jsxid="60" value="0"/>
+              </restrictions>
+              <record jsxid="61" type="C" jsxtext="HistoricalQuote" tns="http://www.xignite.com/services/" path="/wsdl:definitions/wsdl:types/s:schema/s:complexType[index() = 4]/s:sequence/s:element" datatype="tns:HistoricalQuote" jsxopen="1">
+                <mappings jsxid="62">
+                  <record jsxid="63" name="CDF Record" value=""/>
+                </mappings>
+                <restrictions jsxid="64">
+                  <record name="maxoccur" value="unbounded" jsxid="65"/>
+                  <record name="minoccur" jsxid="66" value="0"/>
+                </restrictions>
+                <record jsxid="67" type="C" jsxtext="Outcome" jsxopen="1" tns="http://www.xignite.com/services/" path="/wsdl:definitions/wsdl:types/s:schema/s:complexType[index() = 1]/s:sequence/s:element[index() = 0]" datatype="tns:OutcomeTypes">
+                  <restrictions jsxid="68">
+                    <record name="maxoccur" jsxid="69" value="1"/>
+                  </restrictions>
+                  <mappings jsxid="71363">
+                    <record jsxid="36978" name="Script" value="eg.wsdl2.wsOutcome = MESSAGENODE.getValue();" serverns="sampleWSDLMapping2"/>
+                  </mappings>
+                </record>
+                <record jsxid="70" type="E" jsxtext="Message" jsxopen="1" tns="http://www.xignite.com/services/" path="/wsdl:definitions/wsdl:types/s:schema/s:complexType[index() = 1]/s:sequence/s:element[index() = 1]" datatype="s:string">
+                  <restrictions jsxid="71">
+                    <record name="maxoccur" jsxid="72" value="1"/>
+                    <record name="minoccur" jsxid="73" value="0"/>
+                  </restrictions>
+                  <mappings jsxid="57267">
+                    <record jsxid="35877" name="Script" value="eg.wsdl2.wsMessage = MESSAGENODE.getValue();" serverns="sampleWSDLMapping2"/>
+                  </mappings>
+                </record>
+                
+                
+                <record jsxid="81" type="C" jsxtext="Security" tns="http://www.xignite.com/services/" path="/wsdl:definitions/wsdl:types/s:schema/s:complexType[index() = 0]/s:complexContent/s:extension/s:sequence/s:element[index() = 0]" datatype="tns:Security">
+                  <restrictions jsxid="82">
+                    <record name="maxoccur" jsxid="83" value="1"/>
+                    <record name="minoccur" jsxid="84" value="0"/>
+                  </restrictions>
+                  
+                  
+                  
+                  
+                  
+                  
+                  <record jsxid="107" type="E" jsxtext="Symbol" jsxopen="1" tns="http://www.xignite.com/services/" path="/wsdl:definitions/wsdl:types/s:schema/s:complexType[index() = 2]/s:complexContent/s:extension/s:sequence/s:element[index() = 2]" datatype="s:string">
+                    <mappings jsxid="108">
+                      <record jsxid="109" name="CDF Attribute" value="Security"/>
+                    </mappings>
+                    <restrictions jsxid="110">
+                      <record name="maxoccur" jsxid="111" value="1"/>
+                      <record name="minoccur" jsxid="112" value="0"/>
+                    </restrictions>
+                  </record>
+                  
+                  
+                  
+                </record>
+                <record jsxid="125" type="E" jsxtext="Date" jsxopen="1" tns="http://www.xignite.com/services/" path="/wsdl:definitions/wsdl:types/s:schema/s:complexType[index() = 0]/s:complexContent/s:extension/s:sequence/s:element[index() = 1]" datatype="s:string">
+                  <mappings jsxid="126">
+                    <record jsxid="127" name="CDF Attribute" value="Date"/>
+                  </mappings>
+                  <restrictions jsxid="128">
+                    <record name="maxoccur" jsxid="129" value="1"/>
+                    <record name="minoccur" jsxid="130" value="0"/>
+                  </restrictions>
+                </record>
+                
+                <record jsxid="134" type="E" jsxtext="Open" jsxopen="1" tns="http://www.xignite.com/services/" path="/wsdl:definitions/wsdl:types/s:schema/s:complexType[index() = 0]/s:complexContent/s:extension/s:sequence/s:element[index() = 3]" datatype="s:double">
+                  <mappings jsxid="135">
+                    <record jsxid="136" name="CDF Attribute" value="Open"/>
+                  </mappings>
+                  <restrictions jsxid="137">
+                    <record name="maxoccur" jsxid="138" value="1"/>
+                  </restrictions>
+                </record>
+                <record jsxid="139" type="E" jsxtext="LastClose" jsxopen="1" tns="http://www.xignite.com/services/" path="/wsdl:definitions/wsdl:types/s:schema/s:complexType[index() = 0]/s:complexContent/s:extension/s:sequence/s:element[index() = 4]" datatype="s:double">
+                  <mappings jsxid="140">
+                    <record jsxid="141" name="CDF Attribute" value="LastClose"/>
+                  </mappings>
+                  <restrictions jsxid="142">
+                    <record name="maxoccur" jsxid="143" value="1"/>
+                  </restrictions>
+                </record>
+                <record jsxid="144" type="E" jsxtext="High" jsxopen="1" tns="http://www.xignite.com/services/" path="/wsdl:definitions/wsdl:types/s:schema/s:complexType[index() = 0]/s:complexContent/s:extension/s:sequence/s:element[index() = 5]" datatype="s:double">
+                  <mappings jsxid="145">
+                    <record jsxid="146" name="CDF Attribute" value="High"/>
+                  </mappings>
+                  <restrictions jsxid="147">
+                    <record name="maxoccur" jsxid="148" value="1"/>
+                  </restrictions>
+                </record>
+                <record jsxid="149" type="E" jsxtext="Low" jsxopen="1" tns="http://www.xignite.com/services/" path="/wsdl:definitions/wsdl:types/s:schema/s:complexType[index() = 0]/s:complexContent/s:extension/s:sequence/s:element[index() = 6]" datatype="s:double" jsxselected="1">
+                  <mappings jsxid="150">
+                    <record jsxid="151" name="CDF Attribute" value="Low"/>
+                  </mappings>
+                  <restrictions jsxid="152">
+                    <record name="maxoccur" jsxid="153" value="1"/>
+                  </restrictions>
+                </record>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+              </record>
+            </record>
+          </record>
+        </record>
+      </record>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </record>
+  </record>
+</data>

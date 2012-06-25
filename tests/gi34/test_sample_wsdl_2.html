@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+Copyright 2006-2007 TIBCO Software Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Test Sample WSDL Mapping 2</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+  <tbody>
+    <tr>
+      <td rowspan="1" colspan="3">Test sample WSDL mapping 2<br>
+      </td>
+    </tr>
+   <tr>
+      <td>include</td>
+      <td>testSetup.html</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td>open</td>
+      <td>${GIPATH}/shell.html?jsxapppath=${SAMPLESPATH}/WSDL_Mapping_2</td>
+      <td>// WSDL_Mapping_2 now run in static mode</td>
+    </tr>
+     <tr>
+      <td>waitForJsxButtonPresent</td>
+      <td>Query Service</td>
+       <td>5000</td>
+     </tr>
+    <tr>
+      <td>assertJsxButtonPresent</td>
+      <td>Query Service</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>assertElementPresent</td>
+      <td>JsxTextboxName=symbol</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>typeJsxTextbox</td>
+      <td>JsxTextboxName=symbol</td>
+      <td>CSCO,YHOO,SUNW,TIBX</td>
+    </tr>
+      <tr>
+        <td>pickJsxDate</td>
+        <td>startDate</td>
+        <td>2007/10/13</td>
+      </tr>
+	<!-- IE BUG on resize event cause HW window to collapse -->  
+    <tr>
+      <td>unsubscribeJsxResize</td>
+      <td>// disable resize event subscription to work around IE bug</td>
+      <td>&nbsp;</td>
+    </tr>	
+    <tr>
+      <td>clickJsxDateIcon</td>
+      <td>blkInputPane.startDate</td>
+      <td></td>
+    </tr>
+    
+    <tr>
+      <td>clickJsxDatePrevYear</td>
+      <td>blkInputPane.startDate</td>
+      <td>&nbsp;</td>
+    </tr>
+      <tr>
+        <td>clickJsxDatePrevMonth</td>
+        <td>blkInputPane.startDate</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>clickJsxElement</td>
+      <td>JsxDateDay=startDate,13</td>
+      <td>&nbsp;</td>
+    </tr>
+    <!--IE BUG on resize event cause HW window to collapse -->
+    <tr>
+      <td>click</td>
+      <td>JsxButtonText=Query Service</td>
+      <td>//data returned are static</td>
+    </tr>
+    <tr>
+      <td>waitForElementPresent</td>
+      <td>JsxMatrixRowIndex=gridResults,4</td>
+      <td>5000</td>
+    </tr>
+    <tr>
+      <td>waitForElementPresent</td>
+      <td>JsxAlertCaption="Success"</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>assertElementPresent</td>
+      <td>JsxAlertCaption="Success"</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>assertJsxAlertOK</td>
+      <td>*success*</td>
+      <td>&nbsp;</td>
+    </tr>
+      <tr>
+        <td>assertElementPresent</td>
+        <td>JsxMatrixRowText=gridResults,*TIBX*</td>
+        <td>&nbsp;</td>
+      </tr>
+ <!-- test for returned doc type new 3.3.0 -->
+      <tr>
+        <td>assertEval</td>
+        <td>selenium.page().findByJsxName("gridResults").getXML().getClass()</td>
+        <td>jsx3.xml.CDF.Document</td>
+      </tr>
+
+    <!--tr>
+      <td>open</td>
+      <td>../gi/tests/gi32/testTearDown.html</td>
+      <td>&nbsp;</td>
+    </tr-->
+    
+  </tbody>
+
+</table>
+</body>
+</html>

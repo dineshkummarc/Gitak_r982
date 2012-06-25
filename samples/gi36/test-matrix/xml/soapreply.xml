@@ -1,0 +1,39 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<soap:Body>
+		<resetPasswordResponse xmlns="http://service.bvp.equitymetrics.com">
+			<out xmlns="http://service.bvp.equitymetrics.com">
+				<message xmlns="http://dto.bvp.equitymetrics.com" xsi:nil="true"/>
+				<result xmlns="http://dto.bvp.equitymetrics.com">
+					0
+				</result>
+				<user xmlns="http://dto.bvp.equitymetrics.com">
+					<address1></address1>
+					<address2></address2>
+					<address3></address3>
+					<cityID>0</cityID>
+					<countryID xsi:nil="true"/>
+					<directPhone></directPhone>
+					<email>zhou_rui@founder.com</email>
+					<enabled>false</enabled>
+					<firstName>rui</firstName>
+					<lastName>zhou</lastName>
+					<mobilePhone></mobilePhone>
+					<needChangePassword>true</needChangePassword>
+					<newPassword xsi:nil="true"/>
+					<organizationID>0000002</organizationID>
+					<password>vujofwaa</password>
+					<postalCode></postalCode>
+					<primaryContact>false</primaryContact>
+					<securityAnswer1 xsi:nil="true"/>
+					<securityAnswer2 xsi:nil="true"/>
+					<securityQuestion1 xsi:nil="true"/>
+					<securityQuestion2 xsi:nil="true"/>
+					<stateID xsi:nil="true"/>
+					<usageAgreed>false</usageAgreed>
+					<userID>rui.zhou</userID>
+					<userType>0</userType>
+				</user>
+			</out>
+		</resetPasswordResponse>
+	</soap:Body>
+</soap:Envelope>

@@ -1,0 +1,14 @@
+<data jsxid="jsxroot"> 
+  <record jsxid="1" jsxtext="rootnode" jsxopen="1" jsximg="JSX/images/icons/logo_16.gif">  
+    <record jsxid="2" jsxtext="node a" jsxopen="1">   
+      <record jsxid="3" jsxtext="node b" lazy="1">   
+        <record jsxid="4" jsximg="" jsxtext="loading..."/>   
+      </record>   
+      <record jsxid="6" jsxtext="node e" jsxopen="1" jsximg="JSX/images/imagebutton/off.gif">
+        <record jsxid="7" jsxtext="node f" lazy="1">     
+          <record jsxid="8" jsximg="" jsxtext="loading..."/>    
+        </record>   
+      </record>  
+    </record> 
+  </record>
+</data>

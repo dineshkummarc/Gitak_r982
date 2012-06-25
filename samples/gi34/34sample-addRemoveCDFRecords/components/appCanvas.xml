@@ -1,0 +1,192 @@
+<serialization jsxversion="3.4" xmlns="urn:tibco.com/v3.0">
+  <name><![CDATA[Layout (--)]]></name>
+  <icon></icon>
+  <description><![CDATA[2 top-over-bottom panes in an adaptive layout grid.]]></description>
+  <onBeforeDeserialize></onBeforeDeserialize>
+  <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrepeat="2" jsxsizearray="['180','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"></variants>
+    <strings jsxname="lytMainLayout" jsxwidth="100%" jsxheight="100%" jsxrows="140,*"></strings>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"></variants>
+      <strings jsxname="blkDescription" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;p align=&quot;right&quot;&gt;&lt;b&gt;Add and remove CDF &amp;lt;record&amp;gt;s: version 3.0&lt;/b&gt;&lt;br/&gt; JSX version: 3.4.0&lt;/p&gt;   &lt;p&gt;This sample application shows several different approaches to add and remove rows from the Model (CDF Document) and the View (jsx3.gui.Matrix).&lt;/p&gt; &lt;p&gt;Note that while the initial data came from prices.xml, subsequent changes to the model are accomplished on the relevant XML cache documents for each grid.&lt;/p&gt; &lt;p&gt;In the first example, enter data into the textboxes and click Add Row.  Use the right-click context menu to remove a row.  The code for the two functions is in logic.js.  The context menu is referenced as a Bound Menu property of the grid, and its contents are specified in the XML String property of the menu.&lt;/p&gt;"></strings>
+      <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"></dynamics>
+      <object type="jsx3.gui.CheckBox">
+        <variants jsxheight="18" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxchecked="0"></variants>
+        <strings jsxname="chkDocPane" jsxtext="Minimize doc pane" jsxmargin="0 4 0 0" jsxdisplay=""></strings>
+        <events jsxexecute="jsx3.out('mycheck','the jsxexecute method was fired for checkbox, ' + this.getId());" jsxtoggle="if (intCHECKED) this.getParent().getParent().setRows('20,*',true); else this.getParent().getParent().setRows('140,*',true);"></events>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"></variants>
+      <strings jsxname="blkAppPane" jsxwidth="100%" jsxheight="100%"></strings>
+      <dynamics jsxborder="@Outset"></dynamics>
+      <object type="jsx3.gui.Splitter">
+        <variants jsxorientation="1" jsxleft="0" jsxtop="0"></variants>
+        <strings jsxname="spltAppPaneSplitter" jsxsubcontainer1pct="44.78%" jsxsubcontainer2pct="74.08%"></strings>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1"></variants>
+          <strings jsxname="blkTopPane" jsxwidth="100%" jsxheight="100%"></strings>
+          <dynamics jsxborder="@Inset"></dynamics>
+          <object type="jsx3.gui.LayoutGrid">
+            <variants jsxrepeat="2" jsxsizearray="['50','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"></variants>
+            <strings jsxname="lytTopPaneLayout" jsxwidth="100%" jsxheight="100%" jsxrows="50,*"></strings>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="2"></variants>
+              <strings jsxname="blkInputPane" jsxwidth="100%" jsxheight="100%"></strings>
+              <dynamics jsxborder="@Outset"></dynamics>
+              <object type="jsx3.gui.DatePicker">
+                <variants jsxwidth="120" jsxheight="18"></variants>
+                <strings jsxname="dpkrDateInput" jsxmargin="0 4 0 0"></strings>
+              </object>
+              <object type="jsx3.gui.TextBox">
+                <variants jsxheight="18" jsxrelativeposition="1"></variants>
+                <strings jsxname="txtSecurityInput" jsxmargin="margin-right:4px;" jsxvalue=""></strings>
+              </object>
+              <object type="jsx3.gui.TextBox">
+                <variants jsxheight="18"></variants>
+                <strings jsxname="txtOpenInput" jsxmargin="margin-right:4px;" jsxvalidationtype="number" jsxvalue=""></strings>
+              </object>
+              <object type="jsx3.gui.TextBox">
+                <variants jsxheight="18"></variants>
+                <strings jsxname="txtHighInput" jsxmargin="margin-right:4px;" jsxvalidationtype="number" jsxvalue=""></strings>
+              </object>
+              <object type="jsx3.gui.Button">
+                <variants jsxindex="0" jsxheight="18" jsxrelativeposition="0" jsxleft="241" jsxtop="26"></variants>
+                <strings jsxname="btnAddRowButton" jsxtext="Add Row" jsxmargin="margin-right:4px;"></strings>
+                <events jsxexecute="eg.addRemoveCDF.loadList(this);"></events>
+              </object>
+              <object type="jsx3.gui.Block">
+                <variants jsxwidth="190" jsxheight="16" jsxrelativeposition="0" jsxoverflow="1" jsxleft="308" jsxtop="27"></variants>
+                <strings jsxname="blkRightClickLabel" jsxtext="[Right-click in any row to delete]"></strings>
+              </object>
+            </object>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="1"></variants>
+              <strings jsxname="blkUpdatableGridPane" jsxwidth="100%" jsxheight="100%"></strings>
+              <dynamics jsxborder="@Outset"></dynamics>
+              <object type="jsx3.gui.Matrix">
+                <variants jsxpagingmodel="1" jsxselectionmodel="2"  ></variants>
+                <strings jsxname="mtxUpdatableTable" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxxmlurl="xml/prices.xml" jsxsortpath="Date" jsxsorttype="text" jsxsortdirection="ascending" jsxmenu="mnuDeleteRowMenu"></strings>
+                <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"></xslparameters>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="122"></variants>
+                  <strings jsxname="mcDateColumn" jsxtext="Date" jsxpadding="3" jsxcellpadding="3" jsxpath="Date" jsxformathandler="@date" jsxvaluetemplate="@empty"></strings>
+                  <dynamics jsxbgcolor="@Solid Medium" jsxbg="@Fade TopDown" jsxborder="@Outset"></dynamics>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="102"></variants>
+                  <strings jsxname="mcSecurityColumn" jsxtext="Security" jsxpadding="3" jsxcellpadding="3" jsxpath="Security"></strings>
+                  <dynamics jsxbg="@Fade TopDown" jsxbgcolor="@Solid Medium" jsxborder="@Outset"></dynamics>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="104"></variants>
+                  <strings jsxname="mcOpenColumn" jsxtext="Open" jsxvaluetemplate="@empty" jsxpadding="3" jsxcellpadding="3" jsxpath="Open" jsxformathandler="@number"></strings>
+                  <dynamics jsxbgcolor="@Solid Medium" jsxbg="@Fade TopDown" jsxborder="@Outset"></dynamics>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="120"></variants>
+                  <strings jsxname="mcHighColumn" jsxtext="High" jsxvaluetemplate="@empty" jsxpadding="3" jsxcellpadding="3" jsxpath="High" jsxformathandler="@number"></strings>
+                  <dynamics jsxbgcolor="@Solid Medium" jsxbg="@Fade TopDown" jsxborder="@Outset"></dynamics>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants></variants>
+                  <strings jsxname="mcPaddingColumn" jsxwidth="100" jsxpadding="3" jsxcellpadding="3" jsxpath="jsxtext"></strings>
+                </object>
+              </object>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1"></variants>
+          <strings jsxname="blkBottomPane" jsxwidth="100%" jsxheight="100%"></strings>
+          <dynamics jsxborder="@Inset"></dynamics>
+          <object type="jsx3.gui.LayoutGrid">
+            <variants jsxrepeat="2" jsxsizearray="['60','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"></variants>
+            <strings jsxname="lytBottomPaneLayout" jsxwidth="100%" jsxheight="100%" jsxrows="60,*"></strings>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="2"></variants>
+              <strings jsxname="blkDescriptionPane" jsxwidth="100%" jsxheight="100%" jsxtext="This grid accomplishes the same thing as the grid above with in-line editing after using the right-click context menu to add a row. Existing rows can be edited, and changes are persisted to the relevant CDF Document.  Click the red &quot;X&quot; to delete a row.  The Delete Row and the Textbox column prototypes are available in the Component Library."></strings>
+              <dynamics jsxborder="@Outset"></dynamics>
+            </object>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="1"></variants>
+              <strings jsxname="blkEditableGridPane" jsxwidth="100%" jsxheight="100%"></strings>
+              <dynamics jsxborder="@Outset"></dynamics>
+              <object type="jsx3.gui.Matrix">
+                <variants jsxpagingmodel="1" jsxselectionmodel="2"  ></variants>
+                <strings jsxname="mtxEditableTable" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxxmlurl="xml/prices.xml" jsxsortpath="High" jsxsorttype="text" jsxsortdirection="ascending" jsxmenu="mnuAddRowMenu"></strings>
+                <events jsxbeforeedit="" jsxafteredit=""></events>
+                <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"></xslparameters>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxenabled="1" jsxprefetch="1" jsxtype="0" jsxstate="0" jsxwidth="16" jsxheight="16"/>
+                  <strings jsxname="mcEditDeleteColumn" jsxpadding="3" jsxcellpadding="1" jsxvaluetemplate="@empty"></strings>
+                  <dynamics jsxbgcolor="@Solid Medium" jsxbg="@Fade TopDown" jsxborder="@Outset"></dynamics>
+                  <object type="jsx3.gui.ImageButton">
+                    <variants jsxenabled="1" jsxprefetch="1" jsxtype="0" jsxstate="0"></variants>
+                    <strings jsxname="imageButtonMask" jsximage="jsx:///images/list/delete.gif"></strings>
+                    <events jsxexecute="this.getParent().getParent().deleteRecord(this.emGetSession().recordId, true);"></events>
+                  </object>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="99"></variants>
+                  <strings jsxname="mcEditDateColumn" jsxtext="Date" jsxpadding="3" jsxcellpadding="3" jsxpath="Date" jsxformathandler="@date" jsxvaluetemplate="@empty"></strings>
+                  <dynamics jsxbgcolor="@Solid Medium" jsxbg="@Fade TopDown" jsxborder="@Outset"></dynamics>
+                  <object type="jsx3.gui.DatePicker">
+                    <variants jsxrelativeposition="0" jsxleft="20" jsxtop="80" jsxyear="2005" jsxmonth="6" jsxdate="27" jsxwidth="99" jsxheight="20" jsxzindex="10"></variants>
+                    <strings jsxname="dpkrDateEditor" jsxdisplay="none"></strings>
+                    <dynamics jsxformat="@Medium"></dynamics>
+                  </object>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="102"></variants>
+                  <strings jsxname="mcEditSecurityColumn" jsxtext="Security" jsxpadding="3" jsxcellpadding="3" jsxpath="Security"></strings>
+                  <dynamics jsxbg="@Fade TopDown" jsxbgcolor="@Solid Medium" jsxborder="@Outset"></dynamics>
+                  <object type="jsx3.gui.TextBox">
+                    <variants jsxrelativeposition="0" jsxleft="119" jsxtop="100" jsxzindex="10"></variants>
+                    <strings jsxname="txtSecurityEditor" jsxdisplay="none" jsxvalue="sdsad"></strings>
+                    <events jsxkeydown="1;"></events>
+                  </object>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="104"></variants>
+                  <strings jsxname="mcEditOpenColumn" jsxtext="Open" jsxvaluetemplate="@empty" jsxpadding="3" jsxcellpadding="3" jsxpath="Open" jsxformathandler="@number"></strings>
+                  <dynamics jsxbgcolor="@Solid Medium" jsxbg="@Fade TopDown" jsxborder="@Outset"></dynamics>
+                  <object type="jsx3.gui.TextBox">
+                    <variants jsxrelativeposition="0" jsxleft="221" jsxtop="100" jsxzindex="10"></variants>
+                    <strings jsxname="txtOpenEditor" jsxdisplay="none" jsxvalue="34"></strings>
+                    <events jsxkeydown="1;"></events>
+                  </object>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants jsxwidth="102"></variants>
+                  <strings jsxname="mcEditHighColumn" jsxtext="High" jsxvaluetemplate="@empty" jsxpadding="3" jsxcellpadding="3" jsxpath="High" jsxformathandler="@number"></strings>
+                  <dynamics jsxbgcolor="@Solid Medium" jsxbg="@Fade TopDown" jsxborder="@Outset"></dynamics>
+                  <object type="jsx3.gui.TextBox">
+                    <variants jsxrelativeposition="0" jsxleft="325" jsxtop="40" jsxzindex="10"></variants>
+                    <strings jsxname="txtHighEditor" jsxdisplay="none" jsxvalue="40.66"></strings>
+                    <events jsxkeydown="1;"></events>
+                  </object>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <variants></variants>
+                  <strings jsxname="mcEditPaddingColumn" jsxwidth="100" jsxpadding="3" jsxcellpadding="3" jsxpath="jsxtext"></strings>
+                </object>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+    <object type="jsx3.gui.Menu">
+      <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0"></variants>
+      <strings jsxname="mnuAddRowMenu" jsxtip="menu" jsxtext="addMenu" jsxxml="&lt;data jsxid=&quot;jsxroot&quot;&gt;   &lt;record jsxid=&quot;1&quot; jsxtext=&quot;Add&quot; /&gt; &lt;/data&gt;" jsxdisplay="none"></strings>
+      <events jsxexecute="eg.addRemoveCDF.doAddNewRecord(this, this.getContextRecordId());"></events>
+    </object>
+    <object type="jsx3.gui.Menu">
+      <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0"></variants>
+      <strings jsxname="mnuDeleteRowMenu" jsxtip="menu" jsxtext="deleteMenu" jsxxml="&lt;data jsxid=&quot;jsxroot&quot;&gt;   &lt;record jsxid=&quot;1&quot; jsxtext=&quot;Delete&quot; /&gt; &lt;/data&gt;" jsxdisplay="none"></strings>
+      <events jsxexecute="eg.addRemoveCDF.doDeleteRecord(this, this.getContextRecordId());"></events>
+    </object>
+  </object>
+</serialization>

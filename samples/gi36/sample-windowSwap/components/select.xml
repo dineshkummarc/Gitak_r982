@@ -1,0 +1,20 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.4">
+  <name/>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Block">
+    <variants jsxrelativeposition="1"/>
+    <strings jsxinstanceof="jsx3.app.Model" jsxname="root" jsxwidth="100%" jsxheight="100%"/>
+    <object type="jsx3.gui.Select">
+      <variants jsxwidth="150" jsxheight="18" jsxrequired="1"/>
+      <strings jsxname="select" jsxxmlurl="jsx:///xml/sample.xml" jsxmargin="0 4 0 0"/>
+    </object>
+    <object type="jsx3.gui.Select">
+      <variants jsxwidth="150" jsxheight="18" jsxtype="1" jsxrequired="1"/>
+      <strings jsxname="combo" jsxvalue="a" jsxxmlurl="jsx:///xml/sample.xml" jsxmargin="0 4 0 0"/>
+      <events onmousedown="this.style.backgroundColor='';" onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');"/>
+    </object>
+  </object>
+</serialization>

@@ -1,0 +1,80 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name>Layout - Top/Over</name>
+  <icon>images/prototypes/layout-over.gif</icon>
+  <description>2 top-over-bottom panes in an adaptive layout grid.</description>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.LayoutGrid">
+    <variants jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxsizearray="['175','*']"/>
+    <strings jsxname="layout (--)" jsxwidth="100%" jsxheight="100%"/>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkDescription" jsxwidth="100%" jsxheight="100%" jsxtext="&lt;p align=&quot;left&quot;&gt;&lt;b&gt;Source: &lt;a style=&quot;text-decoration:none&quot; href='http://power.tibco.com/content/GI/Apps/tibco-gi-3.3-pro/JSXAPPS/33sample-windowSwap.zip'&gt;http://power.tibco.com/content/GI/Apps/tibco-gi-3.3-pro/JSXAPPS/33sample-windowSwap.zip&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;&lt;p align=&quot;right&quot;&gt;&lt;b&gt;Window Swap: version 1.0&lt;/b&gt;&lt;br /&gt; JSX version: 3.3.0&lt;/p&gt;  &lt;p&gt;This example demonstrates how to have GI content 'break-away' into a separate window, and return it again to the original application&lt;/p&gt;&lt;p&gt;Initially,when the user clicks the 'Swap to/from Window' button, a new window is created (or reused if it has been created previously), and the pane that is to be swapped is adopted by the new window.&lt;/p&gt;&lt;p&gt;When viewing that content in the new window, it is returned to the main application if the window is closed or the used clicks the 'Swap to/from Window' button again.  If the button is used, the window will also be closed.&lt;/p&gt;"/>
+      <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Medium" jsxpadding="@8Pixel"/>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="1"/>
+      <strings jsxname="blkWindowSwapApp" jsxwidth="100%" jsxheight="100%"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="1"/>
+        <strings jsxname="blkSwappablePane" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1"/>
+        <object type="jsx3.gui.LayoutGrid">
+          <variants jsxsizearray="['40','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxorientation="0"/>
+          <strings jsxname="layout (--)" jsxwidth="100%" jsxheight="100%"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2"/>
+            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+            <dynamics jsxborder="@Outset" jsxpadding="@8Pixel"/>
+            <object type="jsx3.gui.Button">
+              <variants jsxindex="0" jsxheight="18"/>
+              <strings jsxname="button" jsxtext="Swap to/from Window" jsxmargin="0 4 0 0"/>
+              <events jsxexecute="eg.windowswap.swap();"/>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="1"/>
+            <strings jsxname="mainParent" jsxwidth="100%" jsxheight="100%"/>
+            <dynamics jsxborder="@Outset"/>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="1"/>
+              <strings jsxname="swapPane" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1"/>
+              <object type="jsx3.gui.Splitter">
+                <variants jsxleft="0" jsxtop="0"/>
+                <strings jsxname="splitter ( | )" jsxsubcontainer1pct="50%"/>
+                <object type="jsx3.gui.Block">
+                  <variants jsxoverflow="1"/>
+                  <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+                  <dynamics jsxborder="@Inset"/>
+                  <object type="jsx3.gui.Tree">
+                    <variants/>
+                    <strings jsxname="tree" jsxwidth="100%" jsxheight="100%" jsxvalue="1" jsxxml="&lt;data jsxid=&quot;jsxroot&quot;&gt;  &lt;record jsxid=&quot;1&quot; jsxtext=&quot;rootnode&quot; jsxopen=&quot;1&quot; jsximg=&quot;jsx:///images/icons/logo_16.gif&quot;&gt;   &lt;record jsxid=&quot;2&quot; jsxtext=&quot;node a&quot; jsxopen=&quot;1&quot;&gt;     &lt;record jsxid=&quot;3&quot; jsxtext=&quot;node b&quot;&gt;       &lt;record jsxid=&quot;4&quot; jsxtext=&quot;node c&quot;/&gt;       &lt;record jsxid=&quot;5&quot; jsxtext=&quot;node d&quot;/&gt;     &lt;/record&gt;     &lt;record jsxid=&quot;6&quot; jsxtext=&quot;node e&quot; jsxopen=&quot;1&quot; jsximg=&quot;jsx:///images/imagebutton/off.gif&quot;&gt;      &lt;record jsxid=&quot;7&quot; jsxtext=&quot;node f&quot; jsxopen=&quot;1&quot;&gt;        &lt;record jsxid=&quot;8&quot; jsxtext=&quot;node g&quot;/&gt;      &lt;/record&gt;     &lt;/record&gt;   &lt;/record&gt;  &lt;/record&gt; &lt;/data&gt;"/>
+                  </object>
+                </object>
+                <object type="jsx3.gui.Block">
+                  <variants jsxoverflow="1"/>
+                  <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+                  <dynamics jsxborder="@Inset"/>
+                  <object type="jsx3.gui.Matrix">
+                    <variants jsxpagingmodel="1" jsxselectionmodel="2" jsxscalewidth="1"/>
+                    <strings jsxname="matrix1" jsxbodyborder="1px solid #dfdfef" jsxheaderborder="1px solid #dfdfef" jsxbgcolor="#efefff" jsxfocusstyle="font-weight:bold;" jsxxml="       &lt;data jsxid=&quot;jsxroot&quot;&gt;         &lt;record jsxid=&quot;AG&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Afghanistan&quot;/&gt;         &lt;record jsxid=&quot;AL&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Albania&quot;/&gt;         &lt;record jsxid=&quot;AR&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Algeria&quot;/&gt;         &lt;record jsxid=&quot;AS&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;American Samoa&quot;/&gt;         &lt;record jsxid=&quot;AD&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Andorra&quot;/&gt;         &lt;record jsxid=&quot;AO&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Angola&quot;/&gt;         &lt;record jsxid=&quot;AU&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Anguilla&quot;/&gt;         &lt;record jsxid=&quot;AX&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Antarctica&quot;/&gt;         &lt;record jsxid=&quot;AT&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Antigua and Barbuda&quot;/&gt;         &lt;record jsxid=&quot;AE&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Argentina&quot;/&gt;         &lt;record jsxid=&quot;AM&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Armenia&quot;/&gt;         &lt;record jsxid=&quot;AB&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Aruba&quot;/&gt;         &lt;record jsxid=&quot;AA&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Australia&quot;/&gt;         &lt;record jsxid=&quot;AI&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Austria&quot;/&gt;         &lt;record jsxid=&quot;AZ&quot; jsximg=&quot;JSX/images/icons/logo_16.gif&quot; jsxtext=&quot;Azerbaijan&quot;/&gt;       &lt;/data&gt;     "/>
+                    <xslparameters jsx_rowbg1="#ffffff" jsx_rowbg2="#efefff"/>
+                    <object type="jsx3.gui.Matrix.Column">
+                      <variants jsxresize="0"/>
+                      <strings jsxname="mc1" jsxtext="&amp;#160;" jsxwidth="20" jsxcellpadding="2" jsxpath="jsximg" jsxvaluetemplate="@image"/>
+                      <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
+                    </object>
+                    <object type="jsx3.gui.Matrix.Column">
+                      <variants/>
+                      <strings jsxname="mc2" jsxtext="Name" jsxpadding="2" jsxwidth="*" jsxcellpadding="2" jsxpath="jsxtext"/>
+                      <dynamics jsxborder="@Outset" jsxbg="@Bevel TopDown" jsxbgcolor="@Solid Disabled"/>
+                    </object>
+                  </object>
+                </object>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

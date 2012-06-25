@@ -1,0 +1,168 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.4">
+  <name/>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Block">
+    <variants jsxoverflow="1"/>
+    <strings jsxname="blockMain" jsxwidth="100%" jsxheight="100%"/>
+    <object type="jsx3.gui.LayoutGrid">
+      <variants jsxrepeat="4" jsxsizearray="['25','50','*','50']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="0"/>
+      <strings jsxname="layout (--)" jsxwidth="100%" jsxheight="100%" jsxrows="25,50,*,50,25"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+        <dynamics jsxborder="@Outset"/>
+        <object type="jsx3.gui.WindowBar">
+          <variants jsxbartype="1"/>
+          <strings jsxname="toolBar"/>
+          <object type="jsx3.gui.ToolbarButton">
+            <variants/>
+            <strings jsxname="tbbList" jsximage="jsx:///images/tbb/open.gif" jsxtext="List"/>
+            <events jsxexecute="loadMatrix(this, 'List');"/>
+          </object>
+          <object type="jsx3.gui.ToolbarButton">
+            <variants/>
+            <strings jsxname="tbbTable" jsximage="jsx:///images/tbb/open.gif" jsxtext="Table"/>
+            <events jsxexecute="loadMatrix(this, this.getText());"/>
+          </object>
+          <object type="jsx3.gui.ToolbarButton">
+            <variants/>
+            <strings jsxname="tbbGrid" jsximage="jsx:///images/tbb/open.gif" jsxtext="Grid"/>
+            <events jsxexecute="loadMatrix(this, 'Grid');"/>
+          </object>
+          <object type="jsx3.gui.ToolbarButton">
+            <variants/>
+            <strings jsxname="tbbTree" jsximage="jsx:///images/tbb/open.gif" jsxtext="Tree"/>
+            <events jsxexecute="loadMatrix(this, 'Tree');"/>
+          </object>
+          <object type="jsx3.gui.ToolbarButton">
+            <variants/>
+            <strings jsxname="tbbPaged" jsximage="jsx:///images/tbb/open.gif" jsxtext="Paged List"/>
+            <events jsxexecute="loadMatrix(this, 'Paged');"/>
+          </object>
+          <object type="jsx3.gui.ToolbarButton">
+            <variants/>
+            <strings jsxname="tbbMultiSel" jsximage="jsx:///images/tbb/open.gif" jsxtext="MutiSelect" jsxfontweight="bold"/>
+            <events jsxexecute="loadMatrix(this, 'MultiSel');"/>
+          </object>
+          <object type="jsx3.gui.ToolbarButton">
+            <variants/>
+            <strings jsxname="tbbFPane" jsximage="jsx:///images/tbb/open.gif" jsxtext="Freeze Pane"/>
+            <events jsxexecute="loadMatrix(this, 'FPane');"/>
+          </object>
+          <object type="jsx3.gui.ToolbarButton">
+            <variants/>
+            <strings jsxname="tbbClearPane" jsximage="jsx:///images/list/delete.gif" jsxtext="Clear Canvas"/>
+            <events jsxexecute="this.getServer().getJSXByName('paneMatrix').removeChildren(); currentType = '';"/>
+          </object>
+          <object type="jsx3.gui.Menu">
+            <variants/>
+            <strings jsxname="menu" jsxtip="menu" jsxtext="menu" jsxxmlurl="xml/sample.xml"/>
+            <events jsxexecute="this.getServer().getJSXByName('blockMain').load('components/dlgMatrixAsync.xml');"/>
+            <xslparameters jsxsortpath="jsxtext"/>
+          </object>
+          <object type="jsx3.gui.ToolbarButton">
+            <variants/>
+            <strings jsxname="tbbScript" jsximage="jsx:///images/tbb/default.gif" jsxtext="ScriptPad"/>
+            <events jsxexecute="this.getServer().getBodyBlock().load('components/dlgScriptPad.xml');"/>
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="1"/>
+        <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+        <dynamics jsxborder="@Outset"/>
+        <object type="jsx3.gui.LayoutGrid">
+          <variants jsxrepeat="2" jsxsizearray="['50%','*']" jsxrelativeposition="0" jsxleft="0" jsxtop="0" jsxoverflow="2" jsxbestguess="1" jsxorientation="1"/>
+          <strings jsxname="layout ( | )" jsxwidth="100%" jsxheight="100%" jsxcols="50%,*"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2"/>
+            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+            <dynamics jsxborder="@Outset"/>
+            <object type="jsx3.gui.RadioButton">
+              <variants jsxheight="18" jsxdefaultselected="1" jsxselected="1" jsxrelativeposition="1"/>
+              <strings jsxname="radTwo" jsxtext="Text wrap" jsxgroupname="group1" jsxmargin="0 4 0 0" jsxvalue="rad2"/>
+              <events jsxselect="this.getServer().getJSXByName('txtOutput').setValue(this.getValue()).setWrap(true).repaint();"/>
+            </object>
+            <object type="jsx3.gui.RadioButton">
+              <variants jsxheight="18" jsxdefaultselected="1" jsxselected="0" jsxrelativeposition="1"/>
+              <strings jsxname="radOne" jsxtext="Text no wrap" jsxgroupname="group1" jsxmargin="0 4 0 0" jsxvalue="rad1"/>
+              <events jsxselect="this.getServer().getJSXByName('txtOutput').setValue(this.getValue()).setWrap(false).repaint();" jsxchange="this.getServer().getJSXByName('txtOutput').setValue(this.getValue()); "/>
+            </object>
+            <object type="jsx3.gui.TimePicker">
+              <variants jsxrelativeposition="1" jsxheight="18" jsxhours="0" jsxminutes="43" jsxseconds="0" jsxmillis="0" jsxshowsecs="0" jsxshowmillis="0"/>
+              <strings jsxname="tpTime" jsxmargin="0 4 0 0"/>
+              <events jsxchange="this.getServer().getJSXByName('txtOutput').setValue(strFIELD + ' changed.'); jsx3.sleep(function () { this.getServer().getJSXByName('txtOutput').setValue(this.getDate()); }, 'tp', this, true);" />
+            </object>
+            <object type="jsx3.gui.DatePicker">
+              <variants jsxwidth="100" jsxrelativeposition="1" jsxheight="18" jsxyear="2006" jsxmonth="6" jsxdate="1"/>
+              <strings jsxname="dpDate" jsxmargin="0 4 0 0"/>
+              <events jsxchange="this.getServer().getJSXByName('txtOutput').setValue(newDATE);"/>
+            </object>
+            <object type="jsx3.gui.CheckBox">
+              <variants jsxheight="18" jsxchecked="1"/>
+              <strings jsxname="chkTicked" jsxtext="Checkbox" jsxmargin="0 4 0 0"/>
+              <events jsxexecute="jsx3.out('mycheck','the jsxexecute method was fired for checkbox, ' + this.getId());" jsxtoggle="this.getServer().getJSXByName('txtOutput').setValue(this.getChecked()); "/>
+            </object>
+            <object type="jsx3.gui.Slider">
+              <variants jsxvalue="43.78378378378378" jsxrelativeposition="1" jsxorientation="0" jsxpainttrack="1" jsxtrackclick="1"/>
+              <strings jsxname="sldRange" jsxlength="200"/>
+              <events jsxchange="" jsxincchange="this.getServer().getJSXByName('txtOutput').setValue(fpVALUE + ' ' + fpVALUE + ' '  + fpVALUE); "/>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="1"/>
+            <strings jsxname="pane" jsxwidth="100%" jsxheight="100%"/>
+            <dynamics jsxborder="@Outset"/>
+            <object type="jsx3.gui.ImageButton">
+              <variants jsxwidth="100" jsxheight="20" jsxprefetch="1" jsxtype="0" jsxstate="0" jsxoverflow="2"/>
+              <strings jsxname="ibtnFileIcon" jsxtext="[button text]" jsximage="jsx:///images/imagebutton/off.gif" jsxoverimage="jsx:///images/imagebutton/over.gif" jsxdownimage="jsx:///images/imagebutton/down.gif" jsxonimage="jsx:///images/imagebutton/on.gif" jsxdisabledimage="jsx:///images/imagebutton/disabled.gif" jsxmargin="2" jsxtextalign="right" jsxpadding="1"/>
+              <dynamics jsxborder="@Outset" jsxbgcolor="@Solid Medium"/>
+              <events jsxexecute="this.getServer().getBodyBlock().load('components/dlgTwoMatrixAsync.xml');"/>
+            </object>
+            <object type="jsx3.gui.Button">
+              <variants jsxindex="0" jsxheight="20" jsxwidth="100" jsxrelativeposition="1"/>
+              <strings jsxname="btnPressMe" jsxtext="Asynch Matrix" jsxmargin="2" jsxtextalign="center" jsxpadding="2 0 2 0" jsxdisplay=""/>
+              <events jsxexecute="this.getServer().getJSXByName('blockMain').load('components/dlgMatrixAsync.xml');"/>
+            </object>
+            <object type="jsx3.gui.Select">
+              <variants jsxwidth="150" jsxheight="18"/>
+              <strings jsxname="slctOptions" jsxxmlurl="jsx:///xml/sample.xml" jsxmargin="0 4 0 0" jsxdefaulttext="CDF Mapping"/>
+              <events jsxselect="this.getServer().getJSXByName('txtOutput').setValue(this.getValue());"/>
+              <xslparameters jsxsortpath="jsxtext"/>
+            </object>
+            <object type="jsx3.gui.Select">
+              <variants jsxwidth="100" jsxheight="18" jsxtype="1" jsxmaxlength="100"/>
+              <strings jsxname="cmbOptions" jsxvalue="AL" jsxxmlurl="xml/sample.xml" jsxmargin="0 4 0 0"/>
+              <events onmousedown="this.style.backgroundColor='';" onkeyup="jsx3.out('a server call could be made here to perform a lookup on the value, ' + this.childNodes[0].value + '.');" jsxselect="this.getServer().getJSXByName('txtOutput').setValue(this.getValue());"/>
+            </object>
+            <object type="jsx3.gui.TextBox">
+              <variants jsxheight="18"/>
+              <strings jsxname="txtInput" jsxmargin="0 4 0 0" jsxvalue="abc" jsxvalidationtype="number"/>
+              <events jsxexecute="if (this.doValidate()) jsx3.log('validated'); else {jsx3.log('not valid');this.focus(); }"/>
+            </object>
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="1"/>
+        <strings jsxname="paneMatrix" jsxwidth="100%" jsxheight="100%"/>
+        <dynamics jsxborder="@Outset"/>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="1"/>
+        <strings jsxname="paneDisplay" jsxwidth="100%" jsxheight="100%" jsxrelativeposition="1"/>
+        <object type="jsx3.gui.TextBox">
+          <variants jsxwidth="200" jsxwrap="true" jsxtype="1"/>
+          <strings jsxname="txtOutput" jsxmargin="0 4 0 0" jsxheight="100%" jsxvalue=""/>
+        </object>
+      </object>
+      <object type="jsx3.gui.WindowBar">
+        <variants jsxbartype="3"/>
+        <strings jsxname="taskBar"/>
+      </object>
+    </object>
+  </object>
+</serialization>

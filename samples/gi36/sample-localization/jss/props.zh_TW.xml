@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Chinese (zh_TW) localized version of this file. -->
+<data jsxid="jsxroot" jsxns="urn:tibco.com/v3.0/dynamicproperties/1">
+  <record jsxid="Line1" jsxtext="這個老鄉村 " type="jsxtext"/>
+  <record jsxid="Line2" jsxtext="沒有一家" type="jsxtext"/>
+  <record jsxid="Line3" jsxtext="沒棵相思果樹 " type="jsxtext"/>
+  <record jsxid="Tools1" jsxtext="工具" type="jsxtext"/>
+  <record jsxid="Display English" jsxtext="英文"/>
+  <record jsxid="Display Chinese" jsxtext="中文"/>
+  <record jsxid="Display French" jsxtext="法文"/>
+</data>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<soap:Body><GetLastClosingPriceResponse xmlns="http://www.xignite.com/services/">
+<GetLastClosingPriceResult>
+    <Outcome>Success</Outcome>
+    <Identity>IP</Identity>
+    <Delay>0</Delay>
+    <Security>
+        <Outcome>Success</Outcome>
+        <Delay>0</Delay>
+        <CIK>0000858877</CIK>
+        <Cusip>17275R102</Cusip>
+        <Symbol>CSCO</Symbol>
+        <ISIN>US17275R1023</ISIN>
+        <Name>Cisco Systems, Inc.</Name>
+        <Market>NASDAQGS</Market>
+        <CategoryOrIndustry>TECHNOLOGY</CategoryOrIndustry>
+    </Security>
+<Date>6/29/2007</Date>
+<Last>27.85</Last>
+<Open>27.98</Open>
+<LastClose>27.85</LastClose>
+<High>28.06</High>
+<Low>27.65</Low>
+<ChangeFromOpen>-0.13</ChangeFromOpen>
+<PercentChangeFromOpen>-0.465</PercentChangeFromOpen>
+<ChangeFromLastClose>0</ChangeFromLastClose>
+<PercentChangeFromLastClose>0</PercentChangeFromLastClose>
+<Volume>44983400</Volume>
+<SplitRatio>1</SplitRatio>
+<LastAdjusted>27.85</LastAdjusted>
+<OpenAdjusted>27.98</OpenAdjusted><LastCloseAdjusted>27.85</LastCloseAdjusted>
+<HighAdjusted>28.06</HighAdjusted><LowAdjusted>27.65</LowAdjusted>
+<ChangeFromOpenAdjusted>-0.13</ChangeFromOpenAdjusted>
+<ChangeFromLastCloseAdjusted>0</ChangeFromLastCloseAdjusted>
+<VolumeAdjusted>44983400</VolumeAdjusted>
+<NotTraded>false</NotTraded>
+</GetLastClosingPriceResult>
+</GetLastClosingPriceResponse>
+</soap:Body></soap:Envelope>

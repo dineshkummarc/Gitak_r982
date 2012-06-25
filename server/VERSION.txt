@@ -1,0 +1,4 @@
+selenium.rc.version=1.0.3
+selenium.rc.revision=gitak-1.0.0
+selenium.core.version=1.0.1
+selenium.core.revision=gitak-1.0.0
